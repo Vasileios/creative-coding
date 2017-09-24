@@ -847,7 +847,7 @@ Linux operating system such as DebianJessie,
 
 ** Login & preparations
 
-#+BEGIN_SRC sh
+#+BEGIN_SRC shell
 $ ssh pi@raspberrypi.local #from your laptop, default password is raspberry
 $ sudo raspi-config #change password, expand file system, reboot and log in again with ssh
 #+END_SRC
@@ -936,9 +936,7 @@ only 3 harmless class overwrites warnings
 $ pkill jackd #quit jackd
 #+END_SRC
 
-
-
-** 7th lesson
+* Sensors
 
 Use of sensors: touch, movement, elasticity, camera.
 
@@ -954,90 +952,8 @@ examples (https://www.arduino.cc/en/Tutorial/BuiltInExamples).
 
 Using Python-for OSC communication libraries (https://pypi.python.org/pypi/python-osc) - with SuperCollider.
 
-Create teams to design and implement an interactive audio system.
-
-Discussion on student projects.
-
-
-** 8th lesson
-
-
-
-
-** 9th lesson
-
-
-** 10th lesson
-
-
-** 11th lesson
-
-
-
-** 12th lesson
-
-
-** 13th lesson
-
-
-
-
 
 * Suggested Bibliography
 
 ** Books
-
-Baalman, Marije A. J., Daniel Moody-Grigsby, and Christopher L. Salter. 2007. “Schwelle: Sensor Augmented, Adaptive Sound Design for Live Theatrical Performance.” In Proceedings of the 7th International Conference on New Interfaces for Musical Expression, 178–184. NIME ’07. New York, NY, USA: ACM. doi:10.1145/1279740.1279774.
-
-Beilharz, Kirsty, and Sam Ferguson. 2007. “Gestural Hyper Instrument Collaboration with Generative Computation for Real Time Creativity.” In Proceedings of the 6th ACM SIGCHI Conference on Creativity & Cognition, 213–222. C&C ’07. New York, NY, USA: ACM. doi:10.1145/1254960.1254990.
-
-Birchfield, David, Kelly Phillips, Assegid Kidané, and David Lorig. 2006. “Interactive Public Sound Art: A Case Study.” In Proceedings of the 2006 Conference on New Interfaces for Musical Expression, 43–48. NIME ’06. Paris, France, France: IRCAM — Centre Pompidou. http://dl.acm.org/citation.cfm?id=1142215.1142223.
-
-Blaine, Tina, and Tim Perkis. 2000. “The Jam-O-Drum Interactive Music System: A Study in Interaction Design.” In Proceedings of the 3rd Conference on Designing Interactive Systems: Processes, Practices, Methods, and Techniques, 165–173. DIS ’00. New York, NY, USA: ACM. doi:10.1145/347642.347705.
-
-Collins, Karen. 2008. Game Sound: An Introduction to the History, Theory, and Practice of Video Game Music and Sound Design. 1 edition. Cambridge, Mass: The MIT Press.
-“First Edition Community Release | Infrared | Optical Filter.” 2017. Scribd. Accessed August 29. https://www.scribd.com/document/46574382/First-Edition-Community-Release.
-
-Kwastek, Katja. 2015. Aesthetics of Interaction in Digital Art. Reprint edition. Cambridge, Mass.: The MIT Press.
-
-Licht, Alan, and Jim O’Rourke. 2007. Sound Art: Beyond Music, Between Categories. Har/Com edition. New York, N.Y: Rizzoli.
-
-McCartney, James. 2011. The SuperCollider Book. Edited by Scott Wilson, David Cottle, and Nick Collins. Cambridge, Mass: The MIT Press.
-
-Miranda, Eduardo. 2002. Computer Sound Design: Synthesis Techniques and Programming. 2 edition. Amsterdam: Focal Press.
-
-Noble, Joshua. 2012. Programming Interactivity. 2 edition. Beijing ; Sebastopol, CA: O’Reilly Media.
-
-Roads, Curtis. 1996. The Computer Music Tutorial. Cambridge, Mass: MIT Press.
-
-Rogers, Yvonne, Helen Sharp, and Jenny Preece. 2011. Interaction Design: Beyond Human - Computer Interaction. 3 edition. Chichester, West Sussex, U.K: Wiley.
-
-** Sites
-
-https://www.gnu.org/software/emacs/
-
-http://supercollider.github.io
-
-http://www.xbox.com/en-US/xbox-one/accessories/kinect
-
-https://learn.adafruit.com/adafruit-mpr121-12-key-capacitive-touch-sensor-breakout-tutorial/overview
-
-https://www.adafruit.com/product/189
-
-https://www.youtube.com/watch?v=hP36xoPXDnM
-
-https://www.youtube.com/watch?v=wYU18eiiFt4
-
-https://www.youtube.com/watch?v=xEEKBbKvuMQ
-
-https://www.youtube.com/watch?v=lQUy436XQM4
-
-https://www.youtube.com/watch?v=hh_5_CAySXY
-
-https://diyhacking.com/raspberry-pi-gpio-control/
-
-http://bizarresoundcreatures.com
-
-https://vimeo.com/145978991
-
 
