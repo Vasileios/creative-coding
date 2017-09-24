@@ -65,46 +65,6 @@ circuits and how to hack them. A great opportunity to learn, design, recycle old
 
 
 
-** Input Devices
-
-
-Musical gestures can be expressed through a wide range of body
-movements. Dozens of input devices have been developed to capture
-these gestures. (Roads 1996: 625)
-
-#+BEGIN_QUOTE
-Switch
-Push buttons
-Linear potentiometer or fader
-Trackball
-Joystick
-Game Paddles
-etc
-#+END_QUOTE
-** Instrument design
-
-How to...
-
-[[http://bela.io][Bela]]
-
-
-Capacitive touch sensor-raspberry pi
-
-[[https://learn.adafruit.com/mpr121-capacitive-touch-sensor-on-raspberry-pi-and-beaglebone-black/overview][MPR121]] 
-
-
-
-
-** Mapping the Data from the Input Device
-
-The message coming from digital input devices are streams of binary
-numbers. A microprocessor inside the receiving symthesizer must decode
-these streams before commanding the synthesis engine  to emit
-sound. (Roads 1996: 625)
-
-
-** Remote Controllers
-
 
 * SuperCollider
 
@@ -197,6 +157,47 @@ pan, envbuf) * env)
 }).add;
 
 #+END_SRC
+
+
+
+** Input Devices
+
+
+Musical gestures can be expressed through a wide range of body
+movements. Dozens of input devices have been developed to capture
+these gestures. (Roads 1996: 625)
+
+#+BEGIN_QUOTE
+Switch
+Push buttons
+Linear potentiometer or fader
+Trackball
+Joystick
+Game Paddles
+etc
+#+END_QUOTE
+** Instrument design
+
+
+[[http://bela.io][Bela]]
+
+
+Capacitive touch sensor-raspberry pi
+
+[[https://learn.adafruit.com/mpr121-capacitive-touch-sensor-on-raspberry-pi-and-beaglebone-black/overview][MPR121]] 
+
+
+
+
+** Mapping the Data from the Input Device
+
+The message coming from digital input devices are streams of binary
+numbers. A microprocessor inside the receiving symthesizer must decode
+these streams before commanding the synthesis engine  to emit
+sound. (Roads 1996: 625)
+
+
+** Remote Controllers
 
 * Emacs
 
