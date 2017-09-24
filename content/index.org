@@ -920,8 +920,8 @@ In this case I use SuperCollider port *57120*
 
 #VA_exp_280217_001
 
-h1:
-Import libraries numpy, matplotlib, pythonosc
+
+#Import libraries numpy, matplotlib, pythonosc
 
 In [1]
 import numpy as np
