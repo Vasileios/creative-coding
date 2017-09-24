@@ -6,6 +6,12 @@ title: Creative coding
 * Creative coding
 
 ** Introduction
+** Key words:
+
+#+BEGIN_QUOTE
+big-data, data, creative-coding, emacs, interaction, machine learning, org-mode,
+real-time, streaming, web 
+#+END_QUOTE
 
 * Mental objectives
 
@@ -45,12 +51,6 @@ and physical computing,
 
 More on organising and sharing projects using tools such as mass communication techniques Slack-Git.
 
-* Key words:
-
-#+BEGIN_QUOTE
-big-data, data, creative-coding, emacs, interaction, machine learning, org-mode,
-real-time, streaming, web 
-#+END_QUOTE
 
 
 * Creative Coding
