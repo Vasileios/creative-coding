@@ -470,46 +470,42 @@ of the music (Cascone, 2003).
                   <span class="p">(</span><span class="nf">expand-file-name</span>
                       <span class="s">&quot;../contrib&quot;</span>
                      <span class="p">(</span><span class="nf">file-name-directory</span> <span class="p">(</span><span class="nv">org-find-library-dir</span> <span class="s">&quot;org&quot;</span><span class="p">)))))))</span>
-<span class="err">#</span><span class="nv">+end_src</span>
+</code></pre></div>
 
+<h2 id="export-to-other-formats">Export to other formats</h2>
 
-<span class="nv">**</span> <span class="nv">Export</span> <span class="nv">to</span> <span class="nv">other</span> <span class="nv">formats</span>
+<p>Pressing <code>C-c C-e</code> popups a buffer to <strong>export</strong> markups to HTML-PDF-etc.</p>
 
-<span class="nv">Pressing</span> <span class="nv">=C-c</span> <span class="nv">C-e=</span> <span class="nv">popups</span> <span class="nv">a</span> <span class="nv">buffer</span> <span class="nv">to</span> <span class="vg">*export*</span> <span class="nv">markups</span> <span class="nv">to</span> <span class="nv">HTML-PDF-etc.</span>
+<p>Example: hit <code>h</code> and <code>o</code> if you want to <strong>export and open as html</strong>.</p>
 
-<span class="nv">Example:</span> <span class="nv">hit</span> <span class="nv">=h=</span> <span class="k">and</span> <span class="nv">=o=</span> <span class="k">if</span> <span class="nv">you</span> <span class="nv">want</span> <span class="nv">to</span> <span class="nv">*export</span> <span class="k">and</span> <span class="nv">open</span> <span class="nv">as</span> <span class="nv">html*.</span>
+<p>Export Beamer: <code>C-c C-e l P</code>     <code>(org-beamer-export-to-pdf)</code></p>
 
-<span class="nv">Export</span> <span class="nv">Beamer:</span> <span class="nv">=C-c</span> <span class="nv">C-e</span> <span class="nv">l</span> <span class="nv">P=</span>     <span class="nf">=</span><span class="p">(</span><span class="nv">org-beamer-export-to-pdf</span><span class="p">)</span><span class="nf">=</span>
+<p>Export as LaTeX and then process to PDF.</p>
 
-<span class="nv">Export</span> <span class="nv">as</span> <span class="nv">LaTeX</span> <span class="k">and</span> <span class="nv">then</span> <span class="nv">process</span> <span class="nv">to</span> <span class="nv">PDF.</span>
+<p><code>C-c C-e l O</code></p>
 
-<span class="nv">=C-c</span> <span class="nv">C-e</span> <span class="nv">l</span> <span class="nv">O=</span>
+<p>Export as LaTeX and then process to PDF, then open the resulting PDF file.</p>
 
-<span class="nv">Export</span> <span class="nv">as</span> <span class="nv">LaTeX</span> <span class="k">and</span> <span class="nv">then</span> <span class="nv">process</span> <span class="nv">to</span> <span class="nv">PDF,</span> <span class="nv">then</span> <span class="nv">open</span> <span class="nv">the</span> <span class="nv">resulting</span> <span class="nv">PDF</span> <span class="nv">file.</span>
+<h2 id="source-code">Source Code</h2>
 
-<span class="nv">**</span> <span class="nv">Source</span> <span class="nv">Code</span>
+<p>Create code blocks to insert your code.</p>
 
-<span class="nv">Create</span> <span class="nv">code</span> <span class="nv">blocks</span> <span class="nv">to</span> <span class="nf">insert</span> <span class="nv">your</span> <span class="nv">code.</span>
+<p>Press C-c ' <strong>inside the SRC block</strong> to edit the current code block</p>
 
-<span class="nv">Press</span> <span class="nv">C-c</span> <span class="o">&#39;</span> <span class="nv">*inside</span> <span class="nv">the</span> <span class="nv">SRC</span> <span class="nv">block*</span> <span class="nv">to</span> <span class="nv">edit</span> <span class="nv">the</span> <span class="nv">current</span> <span class="nv">code</span> <span class="nb">block</span>
+<p>in the mode of the language you want. For instance:</p>
 
-<span class="nv">in</span> <span class="nv">the</span> <span class="nv">mode</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">language</span> <span class="nv">you</span> <span class="nv">want.</span> <span class="nv">For</span> <span class="nv">instance:</span>
+<p><code>#+BEGIN_SRC emacs-lisp</code></p>
 
- <span class="nv">=#+BEGIN_SRC</span> <span class="nv">emacs-lisp=</span>
+<p>write some lisp to make your configurations in org-mode</p>
 
-<span class="nv">write</span> <span class="nv">some</span> <span class="nv">lisp</span> <span class="nv">to</span> <span class="nv">make</span> <span class="nv">your</span> <span class="nv">configurations</span> <span class="nv">in</span> <span class="nv">org-mode</span>
+<p>so as to see bullets (UTF-8 characters) when you editing <strong>Headers</strong> in org-mode instead of asterisks.</p>
 
-<span class="nv">so</span> <span class="nv">as</span> <span class="nv">to</span> <span class="nv">see</span> <span class="nv">bullets</span> <span class="p">(</span><span class="nv">UTF-8</span> <span class="nv">characters</span><span class="p">)</span> <span class="nb">when</span> <span class="nv">you</span> <span class="nv">editing</span> <span class="vg">*Headers*</span> <span class="nv">in</span> <span class="nv">org-mode</span> <span class="nv">instead</span> <span class="nv">of</span> <span class="nv">asterisks.</span>
+<p>Then close the source block with:</p>
 
-<span class="nv">Then</span> <span class="nv">close</span> <span class="nv">the</span> <span class="nv">source</span> <span class="nb">block</span> <span class="nv">with:</span>
+<p><code>#+END_SRC</code></p>
 
-<span class="nv">=#+END_SRC=</span>
-
-<span class="vg">*Result*</span>
-
-<span class="err">#</span><span class="nv">+BEGIN_SRC</span> <span class="nv">emacs-lisp</span>
-
-     <span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;org-bullets</span><span class="p">)</span>
+<p><strong>Result</strong></p>
+<div class="highlight"><pre><code class="language-emacs-lisp" data-lang="emacs-lisp"><span></span>     <span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;org-bullets</span><span class="p">)</span>
 <span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;org-mode-hook</span>
           <span class="p">(</span><span class="nb">lambda</span> <span class="p">()</span> <span class="p">(</span><span class="nv">org-bullets-mode</span> <span class="mi">1</span><span class="p">)))</span>
 </code></pre></div>

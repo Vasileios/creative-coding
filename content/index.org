@@ -384,7 +384,7 @@ Press tab and arrows to make arrangements for the table
                   (expand-file-name
                       "../contrib"
                      (file-name-directory (org-find-library-dir "org")))))))
-#+end_src
+#+END_SRC
 
 
 ** Export to other formats
