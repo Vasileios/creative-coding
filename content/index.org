@@ -304,9 +304,9 @@ Write your text *inside* the below symbols:
 - 2 equals signs for =verbatim=,
 - 2 pluses for +strike through text+
 
-
 *Bold*, /italics/, =verbatim=, +strikethrough+
-** Linked text
+
+** Linking 
 
  Press =C-c C-l= to *link* objects (files)
 
@@ -318,7 +318,7 @@ Then give a name to the linked text
 
 /Description: Basmyr.net/
 
- Press =C-c C-o= to *open* the linked plain text with external program
+ Press =C-c C-o= to *open* the linked plain text with an external program
 
 [[http://basmyr.net][Basmyr.net]]
 
