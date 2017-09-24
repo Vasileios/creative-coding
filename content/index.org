@@ -6,6 +6,11 @@ title: Creative coding
 * Creative coding
 
 ** Introduction
+
+My research imperatives run along the threads of transmediation,
+intersemiotic translation, post - disciplinarity and the general
+concerns of Human Computer Interaction (HCI). 
+
 ** Key words:
 
 #+BEGIN_QUOTE
