@@ -70,8 +70,6 @@ More on organising and sharing projects using tools such as mass communication t
 
 
 
-* Creative Coding
-
 * SuperCollider
 
 From: [[http://supercollider.github.io][SuperCollider]]
