@@ -26,6 +26,22 @@ interconnection*
 techniques and tools that can also be used in other digital forms and
 entertainment such as arts facilities, video games and the Web.
 
+** Interactive installations
+
+Use of circuits and how to hack them. A great opportunity to learn, design, recycle old toys and instruments, and leave with a bespoke instrument.
+
+** Machine learning
+
+- method of data analysis
+
+- data sonification, visualisation
+
+- Programming language
+
+Python
+
+
+
 
 * Methodology and tools
 
@@ -55,17 +71,6 @@ More on organising and sharing projects using tools such as mass communication t
 
 
 * Creative Coding
-
-** Interactive installations
-
-
- 
-circuits and how to hack them. A great opportunity to learn, design, recycle old toys and instruments, and leave with a bespoke instrument.
-
-** Machine learning
-
-
-
 
 * SuperCollider
 
