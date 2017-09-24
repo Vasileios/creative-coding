@@ -874,20 +874,23 @@ CERN examples: /particle-physics-playground-playground-52de62d/
 
 #+END_QUOTE
 
-# Sonifying ems (muons) - ipython - SuperCollider in emacs 
+*Sonifying ems (muons) - ipython - SuperCollider in emacs* 
 
-This is an exeperiment of data sonification using an example from particle-physics-playground.
+Editor: Emacs Version 24.5 (9.0)
+
+Ipython package **ein** on MELPA
+
+Data sonification experiment on particle-physics-playground.
+
 For more info see here: https://github.com/particle-physics-playground
   
-## Sending OSC messages to other application
+- Sending OSC messages to other application
 
 to send osc messages to other application install *python-osc* library
 
 In this case I use SuperCollider port *57120*
 
-## Editor: Emacs Version 24.5 (9.0)
 
-Ipython package **ein** on MELPA
 
 #+BEGIN_SRC python
 
