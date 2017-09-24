@@ -434,6 +434,30 @@ write down =<s= and press =tab= to open src blocks
 
 to cooment a =lisp= region select a word or a region with C-M-space and then M-; to comment
 
+** TO DO
+type TODO to create a todo object
+Move the cursor one line after the TODO item and press =C-c C-s= =(org-schedule)=
+to schedule with agenda
+
+** Tips
+
+To open week-agenda window press C-ca
+To schedule a TODO item press C-c C-s
+Use shift-arrows to change dates
+
+** TODO Call John
+SCHEDULED: <2016-11-09 Wed>
+
+
+
+** Work
+** TODO read about live coding software
+SCHEDULED: <2016-11-10 Thu>
+
+
+** DONE export html minted [fn:1] (highlight colour - syntax source blocks)
+SCHEDULED: <2016-10-12 Wed
+
 ** Tips
 
 To open week-agenda window press C-ca
@@ -1138,7 +1162,8 @@ for i in photons_E:
 
 #+END_SRC
 
-* TODO Micro-computing
+* Micro-computing
+
 
 ** Physical computing
 
