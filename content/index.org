@@ -366,6 +366,94 @@ Press tab and arrows to make arrangements for the table
 * Images & Graphics
 ** Images
 
+** Ditaa
+*Find the path of ditaa.jar in you computer through a lisp program*
+=C-c C-c= to evaluate lisp code inside source block
+
+#+begin_src lisp
+(expand-file-name
+             "ditaa.jar"
+      (file-name-as-directory
+            (expand-file-name
+                "scripts"
+               (file-name-as-directory
+                  (expand-file-name
+                      "../contrib"
+                     (file-name-directory (org-find-library-dir "org")))))))
+#+end_src
+
+
+* Export to other formats
+
+Pressing =C-c C-e= popups a buffer to *export* markups to HTML-PDF-etc.
+
+Example: hit =h= and =o= if you want to *export and open as html*.
+
+Export Beamer: =C-c C-e l P=     =(org-beamer-export-to-pdf)=
+
+Export as LaTeX and then process to PDF.
+
+=C-c C-e l O=
+
+Export as LaTeX and then process to PDF, then open the resulting PDF file.
+
+* Source Code
+
+Create code blocks to insert your code.
+
+Press C-c ' *inside the SRC block* to edit the current code block
+
+in the mode of the language you want. For instance:
+
+ =#+BEGIN_SRC emacs-lisp=
+
+write some lisp to make your configurations in org-mode
+
+so as to see bullets (UTF-8 characters) when you editing *Headers* in org-mode instead of asterisks.
+
+Then close the source block with:
+
+=#+END_SRC=
+
+*Result*
+
+#+BEGIN_SRC emacs-lisp
+
+     (require 'org-bullets)
+(add-hook 'org-mode-hook
+          (lambda () (org-bullets-mode 1)))
+
+
+#+END_SRC
+
+*You can customise source blocks using =M-x customize-face RET= face RET*
+
+Evaluate source code. Press C-c C-c inside the block and see the results.
+
+ #+BEGIN_Example
+ echo "Hello $USER! Today is `date`"
+ exit
+ #+END_Example
+
+* LaTeX integrator
+
+- Characters: \alpha \rightarrow \beta
+- $O(n \log n)$
+
+
+\begin{align*}
+q = 2 * 4 + 1 - 2 &= 7 \\
+         q &=7
+\end{align*}
+
+* Shortcuts
+
+write down =<s= and press =tab= to open src blocks
+
+to cooment a =lisp= region select a word or a region with C-M-space and then M-; to comment
+
+
+
 * Github
 Introduction to Environments (Github, Bitbucket) for organizing and sharing files-Git.
 Set up an account with Slack and Github.

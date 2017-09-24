@@ -456,6 +456,86 @@ of the music (Cascone, 2003).
 
 <h2 id="images">Images</h2>
 
+<h2 id="ditaa">Ditaa</h2>
+
+<p>*Find the path of ditaa.jar in you computer through a lisp program*
+=C-c C-c= to evaluate lisp code inside source block</p>
+
+<p>(expand-file-name
+             "ditaa.jar"
+      (file-name-as-directory
+            (expand-file-name
+                "scripts"
+               (file-name-as-directory
+                  (expand-file-name
+                      "../contrib"
+                     (file-name-directory (org-find-library-dir "org")))))))</p>
+
+<h1 id="export-to-other-formats">Export to other formats</h1>
+
+<p>Pressing <code>C-c C-e</code> popups a buffer to <strong>export</strong> markups to HTML-PDF-etc.</p>
+
+<p>Example: hit <code>h</code> and <code>o</code> if you want to <strong>export and open as html</strong>.</p>
+
+<p>Export Beamer: <code>C-c C-e l P</code>     <code>(org-beamer-export-to-pdf)</code></p>
+
+<p>Export as LaTeX and then process to PDF.</p>
+
+<p><code>C-c C-e l O</code></p>
+
+<p>Export as LaTeX and then process to PDF, then open the resulting PDF file.</p>
+
+<h1 id="source-code">Source Code</h1>
+
+<p>Create code blocks to insert your code.</p>
+
+<p>Press C-c ' <strong>inside the SRC block</strong> to edit the current code block</p>
+
+<p>in the mode of the language you want. For instance:</p>
+
+<p><code>#+BEGIN_SRC emacs-lisp</code></p>
+
+<p>write some lisp to make your configurations in org-mode</p>
+
+<p>so as to see bullets (UTF-8 characters) when you editing <strong>Headers</strong> in org-mode instead of asterisks.</p>
+
+<p>Then close the source block with:</p>
+
+<p><code>#+END_SRC</code></p>
+
+<p><strong>Result</strong></p>
+<div class="highlight"><pre><code class="language-emacs-lisp" data-lang="emacs-lisp"><span></span>     <span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;org-bullets</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;org-mode-hook</span>
+          <span class="p">(</span><span class="nb">lambda</span> <span class="p">()</span> <span class="p">(</span><span class="nv">org-bullets-mode</span> <span class="mi">1</span><span class="p">)))</span>
+</code></pre></div>
+
+<p><strong>You can customise source blocks using <code>M-x customize-face RET</code> face RET</strong></p>
+
+<p>Evaluate source code. Press C-c C-c inside the block and see the results.</p>
+
+<p>#+BEGIN_Example
+ echo "Hello $USER! Today is `date`"
+ exit
+ #+END_Example</p>
+
+<h1 id="latex-integrator">LaTeX integrator</h1>
+
+<ul>
+<li>Characters: \alpha \rightarrow \beta</li>
+<li>$O(n \log n)$</li>
+</ul>
+
+<p>\begin{align*}
+q = 2 * 4 + 1 - 2 &= 7 \\
+         q &=7
+\end{align*}</p>
+
+<h1 id="shortcuts">Shortcuts</h1>
+
+<p>write down <code>&lt;s</code> and press <code>tab</code> to open src blocks</p>
+
+<p>to cooment a <code>lisp</code> region select a word or a region with C-M-space and then M-; to comment</p>
+
 <h1 id="github">Github</h1>
 
 <p>Introduction to Environments (Github, Bitbucket) for organizing and sharing files-Git.
