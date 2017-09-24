@@ -58,7 +58,7 @@ More on organising and sharing projects using tools such as mass communication t
 * Key words:
 
 #+BEGIN_QUOTE
-big-data, data, creative-coding, emacs, interactiation,machine learning, org-mode,
+big-data, data, creative-coding, emacs, interaction, machine learning, org-mode,
 real-time, streaming, web 
 #+END_QUOTE
 
