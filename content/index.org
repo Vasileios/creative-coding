@@ -277,9 +277,9 @@ Example: =/#+Options: toc:nil/=
 
 #+Options: toc:nil
 
-*Hide* Numbers
+*Hide* Numbers, table of contents
 
-Example: =/#+Options: num:nil/=
+Example: =/#+Options: num:nil/ toc:nil=
 
 Write =#+= and press =Meta-<tab>= to see the list of variables
 
@@ -368,10 +368,13 @@ Press tab and arrows to make arrangements for the table
 ** Images
 
 ** Ditaa
+
 *Find the path of ditaa.jar in you computer through a lisp program*
+
 =C-c C-c= to evaluate lisp code inside source block
 
-#+begin_src lisp
+#+BEGIN_SRC emacs-lisp
+
 (expand-file-name
              "ditaa.jar"
       (file-name-as-directory
