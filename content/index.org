@@ -237,6 +237,7 @@ pan, envbuf) * env)
 #+END_SRC
 
 * Emacs
+
 ** Install packages
 
 Install org-plus-contrib
@@ -288,7 +289,7 @@ Example:
 
 =#+DATE: 120416=
 
-* Bulleting-Quoting
+** Bulleting-Quoting
 
 Use hyphen to make bullets
 
@@ -314,7 +315,7 @@ of the music (Cascone, 2003).
 
 #+END_QUOTE
 
-* Markups
+** Markups
 
 Give *emphasis* to your text.
 
@@ -327,7 +328,7 @@ Write your text *inside* the below symbols:
 
 
 *Bold*, /italics/, =verbatim=, +strikethrough+
-* Linked text
+** Linked text
 
  Press =C-c C-l= to *link* objects (files)
 
@@ -347,7 +348,7 @@ or a video url
 
 [[https://youtu.be/Wr2aFlWyzvM][Granulator]]
 
-* Tables
+** Tables
 
 Use *pipes - vertical bars* to make tables
 
@@ -363,7 +364,7 @@ Press tab and arrows to make arrangements for the table
 |  234 | rocks |
 | 1200 | start |
 
-* Images & Graphics
+** Images & Graphics
 ** Images
 
 ** Ditaa
@@ -383,7 +384,7 @@ Press tab and arrows to make arrangements for the table
 #+end_src
 
 
-* Export to other formats
+** Export to other formats
 
 Pressing =C-c C-e= popups a buffer to *export* markups to HTML-PDF-etc.
 
@@ -397,7 +398,7 @@ Export as LaTeX and then process to PDF.
 
 Export as LaTeX and then process to PDF, then open the resulting PDF file.
 
-* Source Code
+** Source Code
 
 Create code blocks to insert your code.
 
@@ -435,7 +436,7 @@ Evaluate source code. Press C-c C-c inside the block and see the results.
  exit
  #+END_Example
 
-* LaTeX integrator
+** LaTeX integrator
 
 - Characters: \alpha \rightarrow \beta
 - $O(n \log n)$
@@ -446,7 +447,7 @@ q = 2 * 4 + 1 - 2 &= 7 \\
          q &=7
 \end{align*}
 
-* Shortcuts
+** Shortcuts
 
 write down =<s= and press =tab= to open src blocks
 
