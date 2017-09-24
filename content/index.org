@@ -57,8 +57,11 @@ More on organising and sharing projects using tools such as mass communication t
 
 * Key words:
 
-creative-coding,
-interactiation, real-time, web, streaming, data, big-data, machine learning 
+#+BEGIN_QUOTE
+big-data, data, creative-coding, emacs, interactiation,machine learning, org-mode,
+real-time, streaming, web 
+#+END_QUOTE
+
 
 * Creative Coding
 
@@ -185,7 +188,7 @@ This is how it sounds in SuperCollider.
 {SinOsc.ar([440, 443], 0, 0.5)}.scope;
 #+END_SRC
 
-Check this also with:
+use:
 
 #+BEGIN_SRC js
 FreqScope.new;
@@ -237,6 +240,11 @@ pan, envbuf) * env)
 #+END_SRC
 
 * Emacs
+
+GNU Emacs
+An extensible, customizable, free/libre text editor — and more.
+At its core is an interpreter for Emacs Lisp, a dialect of the Lisp programming language with extensions to support text editing.
+...[[https://www.gnu.org/software/emacs/][emacs]]
 
 ** Install packages
 
