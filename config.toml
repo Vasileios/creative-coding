@@ -54,7 +54,7 @@ name = "Shell"
 [languages.el]
 languageName = "Ελληνικά"
 weight = 1
-title = "Μουσική Πληροφορική"
+title = "Δημιουργικός προγραμματισμός"
 
 # Left sidebar footer items. Use HTMl or Markdown.
 toc_footers = [ 
