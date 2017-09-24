@@ -835,6 +835,25 @@ Python
 
 #+END_SRC
 
+
+* Micro-computing
+
+** Sensors
+
+Use of sensors: touch, movement, elasticity, camera.
+
+Programming Interactivity (Noble 2012): Chapter 14, Detection and
+Gestures.
+
+In this lesson, students will experiment with various sensors and
+conclusions will be discussed regarding their use in the design of
+interactive audio systems.
+
+They will also come in contact with Arduino and experiment with some
+examples (https://www.arduino.cc/en/Tutorial/BuiltInExamples).
+
+Using Python-for OSC communication libraries (https://pypi.python.org/pypi/python-osc) - with SuperCollider.
+
 ** Raspberry Pi
 
  
@@ -943,23 +962,6 @@ only 3 harmless class overwrites warnings
     $ 0.exit #quit sclang
 $ pkill jackd #quit jackd
 #+END_SRC
-
-* Sensors
-
-Use of sensors: touch, movement, elasticity, camera.
-
-Programming Interactivity (Noble 2012): Chapter 14, Detection and
-Gestures.
-
-In this lesson, students will experiment with various sensors and
-conclusions will be discussed regarding their use in the design of
-interactive audio systems.
-
-They will also come in contact with Arduino and experiment with some
-examples (https://www.arduino.cc/en/Tutorial/BuiltInExamples).
-
-Using Python-for OSC communication libraries (https://pypi.python.org/pypi/python-osc) - with SuperCollider.
-
 
 * Suggested Bibliography
 
