@@ -789,24 +789,7 @@ and this:
 
 
 
-
-** IPython-notebook
-
-- IPython notebook is used to analyse data and for data visualisation.
-
-Experiment with the examples of
-CERN: /particle-physics-playground-playground-52de62d/
-- install ipython emacs on melpa 'ein'
-
-copy =ein.el= and =ein.py= to the upload directory
-
-- open =init.el= and write
-
-#+BEGIN_SRC emacs-lisp
-(require 'ein)
-#+END_SRC
-
-** Python 3.5
+* Python 3.5
 
 install =python 3.5= and anacoda3
 call anacoda3 form terminal using
@@ -830,6 +813,23 @@ Start IPython notebook server.
 Hit =M-x ein:notebooklist-open= to open notebook list. This will open notebook
 list buffer.
 In the notebook list buffer, you can navigate to your folders to [open], or [create], and [delete] notebooks by hitting
+
+
+** IPython-notebook
+
+- IPython notebook is used to analyse data and for data visualisation.
+
+Experiment with the examples of
+CERN: /particle-physics-playground-playground-52de62d/
+- install ipython emacs on melpa 'ein'
+
+copy =ein.el= and =ein.py= to the upload directory
+
+- open =init.el= and write
+
+#+BEGIN_SRC emacs-lisp
+(require 'ein)
+#+END_SRC
 
 
 ** Interactive Performance.
