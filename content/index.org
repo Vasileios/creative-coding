@@ -68,6 +68,8 @@ circuits and how to hack them. A great opportunity to learn, design, recycle old
 
 * SuperCollider
 
+From: [[http://supercollider.github.io][SuperCollider]]
+
 ** Basics
 
 SuperCollider is a platform for audio synthesis and algorithmic composition, used by musicians, artists, and researchers working with sound. It is free and open source software available for Windows, macOS, and Linux.
@@ -78,7 +80,11 @@ SuperCollider is a platform for audio synthesis and algorithmic composition, use
 - *sclang*, an interpreted programming language. It is focused on sound, but not limited to any specific domain. sclang controls scsynth via Open Sound Control. You can use it for algorithmic composition and sequencing, finding new sound synthesis methods, connecting your app to external hardware including MIDI controllers, network music, writing GUIs and visual displays, or for your daily programming experiments. It has a stock of user-contributed extensions called Quarks.
 - *scide* is an editor for sclang with an integrated help system.
 
+
+  
 ** Nodes
+
+From: [[https://composerprogrammer.com/teaching/supercollider/sctutorial/6.3%2520Nodes.html][composerprogrammer.com]]
 
 The Server has a graph of all the running Synths, which may be organised into Groups for convenience. You can see Synths and Groups being created just by looking at the Server graphics.
 
@@ -105,11 +111,14 @@ Group.basicNew(s, 1); //this gets a reference to Group(1)
 #+END_SRC
 
 
+
+
 ** Find recordings folder
 
 #+BEGIN_SRC js
 thisProcess.platform.recordingsDir;
 #+END_SRC
+
 
 
 ** Synthesis techniques 
