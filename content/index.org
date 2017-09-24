@@ -734,6 +734,58 @@ archivePrefix = "arXiv",
 
 #+END_SRC
 
+and this:
+
+#+BEGIN_SRC latex
+@InProceedings{ alejandro_weinstein-proc-scipy-2016,
+  author    = { {A}lejandro {W}einstein and {W}ael {E}l-{D}eredy and {S}téren {C}habert and {M}yriam {F}uentes },
+  title     = { {F}itting {H}uman {D}ecision {M}aking {M}odels using {P}ython },
+  booktitle = { {P}roceedings of the 15th {P}ython in {S}cience {C}onference },
+  pages     = { 1 - 6 },
+  year      = { 2016 },
+  editor    = { {S}ebastian {B}enthall and {S}cott {R}ostrup }
+}
+
+#+END_SRC
+
+ then use these latex commands inside your org file
+
+#+BEGIN_Example
+#+LaTeX_HEADER: \usepackage[natbib]{biblatex}
+#+LATEX_HEADER: \bibliographystyle{plain}
+#+LATEX_HEADER: \bibliography{test-bib-refs}
+#+END_Example
+
+** Tests
+
+** Test1 slide
+
+   - This is test1 
+
+#+BEGIN_QUOTE
+\cite{2011ApJS..192....9T}.
+#+END_QUOTE
+
+   - This is test2
+
+#+BEGIN_QUOTE
+\cite{alejandro_weinstein-proc-scipy-2016}.
+#+END_QUOTE   
+ 
+
+
+#+BEGIN_QUOTE
+\printbibliography
+#+END_QUOTE
+
+
+
+** Note
+
+ put =\printbibliography= at the end so as to print the references section last on your text.
+
+
+
 
 ** IPython-notebook
 
