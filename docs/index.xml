@@ -16,7 +16,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://vasileios.github.io/creative-coding/</guid>
-      <description>Creative coding Introduction Mental objectives Students will acquire comprehensive knowledge about computer music and music technology and will learn theory, methods and techniques in order to create and manipulate. This course will teach the basic elements of programming in general (logic, loops, functions, objects, classes). They will also be trained in program units analysis for both the production of audio events and the control of their features and behavior through control units such as MIDI keyboards, motion, etc.</description>
+      <description>Creative coding Introduction Mental objectives The basic elements of programming in general (logic, loops, functions, objects, classes).
+concepts of object-oriented programming, interactivity, interactive sound and design, connectivity and interconnection
+techniques and tools that can also be used in other digital forms and entertainment such as arts facilities, video games and the Web.
+Methodology and tools Investigation on how different environments work in relation to the implementation of ideas as well as applications for communication, organization and collaboration.</description>
     </item>
     
   </channel>
