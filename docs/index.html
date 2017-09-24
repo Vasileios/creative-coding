@@ -15,7 +15,7 @@
 
     
 </head>
-<body class="index" data-languages="[ &#34;bibtex&#34; ,  &#34;c&#43;&#43;&#34; ,  &#34;lisp&#34; ,  &#34;ipython&#34; ,  &#34;sh&#34; ,  &#34;javascript&#34; ]">
+<body class="index" data-languages="[ &#34;bibtex&#34; ,  &#34;c&#43;&#43;&#34; ,  &#34;lisp&#34; ,  &#34;python&#34; ,  &#34;sh&#34; ,  &#34;javascript&#34; ]">
     <a href="#" id="nav-button">
         <span>
         NAV
@@ -34,7 +34,7 @@
             
             <a href="#" data-language-name="lisp">emacs-lisp</a>
             
-            <a href="#" data-language-name="ipython">Python</a>
+            <a href="#" data-language-name="python">Python</a>
             
             <a href="#" data-language-name="sh">Shell</a>
             
@@ -931,264 +931,262 @@ In the notebook list buffer, you can navigate to your folders to [open], or [cre
 </code></pre></div>
 
 <p>CERN examples: <em>particle-physics-playground-playground-52de62d</em></p>
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="c1"># Sonifying ems (muons) - ipython - SuperCollider in emacs </span>
 
-# Sonifying ems (muons) - ipython - SuperCollider in emacs 
+<span class="n">This</span> <span class="ow">is</span> <span class="n">an</span> <span class="n">exeperiment</span> <span class="n">of</span> <span class="n">data</span> <span class="n">sonification</span> <span class="n">using</span> <span class="n">an</span> <span class="n">example</span> <span class="kn">from</span> <span class="nn">particle</span><span class="o">-</span><span class="n">physics</span><span class="o">-</span><span class="n">playground</span><span class="o">.</span>
+<span class="n">For</span> <span class="n">more</span> <span class="n">info</span> <span class="n">see</span> <span class="n">here</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">particle</span><span class="o">-</span><span class="n">physics</span><span class="o">-</span><span class="n">playground</span>
 
-This is an exeperiment of data sonification using an example from particle-physics-playground.
-For more info see here: https://github.com/particle-physics-playground
+<span class="c1">## Sending OSC messages to other application</span>
 
-## Sending OSC messages to other application
+<span class="n">to</span> <span class="n">send</span> <span class="n">osc</span> <span class="n">messages</span> <span class="n">to</span> <span class="n">other</span> <span class="n">application</span> <span class="n">install</span> <span class="o">*</span><span class="n">python</span><span class="o">-</span><span class="n">osc</span><span class="o">*</span> <span class="n">library</span>
 
-to send osc messages to other application install *python-osc* library
+<span class="n">In</span> <span class="n">this</span> <span class="n">case</span> <span class="n">I</span> <span class="n">use</span> <span class="n">SuperCollider</span> <span class="n">port</span> <span class="o">*</span><span class="mi">57120</span><span class="o">*</span>
 
-In this case I use SuperCollider port *57120*
+<span class="c1">## Editor: Emacs Version 24.5 (9.0)</span>
 
-## Editor: Emacs Version 24.5 (9.0)
+<span class="n">Ipython</span> <span class="n">package</span> <span class="o">**</span><span class="n">ein</span><span class="o">**</span> <span class="n">on</span> <span class="n">MELPA</span>
 
-Ipython package **ein** on MELPA
+<span class="o">*</span><span class="n">VA_exp_280217_001</span><span class="o">*</span>
 
-*VA_exp_280217_001*
+<span class="n">h1</span><span class="p">:</span>
+<span class="n">Import</span> <span class="n">libraries</span> <span class="n">numpy</span><span class="p">,</span> <span class="n">matplotlib</span><span class="p">,</span> <span class="n">pythonosc</span>
 
-h1:
-Import libraries numpy, matplotlib, pythonosc
+<span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="kn">as</span> <span class="nn">plt</span>
 
-In [1]
-import numpy as np
-import matplotlib.pylab as plt
+<span class="kn">from</span> <span class="nn">IPython</span> <span class="kn">import</span> <span class="n">get_ipython</span>
+<span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;matplotlib&#39;</span><span class="p">,</span> <span class="s1">&#39;inline&#39;</span><span class="p">)</span>
 
-from IPython import get_ipython
-get_ipython().run_line_magic('matplotlib', 'inline')
+<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="c1">#from __future__ import print_function</span>
+<span class="c1">#from __future__ import division</span>
+<span class="kn">import</span> <span class="nn">sys</span>
 
-In [2]
-#from __future__ import print_function
-#from __future__ import division
-import sys
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;../particle-physics-playground-Sonification-Example_001/tools/&quot;</span><span class="p">)</span>
 
-sys.path.append("../particle-physics-playground-Sonification-Example_001/tools/")
+<span class="c1">#from draw_objects3D import *</span>
+<span class="kn">import</span> <span class="nn">cms_tools</span> <span class="kn">as</span> <span class="nn">cms</span>
 
-#from draw_objects3D import *
-import cms_tools as cms
 
 
+<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">infile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../particle-physics-playground-Sonification-Example_001/data/small_cms_test_file.dat&#39;</span><span class="p">)</span>
 
-In [3]
-infile = open('../particle-physics-playground-Sonification-Example_001/data/small_cms_test_file.dat')
+<span class="n">collisions</span> <span class="o">=</span> <span class="n">cms</span><span class="o">.</span><span class="n">get_collisions</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
 
-collisions = cms.get_collisions(infile)
+<span class="n">number_of_collisions</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">collisions</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&quot;# of proton-proton collisions: </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">number_of_collisions</span><span class="p">))</span>
 
-number_of_collisions = len(collisions)
-print ("# of proton-proton collisions: %d" % (number_of_collisions))
 
+<span class="c1"># of proton-proton collisions: 10</span>
 
-# of proton-proton collisions: 10
 
+<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">collisions</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
-In [4]
-print (collisions[0])
 
+<span class="p">[[[</span><span class="mf">88.9127</span><span class="p">,</span> <span class="mf">32.9767</span><span class="p">,</span> <span class="o">-</span><span class="mf">75.1939</span><span class="p">,</span> <span class="mf">29.541</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">79.2211</span><span class="p">,</span> <span class="o">-</span><span class="mf">58.6558</span><span class="p">,</span> <span class="mf">49.1723</span><span class="p">,</span> <span class="mf">13.5915</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">43.313</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.9129</span><span class="p">,</span> <span class="mf">40.0892</span><span class="p">,</span> <span class="mf">12.0431</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">274.8094</span><span class="p">,</span> <span class="o">-</span><span class="mf">21.4194</span><span class="p">,</span> <span class="mf">27.5639</span><span class="p">,</span> <span class="o">-</span><span class="mf">272.4152</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">26.6201</span><span class="p">,</span> <span class="mf">0.5268</span><span class="p">,</span> <span class="o">-</span><span class="mf">24.7563</span><span class="p">,</span> <span class="o">-</span><span class="mf">7.4046</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]],</span> <span class="p">[[</span><span class="mf">15.7375</span><span class="p">,</span> <span class="mf">1.4793</span><span class="p">,</span> <span class="o">-</span><span class="mf">15.2566</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.5645</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]],</span> <span class="p">[],</span> <span class="p">[[</span><span class="mf">52.364</span><span class="p">,</span> <span class="mf">17.4983</span><span class="p">,</span> <span class="o">-</span><span class="mf">45.4233</span><span class="p">,</span> <span class="mf">19.3009</span><span class="p">],</span> <span class="p">[</span><span class="mf">10.2904</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.4633</span><span class="p">,</span> <span class="mf">10.0887</span><span class="p">,</span> <span class="mf">1.4035</span><span class="p">]],</span> <span class="p">[</span><span class="mf">44.9415</span><span class="p">,</span> <span class="mf">0.422</span><span class="p">]]</span>
 
-[[[88.9127, 32.9767, -75.1939, 29.541, -1.0], [79.2211, -58.6558, 49.1723, 13.5915, -1.0], [43.313, -5.9129, 40.0892, 12.0431, -1.0], [274.8094, -21.4194, 27.5639, -272.4152, -1.0], [26.6201, 0.5268, -24.7563, -7.4046, 0.0]], [[15.7375, 1.4793, -15.2566, -3.5645, -1]], [], [[52.364, 17.4983, -45.4233, 19.3009], [10.2904, -1.4633, 10.0887, 1.4035]], [44.9415, 0.422]]
 
+<span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]</span>
 
-In [5]
+<span class="k">print</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">collisions</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
 
-print (len(collisions[0]))
+<span class="mi">5</span>
 
-5
 
+<span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]</span>
+<span class="n">METx</span> <span class="o">=</span> <span class="n">collisions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">4</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">METy</span> <span class="o">=</span> <span class="n">collisions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">4</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
 
-In [6]
-METx = collisions[0][4][0]
-METy = collisions[0][4][1]
+<span class="k">print</span> <span class="p">(</span><span class="s2">&quot;MET x: </span><span class="si">%f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">METx</span><span class="p">))</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&quot;MET y: </span><span class="si">%f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">METy</span><span class="p">))</span>
 
-print ("MET x: %f" % (METx))
-print ("MET y: %f" % (METy))
+<span class="n">MET</span> <span class="n">x</span><span class="p">:</span> <span class="mf">44.941500</span>
+<span class="n">MET</span> <span class="n">y</span><span class="p">:</span> <span class="mf">0.422000</span>
 
-MET x: 44.941500
-MET y: 0.422000
 
+<span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&quot;# of jets:      </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">collisions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])))</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&quot;# of muons:     </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">collisions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">])))</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&quot;# of electrons: </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">collisions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">])))</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&quot;# of photons:   </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">collisions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">3</span><span class="p">])))</span>
 
-In [7]
-print ("# of jets:      %d" % (len(collisions[0][0])))
-print ("# of muons:     %d" % (len(collisions[0][1])))
-print ("# of electrons: %d" % (len(collisions[0][2])))
-print ("# of photons:   %d" % (len(collisions[0][3])))
+<span class="c1"># of jets:      5</span>
+<span class="c1"># of muons:     1</span>
+<span class="c1"># of electrons: 0</span>
+<span class="c1"># of photons:   2</span>
 
-# of jets:      5
-# of muons:     1
-# of electrons: 0
-# of photons:   2
 
+<span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]</span>
+<span class="n">jets</span><span class="p">,</span><span class="n">muons</span><span class="p">,</span><span class="n">electrons</span><span class="p">,</span><span class="n">photons</span><span class="p">,</span><span class="n">met</span> <span class="o">=</span> <span class="n">collisions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
-In [8]
-jets,muons,electrons,photons,met = collisions[0]
 
+<span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]</span>
+<span class="n">E</span><span class="p">,</span><span class="n">px</span><span class="p">,</span><span class="n">py</span><span class="p">,</span><span class="n">pz</span><span class="p">,</span><span class="n">btag</span> <span class="o">=</span> <span class="n">jets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&quot;E:     </span><span class="si">%8.4f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">E</span><span class="p">))</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&quot;px:    </span><span class="si">%8.4f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">px</span><span class="p">))</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&quot;py:    </span><span class="si">%8.4f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">py</span><span class="p">))</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&quot;pz:    </span><span class="si">%8.4f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">pz</span><span class="p">))</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&quot;btag:  </span><span class="si">%8.4f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">btag</span><span class="p">))</span>
 
-In [9]
-E,px,py,pz,btag = jets[0]
-print ("E:     %8.4f" % (E))
-print ("px:    %8.4f" % (px))
-print ("py:    %8.4f" % (py))
-print ("pz:    %8.4f" % (pz))
-print ("btag:  %8.4f" % (btag))
+<span class="n">E</span><span class="p">:</span>      <span class="mf">88.9127</span>
+<span class="n">px</span><span class="p">:</span>     <span class="mf">32.9767</span>
+<span class="n">py</span><span class="p">:</span>    <span class="o">-</span><span class="mf">75.1939</span>
+<span class="n">pz</span><span class="p">:</span>     <span class="mf">29.5410</span>
+<span class="n">btag</span><span class="p">:</span>   <span class="o">-</span><span class="mf">1.0000</span>
 
-E:      88.9127
-px:     32.9767
-py:    -75.1939
-pz:     29.5410
-btag:   -1.0000
 
+<span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">]</span>
+<span class="n">E</span><span class="p">,</span><span class="n">px</span><span class="p">,</span><span class="n">py</span><span class="p">,</span><span class="n">pz</span><span class="p">,</span><span class="n">q</span> <span class="o">=</span> <span class="n">muons</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&quot;E:  </span><span class="si">%8.4f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">E</span><span class="p">))</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&quot;px: </span><span class="si">%8.4f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">px</span><span class="p">))</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&quot;py: </span><span class="si">%8.4f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">py</span><span class="p">))</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&quot;pz: </span><span class="si">%8.4f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">pz</span><span class="p">))</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&quot;q:  </span><span class="si">%8.4f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">q</span><span class="p">))</span>
 
-In [10]
-E,px,py,pz,q = muons[0]
-print ("E:  %8.4f" % (E))
-print ("px: %8.4f" % (px))
-print ("py: %8.4f" % (py))
-print ("pz: %8.4f" % (pz))
-print ("q:  %8.4f" % (q))
+<span class="n">E</span><span class="p">:</span>   <span class="mf">15.7375</span>
+<span class="n">px</span><span class="p">:</span>   <span class="mf">1.4793</span>
+<span class="n">py</span><span class="p">:</span> <span class="o">-</span><span class="mf">15.2566</span>
+<span class="n">pz</span><span class="p">:</span>  <span class="o">-</span><span class="mf">3.5645</span>
+<span class="n">q</span><span class="p">:</span>   <span class="o">-</span><span class="mf">1.0000</span>
 
-E:   15.7375
-px:   1.4793
-py: -15.2566
-pz:  -3.5645
-q:   -1.0000
 
+<span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">]</span>
+<span class="n">E</span><span class="p">,</span><span class="n">px</span><span class="p">,</span><span class="n">py</span><span class="p">,</span><span class="n">pz</span> <span class="o">=</span> <span class="n">photons</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&quot;E:  </span><span class="si">%8.4f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">E</span><span class="p">))</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&quot;px: </span><span class="si">%8.4f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">px</span><span class="p">))</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&quot;py: </span><span class="si">%8.4f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">py</span><span class="p">))</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&quot;pz: </span><span class="si">%8.4f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">pz</span><span class="p">))</span>
 
-In [11]
-E,px,py,pz = photons[0]
-print ("E:  %8.4f" % (E))
-print ("px: %8.4f" % (px))
-print ("py: %8.4f" % (py))
-print ("pz: %8.4f" % (pz))
+<span class="n">E</span><span class="p">:</span>   <span class="mf">52.3640</span>
+<span class="n">px</span><span class="p">:</span>  <span class="mf">17.4983</span>
+<span class="n">py</span><span class="p">:</span> <span class="o">-</span><span class="mf">45.4233</span>
+<span class="n">pz</span><span class="p">:</span>  <span class="mf">19.3009</span>
 
-E:   52.3640
-px:  17.4983
-py: -45.4233
-pz:  19.3009
 
+<span class="n">In</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+      <span class="c1"># Plot the quantities</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 
-In [0]
-      # Plot the quantities
-plt.figure(figsize=(16,4))
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">njets</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">r&#39;# of jets&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;# entries&#39;</span><span class="p">)</span>
 
-plt.subplot(1,3,1)
-plt.hist(njets,bins=5,range=(0,5))
-plt.xlabel(r'# of jets')
-plt.ylabel('# entries')
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">jets_E</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span><span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">400</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">r&#39;Jet energy [GeV]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;# entries&#39;</span><span class="p">)</span>
 
-plt.subplot(1,3,2)
-plt.hist(jets_E,bins=25,range=(0,400))
-plt.xlabel(r'Jet energy [GeV]')
-plt.ylabel('# entries')
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">muons_E</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span><span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">400</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">r&#39;Muon energy [GeV]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;# entries&#39;</span><span class="p">)</span>
 
-plt.subplot(1,3,3)
-plt.hist(muons_E,bins=25,range=(0,400))
-plt.xlabel(r'Muon energy [GeV]')
-plt.ylabel('# entries')
+<span class="n">h1</span><span class="p">:</span>
+<span class="n">Watch</span> <span class="n">an</span> <span class="n">example</span>
 
-h1:
-Watch an example
+<span class="n">In</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;UfimSbOr9to&#39;</span><span class="p">)</span>
 
-In [0]
-from IPython.display import YouTubeVideo
-YouTubeVideo('UfimSbOr9to')
+<span class="n">In</span> <span class="p">[</span><span class="mi">13</span><span class="p">]</span>
+<span class="n">infile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../particle-physics-playground-Sonification-Example_001/data/mc_dy_1000collisions.dat&#39;</span><span class="p">)</span>
 
-In [13]
-infile = open('../particle-physics-playground-Sonification-Example_001/data/mc_dy_1000collisions.dat')
 
+<span class="n">collisions</span> <span class="o">=</span> <span class="n">cms</span><span class="o">.</span><span class="n">get_collisions</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
 
-collisions = cms.get_collisions(infile)
+<span class="c1"># We will use these to store the quantities that we will be plotting later.</span>
+<span class="n">njets</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">jets_E</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">muons_E</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">photons_E</span> <span class="o">=</span> <span class="p">[]</span>
 
-# We will use these to store the quantities that we will be plotting later.
-njets = []
-jets_E = []
-muons_E = []
-photons_E = []
+<span class="k">for</span> <span class="n">collision</span> <span class="ow">in</span> <span class="n">collisions</span><span class="p">:</span>
 
-for collision in collisions:
+    <span class="n">jets</span><span class="p">,</span><span class="n">muons</span><span class="p">,</span><span class="n">electrons</span><span class="p">,</span><span class="n">photons</span><span class="p">,</span><span class="n">met</span> <span class="o">=</span> <span class="n">collision</span>
 
-    jets,muons,electrons,photons,met = collision
+    <span class="n">njets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">jets</span><span class="p">))</span>
 
-    njets.append(len(jets))
+    <span class="k">for</span> <span class="n">jet</span> <span class="ow">in</span> <span class="n">jets</span><span class="p">:</span>
+        <span class="n">E</span><span class="p">,</span><span class="n">px</span><span class="p">,</span><span class="n">py</span><span class="p">,</span><span class="n">pz</span><span class="p">,</span><span class="n">btag</span> <span class="o">=</span> <span class="n">jet</span>
+        <span class="n">jets_E</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">px</span><span class="p">)</span>
 
-    for jet in jets:
-        E,px,py,pz,btag = jet
-        jets_E.append(px)
+    <span class="k">for</span> <span class="n">muon</span> <span class="ow">in</span> <span class="n">muons</span><span class="p">:</span>
+        <span class="n">E</span><span class="p">,</span><span class="n">px</span><span class="p">,</span><span class="n">py</span><span class="p">,</span><span class="n">pz</span><span class="p">,</span><span class="n">q</span> <span class="o">=</span> <span class="n">muon</span>
+        <span class="n">muons_E</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">E</span><span class="p">)</span>
 
-    for muon in muons:
-        E,px,py,pz,q = muon
-        muons_E.append(E)
+    <span class="k">for</span> <span class="n">photon</span> <span class="ow">in</span> <span class="n">photons</span><span class="p">:</span>
+        <span class="n">E</span><span class="p">,</span><span class="n">px</span><span class="p">,</span><span class="n">py</span><span class="p">,</span><span class="n">pz</span> <span class="o">=</span> <span class="n">photon</span>
+        <span class="n">photons_E</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">E</span><span class="p">)</span>
 
-    for photon in photons:
-        E,px,py,pz = photon
-        photons_E.append(E)
 
 
+<span class="n">In</span> <span class="p">[</span><span class="mi">18</span><span class="p">]</span>
+<span class="kn">import</span> <span class="nn">time</span>
 
-In [18]
-import time
+<span class="n">infile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../particle-physics-playground-Sonification-Example_001/data/mc_dy_1000collisions.dat&#39;</span><span class="p">)</span>
 
-infile = open('../particle-physics-playground-Sonification-Example_001/data/mc_dy_1000collisions.dat')
 
+<span class="n">collisions</span> <span class="o">=</span> <span class="n">cms</span><span class="o">.</span><span class="n">get_collisions</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
 
-collisions = cms.get_collisions(infile)
+<span class="c1"># We will use these to store the quantities that we will be plotting later.</span>
+<span class="n">njets</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">jets_E</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">muons_E</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">photons_E</span> <span class="o">=</span> <span class="p">[]</span>
 
-# We will use these to store the quantities that we will be plotting later.
-njets = []
-jets_E = []
-muons_E = []
-photons_E = []
+<span class="k">for</span> <span class="n">collision</span> <span class="ow">in</span> <span class="n">collisions</span><span class="p">:</span>
 
-for collision in collisions:
+    <span class="n">jets</span><span class="p">,</span><span class="n">muons</span><span class="p">,</span><span class="n">electrons</span><span class="p">,</span><span class="n">photons</span><span class="p">,</span><span class="n">met</span> <span class="o">=</span> <span class="n">collision</span>
 
-    jets,muons,electrons,photons,met = collision
+    <span class="n">njets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">jets</span><span class="p">))</span>
 
-    njets.append(len(jets))
+    <span class="k">for</span> <span class="n">jet</span> <span class="ow">in</span> <span class="n">jets</span><span class="p">:</span>
+        <span class="n">E</span><span class="p">,</span><span class="n">px</span><span class="p">,</span><span class="n">py</span><span class="p">,</span><span class="n">pz</span><span class="p">,</span><span class="n">btag</span> <span class="o">=</span> <span class="n">jet</span>
+        <span class="n">jets_E</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">E</span> <span class="p">)</span>
 
-    for jet in jets:
-        E,px,py,pz,btag = jet
-        jets_E.append(E )
+    <span class="k">for</span> <span class="n">muon</span> <span class="ow">in</span> <span class="n">muons</span><span class="p">:</span>
+        <span class="n">E</span><span class="p">,</span><span class="n">px</span><span class="p">,</span><span class="n">py</span><span class="p">,</span><span class="n">pz</span><span class="p">,</span><span class="n">q</span> <span class="o">=</span> <span class="n">muon</span>
+        <span class="n">muons_E</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">E</span><span class="p">)</span>
 
-    for muon in muons:
-        E,px,py,pz,q = muon
-        muons_E.append(E)
+    <span class="k">for</span> <span class="n">photon</span> <span class="ow">in</span> <span class="n">photons</span><span class="p">:</span>
+        <span class="n">E</span><span class="p">,</span><span class="n">px</span><span class="p">,</span><span class="n">py</span><span class="p">,</span><span class="n">pz</span> <span class="o">=</span> <span class="n">photon</span>
+        <span class="n">photons_E</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">E</span><span class="p">)</span>
 
-    for photon in photons:
-        E,px,py,pz = photon
-        photons_E.append(E)
 
+             <span class="c1"># Set up OSC here</span>
 
-             # Set up OSC here
+<span class="kn">from</span> <span class="nn">pythonosc</span> <span class="kn">import</span> <span class="n">osc_message_builder</span>
+<span class="kn">from</span> <span class="nn">pythonosc</span> <span class="kn">import</span> <span class="n">udp_client</span>
 
-from pythonosc import osc_message_builder
-from pythonosc import udp_client
+<span class="c1"># The port for SuperCollider is &#39;57120&#39;</span>
 
-# The port for SuperCollider is '57120'
+<span class="n">client</span> <span class="o">=</span> <span class="n">udp_client</span><span class="o">.</span><span class="n">SimpleUDPClient</span><span class="p">(</span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span> <span class="mi">57120</span><span class="p">)</span>
 
-client = udp_client.SimpleUDPClient("127.0.0.1", 57120)
 
+<span class="c1">#client.send_message(&quot;/print&quot;, muons_E)</span>
 
-#client.send_message("/print", muons_E)
+<span class="c1"># now we can print them out too</span>
 
-# now we can print them out too
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">muons_E</span><span class="p">:</span>
+      <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;muon was: </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span>
+      <span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="s2">&quot;/print&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+      <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.015</span><span class="p">)</span>
 
-for i in muons_E:
-      print ("muon was: %d" % i)
-      client.send_message("/print", i)
-      time.sleep(0.015)
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">jets_E</span><span class="p">:</span>
+      <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;jet was: </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span>
+      <span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="s2">&quot;/print&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+      <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.015</span><span class="p">)</span>
 
-for i in jets_E:
-      print ("jet was: %d" % i)
-      client.send_message("/print", i)
-      time.sleep(0.015)
-
-for i in photons_E:
-      print ("photon was: %d" % i)
-      client.send_message("/print", i)
-      time.sleep(0.015)
-# # Plot the quantities
-
-
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">photons_E</span><span class="p">:</span>
+      <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;photon was: </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span>
+      <span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="s2">&quot;/print&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+      <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.015</span><span class="p">)</span>
+<span class="c1"># # Plot the quantities</span>
+</code></pre></div>
 
 <h1 id="micro-computing"><span class="todo TODO">TODO</span> Micro-computing</h1>
 
@@ -1355,7 +1353,7 @@ $ pkill jackd <span class="c1">#quit jackd</span>
                 
                 <a href="#" data-language-name="lisp">emacs-lisp</a>
                 
-                <a href="#" data-language-name="ipython">Python</a>
+                <a href="#" data-language-name="python">Python</a>
                 
                 <a href="#" data-language-name="sh">Shell</a>
                 

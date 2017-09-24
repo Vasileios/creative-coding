@@ -40,7 +40,7 @@ key = "lisp"
 name = "emacs-lisp" 
 
 [[params.language_tabs]]
-key = "ipython"
+key = "python"
 name = "Python"
 
 [[params.language_tabs]]

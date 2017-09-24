@@ -869,7 +869,7 @@ copy =ein.el= and =ein.py= to the upload directory
 
 CERN examples: /particle-physics-playground-playground-52de62d/
 
-#+BEGIN_SRC ipython
+#+BEGIN_SRC python
 # Sonifying ems (muons) - ipython - SuperCollider in emacs 
 
 This is an exeperiment of data sonification using an example from particle-physics-playground.
