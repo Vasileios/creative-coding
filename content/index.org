@@ -551,6 +551,183 @@ Github
 individual processes using tools such as mass communication techniques
 Slack-Git.
 
+
+** install package magit
+
+Backup rep online in GITLAB, BITBUCKET
+
+create an ssh key to gain access into your repositories in Bitbucker
+
+ Concatanate keys from term
+
+ie. //cat id_rsa.pub | pbcopy
+
+
+Press =C-x m= to display information about the current Git repository
+
+=P-p= to push rep to bitbucket
+
+=c-c= to commint
+
+=s= to stage rep
+
+
+
+** Create and concatenate (link) keys from term
+
+create an shh key in GitHub and then open terminal
+
+ie. //cat id_rsa.pub | pbcopy
+
+
+** create .git file inside a folder
+
+Dired to the folder you want to create the .git file and press
+
+=M-x magit-init= and press =y=
+
+*** This is a way to say to projectile what is a project and so it will
+
+make your search quicker.
+
+Press =C-cpp= to open projectile
+
+
+Create a new branch
+
+and then =magit-set-to-upstream= origin
+
+
+** Pull requests
+
+*issues*
+
+- Git refusing to merge unrelated histories
+
+git cherry-pick -m 1 1234deadbeef1234deadbeef
+git rebase --continue
+
+merge
+
+Git failed...
+
+Git refusing to merge unrelated histories
+
+in magit press h to bring the popoup and choose rebase -r and then -p
+* Auto-correct
+
+
+** Install Dictionaries -emacs
+
+*Install aspell from brew*
+
+#+BEGIN_Example
+
+$ brew install aspell --with-lang-en --with-lang-el --with-lang-de
+
+#+END_Example
+
+for English, Hellenic and Deutsch languages.
+
+if you have problems installing aspell with the above code
+
+just do only:
+
+#+BEGIN_SRC shell
+
+$ brew install aspell
+
+#+END_SRC
+
+*Install aspell using downloaded packages aspell-0.60.6.1*
+
+go to terminal and type:
+
+#+BEGIN_SRC shell
+$ cd ~/aspell path
+$ ./configure
+$ make
+$ make install
+#+END_SRC
+
+To install additional dictionary download the language you prefer from  [[ftp://ftp.gnu.org/gnu/aspell/dict/0index.html][GNU_Available Aspell Dictionaries]]
+
+i.e =aspell-el-0.50-3= for Hellenic language (Greek)
+
+and go to terminal and type:
+
+#+BEGIN_SRC shell
+$ cd ~/dictionary path
+$ ./configure
+$ make
+$ install
+#+END_SRC
+
+*Switch dictionary*
+
+To switch between dictionaries run:
+
+M-x: =ispell-change-dictionary=
+
+and write /greek/ for Hellenic language auto-correct
+
+Press F6 (fn-F6) to switch between dictionaries (british, greek, german)
+
+If you want to use the english dictionary in a particular buffer instead,
+put the following on the first line of the buffer:
+
+=-*- ispell-dictionary: "english" -*-=
+
+*Use flyspell instead of ispell*
+
+#+BEGIN_SRC lisp
+(setq ispell-list-command "--list")
+#+END_SRC
+
+
+
+* IPython-notebook
+
+- IPython notebook is used to analyse data and for data visualisation.
+
+Experiment with the examples of
+CERN: /particle-physics-playground-playground-52de62d/
+- install ipython emacs on melpa 'ein'
+
+copy =ein.el= and =ein.py= to the upload directory
+
+- open =init.el= and write
+
+#+BEGIN_SRC emacs-lisp
+(require 'ein)
+#+END_SRC
+
+** Python 3.5
+
+install =python 3.5= and anacoda3
+call anacoda3 form terminal using
+
+#+BEGIN_SRC shell
+
+➜  ~ source activate anaconda3
+
+#+END_SRC
+
+then call jupyter
+
+#+BEGIN_SRC shell
+
+➜  ~ jupyter notebook
+
+#+END_SRC
+
+Go to emacs and do = M-x ein:notebooklist-login=
+Start IPython notebook server.
+Hit =M-x ein:notebooklist-open= to open notebook list. This will open notebook
+list buffer.
+In the notebook list buffer, you can navigate to your folders to [open], or [create], and [delete] notebooks by hitting
+
+
 ** Interactive Performance.
 
   set of practices that give performers (usually dancers or musicians) control of the media in real time?

@@ -15,7 +15,7 @@
 
     
 </head>
-<body class="index" data-languages="[ &#34;javascript&#34; ,  &#34;c&#43;&#43;&#34; ,  &#34;python&#34; ,  &#34;sh&#34; ,  &#34;lisp&#34; ]">
+<body class="index" data-languages="[ &#34;javascript&#34; ,  &#34;c&#43;&#43;&#34; ,  &#34;python&#34; ,  &#34;sh&#34; ,  &#34;lisp&#34; ,  &#34;bibtex&#34; ]">
     <a href="#" id="nav-button">
         <span>
         NAV
@@ -37,6 +37,8 @@
             <a href="#" data-language-name="sh">Shell</a>
             
             <a href="#" data-language-name="lisp">emacs-lisp</a>
+            
+            <a href="#" data-language-name="bibtex">bibtex</a>
             
         </div>
          
@@ -628,6 +630,163 @@ Github
 individual processes using tools such as mass communication techniques
 Slack-Git.</p>
 
+<h2 id="install-package-magit">install package magit</h2>
+
+<p>Backup rep online in GITLAB, BITBUCKET</p>
+
+<p>create an ssh key to gain access into your repositories in Bitbucker</p>
+
+<p>Concatanate keys from term</p>
+
+<p>ie. //cat id_rsa.pub | pbcopy</p>
+
+<p>Press <code>C-x m</code> to display information about the current Git repository</p>
+
+<p><code>P-p</code> to push rep to bitbucket</p>
+
+<p><code>c-c</code> to commint</p>
+
+<p><code>s</code> to stage rep</p>
+
+<h2 id="create-and-concatenate-link-keys-from-term">Create and concatenate (link) keys from term</h2>
+
+<p>create an shh key in GitHub and then open terminal</p>
+
+<p>ie. //cat id_rsa.pub | pbcopy</p>
+
+<h2 id="create-git-file-inside-a-folder">create .git file inside a folder</h2>
+
+<p>Dired to the folder you want to create the .git file and press</p>
+
+<p><code>M-x magit-init</code> and press <code>y</code></p>
+
+<h3 id="this-is-a-way-to-say-to-projectile-what-is-a-project-and-so-it-will">This is a way to say to projectile what is a project and so it will</h3>
+
+<p>make your search quicker.</p>
+
+<p>Press <code>C-cpp</code> to open projectile</p>
+
+<p>Create a new branch</p>
+
+<p>and then <code>magit-set-to-upstream</code> origin</p>
+
+<h2 id="pull-requests">Pull requests</h2>
+
+<p><strong>issues</strong></p>
+
+<ul>
+<li>Git refusing to merge unrelated histories</li>
+</ul>
+
+<p>git cherry-pick -m 1 1234deadbeef1234deadbeef
+git rebase --continue</p>
+
+<p>merge</p>
+
+<p>Git failed...</p>
+
+<p>Git refusing to merge unrelated histories</p>
+
+<h1 id="auto-correct">Auto-correct</h1>
+
+<p>in magit press h to bring the popoup and choose rebase -r and then -p</p>
+
+<h2 id="install-dictionaries-emacs">Install Dictionaries -emacs</h2>
+
+<p><strong>Install aspell from brew</strong></p>
+
+<pre><code>
+&lt;p&gt;
+$ brew install aspell --with-lang-en --with-lang-el --with-lang-de
+&lt;/p&gt;
+
+
+</code></pre>
+
+<p>for English, Hellenic and Deutsch languages.</p>
+
+<p>if you have problems installing aspell with the above code</p>
+
+<p>just do only:</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ brew install aspell
+</code></pre></div>
+
+<p><strong>Install aspell using downloaded packages aspell-0.60.6.1</strong></p>
+
+<p>go to terminal and type:</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ <span class="nb">cd</span> ~/aspell path
+$ ./configure
+$ make
+$ make install
+</code></pre></div>
+
+<p>To install additional dictionary download the language you prefer from  <a href="ftp://ftp.gnu.org/gnu/aspell/dict/0index.html" title="GNU_Available Aspell Dictionaries" target="_blank">GNU_Available Aspell Dictionaries</a></p>
+
+<p>i.e <code>aspell-el-0.50-3</code> for Hellenic language (Greek)</p>
+
+<p>and go to terminal and type:</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ <span class="nb">cd</span> ~/dictionary path
+$ ./configure
+$ make
+$ install
+</code></pre></div>
+
+<p><strong>Switch dictionary</strong></p>
+
+<p>To switch between dictionaries run:</p>
+
+<p>M-x: <code>ispell-change-dictionary</code></p>
+
+<p>and write <em>greek</em> for Hellenic language auto-correct</p>
+
+<p>Press F6 (fn-F6) to switch between dictionaries (british, greek, german)</p>
+
+<p>If you want to use the english dictionary in a particular buffer instead,
+put the following on the first line of the buffer:</p>
+
+<p><code>-*- ispell-dictionary: &quot;english&quot; -*-</code></p>
+
+<p><strong>Use flyspell instead of ispell</strong></p>
+<div class="highlight"><pre><code class="language-lisp" data-lang="lisp"><span></span><span class="p">(</span><span class="k">setq</span> <span class="nv">ispell-list-command</span> <span class="s">&quot;--list&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h1 id="ipython-notebook">IPython-notebook</h1>
+
+<ul>
+<li>IPython notebook is used to analyse data and for data visualisation.</li>
+</ul>
+
+<ul>
+Experiment with the examples of
+CERN: /particle-physics-playground-playground-52de62d/
+<li>install ipython emacs on melpa 'ein'</li>
+</ul>
+
+<p>copy <code>ein.el</code> and <code>ein.py</code> to the upload directory</p>
+
+<ul>
+<li>open <code>init.el</code> and write</li>
+</ul>
+<div class="highlight"><pre><code class="language-emacs-lisp" data-lang="emacs-lisp"><span></span><span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;ein</span><span class="p">)</span>
+</code></pre></div>
+
+<h2 id="python-3-5">Python 3.5</h2>
+
+<p>install <code>python 3.5</code> and anacoda3
+call anacoda3 form terminal using</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>➜  ~ <span class="nb">source</span> activate anaconda3
+</code></pre></div>
+
+<p>then call jupyter</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>➜  ~ jupyter notebook
+</code></pre></div>
+
+<p>Go to emacs and do = M-x ein:notebooklist-login=
+Start IPython notebook server.
+Hit <code>M-x ein:notebooklist-open</code> to open notebook list. This will open notebook
+list buffer.
+In the notebook list buffer, you can navigate to your folders to [open], or [create], and [delete] notebooks by hitting</p>
+
 <h2 id="interactive-performance">Interactive Performance.</h2>
 
 <p>set of practices that give performers (usually dancers or musicians) control of the media in real time?</p>
@@ -889,6 +1048,8 @@ examples (https://www.arduino.cc/en/Tutorial/BuiltInExamples).</p>
                 <a href="#" data-language-name="sh">Shell</a>
                 
                 <a href="#" data-language-name="lisp">emacs-lisp</a>
+                
+                <a href="#" data-language-name="bibtex">bibtex</a>
                 
             </div>
             
