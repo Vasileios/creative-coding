@@ -861,13 +861,18 @@ In the notebook list buffer, you can navigate to your folders to [open], or [cre
 
 copy =ein.el= and =ein.py= to the upload directory
 
-- open =init.el= and write
+#+BEGIN_QUOTE
+open =init.el= and write
+#+END_QUOTE
 
 #+BEGIN_SRC emacs-lisp
 (require 'ein)
 #+END_SRC
 
+#+BEGIN_QUOTE
 CERN examples: /particle-physics-playground-playground-52de62d/
+
+#+END_QUOTE
 
 #+BEGIN_SRC python
 # Sonifying ems (muons) - ipython - SuperCollider in emacs 
