@@ -11,8 +11,7 @@ My research imperatives run along the threads of transmediation,
 intersemiotic translation, post-disciplinarity and the general concerns of Human Computer Interaction (HCI). 
 
 #+BEGIN_QUOTE
-Key words: big-data, data, creative-coding, emacs, interaction, machine learning, org-mode,
-real-time, streaming, web 
+*Key words:* big-data, data, creative-coding, emacs, interaction, machine learning, org-mode, real-time, streaming, web 
 #+END_QUOTE
 
 * Mental objectives
