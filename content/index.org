@@ -111,7 +111,93 @@ sound. (Roads 1996: 625)
 ** Remote Controllers
 
 
-** 3rd lesson
+** SuperCollider
+
+* Basics
+
+SuperCollider is a platform for audio synthesis and algorithmic composition, used by musicians, artists, and researchers working with sound. It is free and open source software available for Windows, macOS, and Linux.
+
+** SuperCollider features three major components:
+
+- *scsynth*, a real-time audio server, forms the core of the platform. It features 400+ unit generators ("UGens") for analysis, synthesis, and processing. Its granularity allows the fluid combination of many known and unknown audio techniques, moving between additive and subtractive synthesis, FM, granular synthesis, FFT, and physical modelling. You can write your own UGens in C++, and users have already contributed several hundred more to the sc3-plugins repository.
+- *sclang*, an interpreted programming language. It is focused on sound, but not limited to any specific domain. sclang controls scsynth via Open Sound Control. You can use it for algorithmic composition and sequencing, finding new sound synthesis methods, connecting your app to external hardware including MIDI controllers, network music, writing GUIs and visual displays, or for your daily programming experiments. It has a stock of user-contributed extensions called Quarks.
+- *scide* is an editor for sclang with an integrated help system.
+
+* Nodes
+
+The Server has a graph of all the running Synths, which may be organised into Groups for convenience. You can see Synths and Groups being created just by looking at the Server graphics.
+
+A Node means a Synth or a Group. Whenever you press command+period you reset the graph, cleaning out all the Synths and Groups you added, that is, clearing all Nodes.
+
+The initial state of the Node graph on the Server looks like this (do command+period first to destroy any existing nodes so you have the starting state):
+
+#+BEGIN_SRC sclang
+s.queryAllNodes //run me to see the Nodes on the Server
+#+END_SRC
+
+The two default Nodes are convenient Groups for putting your Synths into.
+
+Group(0) is the absolute root of the tree. All new Synths get placed within this Group somewhere (they might be in subGroups but they will be within the RootNode Group at the top of the hierarchy).
+
+#+BEGIN_SRC sclang
+r=RootNode.new; //this gets a reference to Group(0)
+#+END_SRC
+
+Group(1) was added as an additional default to receive all created Synths, to avoid cluttering the base of the tree.
+
+#+BEGIN_SRC sclang
+Group.basicNew(s, 1); //this gets a reference to Group(1)
+#+END_SRC
+
+
+* Find recordings folder
+
+#+BEGIN_SRC sclang
+thisProcess.platform.recordingsDir;
+#+END_SRC
+
+
+* Beat frequency
+
+Beat Frequency is a term used in acoustic science and physics and it is caused when two signals with different frequency or period, play together. In a few words this phenomena caused when you overlap two waves with different frequencies.
+
+For example, lets say that we have a 440 Hz wave and a 443 Hz wave play together.
+
+They will have fluctuations in loudness. see Fig.1 below.
+It is possible to measure the wobbles per second that are caused of that combination. So, how many times these wobbles happen form Constructive[fn:: Constructive is the area where these two waves come together in the exact point of the x and y axis (Fig 1) and that means that the signal is getting louder] to the next Constructive area.
+
+ The frequency of those beats $Fb$ can be calculated using this formula:
+
+\begin{align*}
+ Fb = f1 - f2
+\end{align*}
+
+
+where $f1$ is the period in time of the /wave 1/ and $f2$ is the period of the /wave 2/.
+
+
+This is how it sounds in SuperCollider.
+
+#+BEGIN_SRC sclang
+
+{SinOsc.ar([440, 443], 0, 0.5)}.scope;
+#+END_SRC
+
+Check this also with:
+
+#+BEGIN_SRC sclang
+FreqScope.new;
+#+END_SRC
+
+
+#+CAPTION: Beat Frequency example - wobbles (μετατοπίσεις)
+#+NAME: Fig.1:BF - 440-443Hz
+[[/Users/vasilis/Documents/Projects/sites/pics/images/BeatFrequency_snapshot.png]]
+
+
+#+CAPTION: Beat Frequency example - Total Wave after a summation of two waves
+#+NAME: Fig.2:Total wave
+[[/Users/vasilis/Documents/Projects/sites/pics/images/TotalWave_BeatF.png]]
 
 Introduction to sound design (origin, definition, procedures, application fields).
 In this course, students will learn about sound design and functions in SuperCollider programming environment.
@@ -163,6 +249,759 @@ They will also get in touch with
 Editing, organize and share  files in emacs.
  (Https://www.gnu.org/software/emacs/tour/)
 
+** Install packages
+
+Install org-plus-contrib
+
+#+BEGIN_SRC emacs-lisp
+
+;; add this to your Emacs init file to be able to list the Org mode archives:
+
+(require 'package)
+
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
+
+Then M-x list-packages RET will list both the latest org and
+org-plus-contrib packages.
+
+#+END_SRC
+
+** Create Headers
+
+Start with an *asterisk* to make *Headers* and *two asterisks* for *Subheaders*
+
+Example:
+
+=/* Header/=
+
+=/** Subheader/=
+
+Give a *title* to your page using /hash/ (#) and /plus/ (+) symbols
+
+Example: =/#+Title: Getting started with org-mode/=
+
+#+Title: Getting started with org-mode
+
+*Hide* Table of Contents
+
+Example: =/#+Options: toc:nil/=
+
+#+Options: toc:nil
+
+*Hide* Numbers
+
+Example: =/#+Options: num:nil/=
+
+#+Options: num:nil
+
+** Export settings
+
+#+AUTHOR: Vasilis Agiomyrgianakis
+
+#+CREATOR: emacs org-mode
+
+#+EMAIL: agios.mur@gmail.com
+
+Write =#+= and press =Meta-<tab>= to see the list of variables
+
+Example:
+
+ =#+AUTHOR: Vasilis Agiomyrgianakis=
+
+=#+DATE: 120416=
+
+* Bulleting-Quoting
+
+Use hyphen to make bullets
+
+- bulleted
+- list
+- items
+
+You can include quotations in Org mode documents like this:
+
+=#+BEGIN_QUOTE=
+
+'QUATATION'
+
+=#+END_QUOTE=
+
+#+BEGIN_QUOTE
+
+A frequent criticism of computer music is the lack of performance, \\
+where an artist hides behind their laptop screen, \\
+and the audience is unable to see any activity that might ground their experience \\
+of the music (Cascone, 2003).
+
+
+#+END_QUOTE
+
+* Markups
+
+Give *emphasis* to your text.
+
+Write your text *inside* the below symbols:
+
+- 2 asterics for *Bold*,
+- 2 slashes for /italics/,
+- 2 equals signs for =verbatim=,
+- 2 pluses for +strike through text+
+
+
+*Bold*, /italics/, =verbatim=, +strikethrough+
+* Linked text
+
+ Press =C-c C-l= to *link* objects (files)
+
+Example:
+
+/Link: https//:basmyr.net/
+
+Then give a name to the linked text
+
+/Description: Basmyr.net/
+
+ Press =C-c C-o= to *open* the linked plain text with external program
+
+[[http://basmyr.net][Basmyr.net]]
+
+or a video url
+
+[[https://youtu.be/Wr2aFlWyzvM][Granulator]]
+
+* Tables
+
+Use *pipes - vertical bars* to make tables
+
+Example: Start with pipes and some text:
+
+/| some | | Data |/
+
+then hit return, pipe (vertical bar), hyphen and tab to extend the table verticaly
+
+Press tab and arrows to make arrangements for the table
+
+| Some | Data  |
+|------+-------|
+|  234 | rocks |
+| 1200 | start |
+
+* Images & Graphics
+** Images
+
+[[~/Documents/org-mode/org-mode_webpage/img/Odysseus.png][Image]]
+
+** Ditaa
+
+
+
+#+RESULTS:
+[[file:images/blue.png]]
+
+
+
+
+#+RESULTS:
+[[file:images/hello-world.png]]
+
+
+*Tables with Ditaa*
+
+#+BEGIN_SRC ditta :file images/table01.png
+
+| Some | Data  |
+|------+-------|
+|  234 | rocks |
+| 1200 | start |
+
+#+END_SRC
+
+
+#+BEGIN_SRC ditta :file image/awesome.png
+
+   _
+  /_\__      _____  ___  ___  _ __ ___   ___
+ //_\\ \ /\ / / _ \/ __|/ _ \| '_ ` _ \ / _ \
+/  _  \ V  V /  __/\__ \ (_) | | | | | |  __/
+\_/ \_/\_/\_/ \___||___/\___/|_| |_| |_|\___|
+
+#+END_SRC
+
+*Find the path of ditaa.jar in you computer through a lisp program*
+=C-c C-c= to evaluate lisp code inside source block
+
+#+begin_src emacs-lisp
+(expand-file-name
+             "ditaa.jar"
+      (file-name-as-directory
+            (expand-file-name
+                "scripts"
+               (file-name-as-directory
+                  (expand-file-name
+                      "../contrib"
+                     (file-name-directory (org-find-library-dir "org")))))))
+#+end_src
+
+#+RESULTS:
+: /Users/vasilis/.emacs.d/elpa/contrib/scripts/ditaa.jar
+
+
+
+
+** Dot-Graphviz (Graph visualisation software)
+
+Bubbles-graphics
+
+ #+BEGIN_SRC dot :file images/dot.png
+digraph data_relationships {
+  "org-mode"
+  "org-exp-blocks"
+  "dot"
+  "ditaa"
+  "HTML" [shape=Mrecord, label="{HTML|publish on the web\l}"]
+  "LaTeX" [shape=Mrecord, label="{LaTeX|publish in PDF\l}"]
+  "org-mode" -> "org-exp-blocks"
+  "dot" -> "org-mode"
+  "ditaa" -> "org-mode"
+  "org-exp-blocks" -> "HTML"
+  "org-exp-blocks" -> LaTeX
+}
+ #+END_SRC
+
+ #+RESULTS:
+ [[file:images/dot.png]]
+
+
+
+
+#+BEGIN_Example
+
+#+name: make-dot
+#+BEGIN_SRC emacs-lisp :var table=dot-eg-table :results output :exports none
+  (mapcar #'(lambda (x)
+              (princ (format "%s [label =\"%s\", shape = \"box\"];\n"
+                             (first x) (second x)))) table)
+              (princ (format "%s -- %s;\n" (first (first table)) (first (second table))))
+#+END_SRC
+
+#+END_Example
+
+#+BEGIN_Example
+
+#+BEGIN_SRC dot :file images/test-dot.png :var input=make-dot :exports results
+graph {
+ $input
+}
+#+END_SRC
+
+#+END_Example
+
+* Export to other formats
+
+Pressing =C-c C-e= popups a buffer to *export* markups to HTML-PDF-etc.
+
+Example: hit =h= and =o= if you want to *export and open as html*.
+
+Export Beamer: =C-c C-e l P=     =(org-beamer-export-to-pdf)=
+
+Export as LaTeX and then process to PDF.
+
+=C-c C-e l O=
+
+Export as LaTeX and then process to PDF, then open the resulting PDF file.
+
+* Source Code
+
+Create code blocks to insert your code.
+
+Press C-c ' *inside the SRC block* to edit the current code block
+
+in the mode of the language you want. For instance:
+
+ =#+BEGIN_SRC emacs-lisp=
+
+write some lisp to make your configurations in org-mode
+
+so as to see bullets (UTF-8 characters) when you editing *Headers* in org-mode instead of asterisks.
+
+Then close the source block with:
+
+=#+END_SRC=
+
+*Result*
+
+#+BEGIN_SRC emacs-lisp
+
+     (require 'org-bullets)
+(add-hook 'org-mode-hook
+          (lambda () (org-bullets-mode 1)))
+
+
+#+END_SRC
+
+*You can customise source blocks using =M-x customize-face RET= face RET*
+
+Evaluate source code. Press C-c C-c inside the block and see the results.
+
+ #+BEGIN_Example
+ echo "Hello $USER! Today is `date`"
+ exit
+ #+END_Example
+
+* LaTeX integrator
+
+- Characters: \alpha \rightarrow \beta
+- $O(n \log n)$
+
+
+\begin{align*}
+q = 2 * 4 + 1 - 2 &= 7 \\
+         q &=7
+\end{align*}
+
+* Shortcuts
+
+write down =<s= and press =tab= to open src blocks
+
+to cooment a =lisp= region select a word or a region with C-M-space and then M-; to comment
+
+* TODO
+
+** Insert 3 asterisks and type TODO to create a todo object
+Move the cursor one line after the TODO item and press =C-c C-s= =(org-schedule)=
+to schedule with agenda
+
+*** Tips
+
+To open week-agenda window press C-ca
+To schedule a TODO item press C-c C-s
+Use shift-arrows to change dates
+
+
+** Meetings
+
+** TODO Call John
+SCHEDULED: <2016-11-09 Wed>
+
+
+
+** Work
+** TODO read about live coding software
+SCHEDULED: <2016-11-10 Thu>
+
+
+** DONE export html minted [fn:1] (highlight colour - syntax source blocks)
+SCHEDULED: <2016-10-12 Wed
+** htmlize.el via MELPA is installed
+(setq org-src-fontify-natively t) has been inserted in init.el
+** minted, babel, auto-complete, latex
+
+#+BEGIN_SRC emacs-lisp
+
+;; placed in init.el
+
+
+(require 'org)
+(setq exec-path (append exec-path '("/usr/texbin")))
+(require 'ox-latex)
+(unless (boundp 'org-latex-classes)
+  (setq org-latex-classes nil))
+(add-to-list 'org-latex-classes
+             '("article"
+               "\\documentclass{article}"
+               ("\\section{%s}" . "\\section*{%s}")))
+
+;;(setq org-latex-listings 'minted)
+
+(add-to-list 'org-latex-packages-alist '("" "minted"))
+
+
+
+(setq org-export-latex-listings 'minted)
+
+(setq org-latex-listings 'minted)
+
+(setq org-latex-custom-lang-environments
+      '(
+        (emacs-lisp "common-lispcode")
+        ))
+(setq org-latex-minted-options
+      '(("frame" "lines")
+        ("fontsize" "\\scriptsize")
+        ("linenos" "")))
+
+
+(setq org-latex-to-pdf-process
+
+
+
+      '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+        "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+        "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+
+        ))
+
+
+
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((R . t)
+   (latex . t)))
+;; Use syntax highlighting in source block while editing
+
+
+(setq org-src-fontify-natively t)
+
+;;auto-complete
+
+(require 'auto-complete)
+
+;; Loads latex auto-complete
+(require 'ac-math)
+(add-to-list 'ac-modes 'latex-mode)
+(defun ac-latex-mode-setup ()
+  (setq ac-sources
+        (append '(ac-source-math-latex ac-source-latex-commands  ac-source-math-unicode)
+                ac-sources))
+  )
+(add-hook 'LaTeX-mode-hook 'ac-latex-mode-setup)
+
+#+END_SRC
+
+** TODO syntax highlight code blocks for latex-pdf
+
+** TODO image and video appearances when export to html and pdf
+SCHEDULED: <2016-10-12 Wed>
+Find how to display images and videos when export to html and pdf file
+
+
+[fn:1] Find more here: [[http://orgmode.org/worg/org-tutorials/org-latex-preview.html][Minted]]
+
+
+* About GIT:
+
+** install package magit
+
+Backup rep online in GITLAB, BITBUCKET
+
+create an ssh key to gain access into your repositories in Bitbucker
+
+ Concatanate keys from term
+
+ie. //cat id_rsa.pub | pbcopy
+
+
+Press =C-x m= to display information about the current Git repository
+
+=P-p= to push rep to bitbucket
+
+=c-c= to commint
+
+=s= to stage rep
+
+
+
+** Create and concatenate (link) keys from term
+
+create an shh key in GitHub and then open terminal
+
+ie. //cat id_rsa.pub | pbcopy
+
+
+** create .git file inside a folder
+
+Dired to the folder you want to create the .git file and press
+
+=M-x magit-init= and press =y=
+
+*** This is a way to say to projectile what is a project and so it will
+
+make your search quicker.
+
+Press =C-cpp= to open projectile
+
+
+Create a new branch
+
+and then =magit-set-to-upstream= origin
+
+
+** Pull requests
+
+*issues*
+
+Example from terminal
+
+#+BEGIN_SRC
+
+vasiliss-mbp:Epiplus_WordPress vasilis$ git pull origin
+You asked to pull from the remote 'origin', but did not specify
+a branch. Because this is not the default configured remote
+for your current branch, you must specify a branch on the command line.
+vasiliss-mbp:Epiplus_WordPress vasilis$ git pull origin WordPress-package
+fatal: Couldn't find remote ref WordPress-package
+vasiliss-mbp:Epiplus_WordPress vasilis$ fatal: The remote end hung up unexpectedly
+git pull origin WordPress-init
+From bitbucket.org:wordpressepiplus/wordpress_epiplus
+ * branch            WordPress-init -> FETCH_HEAD
+Updating b02b67d..2e2138c
+Fast-forward
+ README.md | 29 +++++++++++++++++++++++++++++
+ 1 file changed, 29 insertions(+)
+ create mode 100644 README.md
+vasiliss-mbp:Epiplus_WordPress vasilis$
+
+#+END_SRC
+
+** Git refusing to merge unrelated histories
+
+git cherry-pick -m 1 1234deadbeef1234deadbeef
+git rebase --continue
+
+merge
+
+Git failed...
+
+Git refusing to merge unrelated histories
+
+in magit press h to bring the popoup and choose rebase -r and then -p
+* Auto-correct
+
+** Install Dictionaries -emacs
+
+*Install aspell from brew*
+
+#+BEGIN_Example
+
+$ brew install aspell --with-lang-en --with-lang-el --with-lang-de
+
+#+END_Example
+
+for English, Hellenic and Deutsch languages.
+
+if you have problems installing aspell with the above code
+
+just do only:
+
+#+BEGIN_Example
+
+$ brew install aspell
+
+#+END_Example
+
+*Install aspell using downloaded packages aspell-0.60.6.1*
+
+go to terminal and type:
+
+#+BEGIN_Example
+$ cd ~/aspell path
+$ ./configure
+$ make
+$ make install
+#+END_Example
+
+To install additional dictionary download the language you prefer from  [[ftp://ftp.gnu.org/gnu/aspell/dict/0index.html][GNU_Available Aspell Dictionaries]]
+
+i.e =aspell-el-0.50-3= for Hellenic language (Greek)
+
+and go to terminal and type:
+
+#+BEGIN_Example
+$ cd ~/dictionary path
+$ ./configure
+$ make
+$ install
+#+END_Example
+
+*Switch dictionary*
+
+To switch between dictionaries run:
+
+M-x: =ispell-change-dictionary=
+
+and write /greek/ for Hellenic language auto-correct
+
+Press F6 (fn-F6) to switch between dictionaries (british, greek, german)
+
+If you want to use the english dictionary in a particular buffer instead,
+put the following on the first line of the buffer:
+
+=-*- ispell-dictionary: "english" -*-=
+
+*Use flyspell instead of ispell*
+
+#+NAME: flyspell-choose
+#+BEGIN_SRC lisp
+(setq ispell-list-command "--list")
+#+END_SRC
+* text expansion
+
+install YASnippet using MELPA
+
+put the below into your init.el
+
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'load-path
+             "~/.emacs.d/plugins/yasnippet")
+(require 'yasnippet)
+(yas-global-mode 1)
+#+END_SRC
+
+quit emacs and open again and type
+
+=M-x yas-new-snippet=
+
+- Give a name to your snippet
+- give the abrev
+- write your text or code you want to be expanted
+- save file C-c C-c
+- choose a table i.e prog-mode
+- give a name to your snippet (I use the abrev key as the name)
+
+try using the abrev key and press tab to expant your text.
+
+* IPython-notebook
+
+- IPython notebook is used to analyse data and for data visualisation.
+
+Experiment with the examples of
+CERN: /particle-physics-playground-playground-52de62d/
+- install ipython emacs on melpa 'ein'
+
+copy =ein.el= and =ein.py= to the upload directory
+
+- open =init.el= and write
+
+#+BEGIN_SRC emacs-lisp
+(require 'ein)
+#+END_SRC
+
+** Python 3.5
+
+install =python 3.5= and anacoda3
+call anacoda3 form terminal using
+
+#+BEGIN_Example
+
+➜  ~ source activate anaconda3
+
+#+END_Example
+
+then call jupyter
+
+#+BEGIN_Example
+
+➜  ~ jupyter notebook
+
+#+END_Example
+
+Go to emacs and do = M-x ein:notebooklist-login=
+Start IPython notebook server.
+Hit =M-x ein:notebooklist-open= to open notebook list. This will open notebook
+list buffer.
+In the notebook list buffer, you can navigate to your folders to [open], or [create], and [delete] notebooks by hitting
+
+* Searching Help
+
+
+C-h f (or M-x describe-function) will show you the bindings for a command.
+You are correct, C-h b (or M-x describe-bindings) will show you all bindings. C-h m (M-x describe-mode) is also handy to list bindings by mode.
+You might also try C-h k (M-x describe-key) to show what command is bound to a key. For instance, on my machine save-buffers-kill-emacs isn't bound to anything, but C-h k C-x C-c tells me that C-x C-c is bound to save-buffers-kill-terminal. It will list all bindings for the command at the same time.
+
+
+helm swoop
+
+help C-h
+
+
+
+* Export references to pdf with org-mode - bibtex
+
+Use bibtex package for citation.
+
+First put the bellow code in your ./emacs
+
+
+#+BEGIN_SRC emacs-lisp :exports code
+
+;; Bibtex-latex export citation
+(setq org-latex-pdf-process
+      '("latexmk -pdflatex='pdflatex -interaction nonstopmode' -pdf -bibtex -f %f"))
+#+END_SRC
+
+Your next step is to create a .bib file with your citations and name it i.e: =test-bib-refs=
+
+Below is an example of bibtex style
+
+
+#+BEGIN_SRC bibtex
+@ARTICLE{2011ApJS..192....9T,
+   author = {{Turk}, M.~J. and {Smith}, B.~D. and {Oishi}, J.~S. and {Skory}, S. and
+     {Skillman}, S.~W. and {Abel}, T. and {Norman}, M.~L.},
+    title = "{yt: A Multi-code Analysis Toolkit for Astrophysical Simulation Data}",
+  journal = {The Astrophysical Journal Supplement Series},
+archivePrefix = "arXiv",
+   eprint = {1011.3514},
+ primaryClass = "astro-ph.IM",
+ keywords = {cosmology: theory, methods: data analysis, methods: numerical },
+     year = 2011,
+    month = jan,
+   volume = 192,
+      eid = {9},
+    pages = {9},
+      doi = {10.1088/0067-0049/192/1/9},
+   adsurl = {http://adsabs.harvard.edu/abs/2011ApJS..192....9T},
+  adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+
+#+END_SRC
+
+and this:
+
+#+BEGIN_SRC bibtex
+@InProceedings{ alejandro_weinstein-proc-scipy-2016,
+  author    = { {A}lejandro {W}einstein and {W}ael {E}l-{D}eredy and {S}téren {C}habert and {M}yriam {F}uentes },
+  title     = { {F}itting {H}uman {D}ecision {M}aking {M}odels using {P}ython },
+  booktitle = { {P}roceedings of the 15th {P}ython in {S}cience {C}onference },
+  pages     = { 1 - 6 },
+  year      = { 2016 },
+  editor    = { {S}ebastian {B}enthall and {S}cott {R}ostrup }
+}
+
+#+END_SRC
+
+
+ then use these latex commands inside your org file
+
+#+BEGIN_Example
+#+LaTeX_HEADER: \usepackage[natbib]{biblatex}
+#+LATEX_HEADER: \bibliographystyle{plain}
+#+LATEX_HEADER: \bibliography{test-bib-refs}
+#+END_Example
+
+
+* Tests
+** Test1 slide
+   - This is test1 \cite{2011ApJS..192....9T}.
+   - This is test2 \cite{alejandro_weinstein-proc-scipy-2016}.
+
+
+*
+\printbibliography
+
+
+** Note
+
+ put =\printbibliography= at the end so as to print the references section last on your text.
+
+
+** And this is the result:
+
+#+CAPTION: A snapshot for Pdf export references /bibtex/, /org-mode/
+     #+NAME:   fig:Pdf export references
+     [[./images/sample_refs_pdf_bibtex.png]]
+
+* Github
 Introduction to Environments (Github, Bitbucket) for organizing and sharing files-Git.
 Set up an account with Slack and Github.
 
@@ -333,6 +1172,8 @@ only 3 harmless class overwrites warnings
     $ 0.exit #quit sclang
 $ pkill jackd #quit jackd
 #+END_SRC
+
+
 
 ** 7th lesson
 
