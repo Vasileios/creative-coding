@@ -56,9 +56,11 @@ and physical computing,
 More on organising and sharing projects using tools such as mass communication techniques Slack-Git.
 
 * Key words:
+
 creative-coding,
 interactiation, real-time, web, streaming, data, big-data, machine learning 
 
+* Creative Coding
 
 ** Interactive installations
 
@@ -131,7 +133,7 @@ A Node means a Synth or a Group. Whenever you press command+period you reset the
 
 The initial state of the Node graph on the Server looks like this (do command+period first to destroy any existing nodes so you have the starting state):
 
-#+BEGIN_SRC sclang
+#+BEGIN_SRC js
 s.queryAllNodes //run me to see the Nodes on the Server
 #+END_SRC
 
@@ -139,20 +141,20 @@ The two default Nodes are convenient Groups for putting your Synths into.
 
 Group(0) is the absolute root of the tree. All new Synths get placed within this Group somewhere (they might be in subGroups but they will be within the RootNode Group at the top of the hierarchy).
 
-#+BEGIN_SRC sclang
+#+BEGIN_SRC js
 r=RootNode.new; //this gets a reference to Group(0)
 #+END_SRC
 
 Group(1) was added as an additional default to receive all created Synths, to avoid cluttering the base of the tree.
 
-#+BEGIN_SRC sclang
+#+BEGIN_SRC js
 Group.basicNew(s, 1); //this gets a reference to Group(1)
 #+END_SRC
 
 
 * Find recordings folder
 
-#+BEGIN_SRC sclang
+#+BEGIN_SRC js
 thisProcess.platform.recordingsDir;
 #+END_SRC
 
@@ -164,7 +166,7 @@ Beat Frequency is a term used in acoustic science and physics and it is caused w
 For example, lets say that we have a 440 Hz wave and a 443 Hz wave play together.
 
 They will have fluctuations in loudness. see Fig.1 below.
-It is possible to measure the wobbles per second that are caused of that combination. So, how many times these wobbles happen form Constructive[fn:: Constructive is the area where these two waves come together in the exact point of the x and y axis (Fig 1) and that means that the signal is getting louder] to the next Constructive area.
+It is possible to measure the wobbles per second that are caused of that combination. So, how many times these wobbles happen form Constructive: Constructive is the area where these two waves come together in the exact point of the x and y axis (Fig 1) and that means that the signal is getting louder to the next Constructive area.
 
  The frequency of those beats $Fb$ can be calculated using this formula:
 
@@ -178,26 +180,17 @@ where $f1$ is the period in time of the /wave 1/ and $f2$ is the period of the /
 
 This is how it sounds in SuperCollider.
 
-#+BEGIN_SRC sclang
+#+BEGIN_SRC js
 
 {SinOsc.ar([440, 443], 0, 0.5)}.scope;
 #+END_SRC
 
 Check this also with:
 
-#+BEGIN_SRC sclang
+#+BEGIN_SRC js
 FreqScope.new;
 #+END_SRC
 
-
-#+CAPTION: Beat Frequency example - wobbles (μετατοπίσεις)
-#+NAME: Fig.1:BF - 440-443Hz
-[[/Users/vasilis/Documents/Projects/sites/pics/images/BeatFrequency_snapshot.png]]
-
-
-#+CAPTION: Beat Frequency example - Total Wave after a summation of two waves
-#+NAME: Fig.2:Total wave
-[[/Users/vasilis/Documents/Projects/sites/pics/images/TotalWave_BeatF.png]]
 
 Introduction to sound design (origin, definition, procedures, application fields).
 In this course, students will learn about sound design and functions in SuperCollider programming environment.
@@ -232,6 +225,7 @@ Granular synthesis
 #+END_QUOTE
 
 #+BEGIN_SRC js
+
 SynthDef(\granular, {|out = 0, trig = 1, dur = 0.1, sndbuf, pos = 0.2, 
 rate = 1, pan = 0, amp = 0.4|
 var env, source;
@@ -239,6 +233,7 @@ env = EnvGen.kr(Env.adsr, 1, doneAcion: 2);
 source = Out.ar(out, GrainBuf.ar(2, Impulse.kr(trig), dur, sndbuf, rate, pos, 2,
 pan, envbuf) * env)
 }).add;
+
 #+END_SRC
 
 The SuperCollider Book (Wilson et al., 2011): Chapters 1, 2: Beginner's Tutorial, The Unit Generator.
@@ -253,7 +248,7 @@ Editing, organize and share  files in emacs.
 
 Install org-plus-contrib
 
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_EXAMPLE
 
 ;; add this to your Emacs init file to be able to list the Org mode archives:
 
@@ -264,7 +259,7 @@ Install org-plus-contrib
 Then M-x list-packages RET will list both the latest org and
 org-plus-contrib packages.
 
-#+END_SRC
+#+END_EXAMPLE
 
 ** Create Headers
 
@@ -286,21 +281,22 @@ Example: =/#+Title: Getting started with org-mode/=
 
 Example: =/#+Options: toc:nil/=
 
-#+Options: toc:nil
 
 *Hide* Numbers
 
 Example: =/#+Options: num:nil/=
 
-#+Options: num:nil
 
 ** Export settings
 
+#+BEGIN_EXAMPLE
 #+AUTHOR: Vasilis Agiomyrgianakis
 
 #+CREATOR: emacs org-mode
 
 #+EMAIL: agios.mur@gmail.com
+
+#+END_EXAMPLE
 
 Write =#+= and press =Meta-<tab>= to see the list of variables
 
@@ -389,48 +385,16 @@ Press tab and arrows to make arrangements for the table
 * Images & Graphics
 ** Images
 
-[[~/Documents/org-mode/org-mode_webpage/img/Odysseus.png][Image]]
-
 ** Ditaa
 
 
 
-#+RESULTS:
-[[file:images/blue.png]]
 
-
-
-
-#+RESULTS:
-[[file:images/hello-world.png]]
-
-
-*Tables with Ditaa*
-
-#+BEGIN_SRC ditta :file images/table01.png
-
-| Some | Data  |
-|------+-------|
-|  234 | rocks |
-| 1200 | start |
-
-#+END_SRC
-
-
-#+BEGIN_SRC ditta :file image/awesome.png
-
-   _
-  /_\__      _____  ___  ___  _ __ ___   ___
- //_\\ \ /\ / / _ \/ __|/ _ \| '_ ` _ \ / _ \
-/  _  \ V  V /  __/\__ \ (_) | | | | | |  __/
-\_/ \_/\_/\_/ \___||___/\___/|_| |_| |_|\___|
-
-#+END_SRC
 
 *Find the path of ditaa.jar in you computer through a lisp program*
 =C-c C-c= to evaluate lisp code inside source block
 
-#+begin_src emacs-lisp
+#+begin_example
 (expand-file-name
              "ditaa.jar"
       (file-name-as-directory
@@ -440,10 +404,8 @@ Press tab and arrows to make arrangements for the table
                   (expand-file-name
                       "../contrib"
                      (file-name-directory (org-find-library-dir "org")))))))
-#+end_src
+#+end_example
 
-#+RESULTS:
-: /Users/vasilis/.emacs.d/elpa/contrib/scripts/ditaa.jar
 
 
 
@@ -452,7 +414,7 @@ Press tab and arrows to make arrangements for the table
 
 Bubbles-graphics
 
- #+BEGIN_SRC dot :file images/dot.png
+ #+BEGIN_example
 digraph data_relationships {
   "org-mode"
   "org-exp-blocks"
@@ -466,10 +428,8 @@ digraph data_relationships {
   "org-exp-blocks" -> "HTML"
   "org-exp-blocks" -> LaTeX
 }
- #+END_SRC
+ #+END_example
 
- #+RESULTS:
- [[file:images/dot.png]]
 
 
 
@@ -530,14 +490,14 @@ Then close the source block with:
 
 *Result*
 
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_example
 
      (require 'org-bullets)
 (add-hook 'org-mode-hook
           (lambda () (org-bullets-mode 1)))
 
 
-#+END_SRC
+#+END_example
 
 *You can customise source blocks using =M-x customize-face RET= face RET*
 
@@ -578,25 +538,13 @@ To schedule a TODO item press C-c C-s
 Use shift-arrows to change dates
 
 
-** Meetings
-
-** TODO Call John
-SCHEDULED: <2016-11-09 Wed>
 
 
-
-** Work
-** TODO read about live coding software
-SCHEDULED: <2016-11-10 Thu>
-
-
-** DONE export html minted [fn:1] (highlight colour - syntax source blocks)
-SCHEDULED: <2016-10-12 Wed
 ** htmlize.el via MELPA is installed
 (setq org-src-fontify-natively t) has been inserted in init.el
 ** minted, babel, auto-complete, latex
 
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC lisp
 
 ;; placed in init.el
 
@@ -668,15 +616,6 @@ SCHEDULED: <2016-10-12 Wed
 
 #+END_SRC
 
-** TODO syntax highlight code blocks for latex-pdf
-
-** TODO image and video appearances when export to html and pdf
-SCHEDULED: <2016-10-12 Wed>
-Find how to display images and videos when export to html and pdf file
-
-
-[fn:1] Find more here: [[http://orgmode.org/worg/org-tutorials/org-latex-preview.html][Minted]]
-
 
 * About GIT:
 
@@ -732,39 +671,8 @@ and then =magit-set-to-upstream= origin
 
 Example from terminal
 
-#+BEGIN_SRC
 
-vasiliss-mbp:Epiplus_WordPress vasilis$ git pull origin
-You asked to pull from the remote 'origin', but did not specify
-a branch. Because this is not the default configured remote
-for your current branch, you must specify a branch on the command line.
-vasiliss-mbp:Epiplus_WordPress vasilis$ git pull origin WordPress-package
-fatal: Couldn't find remote ref WordPress-package
-vasiliss-mbp:Epiplus_WordPress vasilis$ fatal: The remote end hung up unexpectedly
-git pull origin WordPress-init
-From bitbucket.org:wordpressepiplus/wordpress_epiplus
- * branch            WordPress-init -> FETCH_HEAD
-Updating b02b67d..2e2138c
-Fast-forward
- README.md | 29 +++++++++++++++++++++++++++++
- 1 file changed, 29 insertions(+)
- create mode 100644 README.md
-vasiliss-mbp:Epiplus_WordPress vasilis$
 
-#+END_SRC
-
-** Git refusing to merge unrelated histories
-
-git cherry-pick -m 1 1234deadbeef1234deadbeef
-git rebase --continue
-
-merge
-
-Git failed...
-
-Git refusing to merge unrelated histories
-
-in magit press h to bring the popoup and choose rebase -r and then -p
 * Auto-correct
 
 ** Install Dictionaries -emacs
@@ -775,7 +683,7 @@ in magit press h to bring the popoup and choose rebase -r and then -p
 
 $ brew install aspell --with-lang-en --with-lang-el --with-lang-de
 
-#+END_Example
+
 
 for English, Hellenic and Deutsch languages.
 
@@ -840,7 +748,7 @@ install YASnippet using MELPA
 
 put the below into your init.el
 
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC lisp
 (add-to-list 'load-path
              "~/.emacs.d/plugins/yasnippet")
 (require 'yasnippet)
@@ -872,7 +780,7 @@ copy =ein.el= and =ein.py= to the upload directory
 
 - open =init.el= and write
 
-#+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC lisp
 (require 'ein)
 #+END_SRC
 
@@ -934,7 +842,7 @@ Your next step is to create a .bib file with your citations and name it i.e: =te
 Below is an example of bibtex style
 
 
-#+BEGIN_SRC bibtex
+#+BEGIN_example
 @ARTICLE{2011ApJS..192....9T,
    author = {{Turk}, M.~J. and {Smith}, B.~D. and {Oishi}, J.~S. and {Skory}, S. and
      {Skillman}, S.~W. and {Abel}, T. and {Norman}, M.~L.},
@@ -954,11 +862,11 @@ archivePrefix = "arXiv",
   adsnote = {Provided by the SAO/NASA Astrophysics Data System}
 }
 
-#+END_SRC
+#+END_example
 
 and this:
 
-#+BEGIN_SRC bibtex
+#+BEGIN_example
 @InProceedings{ alejandro_weinstein-proc-scipy-2016,
   author    = { {A}lejandro {W}einstein and {W}ael {E}l-{D}eredy and {S}téren {C}habert and {M}yriam {F}uentes },
   title     = { {F}itting {H}uman {D}ecision {M}aking {M}odels using {P}ython },
@@ -968,7 +876,7 @@ and this:
   editor    = { {S}ebastian {B}enthall and {S}cott {R}ostrup }
 }
 
-#+END_SRC
+#+END_example
 
 
  then use these latex commands inside your org file

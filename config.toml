@@ -44,7 +44,10 @@ key = "python"
 name = "Python"
 [[params.language_tabs]]
 key = "sh"
-name = "Shell" 
+name = "Shell"
+[[params.language_tabs]]
+key = "lisp"
+name = "emacs-lisp" 
 
 
 
