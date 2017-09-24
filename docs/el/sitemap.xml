@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://vasileios.github.io/computer-music/el/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://vasileios.github.io/computer-music/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="el"
+                href="https://vasileios.github.io/computer-music/el/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://vasileios.github.io/computer-music/el/master_file/</loc>
+  </url>
+  
+  <url>
+    <loc>https://vasileios.github.io/computer-music/el/categories/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://vasileios.github.io/computer-music/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="el"
+                href="https://vasileios.github.io/computer-music/el/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://vasileios.github.io/computer-music/el/tags/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://vasileios.github.io/computer-music/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="el"
+                href="https://vasileios.github.io/computer-music/el/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://vasileios.github.io/computer-music/el/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://vasileios.github.io/computer-music/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="el"
+                href="https://vasileios.github.io/computer-music/el/"
+                />
+  </url>
+  
+</urlset>

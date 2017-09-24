@@ -1,0 +1,85 @@
+#themesdir = "/themes/docuapi"
+languageCode = "en-us"
+baseurl= "https://vasileios.github.io/creative-hacking"
+title = "Creative hacking"
+
+# Code higlighting settings
+pygmentsCodefences = true
+pygmentsCodeFencesGuesSsyntax = false
+pygmentsOptions = ""
+pygmentsStyle = "monokai"
+#pygmentsStyle = "newstyle"
+
+# The monokai stylesheet is included in the base template.
+pygmentsUseClasses = true
+
+# defaultContentLanguage = "el"
+
+defaultContentLanguage = "en"
+
+publishDir = "docs"
+
+theme = "docuapi"
+
+[params]
+search = true
+
+# Configure the language example tabs.
+#[[params.language_tabs]]
+#key = "go"
+#name = "go"  
+[[params.language_tabs]]
+key = "javascript"
+#key = "sclang"
+name = "SuperCollider"
+[[params.language_tabs]]
+key = "c++"
+name = "C++"
+
+#[[params.language_tabs]]
+#key = "ruby"
+#name = "Ruby"
+[[params.language_tabs]]
+key = "python"
+name = "Python"
+[[params.language_tabs]]
+key = "sh"
+name = "Shell" 
+
+
+
+#Languages 
+[languages]
+
+[languages.el]
+languageName = "Ελληνικά"
+weight = 1
+title = "Μουσική Πληροφορική"
+
+# Left sidebar footer items. Use HTMl or Markdown.
+toc_footers = [ 
+"<a href='#'>CM source at Github</a>",
+"Documentation Powered by [DocuAPI](https://github.com/bep/docuapi)",
+"Hugo Theme by [bep](https://github.com/bep)",
+"License: CC",
+"Contact: agios[dot]mur[at]gmail.com"
+]
+
+
+[languages.en]
+languageName = "English"
+weight = 2
+title = "Creative hacking"
+
+# Left sidebar footer items. Use HTMl or Markdown.
+toc_footers = [ 
+"<a href='#'>CM source at Github</a>",
+"Documentation Powered by [DocuAPI](https://github.com/bep/docuapi)",
+"Hugo Theme by [bep](https://github.com/bep)",
+"License: CC",
+"Contact: agios[dot]mur[at]gmail.com"
+]
+[languages.en.blackfriday]
+angledQuotes = false
+hrefTargetBlank = true
+

@@ -1,0 +1,511 @@
+---
+weight: 10
+title: Creative hacking
+---
+
+* Creative hackin
+
+** Introduction
+
+* Mental objectives
+
+Students will acquire comprehensive knowledge about computer music and
+music technology and will learn theory, methods and techniques in order to
+create and manipulate. This course will teach the basic
+elements of programming in general (logic, loops, functions, objects,
+classes). They will also be trained in program units analysis for both
+the production of audio events and the control of their features and
+behavior through control units such as MIDI keyboards, motion,
+etc. SuperCollider is a platform for sound synthesis and algorithmic
+composition, Used by musicians, artists and researchers working with
+sound. Through the experimentation with these tools, they will
+understand the concepts of *object-oriented programming,
+interactivity, interactive sound and design, connectivity and
+interconnection*
+
+Through the musical examples provided in this lesson, they will
+prepare students to program in C ++, Java and other languages. In
+addition, they will understand the term interdisciplinarity and will
+learn to link the science of music with physics, engineering and programming. In this way students will learn techniques and tools that can also be used in other digital forms of art and entertainment such as arts facilities, video games and the art of the Internet.
+
+*Key words:*  audio design, dynamic systems, interactive multimedia,
+interactive performance, installations, sensors, sharing. 
+
+* Prerequisites
+
+Students should be familiar with basic concepts of sound science and
+programming. They also have to have basic audio synthesis knowledge, and
+HCI.
+
+
+* Methodology and tools
+
+The workshop will teach how different environments work in relation to the implementation of ideas as well as applications for communication, organization and collaboration.
+
+They will be trained in creative programming environments:
+
+Emacs as a basic editor and Git file sharing
+(https://github.com/magit/magit), 
+
+SuperCollider, and Python to process and build interactive audio
+ systems.
+
+They will also come in contact with midi controllers, OSC communication, microcontrollers (arduino), and physical computing, sensor usage, multitouch technologies, etc. In addition, students will learn how to communicate to organize their projects and share the individual processes Using tools such as mass communication techniques Slack-Git.
+
+* Lessons
+
+** Fundamentals 
+
+First contact with the students - Acquaintance - Introduction to the concepts of the course.
+
+In this course students will learn concepts such as interactive sound, interactive design, and what applications they may have in the art. They will also make use of the term interactive sound (Collins, 2008) in relation to the use of audio in interactive virtual environments and video games.
+
+Programming Interactivity (Noble 2012), Chapter 1: Introducing
+Interaction Design.
+
+** Interactive sound installations
+
+- The Cave of Sounds (Browne 2013)
+
+The Cave of Sounds is an interactive sound installation exploring the
+prehistoric origins of collective music making through the
+contemporary music hacker scene.
+
+#+BEGIN_QUOTE
+[[http://caveofsounds.com][The Cave of Sounds]]
+#+END_QUOTE
+
+- Circuit Bending and DIY synth making.
+
+Moreover, in this lesson, will introduce participants to musical
+circuits and how to hack them. A great opportunity to learn, design,
+recycle old toys and instruments, and leave with a bespoke instrument.
+
+** 2nd lesson
+
+Historical review of sound synthesis as art in, for example, sound objects: The Interactive Sound Art of Peter Vogel (http://vogelexhibition.weebly.com), and the interactive installations of other artists (http: // bizarresoundcreatures .com, https://vimeo.com/145978991).
+
+The musician's interface (Roads, 1996: 611)
+In this course students will learn concepts such as algorithmic
+synthesis, interconnection, data conversion via MIDI controllers or other devices.
+
+
+
+** Input Devices
+
+
+Musical gestures can be expressed through a wide range of body
+movements. Dozens of input devices have been developed to capture
+these gestures. (Roads 1996: 625)
+
+#+BEGIN_QUOTE
+Switch
+Push buttons
+Linear potentiometer or fader
+Trackball
+Joystick
+Game Paddles
+etc
+#+END_QUOTE
+** Instrument design
+
+#+BEGIN_QUOTE
+
+[[https://youtu.be/XejcHPECBUU][Robbie's Tiles]]
+#+END_QUOTE
+
+How to...
+
+[[http://bela.io][Bela]]
+
+
+Capacitive touch sensor-raspberry pi
+
+[[https://learn.adafruit.com/mpr121-capacitive-touch-sensor-on-raspberry-pi-and-beaglebone-black/overview][MPR121]] 
+
+
+
+
+** Mapping the Data from the Input Device
+
+The message coming from digital input devices are streams of binary
+numbers. A microprocessor inside the receiving symthesizer must decode
+these streams before commanding the synthesis engine  to emit
+sound. (Roads 1996: 625)
+
+
+** Remote Controllers
+
+
+** 3rd lesson
+
+Introduction to sound design (origin, definition, procedures, application fields).
+In this course, students will learn about sound design and functions such as the SuperCollider programming environment.
+
+#+BEGIN_QUOTE
+SuperCollider example:
+Creating a sine wave
+#+END_QUOTE
+
+
+#+BEGIN_SRC js
+{SinOsc.ar(440, 0, 0.3)}.play
+#+END_SRC
+
+#+BEGIN_QUOTE
+Additive synthesis
+#+END_QUOTE
+#+BEGIN_SRC js
+{SinOsc.ar(440, 0, 0.4)+SinOsc.ar(660, 0, 0.3)}.play;
+#+END_SRC
+
+#+BEGIN_QUOTE
+Subtractive synthesis
+#+END_QUOTE
+
+#+BEGIN_SRC js
+{LPF.ar(SinOsc.ar(440, 0, 0.4), 6000, 0.3)}.play;
+#+END_SRC
+
+#+BEGIN_QUOTE
+Granular synthesis
+#+END_QUOTE
+
+#+BEGIN_SRC js
+SynthDef(\granular, {|out = 0, trig = 1, dur = 0.1, sndbuf, pos = 0.2, 
+rate = 1, pan = 0, amp = 0.4|
+var env, source;
+env = EnvGen.kr(Env.adsr, 1, doneAcion: 2);
+source = Out.ar(out, GrainBuf.ar(2, Impulse.kr(trig), dur, sndbuf, rate, pos, 2,
+pan, envbuf) * env)
+}).add;
+#+END_SRC
+
+The SuperCollider Book (Wilson et al., 2011): Chapters 1, 2: Beginner's Tutorial, The Unit Generator.
+They will also get in touch with Emacs to learn to process to organize
+and share their records. (Https://www.gnu.org/software/emacs/tour/).
+
+** 4th lesson
+
+This course will teach the concept of "Interactive Performance". And what is usually the set of practices that give performers (usually dancers or musicians) control of the media in real time using their physical movements and gestures. (Ng, 2002).
+Introduction to Environments (Github, Bitbucket) for organizing and sharing files-Git.
+Set up an account with Slack and Github.
+
+#+BEGIN_QUOTE
+Github
+#+END_QUOTE
+
+Students will learn to organize their projects and share the
+individual processes using tools such as mass communication techniques
+Slack-Git.
+
+** 5th lesson
+
+Adaptive Audio Scenography.
+Example of an interactive sound system design with regard to theater and performance. Analysis of the way and means of implementation such as wireless sensors found both in the body of an performer and in the theater. The ever-born data from both the performer and the environment are then used to influence what we call adaptive audio scenography. (Baalman, Grigsby, Salter 2007: 178)
+Git:
+
+- Create a Repository
+- Create a Branch
+- Make a Commit
+- Push and Commit.
+
+[[https://guides.github.com/activities/hello-world/][GitHub Hello world]]
+
+
+[[https://gist.github.com/davfre/8313299][Github example]]
+
+Https://guides.github.com/activities/hello-world/,
+Https://gist.github.com/davfre/8313299
+
+
+** 6th lesson
+
+Interactive sound systems for theater and installations.
+Introduction to physical computing - microcontrollers. Programming
+Interactivity (Noble 2012): Chapter 4: Arduino.
+
+Introduction to Raspberry Pi
+(https://www.raspberrypi.org/learning/hardware-guide/).
+
+Introduction to Python (https://www.python.org/doc/).
+
+
+#+BEGIN_QUOTE
+Python
+#+END_QUOTE
+
+#+BEGIN_SRC python
+
+# Python 3: Fibonacci series up to n
+ def fib(n):
+     a, b = 0, 1
+     while a < n:
+         print(a, end=' ')
+         a, b = b, a+b
+     print()
+ fib(1000)
+
+#+END_SRC
+
+In this lesson, students will learn how to install Raspberry Pi on a
+Linux operating system such as DebianJessie, and other programs such
+as Emacs as a basic copywriter and Git (Magit) file sharing,
+SuperCollider for processing and constructing interactive sound
+systems, and Python To communicate with the sensors.
+
+** Hardware set up
+
+[[http://supercollider.github.io/development/building-raspberrypi][Building from Source on Raspberry]]
+
+#+BEGIN_QUOTE
+- connect an ethernet cable from the network router to the rpi
+- insert the sd card and usb soundcard
+- last connect usb power from a 5V@1A power supply
+
+#+END_QUOTE
+
+** Login & preparations
+
+#+BEGIN_SRC sh
+$ ssh pi@raspberrypi.local #from your laptop, default password is raspberry
+$ sudo raspi-config #change password, expand file system, reboot and log in again with ssh
+#+END_SRC
+
+#+BEGIN_QUOTE
+update the system, install required libraries & compilers
+#+END_QUOTE
+
+#+BEGIN_SRC shell
+$sudo apt-get update
+
+$sudo apt-get upgrade
+
+$sudo apt-get install alsa-base libicu-dev libasound2-dev libsamplerate0-dev libsndfile1-dev libreadline-dev libxt-dev libudev-dev libavahi-client-dev libfftw3-dev cmake git gcc-4.8 g++-4.8
+
+#+END_SRC
+
+#+BEGIN_QUOTE
+compile & install jackd (no d-bus)
+#+END_QUOTE
+
+#+BEGIN_SRC shell
+$git clone git://github.com/jackaudio/jack2 --depth 1
+$cd jack2
+$./waf configure --alsa #note: here we use the default gcc-4.9
+$./waf build
+$sudo ./waf install
+$sudo ldconfig
+$cd ..
+$rm -rf jack2
+$sudo nano /etc/security/limits.conf #and add the following two lines at the end
+    * @audio - memlock 256000
+    * @audio - rtprio 75
+ exit #and log in again to make the limits.conf settings work
+
+#+END_SRC
+
+#+BEGIN_QUOTE
+compile & install sc master
+#+END_QUOTE
+
+#+BEGIN_SRC shell
+$git clone --recursive git://github.com/supercollider/supercollider
+#optionally add –depth 1 here if you only need master
+$cd supercollider
+$git submodule init && git submodule update
+$mkdir build && cd build
+$export CC=/usr/bin/gcc-4.8 #here temporarily use the older gcc-4.8
+$export CXX=/usr/bin/g++-4.8
+$cmake -L -DCMAKE_BUILD_TYPE="Release" -DBUILD_TESTING=OFF -DSSE=OFF -DSSE2=OFF
+-DSUPERNOVA=OFF -DNOVA_SIMD=ON -DNATIVE=OFF -DSC_ED=OFF
+-DSC_WII=OFF -DSC_IDE=OFF -DSC_QT=OFF -DSC_EL=OFF -DSC_VIM=OFF
+-DCMAKE_C_FLAGS="-mtune=cortex-a7 -mfloat-abi=hard -mfpu=neon
+-funsafe-math-optimizations" 
+-DCMAKE_CXX_FLAGS="-mtune=cortex-a7 -mfloat-abi=hard -mfpu=neon
+-funsafe-math-optimizations" ..
+$make -j 4 #leave out flag j4 on single core rpi models
+$sudo make install
+$sudo ldconfig
+$cd ../..
+$rm -rf supercollider
+$sudo mv /usr/local/share/SuperCollider/SCClassLibrary/Common/GUI
+/usr/local/share/SuperCollider/SCClassLibrary/scide_scqt/GUI
+$sudo mv /usr/local/share/SuperCollider/SCClassLibrary/JITLib/GUI
+/usr/local/share/SuperCollider/SCClassLibrary/scide_scqt/JITLibGUI
+#+END_SRC
+
+#+BEGIN_QUOTE
+start jack & sclang & test
+#+END_QUOTE
+
+#+BEGIN_SRC shell
+$jackd -P75 -dalsa -dhw:1 -p1024 -n3 -s -r44100 & 
+#edit -dhw:1 to match your soundcard. usually it is 1 for usb, or,jackd -P75-dalsa -dhw:UA25EX -p1024
+-n3 -s -r44100 &
+$sclang #should start sc and compile the class library with 
+only 3 harmless class overwrites warnings
+    $s.boot #should boot the server
+    $ a= {SinOsc.ar([400, 404])}.play #should play sound in both channels
+    $ a.free
+     {1000000.do{2.5.sqrt}}.bench #benchmark: ~0.89 for rpi2, ~3.1 for rpi1
+    $ a= {Mix(50.collect{RLPF.ar(SinOsc.ar)});DC.ar(0)}.play#benchmark
+    $ s.dump #avgCPU should show ~19% for rpi2 and ~73% for rpi1
+    $ a.free
+    $ 0.exit #quit sclang
+$ pkill jackd #quit jackd
+#+END_SRC
+
+** 7th lesson
+
+Use of sensors: touch, movement, elasticity, camera.
+
+Programming Interactivity (Noble 2012): Chapter 14, Detection and
+Gestures.
+
+In this lesson, students will experiment with various sensors and
+conclusions will be discussed regarding their use in the design of
+interactive audio systems.
+
+They will also come in contact with Arduino and experiment with some
+examples (https://www.arduino.cc/en/Tutorial/BuiltInExamples).
+
+Using Python-for OSC communication libraries (https://pypi.python.org/pypi/python-osc) - with SuperCollider.
+
+Create teams to design and implement an interactive audio system.
+
+Discussion on student projects.
+
+
+** 8th lesson
+
+Physical computing, algorithmic synthesis, sound design.
+
+The SuperCollider Book (Wilson et al., 2011): Chapters 3, 4: Composition with SuperCollider, In and Outs: SuperCollider and External Devices.
+
+Continue learning in Git-Magit file organizing and sharing environments.
+
+- Open and Pull Request
+- Merge Pull Request
+
+Supervision and discussion with student groups on the course of
+projects.
+
+Project proposals submitted by the student groups.
+
+
+** 9th lesson
+
+Design of interface and control units.
+
+Programming Interactivity (Noble 2012), chapter: Interfaces and Controls
+
+Discussion with student groups on the progress of projects
+
+
+** 10th lesson
+
+Physical computing, algorithmic synthesis, sound design.
+
+The SuperCollider Book (Wilson et al., 2011), Chapters 5, 6:
+Programming in SuperCollider, Events and Patterns.
+
+Continue learning in Git-Magit file organizing and sharing environments.
+
+Supervision and discussion with student groups on the course of projects
+
+** 11th lesson
+
+In this lesson, students will learn new methods of synthesizing and executing a sound work with the role of the public as part of the synthesis process and how it can be enhanced through gestural interaction (intelligent sensor environments -sensate spaces) (Bellhartz, 2007).
+
+Programming Interactivity (Noble 2012), Chapter 15: Movement and Location
+
+Supervision and discussion with student groups on the course of projects.
+
+** 12th lesson
+
+Supervision and discussion with student groups on the course of projects
+
+** 13th lesson
+
+Presentation of the projects
+
+* Examination mode
+
+As a job, students should deliver and present:
+
+- the idea of the project and the way of realization - designing it in a text together with,
+
+- the source code and application if any,
+
+Student assessment will be based on the following criteria:
+
+- fineness of finished product: 3
+
+- difficulty in building: 1
+
+- original idea: 1
+
+- final presentation: 2
+
+- writting: 3
+
+
+* Suggested Bibliography
+
+** Books
+
+Baalman, Marije A. J., Daniel Moody-Grigsby, and Christopher L. Salter. 2007. “Schwelle: Sensor Augmented, Adaptive Sound Design for Live Theatrical Performance.” In Proceedings of the 7th International Conference on New Interfaces for Musical Expression, 178–184. NIME ’07. New York, NY, USA: ACM. doi:10.1145/1279740.1279774.
+
+Beilharz, Kirsty, and Sam Ferguson. 2007. “Gestural Hyper Instrument Collaboration with Generative Computation for Real Time Creativity.” In Proceedings of the 6th ACM SIGCHI Conference on Creativity & Cognition, 213–222. C&C ’07. New York, NY, USA: ACM. doi:10.1145/1254960.1254990.
+
+Birchfield, David, Kelly Phillips, Assegid Kidané, and David Lorig. 2006. “Interactive Public Sound Art: A Case Study.” In Proceedings of the 2006 Conference on New Interfaces for Musical Expression, 43–48. NIME ’06. Paris, France, France: IRCAM — Centre Pompidou. http://dl.acm.org/citation.cfm?id=1142215.1142223.
+
+Blaine, Tina, and Tim Perkis. 2000. “The Jam-O-Drum Interactive Music System: A Study in Interaction Design.” In Proceedings of the 3rd Conference on Designing Interactive Systems: Processes, Practices, Methods, and Techniques, 165–173. DIS ’00. New York, NY, USA: ACM. doi:10.1145/347642.347705.
+
+Collins, Karen. 2008. Game Sound: An Introduction to the History, Theory, and Practice of Video Game Music and Sound Design. 1 edition. Cambridge, Mass: The MIT Press.
+“First Edition Community Release | Infrared | Optical Filter.” 2017. Scribd. Accessed August 29. https://www.scribd.com/document/46574382/First-Edition-Community-Release.
+
+Kwastek, Katja. 2015. Aesthetics of Interaction in Digital Art. Reprint edition. Cambridge, Mass.: The MIT Press.
+
+Licht, Alan, and Jim O’Rourke. 2007. Sound Art: Beyond Music, Between Categories. Har/Com edition. New York, N.Y: Rizzoli.
+
+McCartney, James. 2011. The SuperCollider Book. Edited by Scott Wilson, David Cottle, and Nick Collins. Cambridge, Mass: The MIT Press.
+
+Miranda, Eduardo. 2002. Computer Sound Design: Synthesis Techniques and Programming. 2 edition. Amsterdam: Focal Press.
+
+Noble, Joshua. 2012. Programming Interactivity. 2 edition. Beijing ; Sebastopol, CA: O’Reilly Media.
+
+Roads, Curtis. 1996. The Computer Music Tutorial. Cambridge, Mass: MIT Press.
+
+Rogers, Yvonne, Helen Sharp, and Jenny Preece. 2011. Interaction Design: Beyond Human - Computer Interaction. 3 edition. Chichester, West Sussex, U.K: Wiley.
+
+** Sites
+
+https://www.gnu.org/software/emacs/
+
+http://supercollider.github.io
+
+http://www.xbox.com/en-US/xbox-one/accessories/kinect
+
+https://learn.adafruit.com/adafruit-mpr121-12-key-capacitive-touch-sensor-breakout-tutorial/overview
+
+https://www.adafruit.com/product/189
+
+https://www.youtube.com/watch?v=hP36xoPXDnM
+
+https://www.youtube.com/watch?v=wYU18eiiFt4
+
+https://www.youtube.com/watch?v=xEEKBbKvuMQ
+
+https://www.youtube.com/watch?v=lQUy436XQM4
+
+https://www.youtube.com/watch?v=hh_5_CAySXY
+
+https://diyhacking.com/raspberry-pi-gpio-control/
+
+http://bizarresoundcreatures.com
+
+https://vimeo.com/145978991
+
+
