@@ -239,30 +239,7 @@ sound. (Roads 1996: 625)</p>
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="nx">thisProcess</span><span class="p">.</span><span class="nx">platform</span><span class="p">.</span><span class="nx">recordingsDir</span><span class="p">;</span>
 </code></pre></div>
 
-<h2 id="beat-frequency">Beat frequency</h2>
-
-<p>Beat Frequency is a term used in acoustic science and physics and it is caused when two signals with different frequency or period, play together. In a few words this phenomena caused when you overlap two waves with different frequencies.</p>
-
-<p>For example, lets say that we have a 440 Hz wave and a 443 Hz wave play together.</p>
-
-<p>They will have fluctuations in loudness. see Fig.1 below.
-It is possible to measure the wobbles per second that are caused of that combination. So, how many times these wobbles happen form Constructive: Constructive is the area where these two waves come together in the exact point of the x and y axis (Fig 1) and that means that the signal is getting louder to the next Constructive area.</p>
-
-<p>The frequency of those beats $Fb$ can be calculated using this formula:</p>
-
-<p>\begin{align*}
- Fb = f1 - f2
-\end{align*}</p>
-
-<p>where $f1$ is the period in time of the <em>wave 1</em> and $f2$ is the period of the <em>wave 2</em>.</p>
-
-<p>This is how it sounds in SuperCollider.</p>
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="p">{</span><span class="nx">SinOsc</span><span class="p">.</span><span class="nx">ar</span><span class="p">([</span><span class="mi">440</span><span class="p">,</span> <span class="mi">443</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)}.</span><span class="nx">scope</span><span class="p">;</span>
-</code></pre></div>
-
-<p>use:</p>
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="nx">FreqScope</span><span class="p">.</span><span class="k">new</span><span class="p">;</span>
-</code></pre></div>
+<h2 id="synthesis-techniques">Synthesis techniques</h2>
 
 <p>Introduction to sound design (origin, definition, procedures, application fields).
 In this course, students will learn about sound design and functions in SuperCollider programming environment.</p>

@@ -152,37 +152,7 @@ thisProcess.platform.recordingsDir;
 #+END_SRC
 
 
-** Beat frequency
-
-Beat Frequency is a term used in acoustic science and physics and it is caused when two signals with different frequency or period, play together. In a few words this phenomena caused when you overlap two waves with different frequencies.
-
-For example, lets say that we have a 440 Hz wave and a 443 Hz wave play together.
-
-They will have fluctuations in loudness. see Fig.1 below.
-It is possible to measure the wobbles per second that are caused of that combination. So, how many times these wobbles happen form Constructive: Constructive is the area where these two waves come together in the exact point of the x and y axis (Fig 1) and that means that the signal is getting louder to the next Constructive area.
-
- The frequency of those beats $Fb$ can be calculated using this formula:
-
-\begin{align*}
- Fb = f1 - f2
-\end{align*}
-
-
-where $f1$ is the period in time of the /wave 1/ and $f2$ is the period of the /wave 2/.
-
-
-This is how it sounds in SuperCollider.
-
-#+BEGIN_SRC js
-
-{SinOsc.ar([440, 443], 0, 0.5)}.scope;
-#+END_SRC
-
-use:
-
-#+BEGIN_SRC js
-FreqScope.new;
-#+END_SRC
+** Synthesis techniques 
 
 
 Introduction to sound design (origin, definition, procedures, application fields).
