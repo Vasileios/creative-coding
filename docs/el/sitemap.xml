@@ -3,65 +3,65 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://vasileios.github.io/computer-music/el/</loc>
+    <loc>https://vasileios.github.io/creative-hacking/el/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://vasileios.github.io/computer-music/"
+                href="https://vasileios.github.io/creative-hacking/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="el"
-                href="https://vasileios.github.io/computer-music/el/"
+                href="https://vasileios.github.io/creative-hacking/el/"
                 />
   </url>
   
   <url>
-    <loc>https://vasileios.github.io/computer-music/el/master_file/</loc>
+    <loc>https://vasileios.github.io/creative-hacking/el/master_file/</loc>
   </url>
   
   <url>
-    <loc>https://vasileios.github.io/computer-music/el/categories/</loc>
+    <loc>https://vasileios.github.io/creative-hacking/el/categories/</loc>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://vasileios.github.io/computer-music/categories/"
+                href="https://vasileios.github.io/creative-hacking/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="el"
-                href="https://vasileios.github.io/computer-music/el/categories/"
+                href="https://vasileios.github.io/creative-hacking/el/categories/"
                 />
   </url>
   
   <url>
-    <loc>https://vasileios.github.io/computer-music/el/tags/</loc>
+    <loc>https://vasileios.github.io/creative-hacking/el/tags/</loc>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://vasileios.github.io/computer-music/tags/"
+                href="https://vasileios.github.io/creative-hacking/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="el"
-                href="https://vasileios.github.io/computer-music/el/tags/"
+                href="https://vasileios.github.io/creative-hacking/el/tags/"
                 />
   </url>
   
   <url>
-    <loc>https://vasileios.github.io/computer-music/el/</loc>
+    <loc>https://vasileios.github.io/creative-hacking/el/</loc>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://vasileios.github.io/computer-music/"
+                href="https://vasileios.github.io/creative-hacking/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="el"
-                href="https://vasileios.github.io/computer-music/el/"
+                href="https://vasileios.github.io/creative-hacking/el/"
                 />
   </url>
   

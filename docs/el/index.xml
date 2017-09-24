@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Μουσική Πληροφορική</title>
-    <link>https://vasileios.github.io/computer-music/el/</link>
-    <description>Recent content on Μουσική Πληροφορική</description>
+    <title>Δημιουργικός προγραμματισμός</title>
+    <link>https://vasileios.github.io/creative-hacking/el/</link>
+    <description>Recent content on Δημιουργικός προγραμματισμός</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="https://vasileios.github.io/computer-music/el/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://vasileios.github.io/creative-hacking/el/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Μουσική Πληροφορική</title>
-      <link>https://vasileios.github.io/computer-music/el/</link>
+      <link>https://vasileios.github.io/creative-hacking/el/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://vasileios.github.io/computer-music/el/</guid>
+      <guid>https://vasileios.github.io/creative-hacking/el/</guid>
       <description>Μουσική Πληροφορική Εισαγωγή Περιγραφή μαθήματος Mαθησιακοί στόχοι Οι φοιτητές θα αποκτήσουν ολοκληρωμένη γνώση σχετικά με την μουσική πληροφορική και μουσική τεχνολογία και θα διδαχθούν θεωρία, ιστορία, έννοιες, και χαρακτηριστικά. Σε αυτό το μάθημα θα διδάχτουν τα βασικά στοιχεία του προγραμματισμού γενικά (λογική, βρόχοι, λειτουργίες, αντικείμενα, κλάσεις). Επίσης, θα εκπαιδευτούν στην αναπτύξη προγραμματιστικών μονάδων (ψηφιακών “μουσικών οργάνων”) τόσο για την παραγωγή ηχητικών συμβάντων καθώς και για τον έλεγχο των χαρακτηριστικών και της συμπεριφορά τους μέσω μονάδων ελέγχου όπως MIDI keyboards, pads, sliders, knobs, camera, αισθητήρες αφής, κίνησης, κλπ.</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://vasileios.github.io/computer-music/el/master_file/</link>
+      <link>https://vasileios.github.io/creative-hacking/el/master_file/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://vasileios.github.io/computer-music/el/master_file/</guid>
+      <guid>https://vasileios.github.io/creative-hacking/el/master_file/</guid>
       <description>Εννοιες   Διαδραστικός Ήχος  </description>
     </item>
     

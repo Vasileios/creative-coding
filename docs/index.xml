@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Computer Music</title>
-    <link>https://vasileios.github.io/computer-music/</link>
-    <description>Recent content on Computer Music</description>
+    <title>Creative hacking</title>
+    <link>https://vasileios.github.io/creative-hacking/</link>
+    <description>Recent content on Creative hacking</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="https://vasileios.github.io/computer-music/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://vasileios.github.io/creative-hacking/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Computer Music</title>
-      <link>https://vasileios.github.io/computer-music/</link>
+      <title>Creative hacking</title>
+      <link>https://vasileios.github.io/creative-hacking/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://vasileios.github.io/computer-music/</guid>
-      <description>Computer Music Introduction Course Description: Mental objectives Students will acquire comprehensive knowledge about computer music and music technology and will learn theory, methods and techniques in order to create and manipulate sound devices. This course will teach the basic elements of programming in general (logic, loops, functions, objects, classes). They will also be trained in program units analysis for both the production of audio events and the control of their features and behavior through control units such as MIDI keyboards, motion, etc.</description>
+      <guid>https://vasileios.github.io/creative-hacking/</guid>
+      <description>Creative hackin Introduction Mental objectives Students will acquire comprehensive knowledge about computer music and music technology and will learn theory, methods and techniques in order to create and manipulate. This course will teach the basic elements of programming in general (logic, loops, functions, objects, classes). They will also be trained in program units analysis for both the production of audio events and the control of their features and behavior through control units such as MIDI keyboards, motion, etc.</description>
     </item>
     
   </channel>
