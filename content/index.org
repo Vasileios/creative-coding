@@ -874,7 +874,6 @@ CERN examples: /particle-physics-playground-playground-52de62d/
 
 #+END_QUOTE
 
-#+BEGIN_SRC python
 # Sonifying ems (muons) - ipython - SuperCollider in emacs 
 
 This is an exeperiment of data sonification using an example from particle-physics-playground.
@@ -890,7 +889,9 @@ In this case I use SuperCollider port *57120*
 
 Ipython package **ein** on MELPA
 
-*VA_exp_280217_001*
+#+BEGIN_SRC python
+
+#VA_exp_280217_001
 
 h1:
 Import libraries numpy, matplotlib, pythonosc
