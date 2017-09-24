@@ -518,6 +518,7 @@ Find more here: [[http://orgmode.org/worg/org-tutorials/org-latex-preview.html][
 
 
 ** Github
+
 Introduction to Environments (Github, Bitbucket) for organizing and sharing files-Git.
 Set up an account with Slack and Github.
 
@@ -528,6 +529,21 @@ Github
  organize projects and share the
 individual processes using tools such as mass communication techniques
 Slack-Git.
+
+Git:
+
+- Create a Repository
+- Create a Branch
+- Make a Commit
+- Push and Commit.
+
+[[https://guides.github.com/activities/hello-world/][GitHub Hello world]]
+
+
+[[https://gist.github.com/davfre/8313299][Github example]]
+
+Https://guides.github.com/activities/hello-world/,
+Https://gist.github.com/davfre/8313299
 
  
 ** install package magit
@@ -791,6 +807,27 @@ and this:
 
 * Python 3.5
 
+
+Introduction to Python (https://www.python.org/doc/).
+
+
+#+BEGIN_QUOTE
+Python
+#+END_QUOTE
+
+#+BEGIN_SRC python
+
+# Python 3: Fibonacci series up to n
+ def fib(n):
+     a, b = 0, 1
+     while a < n:
+         print(a, end=' ')
+         a, b = b, a+b
+     print()
+ fib(1000)
+
+#+END_SRC
+
 install =python 3.5= and anacoda3
 call anacoda3 form terminal using
 
@@ -832,28 +869,7 @@ copy =ein.el= and =ein.py= to the upload directory
 #+END_SRC
 
 
-** Interactive Performance.
-
-  set of practices that give performers (usually dancers or musicians) control of the media in real time?
-
- wireless sensors found both in the body of an performer and in the
- theater.
-
-Git:
-
-- Create a Repository
-- Create a Branch
-- Make a Commit
-- Push and Commit.
-
-[[https://guides.github.com/activities/hello-world/][GitHub Hello world]]
-
-
-[[https://gist.github.com/davfre/8313299][Github example]]
-
-Https://guides.github.com/activities/hello-world/,
-Https://gist.github.com/davfre/8313299
-
+* Micro-computing
 
 ** Physical computing
 
@@ -863,28 +879,12 @@ Interactivity (Noble 2012): Chapter 4: Arduino.
 Introduction to Raspberry Pi
 (https://www.raspberrypi.org/learning/hardware-guide/).
 
-Introduction to Python (https://www.python.org/doc/).
+** Interactive Performance.
 
+  set of practices that give performers (usually dancers or musicians) control of the media in real time?
 
-#+BEGIN_QUOTE
-Python
-#+END_QUOTE
-
-#+BEGIN_SRC python
-
-# Python 3: Fibonacci series up to n
- def fib(n):
-     a, b = 0, 1
-     while a < n:
-         print(a, end=' ')
-         a, b = b, a+b
-     print()
- fib(1000)
-
-#+END_SRC
-
-
-* Micro-computing
+ wireless sensors found both in the body of an performer and in the
+ theater.
 
 ** Sensors
 
