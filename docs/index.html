@@ -15,7 +15,7 @@
 
     
 </head>
-<body class="index" data-languages="[ &#34;javascript&#34; ,  &#34;c&#43;&#43;&#34; ,  &#34;python&#34; ,  &#34;sh&#34; ]">
+<body class="index" data-languages="[ &#34;javascript&#34; ,  &#34;c&#43;&#43;&#34; ,  &#34;python&#34; ,  &#34;sh&#34; ,  &#34;lisp&#34; ]">
     <a href="#" id="nav-button">
         <span>
         NAV
@@ -35,6 +35,8 @@
             <a href="#" data-language-name="python">Python</a>
             
             <a href="#" data-language-name="sh">Shell</a>
+            
+            <a href="#" data-language-name="lisp">emacs-lisp</a>
             
         </div>
          
@@ -139,6 +141,8 @@ and physical computing,
 <p>creative-coding,
 interactiation, real-time, web, streaming, data, big-data, machine learning</p>
 
+<h1 id="creative-coding-1">Creative Coding</h1>
+
 <h2 id="interactive-installations">Interactive installations</h2>
 
 <p>circuits and how to hack them. A great opportunity to learn, design, recycle old toys and instruments, and leave with a bespoke instrument.</p>
@@ -194,7 +198,68 @@ sound. (Roads 1996: 625)</p>
 
 <h2 id="remote-controllers">Remote Controllers</h2>
 
-<h2 id="3rd-lesson">3rd lesson</h2>
+<h2 id="supercollider">SuperCollider</h2>
+
+<h1 id="basics">Basics</h1>
+
+<p>SuperCollider is a platform for audio synthesis and algorithmic composition, used by musicians, artists, and researchers working with sound. It is free and open source software available for Windows, macOS, and Linux.</p>
+
+<h2 id="supercollider-features-three-major-components">SuperCollider features three major components:</h2>
+
+<ul>
+<li><strong>scsynth</strong>, a real-time audio server, forms the core of the platform. It features 400+ unit generators ("UGens") for analysis, synthesis, and processing. Its granularity allows the fluid combination of many known and unknown audio techniques, moving between additive and subtractive synthesis, FM, granular synthesis, FFT, and physical modelling. You can write your own UGens in C++, and users have already contributed several hundred more to the sc3-plugins repository.</li>
+<li><strong>sclang</strong>, an interpreted programming language. It is focused on sound, but not limited to any specific domain. sclang controls scsynth via Open Sound Control. You can use it for algorithmic composition and sequencing, finding new sound synthesis methods, connecting your app to external hardware including MIDI controllers, network music, writing GUIs and visual displays, or for your daily programming experiments. It has a stock of user-contributed extensions called Quarks.</li>
+<li><strong>scide</strong> is an editor for sclang with an integrated help system.</li>
+</ul>
+
+<h1 id="nodes">Nodes</h1>
+
+<p>The Server has a graph of all the running Synths, which may be organised into Groups for convenience. You can see Synths and Groups being created just by looking at the Server graphics.</p>
+
+<p>A Node means a Synth or a Group. Whenever you press command+period you reset the graph, cleaning out all the Synths and Groups you added, that is, clearing all Nodes.</p>
+
+<p>The initial state of the Node graph on the Server looks like this (do command+period first to destroy any existing nodes so you have the starting state):</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="nx">s</span><span class="p">.</span><span class="nx">queryAllNodes</span> <span class="c1">//run me to see the Nodes on the Server</span>
+</code></pre></div>
+
+<p>The two default Nodes are convenient Groups for putting your Synths into.</p>
+
+<p>Group(0) is the absolute root of the tree. All new Synths get placed within this Group somewhere (they might be in subGroups but they will be within the RootNode Group at the top of the hierarchy).</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="nx">r</span><span class="o">=</span><span class="nx">RootNode</span><span class="p">.</span><span class="k">new</span><span class="p">;</span> <span class="c1">//this gets a reference to Group(0)</span>
+</code></pre></div>
+
+<p>Group(1) was added as an additional default to receive all created Synths, to avoid cluttering the base of the tree.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="nx">Group</span><span class="p">.</span><span class="nx">basicNew</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">//this gets a reference to Group(1)</span>
+</code></pre></div>
+
+<h1 id="find-recordings-folder">Find recordings folder</h1>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="nx">thisProcess</span><span class="p">.</span><span class="nx">platform</span><span class="p">.</span><span class="nx">recordingsDir</span><span class="p">;</span>
+</code></pre></div>
+
+<h1 id="beat-frequency">Beat frequency</h1>
+
+<p>Beat Frequency is a term used in acoustic science and physics and it is caused when two signals with different frequency or period, play together. In a few words this phenomena caused when you overlap two waves with different frequencies.</p>
+
+<p>For example, lets say that we have a 440 Hz wave and a 443 Hz wave play together.</p>
+
+<p>They will have fluctuations in loudness. see Fig.1 below.
+It is possible to measure the wobbles per second that are caused of that combination. So, how many times these wobbles happen form Constructive: Constructive is the area where these two waves come together in the exact point of the x and y axis (Fig 1) and that means that the signal is getting louder to the next Constructive area.</p>
+
+<p>The frequency of those beats $Fb$ can be calculated using this formula:</p>
+
+<p>\begin{align*}
+ Fb = f1 - f2
+\end{align*}</p>
+
+<p>where $f1$ is the period in time of the <em>wave 1</em> and $f2$ is the period of the <em>wave 2</em>.</p>
+
+<p>This is how it sounds in SuperCollider.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="p">{</span><span class="nx">SinOsc</span><span class="p">.</span><span class="nx">ar</span><span class="p">([</span><span class="mi">440</span><span class="p">,</span> <span class="mi">443</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)}.</span><span class="nx">scope</span><span class="p">;</span>
+</code></pre></div>
+
+<p>Check this also with:</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="nx">FreqScope</span><span class="p">.</span><span class="k">new</span><span class="p">;</span>
+</code></pre></div>
 
 <p>Introduction to sound design (origin, definition, procedures, application fields).
 In this course, students will learn about sound design and functions in SuperCollider programming environment.</p>
@@ -240,13 +305,158 @@ Granular synthesis
 <span class="p">}).</span><span class="nx">add</span><span class="p">;</span>
 </code></pre></div>
 
-<p>The SuperCollider Book (Wilson et al., 2011): Chapters 1, 2: Beginner's Tutorial, The Unit Generator.
-They will also get in touch with</p>
+<h1 id="emacs">Emacs</h1>
 
-<h2 id="emacs">Emacs</h2>
+<h2 id="install-packages">Install packages</h2>
 
-<p>Editing, organize and share  files in emacs.
- (Https://www.gnu.org/software/emacs/tour/)</p>
+<p>Install org-plus-contrib</p>
+<div class="highlight"><pre><code class="language-emacs-lisp" data-lang="emacs-lisp"><span></span><span class="c1">;; add this to your Emacs init file to be able to list the Org mode archives:</span>
+
+<span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;package</span><span class="p">)</span>
+
+<span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;package-archives</span> <span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;org&quot;</span> <span class="o">.</span> <span class="s">&quot;http://orgmode.org/elpa/&quot;</span><span class="p">)</span> <span class="no">t</span><span class="p">)</span>
+
+<span class="nv">Then</span> <span class="nv">M-x</span> <span class="nv">list-packages</span> <span class="nv">RET</span> <span class="nv">will</span> <span class="nf">list</span> <span class="nv">both</span> <span class="nv">the</span> <span class="nv">latest</span> <span class="nv">org</span> <span class="k">and</span>
+<span class="nv">org-plus-contrib</span> <span class="nv">packages.</span>
+</code></pre></div>
+
+<h2 id="create-headers">Create Headers</h2>
+
+<p>Start with an <strong>asterisk</strong> to make <strong>Headers</strong> and <strong>two asterisks</strong> for <strong>Subheaders</strong></p>
+
+<p>Example:</p>
+
+<p><code>/* Header/</code></p>
+
+<p><code>/** Subheader/</code></p>
+
+<p>Give a <strong>title</strong> to your page using <em>hash</em> (#) and <em>plus</em> (+) symbols</p>
+
+<p>Example: <code>/#+Title: Getting started with org-mode/</code></p>
+
+<p><strong>Hide</strong> Table of Contents</p>
+
+<p>Example: <code>/#+Options: toc:nil/</code></p>
+
+<p><strong>Hide</strong> Numbers</p>
+
+<p>Example: <code>/#+Options: num:nil/</code></p>
+
+<p>Write <code>#+</code> and press <code>Meta-&lt;tab&gt;</code> to see the list of variables</p>
+
+<p>Example:</p>
+
+<p><code>#+AUTHOR: Vasilis Agiomyrgianakis</code></p>
+
+<p><code>#+DATE: 120416</code></p>
+
+<h1 id="bulleting-quoting">Bulleting-Quoting</h1>
+
+<p>Use hyphen to make bullets</p>
+
+<ul>
+<li>bulleted</li>
+<li>list</li>
+<li>items</li>
+</ul>
+
+<p>You can include quotations in Org mode documents like this:</p>
+
+<p><code>#+BEGIN_QUOTE</code></p>
+
+<p>'QUATATION'</p>
+
+<p><code>#+END_QUOTE</code></p>
+
+<blockquote>
+
+<p>
+A frequent criticism of computer music is the lack of performance, \\
+</p>
+<p>
+where an artist hides behind their laptop screen, \\
+</p>
+<p>
+and the audience is unable to see any activity that might ground their experience \\
+</p>
+<p>
+of the music (Cascone, 2003).
+</p>
+
+
+</blockquote>
+
+<h1 id="markups">Markups</h1>
+
+<p>Give <strong>emphasis</strong> to your text.</p>
+
+<p>Write your text <strong>inside</strong> the below symbols:</p>
+
+<ul>
+<li>2 asterics for <strong>Bold</strong>,</li>
+<li>2 slashes for <em>italics</em>,</li>
+<li>2 equals signs for <code>verbatim</code>,</li>
+<li>2 pluses for <del>strike through text</del></li>
+</ul>
+
+<h1 id="linked-text">Linked text</h1>
+
+<p><strong>Bold</strong>, <em>italics</em>, <code>verbatim</code>, <del>strikethrough</del></p>
+
+<p>Press <code>C-c C-l</code> to <strong>link</strong> objects (files)</p>
+
+<p>Example:</p>
+
+<p><em>Link: https//:basmyr.net</em></p>
+
+<p>Then give a name to the linked text</p>
+
+<p><em>Description: Basmyr.net</em></p>
+
+<p>Press <code>C-c C-o</code> to <strong>open</strong> the linked plain text with external program</p>
+
+<p><a href="http://basmyr.net" title="Basmyr.net" target="_blank">Basmyr.net</a></p>
+
+<p>or a video url</p>
+
+<p><a href="https://youtu.be/Wr2aFlWyzvM" title="Granulator" target="_blank">Granulator</a></p>
+
+<h1 id="tables">Tables</h1>
+
+<p>Use <strong>pipes - vertical bars</strong> to make tables</p>
+
+<p>Example: Start with pipes and some text:
+/| some | | Data |/</p>
+
+<p>then hit return, pipe (vertical bar), hyphen and tab to extend the table verticaly</p>
+
+<p>Press tab and arrows to make arrangements for the table</p>
+
+<table>
+<thead>
+<tr>
+<th>Some</th>
+<th>Data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>234</td>
+<td>rocks</td>
+</tr>
+
+<tr>
+<td>1200</td>
+<td>start</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="images-graphics">Images & Graphics</h1>
+
+<h2 id="images">Images</h2>
+
+<h1 id="github">Github</h1>
 
 <p>Introduction to Environments (Github, Bitbucket) for organizing and sharing files-Git.
 Set up an account with Slack and Github.</p>
@@ -520,6 +730,8 @@ examples (https://www.arduino.cc/en/Tutorial/BuiltInExamples).</p>
                 <a href="#" data-language-name="python">Python</a>
                 
                 <a href="#" data-language-name="sh">Shell</a>
+                
+                <a href="#" data-language-name="lisp">emacs-lisp</a>
                 
             </div>
             
