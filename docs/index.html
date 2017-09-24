@@ -200,9 +200,9 @@ sound. (Roads 1996: 625)</p>
 
 <h2 id="remote-controllers">Remote Controllers</h2>
 
-<h2 id="supercollider">SuperCollider</h2>
+<h1 id="supercollider">SuperCollider</h1>
 
-<h1 id="basics">Basics</h1>
+<h2 id="basics">Basics</h2>
 
 <p>SuperCollider is a platform for audio synthesis and algorithmic composition, used by musicians, artists, and researchers working with sound. It is free and open source software available for Windows, macOS, and Linux.</p>
 
@@ -214,7 +214,7 @@ sound. (Roads 1996: 625)</p>
 <li><strong>scide</strong> is an editor for sclang with an integrated help system.</li>
 </ul>
 
-<h1 id="nodes">Nodes</h1>
+<h2 id="nodes">Nodes</h2>
 
 <p>The Server has a graph of all the running Synths, which may be organised into Groups for convenience. You can see Synths and Groups being created just by looking at the Server graphics.</p>
 
@@ -234,11 +234,11 @@ sound. (Roads 1996: 625)</p>
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="nx">Group</span><span class="p">.</span><span class="nx">basicNew</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">//this gets a reference to Group(1)</span>
 </code></pre></div>
 
-<h1 id="find-recordings-folder">Find recordings folder</h1>
+<h2 id="find-recordings-folder">Find recordings folder</h2>
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="nx">thisProcess</span><span class="p">.</span><span class="nx">platform</span><span class="p">.</span><span class="nx">recordingsDir</span><span class="p">;</span>
 </code></pre></div>
 
-<h1 id="beat-frequency">Beat frequency</h1>
+<h2 id="beat-frequency">Beat frequency</h2>
 
 <p>Beat Frequency is a term used in acoustic science and physics and it is caused when two signals with different frequency or period, play together. In a few words this phenomena caused when you overlap two waves with different frequencies.</p>
 
@@ -321,6 +321,8 @@ Granular synthesis
 <span class="nv">Then</span> <span class="nv">M-x</span> <span class="nv">list-packages</span> <span class="nv">RET</span> <span class="nv">will</span> <span class="nf">list</span> <span class="nv">both</span> <span class="nv">the</span> <span class="nv">latest</span> <span class="nv">org</span> <span class="k">and</span>
 <span class="nv">org-plus-contrib</span> <span class="nv">packages.</span>
 </code></pre></div>
+
+<h2 id="org-mode">Org-mode</h2>
 
 <h2 id="create-headers">Create Headers</h2>
 
@@ -615,7 +617,7 @@ Use shift-arrows to change dates</p>
 
 <p>Find more here: <a href="http://orgmode.org/worg/org-tutorials/org-latex-preview.html" title="Minted" target="_blank">Minted</a></p>
 
-<h1 id="github">Github</h1>
+<h2 id="github">Github</h2>
 
 <p>Introduction to Environments (Github, Bitbucket) for organizing and sharing files-Git.
 Set up an account with Slack and Github.</p>
@@ -660,7 +662,7 @@ Slack-Git.</p>
 
 <p><code>M-x magit-init</code> and press <code>y</code></p>
 
-<h3 id="this-is-a-way-to-say-to-projectile-what-is-a-project-and-so-it-will">This is a way to say to projectile what is a project and so it will</h3>
+<p>This is a way to say to projectile what is a project and so it will</p>
 
 <p>make your search quicker.</p>
 
@@ -687,9 +689,9 @@ git rebase --continue</p>
 
 <p>Git refusing to merge unrelated histories</p>
 
-<h1 id="auto-correct">Auto-correct</h1>
-
 <p>in magit press h to bring the popoup and choose rebase -r and then -p</p>
+
+<h2 id="auto-correct">Auto-correct</h2>
 
 <h2 id="install-dictionaries-emacs">Install Dictionaries -emacs</h2>
 
@@ -750,7 +752,49 @@ put the following on the first line of the buffer:</p>
 <div class="highlight"><pre><code class="language-lisp" data-lang="lisp"><span></span><span class="p">(</span><span class="k">setq</span> <span class="nv">ispell-list-command</span> <span class="s">&quot;--list&quot;</span><span class="p">)</span>
 </code></pre></div>
 
-<h1 id="ipython-notebook">IPython-notebook</h1>
+<h2 id="text-expansion">text expansion</h2>
+
+<p>install YASnippet using MELPA</p>
+
+<p>put the below into your init.el</p>
+<div class="highlight"><pre><code class="language-emacs-lisp" data-lang="emacs-lisp"><span></span><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;load-path</span>
+             <span class="s">&quot;~/.emacs.d/plugins/yasnippet&quot;</span><span class="p">)</span>
+<span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;yasnippet</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">yas-global-mode</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+
+<p>quit emacs and open again and type</p>
+
+<p><code>M-x yas-new-snippet</code></p>
+
+<ul>
+<li>Give a name to your snippet</li>
+<li>give the abrev</li>
+<li>write your text or code you want to be expanted</li>
+<li>save file C-c C-c</li>
+<li>choose a table i.e prog-mode</li>
+<li>give a name to your snippet (I use the abrev key as the name)</li>
+</ul>
+
+<p>try using the abrev key and press tab to expant your text.</p>
+
+<h2 id="searching-help">Searching Help</h2>
+
+<p>C-h f (or M-x describe-function) will show you the bindings for a command.
+You are correct, C-h b (or M-x describe-bindings) will show you all bindings. C-h m (M-x describe-mode) is also handy to list bindings by mode.
+You might also try C-h k (M-x describe-key) to show what command is bound to a key. For instance, on my machine save-buffers-kill-emacs isn't bound to anything, but C-h k C-x C-c tells me that C-x C-c is bound to save-buffers-kill-terminal. It will list all bindings for the command at the same time.</p>
+
+<p>helm swoop</p>
+
+<p>help C-h</p>
+
+<h2 id="export-references-to-pdf-with-org-mode-bibtex">Export references to pdf with org-mode - bibtex</h2>
+
+<p>Use bibtex package for citation.</p>
+
+<p>First put the bellow code in your ./emacs</p>
+
+<h2 id="ipython-notebook">IPython-notebook</h2>
 
 <ul>
 <li>IPython notebook is used to analyse data and for data visualisation.</li>

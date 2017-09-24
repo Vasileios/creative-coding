@@ -113,9 +113,9 @@ sound. (Roads 1996: 625)
 ** Remote Controllers
 
 
-** SuperCollider
+* SuperCollider
 
-* Basics
+** Basics
 
 SuperCollider is a platform for audio synthesis and algorithmic composition, used by musicians, artists, and researchers working with sound. It is free and open source software available for Windows, macOS, and Linux.
 
@@ -125,7 +125,7 @@ SuperCollider is a platform for audio synthesis and algorithmic composition, use
 - *sclang*, an interpreted programming language. It is focused on sound, but not limited to any specific domain. sclang controls scsynth via Open Sound Control. You can use it for algorithmic composition and sequencing, finding new sound synthesis methods, connecting your app to external hardware including MIDI controllers, network music, writing GUIs and visual displays, or for your daily programming experiments. It has a stock of user-contributed extensions called Quarks.
 - *scide* is an editor for sclang with an integrated help system.
 
-* Nodes
+** Nodes
 
 The Server has a graph of all the running Synths, which may be organised into Groups for convenience. You can see Synths and Groups being created just by looking at the Server graphics.
 
@@ -152,14 +152,14 @@ Group.basicNew(s, 1); //this gets a reference to Group(1)
 #+END_SRC
 
 
-* Find recordings folder
+** Find recordings folder
 
 #+BEGIN_SRC js
 thisProcess.platform.recordingsDir;
 #+END_SRC
 
 
-* Beat frequency
+** Beat frequency
 
 Beat Frequency is a term used in acoustic science and physics and it is caused when two signals with different frequency or period, play together. In a few words this phenomena caused when you overlap two waves with different frequencies.
 
@@ -254,6 +254,7 @@ Then M-x list-packages RET will list both the latest org and
 org-plus-contrib packages.
 
 #+END_SRC
+** Org-mode
 
 ** Create Headers
 
@@ -539,7 +540,7 @@ Use shift-arrows to change dates
 Find more here: [[http://orgmode.org/worg/org-tutorials/org-latex-preview.html][Minted]]
 
 
-* Github
+** Github
 Introduction to Environments (Github, Bitbucket) for organizing and sharing files-Git.
 Set up an account with Slack and Github.
 
@@ -551,7 +552,7 @@ Github
 individual processes using tools such as mass communication techniques
 Slack-Git.
 
-
+ 
 ** install package magit
 
 Backup rep online in GITLAB, BITBUCKET
@@ -572,21 +573,21 @@ Press =C-x m= to display information about the current Git repository
 =s= to stage rep
 
 
-
+ 
 ** Create and concatenate (link) keys from term
 
 create an shh key in GitHub and then open terminal
 
 ie. //cat id_rsa.pub | pbcopy
 
-
+ 
 ** create .git file inside a folder
 
 Dired to the folder you want to create the .git file and press
 
 =M-x magit-init= and press =y=
 
-*** This is a way to say to projectile what is a project and so it will
+ This is a way to say to projectile what is a project and so it will
 
 make your search quicker.
 
@@ -614,9 +615,10 @@ Git failed...
 Git refusing to merge unrelated histories
 
 in magit press h to bring the popoup and choose rebase -r and then -p
-* Auto-correct
 
+** Auto-correct
 
+ 
 ** Install Dictionaries -emacs
 
 *Install aspell from brew*
@@ -683,10 +685,56 @@ put the following on the first line of the buffer:
 #+BEGIN_SRC lisp
 (setq ispell-list-command "--list")
 #+END_SRC
+ 
+** text expansion
+
+install YASnippet using MELPA
+
+put the below into your init.el
+
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'load-path
+             "~/.emacs.d/plugins/yasnippet")
+(require 'yasnippet)
+(yas-global-mode 1)
+#+END_SRC
+
+quit emacs and open again and type
+
+=M-x yas-new-snippet=
+
+- Give a name to your snippet
+- give the abrev
+- write your text or code you want to be expanted
+- save file C-c C-c
+- choose a table i.e prog-mode
+- give a name to your snippet (I use the abrev key as the name)
+
+try using the abrev key and press tab to expant your text.
+
+
+** Searching Help
+
+
+C-h f (or M-x describe-function) will show you the bindings for a command.
+You are correct, C-h b (or M-x describe-bindings) will show you all bindings. C-h m (M-x describe-mode) is also handy to list bindings by mode.
+You might also try C-h k (M-x describe-key) to show what command is bound to a key. For instance, on my machine save-buffers-kill-emacs isn't bound to anything, but C-h k C-x C-c tells me that C-x C-c is bound to save-buffers-kill-terminal. It will list all bindings for the command at the same time.
+
+
+helm swoop
+
+help C-h
+
+ 
+** Export references to pdf with org-mode - bibtex
+
+Use bibtex package for citation.
+
+First put the bellow code in your ./emacs
 
 
 
-* IPython-notebook
+** IPython-notebook
 
 - IPython notebook is used to analyse data and for data visualisation.
 
