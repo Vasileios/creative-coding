@@ -29,28 +29,32 @@ search = true
 #key = "go"
 #name = "go"  
 [[params.language_tabs]]
-key = "javascript"
-#key = "sclang"
-name = "SuperCollider"
+key = "bibtex"
+name = "bibtex" 
 [[params.language_tabs]]
 key = "c++"
 name = "C++"
 
-#[[params.language_tabs]]
-#key = "ruby"
-#name = "Ruby"
-[[params.language_tabs]]
-key = "python"
-name = "Python"
-[[params.language_tabs]]
-key = "sh"
-name = "Shell"
 [[params.language_tabs]]
 key = "lisp"
 name = "emacs-lisp" 
+
 [[params.language_tabs]]
-key = "bibtex"
-name = "bibtex" 
+key = "python"
+name = "Python"
+
+[[params.language_tabs]]
+key = "sh"
+name = "Shell"
+
+[[params.language_tabs]]
+key = "javascript"
+#key = "sclang"
+name = "SuperCollider"
+
+#[[params.language_tabs]]
+#key = "ruby"
+#name = "Ruby"
 
 
 
