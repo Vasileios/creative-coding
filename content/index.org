@@ -842,22 +842,29 @@ Python
 
 Use of sensors: touch, movement, elasticity, camera.
 
-Programming Interactivity (Noble 2012): Chapter 14, Detection and
-Gestures.
+*Programming Interactivity* 
 
-In this lesson, students will experiment with various sensors and
-conclusions will be discussed regarding their use in the design of
-interactive audio systems.
+experimentng with various sensors.
 
-They will also come in contact with Arduino and experiment with some
-examples (https://www.arduino.cc/en/Tutorial/BuiltInExamples).
+experiment with Arduino and node.js
 
-Using Python-for OSC communication libraries (https://pypi.python.org/pypi/python-osc) - with SuperCollider.
+Arduino basic examples
+(https://www.arduino.cc/en/Tutorial/BuiltInExamples).
+
+Using Python-for OSC communication libraries 
+
+(https://pypi.python.org/pypi/python-osc) - with SuperCollider.
 
 ** Raspberry Pi
 
  
-Linux operating system such as DebianJessie,
+Install Linux Raspbian Jessie Lite OS Image on the SD card
+
+Download Raspbian here:
+[[https://www.raspberrypi.org/downloads/raspbian/][raspbian]]
+
+Follow the instructions here:
+[[https://www.raspberrypi.org/documentation/installation/installing-images/README.md][installation-guide]]
 
 
 
