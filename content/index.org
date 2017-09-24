@@ -1,9 +1,9 @@
 ---
 weight: 10
-title: Creative hacking
+title: Creative coding
 ---
 
-* Creative hacking
+* Creative coding
 
 ** Introduction
 
