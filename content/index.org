@@ -3,7 +3,7 @@ weight: 10
 title: Creative hacking
 ---
 
-* Creative hackin
+* Creative hacking
 
 ** Introduction
 
@@ -31,11 +31,6 @@ learn to link the science of music with physics, engineering and programming. In
 *Key words:*  audio design, dynamic systems, interactive multimedia,
 interactive performance, installations, sensors, sharing. 
 
-* Prerequisites
-
-Students should be familiar with basic concepts of sound science and
-programming. They also have to have basic audio synthesis knowledge, and
-HCI.
 
 
 * Methodology and tools
@@ -47,47 +42,31 @@ They will be trained in creative programming environments:
 Emacs as a basic editor and Git file sharing
 (https://github.com/magit/magit), 
 
-SuperCollider, and Python to process and build interactive audio
- systems.
+SuperCollider, and Python for data analysis and interpretation.
 
-They will also come in contact with midi controllers, OSC communication, microcontrollers (arduino), and physical computing, sensor usage, multitouch technologies, etc. In addition, students will learn how to communicate to organize their projects and share the individual processes Using tools such as mass communication techniques Slack-Git.
+More on input devices 
 
-* Lessons
+- midi controllers, 
+- OSC communication,
+- microcontrollers (arduino),
+and physical computing,
+- sensor usage, 
+- multitouch technologies, etc. 
 
-** Fundamentals 
+More on organising and sharing projects using tools such as mass communication techniques Slack-Git.
 
-First contact with the students - Acquaintance - Introduction to the concepts of the course.
+* Key words:
+creative-coding,
+interactiation, real-time, web, streaming, data, big-data, machine learning 
 
-In this course students will learn concepts such as interactive sound, interactive design, and what applications they may have in the art. They will also make use of the term interactive sound (Collins, 2008) in relation to the use of audio in interactive virtual environments and video games.
 
-Programming Interactivity (Noble 2012), Chapter 1: Introducing
-Interaction Design.
+** Interactive installations
 
-** Interactive sound installations
 
-- The Cave of Sounds (Browne 2013)
+ 
+circuits and how to hack them. A great opportunity to learn, design, recycle old toys and instruments, and leave with a bespoke instrument.
 
-The Cave of Sounds is an interactive sound installation exploring the
-prehistoric origins of collective music making through the
-contemporary music hacker scene.
-
-#+BEGIN_QUOTE
-[[http://caveofsounds.com][The Cave of Sounds]]
-#+END_QUOTE
-
-- Circuit Bending and DIY synth making.
-
-Moreover, in this lesson, will introduce participants to musical
-circuits and how to hack them. A great opportunity to learn, design,
-recycle old toys and instruments, and leave with a bespoke instrument.
-
-** 2nd lesson
-
-Historical review of sound synthesis as art in, for example, sound objects: The Interactive Sound Art of Peter Vogel (http://vogelexhibition.weebly.com), and the interactive installations of other artists (http: // bizarresoundcreatures .com, https://vimeo.com/145978991).
-
-The musician's interface (Roads, 1996: 611)
-In this course students will learn concepts such as algorithmic
-synthesis, interconnection, data conversion via MIDI controllers or other devices.
+** Machine learning
 
 
 
@@ -108,11 +87,6 @@ Game Paddles
 etc
 #+END_QUOTE
 ** Instrument design
-
-#+BEGIN_QUOTE
-
-[[https://youtu.be/XejcHPECBUU][Robbie's Tiles]]
-#+END_QUOTE
 
 How to...
 
@@ -140,7 +114,7 @@ sound. (Roads 1996: 625)
 ** 3rd lesson
 
 Introduction to sound design (origin, definition, procedures, application fields).
-In this course, students will learn about sound design and functions such as the SuperCollider programming environment.
+In this course, students will learn about sound design and functions in SuperCollider programming environment.
 
 #+BEGIN_QUOTE
 SuperCollider example:
@@ -182,12 +156,13 @@ pan, envbuf) * env)
 #+END_SRC
 
 The SuperCollider Book (Wilson et al., 2011): Chapters 1, 2: Beginner's Tutorial, The Unit Generator.
-They will also get in touch with Emacs to learn to process to organize
-and share their records. (Https://www.gnu.org/software/emacs/tour/).
+They will also get in touch with 
 
-** 4th lesson
+** Emacs 
 
-This course will teach the concept of "Interactive Performance". And what is usually the set of practices that give performers (usually dancers or musicians) control of the media in real time using their physical movements and gestures. (Ng, 2002).
+Editing, organize and share  files in emacs.
+ (Https://www.gnu.org/software/emacs/tour/)
+
 Introduction to Environments (Github, Bitbucket) for organizing and sharing files-Git.
 Set up an account with Slack and Github.
 
@@ -195,14 +170,17 @@ Set up an account with Slack and Github.
 Github
 #+END_QUOTE
 
-Students will learn to organize their projects and share the
+ organize projects and share the
 individual processes using tools such as mass communication techniques
 Slack-Git.
 
-** 5th lesson
+** Interactive Performance.
 
-Adaptive Audio Scenography.
-Example of an interactive sound system design with regard to theater and performance. Analysis of the way and means of implementation such as wireless sensors found both in the body of an performer and in the theater. The ever-born data from both the performer and the environment are then used to influence what we call adaptive audio scenography. (Baalman, Grigsby, Salter 2007: 178)
+  set of practices that give performers (usually dancers or musicians) control of the media in real time?
+
+ wireless sensors found both in the body of an performer and in the
+ theater.
+
 Git:
 
 - Create a Repository
@@ -219,9 +197,8 @@ Https://guides.github.com/activities/hello-world/,
 Https://gist.github.com/davfre/8313299
 
 
-** 6th lesson
+** Physical computing
 
-Interactive sound systems for theater and installations.
 Introduction to physical computing - microcontrollers. Programming
 Interactivity (Noble 2012): Chapter 4: Arduino.
 
@@ -248,11 +225,12 @@ Python
 
 #+END_SRC
 
-In this lesson, students will learn how to install Raspberry Pi on a
-Linux operating system such as DebianJessie, and other programs such
-as Emacs as a basic copywriter and Git (Magit) file sharing,
-SuperCollider for processing and constructing interactive sound
-systems, and Python To communicate with the sensors.
+** Raspberry Pi
+
+ 
+Linux operating system such as DebianJessie,
+
+
 
 ** Hardware set up
 
@@ -379,76 +357,26 @@ Discussion on student projects.
 
 ** 8th lesson
 
-Physical computing, algorithmic synthesis, sound design.
 
-The SuperCollider Book (Wilson et al., 2011): Chapters 3, 4: Composition with SuperCollider, In and Outs: SuperCollider and External Devices.
-
-Continue learning in Git-Magit file organizing and sharing environments.
-
-- Open and Pull Request
-- Merge Pull Request
-
-Supervision and discussion with student groups on the course of
-projects.
-
-Project proposals submitted by the student groups.
 
 
 ** 9th lesson
 
-Design of interface and control units.
-
-Programming Interactivity (Noble 2012), chapter: Interfaces and Controls
-
-Discussion with student groups on the progress of projects
-
 
 ** 10th lesson
 
-Physical computing, algorithmic synthesis, sound design.
-
-The SuperCollider Book (Wilson et al., 2011), Chapters 5, 6:
-Programming in SuperCollider, Events and Patterns.
-
-Continue learning in Git-Magit file organizing and sharing environments.
-
-Supervision and discussion with student groups on the course of projects
 
 ** 11th lesson
 
-In this lesson, students will learn new methods of synthesizing and executing a sound work with the role of the public as part of the synthesis process and how it can be enhanced through gestural interaction (intelligent sensor environments -sensate spaces) (Bellhartz, 2007).
 
-Programming Interactivity (Noble 2012), Chapter 15: Movement and Location
-
-Supervision and discussion with student groups on the course of projects.
 
 ** 12th lesson
 
-Supervision and discussion with student groups on the course of projects
 
 ** 13th lesson
 
-Presentation of the projects
 
-* Examination mode
 
-As a job, students should deliver and present:
-
-- the idea of the project and the way of realization - designing it in a text together with,
-
-- the source code and application if any,
-
-Student assessment will be based on the following criteria:
-
-- fineness of finished product: 3
-
-- difficulty in building: 1
-
-- original idea: 1
-
-- final presentation: 2
-
-- writting: 3
 
 
 * Suggested Bibliography
