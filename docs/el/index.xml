@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Δημιουργικός προγραμματισμός</title>
-    <link>https://vasileios.github.io/creative-hacking/el/</link>
+    <link>https://vasileios.github.io/creative-coding/el/</link>
     <description>Recent content on Δημιουργικός προγραμματισμός</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="https://vasileios.github.io/creative-hacking/el/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://vasileios.github.io/creative-coding/el/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Μουσική Πληροφορική</title>
-      <link>https://vasileios.github.io/creative-hacking/el/</link>
+      <link>https://vasileios.github.io/creative-coding/el/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://vasileios.github.io/creative-hacking/el/</guid>
+      <guid>https://vasileios.github.io/creative-coding/el/</guid>
       <description>Μουσική Πληροφορική Εισαγωγή Περιγραφή μαθήματος Mαθησιακοί στόχοι Οι φοιτητές θα αποκτήσουν ολοκληρωμένη γνώση σχετικά με την μουσική πληροφορική και μουσική τεχνολογία και θα διδαχθούν θεωρία, ιστορία, έννοιες, και χαρακτηριστικά. Σε αυτό το μάθημα θα διδάχτουν τα βασικά στοιχεία του προγραμματισμού γενικά (λογική, βρόχοι, λειτουργίες, αντικείμενα, κλάσεις). Επίσης, θα εκπαιδευτούν στην αναπτύξη προγραμματιστικών μονάδων (ψηφιακών “μουσικών οργάνων”) τόσο για την παραγωγή ηχητικών συμβάντων καθώς και για τον έλεγχο των χαρακτηριστικών και της συμπεριφορά τους μέσω μονάδων ελέγχου όπως MIDI keyboards, pads, sliders, knobs, camera, αισθητήρες αφής, κίνησης, κλπ.</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://vasileios.github.io/creative-hacking/el/master_file/</link>
+      <link>https://vasileios.github.io/creative-coding/el/master_file/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://vasileios.github.io/creative-hacking/el/master_file/</guid>
+      <guid>https://vasileios.github.io/creative-coding/el/master_file/</guid>
       <description>Εννοιες   Διαδραστικός Ήχος  </description>
     </item>
     
