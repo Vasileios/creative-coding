@@ -551,7 +551,7 @@ Press =C-x m= to display information about the current Git repository
 
 
  
-** Create and concatenate (link) keys from term
+** Create and concatenate (link) keys on term
 
 create an shh key in GitHub and then open terminal
 
