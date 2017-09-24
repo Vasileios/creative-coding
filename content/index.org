@@ -844,11 +844,11 @@ Use of sensors: touch, movement, elasticity, camera.
 
 *Programming Interactivity* 
 
-experimentng with various sensors.
+experimenting with various sensors.
 
-experiment with Arduino and node.js
+experimenting with Arduino and node.js
 
-Arduino basic examples
+Arduino basic examples:
 (https://www.arduino.cc/en/Tutorial/BuiltInExamples).
 
 Using Python-for OSC communication libraries 
