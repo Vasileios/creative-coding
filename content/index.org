@@ -156,7 +156,6 @@ thisProcess.platform.recordingsDir;
 
 
 Introduction to sound design (origin, definition, procedures, application fields).
-In this course, students will learn about sound design and functions in SuperCollider programming environment.
 
 #+BEGIN_QUOTE
 SuperCollider example:
