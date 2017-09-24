@@ -64,7 +64,7 @@ title = "Δημιουργικός προγραμματισμός"
 
 # Left sidebar footer items. Use HTMl or Markdown.
 toc_footers = [ 
-"<a href='#'>CM source at Github</a>",
+"<a href='#'>CC source at Github</a>",
 "Documentation Powered by [DocuAPI](https://github.com/bep/docuapi)",
 "Hugo Theme by [bep](https://github.com/bep)",
 "License: CC",
@@ -79,7 +79,7 @@ title = "Creative coding"
 
 # Left sidebar footer items. Use HTMl or Markdown.
 toc_footers = [ 
-"<a href='#'>CM source at Github</a>",
+"<a href='#'>CC source at Github</a>",
 "Documentation Powered by [DocuAPI](https://github.com/bep/docuapi)",
 "Hugo Theme by [bep](https://github.com/bep)",
 "License: CC",
