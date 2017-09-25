@@ -452,6 +452,10 @@ etc.
 
 to cooment a =lisp= region select a word or a region with C-M-space and then M-; to comment
 
+** Change read-only files on emacs
+
+=M-x toggle-read-only=
+
 ** TO DO
 type TODO to create a todo object
 Move the cursor one line after the TODO item and press =C-c C-s= =(org-schedule)=
@@ -1414,9 +1418,7 @@ $ scp -r /Users/path pi@raspberrypi:~/SC_Stuff
 
 
 
-** Change read-only files on emacs
 
-=M-x toggle-read-only=
 
 ** Open raspberrypi3 from  emacs using TRAMP
 
