@@ -433,7 +433,15 @@ q = 2 * 4 + 1 - 2 &= 7 \\
 
 ** Shortcuts
 
-write down =<s= and press =tab= to open src blocks
+write down =<s= and press =tab= to open src blocks,
+
+=<q= tab for Quotes,
+
+=<e= tab for Examples
+
+=<c= tab for Center
+
+etc.
 
 to cooment a =lisp= region select a word or a region with C-M-space and then M-; to comment
 
@@ -448,18 +456,21 @@ To open week-agenda window press C-ca
 To schedule a TODO item press C-c C-s
 Use shift-arrows to change dates
 
-** TODO Call John
+#+BEGIN_QUOTE
+ TODO Call John
 SCHEDULED: <2016-11-09 Wed>
+#+END_QUOTE
 
-
-
-** Work
-** TODO read about live coding software
+#+BEGIN_QUOTE
+ TODO read this and that
 SCHEDULED: <2016-11-10 Thu>
+#+END_QUOTE
 
+#+BEGIN_QUOTE
+ DONE export html minted  (highlight colour - syntax source blocks)
+SCHEDULED: <2016-10-12 Wed>
+#+END_QUOTE
 
-** DONE export html minted [fn:1] (highlight colour - syntax source blocks)
-SCHEDULED: <2016-10-12 Wed
 
 ** Tips
 
