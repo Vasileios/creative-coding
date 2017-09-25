@@ -843,7 +843,8 @@ i.e =password: 8b6cae64f7dbcfc425a2dsf30cretfdfc7d730dcba9180ab8=
 
 *Term output example*:
 
-#+Begin_SRC sh
+#+Begin_SRC shell
+
 [I 01:49:54.596 NotebookApp] Serving
 notebooks from local directory: /Users/usr_name
 [I 01:49:54.596 NotebookApp] 0 active kernels
@@ -858,6 +859,7 @@ down all kernels (twice to skip confirmation).
 
   http://localhost:8888/?token=8b6cae64f7dbcfc425a2dsf30cretfdfc7d730dcba9180ab8
 #+End_SRC
+
 If you successfully logged in to the server;
 
 Hit =M-x ein:notebooklist-open= to open the notebook list. This will open a notebook list buffer.
