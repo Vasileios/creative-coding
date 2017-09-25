@@ -41,7 +41,7 @@ Python
 
 * Methodology and tools
 
-Investigation on how different environments work in relation to the implementation of ideas as well as applications for communication, organization and collaboration.
+Investigation on different environments and to create interconnection.
 
 creative programming environments:
 
@@ -50,10 +50,11 @@ creative programming environments:
 
 - SuperCollider, and
 - Python 
+- C++ and openFrameworks
 
-for data analysis and interpretation.
+for data analysis sonification, visualisation.
 
-More on input devices 
+** Input devices 
 
 - midi controllers, 
 - OSC communication,
@@ -62,7 +63,9 @@ and physical computing,
 - sensor usage, 
 - multitouch technologies, etc. 
 
-More on organising and sharing projects using tools such as mass communication techniques Slack-Git.
+** Organising and sharing
+
+organising and sharing projects using tools such as mass communication techniques Slack-Git.
 
 
 
