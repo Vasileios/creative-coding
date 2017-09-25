@@ -812,7 +812,7 @@ Go to emacs and do = M-x ein:notebooklist-login=
 Start IPython notebook server.
 Hit =M-x ein:notebooklist-open= to open notebook list. This will open notebook
 list buffer.
-In the notebook list buffer, you can navigate to your folders to [open], or [create], and [delete] notebooks by hitting
+In the notebook list buffer, you can navigate to your folders to [open], [create], and [delete] notebooks
 
 - install ipython emacs on melpa 'ein'
 
