@@ -17,9 +17,14 @@ intersemiotic translation, post-disciplinarity and the general concerns of Human
 * Mental objectives
 
 The basic elements of programming in general (logic, loops, functions, objects,
-classes).
+classes).Discussion on concepts of *object-oriented programming, interactivity, interactive design, connectivity and interconnection*
 
-concepts of *object-oriented programming, interactivity, interactive design, connectivity and interconnection*
+- Notes for emacs, SuperCollider, Raspberry pi
+
+- Programming languages
+
+C++, Shell, Python, emacs-lisp, SuperCollider
+
 
 ** Interactive installations
 
@@ -242,25 +247,18 @@ Start with an *asterisk* to make *Headers* and *two asterisks* for *Subheaders*
 
 Example:
 
-=/* Header/=
+=* Header=
 
-=/** Subheader/=
+=** Subheader=
 
 Give a *title* to your page using /hash/ (#) and /plus/ (+) symbols
 
-Example: =/#+Title: Getting started with org-mode/=
+Example: =#+Title: Getting started with org-mode=
 
-#+Title: Getting started with org-mode
-
-*Hide* Table of Contents
-
-Example: =/#+Options: toc:nil/=
-
-#+Options: toc:nil
 
 *Hide* Numbers, table of contents
 
-Example: =/#+Options: num:nil/ toc:nil=
+Example: =#+Options: num:nil toc:nil=
 
 Write =#+= and press =Meta-<tab>= to see the list of variables
 
@@ -288,11 +286,7 @@ You can include quotations in Org mode documents like this:
 
 #+BEGIN_QUOTE
 
-A frequent criticism of computer music is the lack of performance, \\
-where an artist hides behind their laptop screen, \\
-and the audience is unable to see any activity that might ground their experience \\
-of the music (Cascone, 2003).
-
+QUATATION
 
 #+END_QUOTE
 
