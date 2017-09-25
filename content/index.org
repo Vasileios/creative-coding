@@ -1193,11 +1193,11 @@ When you try to connect using ssh pi@raspnberrypi.local you might come across wi
 @       WARNING: POSSIBLE DNS SPOOFING DETECTED!          @
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 The ECDSA host key for raspberrypi.local has changed,
-and the key for the corresponding IP address fe80::6438:a684:af09:7907%en1
+and the key for the corresponding IP address uu
 has a different value. This could either mean that
 DNS SPOOFING is happening or the IP address for the host
 and its host key have changed at the same time.
-Offending key for IP in /Users/vasilis/.ssh/known_hosts:7
+Offending key for IP in /Users/user/.ssh/known_hosts:7
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -1205,7 +1205,7 @@ IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
 Someone could be eavesdropping on you right now (man-in-the-middle attack)!
 It is also possible that a host key has just been changed.
 The fingerprint for the ECDSA key sent by the remote host is
-SHA256:2klTIS/Gsubfxiwj9xHnml5H82W77+m9rN8pPJ1pbfU.
+h
 Please contact your system administrator.
 Add correct host key in /Users/vasilis/.ssh/known_hosts to get rid of this message.
 Offending ECDSA key in /Users/vasilis/.ssh/known_hosts:19
