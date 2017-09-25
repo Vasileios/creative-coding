@@ -839,7 +839,7 @@ Go to terminal and write: =jupyter notebook= then copy the /token/ and paste it 
 
 On emacs hit =M-x ein:notebooklist-login= and press /return/ to use the =localhost:8888=, server and use the token (password) to login.
 
-i.e =password: 8b4cae6477dbcfc426a2d9030c8bfdfc7d7503cba9180ab8=
+i.e =password: 8b6cae64f7dbcfc425a2dsf30cretfdfc7d730dcba9180ab8=
 
 *Term output example*:
 
@@ -848,7 +848,7 @@ i.e =password: 8b4cae6477dbcfc426a2d9030c8bfdfc7d7503cba9180ab8=
 notebooks from local directory: /Users/usr_name
 [I 01:49:54.596 NotebookApp] 0 active kernels
 [I 01:49:54.597 NotebookApp] The Jupyter Notebook is running at:
-http://localhost:8888/?token=8b4cae6477dbcfc426a2d9030c8bfdfc7d7503cba9180ab8
+http://localhost:8888/?token8b6cae64f7dbcfc425a2dsf30cretfdfc7d730dcba9180ab8
 [I 01:49:54.597 NotebookApp] Use Control-C to stop this server and shut
 down all kernels (twice to skip confirmation).
 [C 01:49:54.626 NotebookApp]
@@ -856,8 +856,7 @@ down all kernels (twice to skip confirmation).
     Copy/paste this URL into your browser when you connect for the first time,
     to login with a token:
 
-        http://localhost:8888/?token=8b
-4cae6477dbcfc426a2d9030c8bfdfc7d7503cba9180ab8
+  http://localhost:8888/?token=8b6cae64f7dbcfc425a2dsf30cretfdfc7d730dcba9180ab8
 #+End_SRC
 If you successfully logged in to the server;
 
