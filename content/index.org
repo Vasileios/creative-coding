@@ -1150,7 +1150,7 @@ Follow the instructions here:
 
 
 
-* Installing raspbian jessie-lite on raspberry
+** Installing raspbian jessie-lite on raspberry
 
 ** Import your SD card to your mac
 
@@ -1171,7 +1171,7 @@ Remember to replace =n= with the number that you noted before!
 
 eject sd card and connect it to raspberry
 
-* Set up network
+** Set up network
 
 login from external screen and edit wpa_supplicant.conf
 
@@ -1233,7 +1233,7 @@ pi@raspberrypi:~ $ sudo apt-get upgrade
 then you can start adding packages like supercollider, jack and others.
 
 
-* Install emacs
+** Install emacs
 
 #+BEGIN_SRC shell
 pi@raspberrypi:~ $ sudo apt-get install emacs=
@@ -1256,428 +1256,9 @@ The following syntax is used to rename files with mv:
 =mv (option) filename1.ext filename2.ext=
 
 
-* Run SuperCollider in emacs
 
-[[http://supercollider.github.io/development/building-raspberrypi][raspberrypi_SuperCollider]]
 
-create directory =packages= in =~/emacs.d/personal/=
-
-and =mv /directory-of-scel/el/ to /packages-directory/=
-
-then write in the init.el file
-
-#+BEGIN_SRC lisp
-
-(add-to-list ~/.emacs.d/personal/packages/el)
-(require 'sclang)
-
-#+END_SRC
-
-
-Create an =Extensions= directory in
-=/usr/local/share/SuperCollider/=
-
-and cp the =sc= directory from
-=~/supercollider/editors/scel/sc=
-to =/usr/local/share/SuperCollider/Extensions/=
-
-Then type to the terminal
-
-#+BEGIN_SRC shell
-pi@raspberrypi:~ $ jackd -P75 -dalsa -dhw:1 -p1024 -n3 -s -r44100 &
-//pi@raspberrypi:~ $ scsynth -u 57110 &
-pi@raspberrypi:~ $ emacs -sclang
-
-#+END_SRC
-
-
-
-Copy directories from mac to pi using terminal
-
-
-#+BEGIN_SRC shell
-$ scp -r /path/to/directory pi@raspberrypi:~/path/to/remote/dir
-
-#+END_SRC
-
-
-example:
-
-#+BEGIN_SRC shell
-$ scp -r /Users/path pi@raspberrypi:~/SC_Stuff
-#+END_SRC
-
-
-
-
-* Change read-only files on emacs
-
-=M-x toggle-read-only=
-
-* Open raspberrypi3 from your emacs using TRAMP
-
-=C-x C-f= and type
-
-#+Begin_SRC shell
- /ssh:pi@raspberrypi:
-#+End_SRC
-
-then type your raspberry password
-
-#+Begin_EXAMPLE
- pass: *******
-#+End_EXAMPLE
-
-and then dired freely, open files and programms using  shell as well to run sclang
-
-** Edit and save files using tramp
-
-=C-x C-f= and type
-
-#+BEGIN_SRC shell
-/ssh:pi@raspberrypi|sudo:root@pi@raspberrypi:
-#+END_SRC
-
-dired to your file, make changes and save!!!
-
-Good luck!! seriously
-
-* Copy files from Raspberrypi to mac and the opposite
-
-
-#+BEGIN_SRC shell
-scp /path/to/py/file pi@raspberrypi:~
-#+END_SRC
-
-Replace raspberrypi with the ip address of the Pi if using the hostname doesn't work.
-
-or from the pi
-
-#+BEGIN_SRC shell
-scp macuser@macipaddress:/path/to/py/file ~
-
-#+END_SRC
-
-replace macuser and macipaddress with your mac user and mac's ip address.
-
-
-
-https://www.raspberrypi.org/forums/viewtopic.php?t=35152&p=296946
-
-** Use rsync
-
-On your mac go to the directory you want to sync using *cd* on your terminal and type the following command:
-
-transfering files from raspberry to mac
-
-#+BEGIN_SRC shell
- Recordings git:(SuperCollider) ✗ rsync -avz -e ssh pi@192.168.1.96:/home/pi/.local/share/SuperCollider/Recordings/ Recordings/
-
-#+END_SRC
-
-and
-
-#+BEGIN_SRC shell
-voices git:(SuperCollider) ✗ rsync -avz -e ssh pi@192.168.1.96:~/001WorkFiles/voices/ voices/
-pi@192.168.1.96's password:
-receiving file list ... done
-created directory Weaving-voices
-#+END_SRC
-
-transfering files from mac to raspberry
-
-#+BEGIN_SRC shell
-$ rsync -avP sounds/ pi@192.168.1.96:~/001WorkFiles/voices/sounds
-#+END_SRC
-
-Unfortunatelly it doesnt work with the name of the raspberry instead you need to find the ip of raspberry. To find the ip ssh to your raspberry and type:
-
-#+BEGIN_SRC shell
-$ sudo ifconfig
-#+END_SRC
-
-
-it will ask for the pass word:
-
-#+BEGIN_SRC shell
-pi@192.168.1.96's password:
-receiving file list ... done
-created directory Recordings
-./
-SC_161215_114846.aiff
-SC_170422_120739.aiff
-SC_170422_135403.aiff
-
-sent 88 bytes  received 11223209 bytes  477587.11 bytes/sec
-total size is 25854264  speedup is 2.30
-➜  Recordings git:(SuperCollider) ✗
-
-#+END_SRC
-
-
-
-* Installing tmux
-
-*tmux* is a "terminal multiplexer", it enables a number of terminals (or windows) to be accessed and controlled from a single terminal. tmux is intended to be a simple, modern, BSD-licensed alternative to programs such as GNU screen.
-
-This release runs on /OpenBSD/, /FreeBSD/, /NetBSD/, /Linux/, /OS X/ and /Solaris/.
-
-tmux depends on *libevent 2.x*. Download it from:
-
-	http://libevent.org
-
-use this command to install it:
-
-#+BEGIN_SRC shell
-$ sudo apt-get install libevent-dev
-#+END_SRC
-
-It also depends on *ncurses*, available from:
-
-	http://invisible-island.net/ncurses/
-
-to install ncurse open shell and type:
-
-#+BEGIN_SRC shell
-$ sudo apt-get install libncurses5-dev libncursesw5-dev
-#+END_SRC
-
-To build and install *tmux* from a release tarball, use:
-
-#+BEGIN_SRC shell
-$ ./configure && make
-$ sudo make install
-#+END_SRC
-
-tmux can use the utempter library to update utmp(5), if it is installed - run
-configure with --enable-utempter to enable this.
-
-To get and build the latest *tmux* from version control:
-
-#+BEGIN_SRC shell
-	$ git clone https://github.com/tmux/tmux.git
-	$ cd tmux
-	$ sh autogen.sh
-	$ ./configure && make
-#+END_SRC
-
-to run =sh autogen.sh= you need to install *automake*.
-
-*aclocal* is part of the *automake* package.
-
-#+BEGIN_SRC shell
-$ sudo apt-get update
-$ sudo apt-get upgrade
-$ sudo apt-get install automake
-#+END_SRC
-
-To install *tmux* run the following command:
-
-#+BEGIN_SRC shell
-$ sudo apt-get update
-$ sudo apt-get upgrade
-$ sudo apt-get install tmux
-#+END_SRC
-
-To run *tmux* open shell and write:
-
-#+BEGIN_SRC shell
-tmux
-#+END_SRC
-
-see the *tmux* manual here [[http://man.openbsd.org/OpenBSD-current/man1/tmux.1][tmux]]
-
-and here [[https://gist.github.com/MohamedAlaa/2961058][tmux-cheatsheet]]
-
-* Switch to =zsh=
-
-The *Z shell* (zsh) is a Unix shell [...]. Zsh can be thought of as an extended Bourne shell with a large number of improvements, including some features of bash, ksh, and tcsh[fn::https://gist.github.com/derhuerst/12a1558a4b408b3b2b6e].
-
-
-** Installing zsh on Linux
-
-Some Linux systems come preloaded with zsh. You can check if it exists as well as its version by writing zsh --version in a terminal window. In case this zsh version is ok for you, you're done now!
-
-Determine on which Linux distribution your system is based on. See List of Linux distributions – Wikipedia for a list. Most Linux systems – including Ubuntu – are Debian-based.
-
-Debian-based linux systems
-
-Open a terminal window. Copy & paste the following into the terminal window and hit Return. You may be prompted to enter your password.
-
-#+BEGIN_SRC shell
-$ sudo apt-get update
-$ sudo apt-get upgrade
-$ sudo apt-get install zsh
-#+END_SRC
-
-*You can use zsh now*.
-
-to switch from bash to zsh open shell and run the following command:
-
-#+BEGIN_SRC shell
-$ chsh -s $(which zsh)
-#+END_SRC
-
-
-To know which shell are you using, use the following command:
-
-#+BEGIN_SRC shell
-$ echo $SHELL
-#+END_SRC
-
-
-It will return something like:
-
-=/bin/bash=
-
-or
-
-=/bin/zsh=
-
-After you know the shell, if the file .bashrc or .zshrc doesn't exist in your home directory (echo $HOME to find out), just create it.
-
-If you are using bash, you may have a file called .bash_profile where you can put your export command instead (don't know in zsh).
-* Convert w4a, mp4, etc to wav
-
-install ffmeg
-#+BEGIN_SRC shell
-$ brew install ffmpeg --with-fdk-aac --with-ffplay --with-freetype --with-libass --with-libquvi --with-libvorbis --with-libvpx --with-opus --with-x265
-#+END_SRC
-
-link brew with python
-
-#+BEGIN_SRC shell
-brew link python
-#+END_SRC
-
-remove existed files
-#+BEGIN_SRC shell
-rm 'usr/local/Cellar/2to3'
-#+END_SRC
-
-convert .m4a to .wav
-
-#+BEGIN_SRC shell
-$ ffmpeg -i /Users/vasilis/Documents/001Workfiles/Weaving-voices/sounds/23.3.\ j.m4a  23.3.\ j.wav
-#+END_SRC
-
-convert all the files into directory with .wma to mp3
-
-#+BEGIN_SRC shell
-$ for file in *.wma; do ffmpeg -i "${file}"  -acodec libmp3lame -ab 192k "${file/.wma/.mp3}"; done
-#+END_SRC
-
-* Install Adafruit MPR121 on Raspberry
-
-* Soldering
-
-Prepare the header strip, Add the breakout board, and solde
-
-see more [[https://learn.adafruit.com/adafruit-mpr121-12-key-capacitive-touch-sensor-breakout-tutorial/assembly][here]]
-
-After you've soldered the sensor to the header strip move to wiring sesion:
-
-** Wiring
-
-Wiring
-Place the MPR121 board into a breadboard and connect its inputs to the electrodes you plan to use.  Then follow the wiring below for your platform to connect the MPR121 to an I2C communication channel.
-Raspberry Pi
-On a Raspberry Pi connect the hardware as follows.
-Note: Make sure you've enabled I2C on your Raspberry Pi!
-
-
-
-First make sure that you've installed python.
-
-#+BEGIN_SRC shell
-sudo apt-get update
-sudo apt-get install build-essential python-dev python-smbus python-pip git
-
-#+END_SRC
-
-Then clone Adafruit_Python_MPR121.git
-
-#+BEGIN_SRC shell
-cd ~
-git clone https://github.com/adafruit/Adafruit_Python_MPR121.git
-#+END_SRC
-
-and install it
-
-#+BEGIN_SRC shell
-cd Adafruit_Python_MPR121
-sudo python setup.py install
-
-#+END_SRC
-
-** Configuring I2C
-
-I2C is a very commonly used standard designed to allow one chip to talk to another. So, since the Raspberry Pi can talk I2C we can connect it to a variety of I2C capable chips and modules.
-Here are some of the Adafruit projects that make use of I2C devices and modules:
-
-https://learn.adafruit.com/adafruits-raspberry-pi-lesson-4-gpio-setup/configuring-i2c
-
-
-*** Testing I2C
-
-Now when you log in you can type the following command to see all the connected devices
-
-#+BEGIN_SRC shell
-$ sudo i2cdetect -y 1
-#+END_SRC
-
-
-** Usage
-
-#+BEGIN_SRC shell
-cd examples
-sudo python simpletest.py
-#+END_SRC
-
-These are the output values of 12 capacitive touch inputs
-
-0 = 1
-1 = 2
-2 = 4
-3 = 8
-4 = 16
-5 = 32
-6 = 64
-7 = 128
-8 = 256
-9 = 512
-10 = 1024
-11 = 2048
-
-* Chage permission to read-only files 
-
-** raspberry pi
-
-#+BEGIN_SRC shell
-➜  ~ cd /Volumes
-➜  /Volumes ls
-Macintosh HD boot
-➜  /Volumes cd boot
-➜  boot ls
-.
-➜  boot sudo chmod a+w cmdline.txt
-Password:
-➜  boot
-#+END_SRC
-
-
-** Hardware set up
-
-[[http://supercollider.github.io/development/building-raspberrypi][Building from Source on Raspberry]]
-
-#+BEGIN_QUOTE
-- connect an ethernet cable from the network router to the rpi
-- insert the sd card and usb soundcard
-- last connect usb power from a 5V@1A power supply
-
-#+END_QUOTE
-
-** Login & preparations
+** Install SupeCollider on RPI
 
 #+BEGIN_SRC shell
 $ ssh pi@raspberrypi.local #from your laptop, default password is raspberry
@@ -1767,6 +1348,431 @@ only 3 harmless class overwrites warnings
     $ 0.exit #quit sclang
 $ pkill jackd #quit jackd
 #+END_SRC
+
+** Run SuperCollider on emacs
+
+[[http://supercollider.github.io/development/building-raspberrypi][raspberrypi_SuperCollider]]
+
+create directory =packages= in =~/emacs.d/personal/=
+
+and =mv /directory-of-scel/el/ to /packages-directory/=
+
+then write in the init.el file
+
+#+BEGIN_SRC lisp
+
+(add-to-list ~/.emacs.d/personal/packages/el)
+(require 'sclang)
+
+#+END_SRC
+
+
+Create an =Extensions= directory in
+=/usr/local/share/SuperCollider/=
+
+and cp the =sc= directory from
+=~/supercollider/editors/scel/sc=
+to =/usr/local/share/SuperCollider/Extensions/=
+
+Then type to the terminal
+
+#+BEGIN_SRC shell
+pi@raspberrypi:~ $ jackd -P75 -dalsa -dhw:1 -p1024 -n3 -s -r44100 &
+//pi@raspberrypi:~ $ scsynth -u 57110 &
+pi@raspberrypi:~ $ emacs -sclang
+
+#+END_SRC
+
+
+
+Copy directories from mac to pi using terminal
+
+
+#+BEGIN_SRC shell
+$ scp -r /path/to/directory pi@raspberrypi:~/path/to/remote/dir
+
+#+END_SRC
+
+
+example:
+
+#+BEGIN_SRC shell
+$ scp -r /Users/path pi@raspberrypi:~/SC_Stuff
+#+END_SRC
+
+
+
+
+** Change read-only files on emacs
+
+=M-x toggle-read-only=
+
+** Open raspberrypi3 from  emacs using TRAMP
+
+=C-x C-f= and type
+
+#+Begin_SRC shell
+ /ssh:pi@raspberrypi:
+#+End_SRC
+
+then type your raspberry password
+
+#+Begin_EXAMPLE
+ pass: *******
+#+End_EXAMPLE
+
+and then dired freely, open files and programms using  shell as well to run sclang
+
+** Edit and save files using tramp
+
+=C-x C-f= and type
+
+#+BEGIN_SRC shell
+/ssh:pi@raspberrypi|sudo:root@pi@raspberrypi:
+#+END_SRC
+
+dired to your file, make changes and save!!!
+
+Good luck!! seriously
+
+** Copy files from Raspberrypi to mac and the opposite
+
+
+#+BEGIN_SRC shell
+scp /path/to/py/file pi@raspberrypi:~
+#+END_SRC
+
+Replace raspberrypi with the ip address of the Pi if using the hostname doesn't work.
+
+or from the pi
+
+#+BEGIN_SRC shell
+scp macuser@macipaddress:/path/to/py/file ~
+
+#+END_SRC
+
+replace macuser and macipaddress with your mac user and mac's ip address.
+
+
+
+https://www.raspberrypi.org/forums/viewtopic.php?t=35152&p=296946
+
+** Use rsync
+
+On your mac go to the directory you want to sync using *cd* on your terminal and type the following command:
+
+transfering files from raspberry to mac
+
+#+BEGIN_SRC shell
+ Recordings git:(SuperCollider) ✗ rsync -avz -e ssh pi@192.168.1.96:/home/pi/.local/share/SuperCollider/Recordings/ Recordings/
+
+#+END_SRC
+
+and
+
+#+BEGIN_SRC shell
+voices git:(SuperCollider) ✗ rsync -avz -e ssh pi@192.168.1.96:~/sounds/voices/ voicesA/
+pi@192.168.1.96's password:
+receiving file list ... done
+created directory Weaving-voices
+#+END_SRC
+
+transfering files from mac to raspberry
+
+#+BEGIN_SRC shell
+$ rsync -avP sounds/ pi@192.168.1.96:~/sounds/voices/voicesA/
+#+END_SRC
+
+Unfortunatelly it doesnt work with the name of the raspberry instead you need to find the ip of raspberry. To find the ip ssh to your raspberry and type:
+
+#+BEGIN_SRC shell
+$ sudo ifconfig
+#+END_SRC
+
+
+it will ask for the pass word:
+
+#+BEGIN_SRC shell
+pi@192.168.1.96's password:
+receiving file list ... done
+created directory Recordings
+./
+SC_161215_114846.aiff
+SC_170422_120739.aiff
+SC_170422_135403.aiff
+
+sent 88 bytes  received 11223209 bytes  477587.11 bytes/sec
+total size is 25854264  speedup is 2.30
+➜  Recordings git:(SuperCollider) ✗
+
+#+END_SRC
+
+
+
+** Installing tmux
+
+*tmux* is a "terminal multiplexer", it enables a number of terminals (or windows) to be accessed and controlled from a single terminal. tmux is intended to be a simple, modern, BSD-licensed alternative to programs such as GNU screen.
+
+This release runs on /OpenBSD/, /FreeBSD/, /NetBSD/, /Linux/, /OS X/ and /Solaris/.
+
+tmux depends on *libevent 2.x*. Download it from:
+
+	http://libevent.org
+
+use this command to install it:
+
+#+BEGIN_SRC shell
+$ sudo apt-get install libevent-dev
+#+END_SRC
+
+It also depends on *ncurses*, available from:
+
+	http://invisible-island.net/ncurses/
+
+to install ncurse open shell and type:
+
+#+BEGIN_SRC shell
+$ sudo apt-get install libncurses5-dev libncursesw5-dev
+#+END_SRC
+
+To build and install *tmux* from a release tarball, use:
+
+#+BEGIN_SRC shell
+$ ./configure && make
+$ sudo make install
+#+END_SRC
+
+tmux can use the utempter library to update utmp(5), if it is installed - run
+configure with --enable-utempter to enable this.
+
+To get and build the latest *tmux* from version control:
+
+#+BEGIN_SRC shell
+	$ git clone https://github.com/tmux/tmux.git
+	$ cd tmux
+	$ sh autogen.sh
+	$ ./configure && make
+#+END_SRC
+
+to run =sh autogen.sh= you need to install *automake*.
+
+*aclocal* is part of the *automake* package.
+
+#+BEGIN_SRC shell
+$ sudo apt-get update
+$ sudo apt-get upgrade
+$ sudo apt-get install automake
+#+END_SRC
+
+To install *tmux* run the following command:
+
+#+BEGIN_SRC shell
+$ sudo apt-get update
+$ sudo apt-get upgrade
+$ sudo apt-get install tmux
+#+END_SRC
+
+To run *tmux* open shell and write:
+
+#+BEGIN_SRC shell
+tmux
+#+END_SRC
+
+see the *tmux* manual here [[http://man.openbsd.org/OpenBSD-current/man1/tmux.1][tmux]]
+
+and here [[https://gist.github.com/MohamedAlaa/2961058][tmux-cheatsheet]]
+
+** Switch to =zsh=
+
+The *Z shell* (zsh) is a Unix shell [...]. Zsh can be thought of as an extended Bourne shell with a large number of improvements, including some features of bash, ksh, and tcsh[fn::https://gist.github.com/derhuerst/12a1558a4b408b3b2b6e].
+
+
+** Installing zsh on Linux
+
+Some Linux systems come preloaded with zsh. You can check if it exists as well as its version by writing zsh --version in a terminal window. In case this zsh version is ok for you, you're done now!
+
+Determine on which Linux distribution your system is based on. See List of Linux distributions – Wikipedia for a list. Most Linux systems – including Ubuntu – are Debian-based.
+
+Debian-based linux systems
+
+Open a terminal window. Copy & paste the following into the terminal window and hit Return. You may be prompted to enter your password.
+
+#+BEGIN_SRC shell
+$ sudo apt-get update
+$ sudo apt-get upgrade
+$ sudo apt-get install zsh
+#+END_SRC
+
+*You can use zsh now*.
+
+to switch from bash to zsh open shell and run the following command:
+
+#+BEGIN_SRC shell
+$ chsh -s $(which zsh)
+#+END_SRC
+
+
+To know which shell are you using, use the following command:
+
+#+BEGIN_SRC shell
+$ echo $SHELL
+#+END_SRC
+
+
+It will return something like:
+
+=/bin/bash=
+
+or
+
+=/bin/zsh=
+
+After you know the shell, if the file .bashrc or .zshrc doesn't exist in your home directory (echo $HOME to find out), just create it.
+
+If you are using bash, you may have a file called .bash_profile where
+you can put your export command instead (don't know in zsh).
+
+** Convert w4a, mp4, etc to wav
+
+install ffmeg
+#+BEGIN_SRC shell
+$ brew install ffmpeg --with-fdk-aac --with-ffplay --with-freetype --with-libass --with-libquvi --with-libvorbis --with-libvpx --with-opus --with-x265
+#+END_SRC
+
+link brew with python
+
+#+BEGIN_SRC shell
+brew link python
+#+END_SRC
+
+remove existed files
+#+BEGIN_SRC shell
+rm 'usr/local/Cellar/2to3'
+#+END_SRC
+
+convert .m4a to .wav
+
+#+BEGIN_SRC shell
+$ ffmpeg -i /Users/vasilis/Documents/001Workfiles/Weaving-voices/sounds/23.3.\ j.m4a  23.3.\ j.wav
+#+END_SRC
+
+convert all the files into directory with .wma to mp3
+
+#+BEGIN_SRC shell
+$ for file in *.wma; do ffmpeg -i "${file}"  -acodec libmp3lame -ab 192k "${file/.wma/.mp3}"; done
+#+END_SRC
+
+** Install Adafruit MPR121 on Raspberry
+
+** Soldering
+
+Prepare the header strip, Add the breakout board, and solde
+
+see more [[https://learn.adafruit.com/adafruit-mpr121-12-key-capacitive-touch-sensor-breakout-tutorial/assembly][here]]
+
+After you've soldered the sensor to the header strip move to wiring sesion:
+
+** Wiring
+
+Wiring
+Place the MPR121 board into a breadboard and connect its inputs to the electrodes you plan to use.  Then follow the wiring below for your platform to connect the MPR121 to an I2C communication channel.
+Raspberry Pi
+On a Raspberry Pi connect the hardware as follows.
+Note: Make sure you've enabled I2C on your Raspberry Pi!
+
+
+
+First make sure that you've installed python.
+
+#+BEGIN_SRC shell
+sudo apt-get update
+sudo apt-get install build-essential python-dev python-smbus python-pip git
+
+#+END_SRC
+
+Then clone Adafruit_Python_MPR121.git
+
+#+BEGIN_SRC shell
+cd ~
+git clone https://github.com/adafruit/Adafruit_Python_MPR121.git
+#+END_SRC
+
+and install it
+
+#+BEGIN_SRC shell
+cd Adafruit_Python_MPR121
+sudo python setup.py install
+
+#+END_SRC
+
+** Configuring I2C
+
+I2C is a very commonly used standard designed to allow one chip to talk to another. So, since the Raspberry Pi can talk I2C we can connect it to a variety of I2C capable chips and modules.
+Here are some of the Adafruit projects that make use of I2C devices and modules:
+
+https://learn.adafruit.com/adafruits-raspberry-pi-lesson-4-gpio-setup/configuring-i2c
+
+
+*** Testing I2C
+
+Now when you log in you can type the following command to see all the connected devices
+
+#+BEGIN_SRC shell
+$ sudo i2cdetect -y 1
+#+END_SRC
+
+
+** Usage
+
+#+BEGIN_SRC shell
+cd examples
+sudo python simpletest.py
+#+END_SRC
+
+These are the output values of 12 capacitive touch inputs
+
+0 = 1
+1 = 2
+2 = 4
+3 = 8
+4 = 16
+5 = 32
+6 = 64
+7 = 128
+8 = 256
+9 = 512
+10 = 1024
+11 = 2048
+
+** Chage permission to read-only files 
+
+** raspberry pi
+
+#+BEGIN_SRC shell
+➜  ~ cd /Volumes
+➜  /Volumes ls
+Macintosh HD boot
+➜  /Volumes cd boot
+➜  boot ls
+.
+➜  boot sudo chmod a+w cmdline.txt
+Password:
+➜  boot
+#+END_SRC
+
+
+** Hardware set up
+
+[[http://supercollider.github.io/development/building-raspberrypi][Building from Source on Raspberry]]
+
+#+BEGIN_QUOTE
+- connect an ethernet cable from the network router to the rpi
+- insert the sd card and usb soundcard
+- last connect usb power from a 5V@1A power supply
+
+#+END_QUOTE
+
+
 
 * Suggested Bibliography
 
