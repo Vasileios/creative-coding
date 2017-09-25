@@ -25,23 +25,16 @@ classes).Discussion on concepts of *object-oriented programming, interactivity, 
 
 C++, Shell, Python, emacs-lisp, SuperCollider
 
-
-** Interactive installations
+-  Interactive installations
 
 Use of circuits and how to hack them. A great opportunity to learn,
 design, recycle old toys and instruments, and transformed them to an alternate instrument.
 
-** Machine learning
+-  Machine learning
 
-- method of data analysis
+ method of data analysis
 
-- data sonification, visualisation
-
-- Programming language
-
-Python
-
-
+ data sonification, visualisation
 
 
 * Methodology and tools
