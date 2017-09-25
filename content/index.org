@@ -1237,7 +1237,7 @@ then you can start adding packages like supercollider, jack and others.
 [[http://supercollider.github.io/development/building-raspberrypi][Building from Source on Raspberry]]
 
 #+BEGIN_QUOTE
-- connect an ethernet cable from the network router to the rpi
+- connect an ethernet cable from the network router or your computer to the rpi
 - insert the sd card and usb soundcard
 - last connect usb power from a 5V@1A power supply
 
