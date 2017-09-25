@@ -878,11 +878,13 @@ CERN examples: /particle-physics-playground-playground-52de62d/
 
 #+END_QUOTE
 
-*Sonifying ems (muons) - ipython - SuperCollider in emacs* 
+** Sonifying ems (muons) - ipython - SuperCollider in emacs 
 
 Editor: Emacs Version 24.5 (9.0)
 
 Ipython package **ein** on MELPA
+
+SuperCollider 3.7
 
 Data sonification experiment on particle-physics-playground.
 
