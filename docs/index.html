@@ -548,12 +548,6 @@ q = 2 * 4 + 1 - 2 &= 7 \\
 Move the cursor one line after the TODO item and press <code>C-c C-s</code> =(org-schedule)=
 to schedule with agenda</p>
 
-<h2 id="tips">Tips</h2>
-
-<p>To open week-agenda window press C-ca
-To schedule a TODO item press C-c C-s
-Use shift-arrows to change dates</p>
-
 <blockquote>
 <p>
  TODO Call John
@@ -581,81 +575,9 @@ SCHEDULED: <2016-10-12 Wed>
 </p>
 </blockquote>
 
-<h2 id="tips-1">Tips</h2>
-
 <p>To open week-agenda window press C-ca
 To schedule a TODO item press C-c C-s
 Use shift-arrows to change dates</p>
-<div class="highlight"><pre><code class="language-emacs-lisp" data-lang="emacs-lisp"><span></span><span class="c1">;; placed in init.el</span>
-
-
-<span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;org</span><span class="p">)</span>
-<span class="p">(</span><span class="k">setq</span> <span class="nv">exec-path</span> <span class="p">(</span><span class="nf">append</span> <span class="nv">exec-path</span> <span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;/usr/texbin&quot;</span><span class="p">)))</span>
-<span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;ox-latex</span><span class="p">)</span>
-<span class="p">(</span><span class="nb">unless</span> <span class="p">(</span><span class="nf">boundp</span> <span class="ss">&#39;org-latex-classes</span><span class="p">)</span>
-  <span class="p">(</span><span class="k">setq</span> <span class="nv">org-latex-classes</span> <span class="no">nil</span><span class="p">))</span>
-<span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;org-latex-classes</span>
-             <span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;article&quot;</span>
-               <span class="s">&quot;\\documentclass{article}&quot;</span>
-               <span class="p">(</span><span class="s">&quot;\\section{%s}&quot;</span> <span class="o">.</span> <span class="s">&quot;\\section*{%s}&quot;</span><span class="p">)))</span>
-
-<span class="c1">;;(setq org-latex-listings &#39;minted)</span>
-
-<span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;org-latex-packages-alist</span> <span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;&quot;</span> <span class="s">&quot;minted&quot;</span><span class="p">))</span>
-
-
-
-<span class="p">(</span><span class="k">setq</span> <span class="nv">org-export-latex-listings</span> <span class="ss">&#39;minted</span><span class="p">)</span>
-
-<span class="p">(</span><span class="k">setq</span> <span class="nv">org-latex-listings</span> <span class="ss">&#39;minted</span><span class="p">)</span>
-
-<span class="p">(</span><span class="k">setq</span> <span class="nv">org-latex-custom-lang-environments</span>
-      <span class="o">&#39;</span><span class="p">(</span>
-        <span class="p">(</span><span class="nv">emacs-lisp</span> <span class="s">&quot;common-lispcode&quot;</span><span class="p">)</span>
-        <span class="p">))</span>
-<span class="p">(</span><span class="k">setq</span> <span class="nv">org-latex-minted-options</span>
-      <span class="o">&#39;</span><span class="p">((</span><span class="s">&quot;frame&quot;</span> <span class="s">&quot;lines&quot;</span><span class="p">)</span>
-        <span class="p">(</span><span class="s">&quot;fontsize&quot;</span> <span class="s">&quot;\\scriptsize&quot;</span><span class="p">)</span>
-        <span class="p">(</span><span class="s">&quot;linenos&quot;</span> <span class="s">&quot;&quot;</span><span class="p">)))</span>
-
-
-<span class="p">(</span><span class="k">setq</span> <span class="nv">org-latex-to-pdf-process</span>
-
-
-
-      <span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f&quot;</span>
-        <span class="s">&quot;pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f&quot;</span>
-        <span class="s">&quot;pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f&quot;</span>
-
-        <span class="p">))</span>
-
-
-
-<span class="p">(</span><span class="nv">org-babel-do-load-languages</span>
- <span class="ss">&#39;org-babel-load-languages</span>
- <span class="o">&#39;</span><span class="p">((</span><span class="nv">R</span> <span class="o">.</span> <span class="no">t</span><span class="p">)</span>
-   <span class="p">(</span><span class="nv">latex</span> <span class="o">.</span> <span class="no">t</span><span class="p">)))</span>
-<span class="c1">;; Use syntax highlighting in source block while editing</span>
-
-
-<span class="p">(</span><span class="k">setq</span> <span class="nv">org-src-fontify-natively</span> <span class="no">t</span><span class="p">)</span>
-
-<span class="c1">;;auto-complete</span>
-
-<span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;auto-complete</span><span class="p">)</span>
-
-<span class="c1">;; Loads latex auto-complete</span>
-<span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;ac-math</span><span class="p">)</span>
-<span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;ac-modes</span> <span class="ss">&#39;latex-mode</span><span class="p">)</span>
-<span class="p">(</span><span class="nb">defun</span> <span class="nv">ac-latex-mode-setup</span> <span class="p">()</span>
-  <span class="p">(</span><span class="k">setq</span> <span class="nv">ac-sources</span>
-        <span class="p">(</span><span class="nf">append</span> <span class="o">&#39;</span><span class="p">(</span><span class="nv">ac-source-math-latex</span> <span class="nv">ac-source-latex-commands</span>  <span class="nv">ac-source-math-unicode</span><span class="p">)</span>
-                <span class="nv">ac-sources</span><span class="p">))</span>
-  <span class="p">)</span>
-<span class="p">(</span><span class="nv">add-hook</span> <span class="ss">&#39;LaTeX-mode-hook</span> <span class="ss">&#39;ac-latex-mode-setup</span><span class="p">)</span>
-</code></pre></div>
-
-<p>Find more here: <a href="http://orgmode.org/worg/org-tutorials/org-latex-preview.html" title="Minted" target="_blank">Minted</a></p>
 
 <h2 id="github">Github</h2>
 

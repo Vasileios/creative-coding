@@ -450,12 +450,6 @@ type TODO to create a todo object
 Move the cursor one line after the TODO item and press =C-c C-s= =(org-schedule)=
 to schedule with agenda
 
-** Tips
-
-To open week-agenda window press C-ca
-To schedule a TODO item press C-c C-s
-Use shift-arrows to change dates
-
 #+BEGIN_QUOTE
  TODO Call John
 SCHEDULED: <2016-11-09 Wed>
@@ -471,88 +465,9 @@ SCHEDULED: <2016-11-10 Thu>
 SCHEDULED: <2016-10-12 Wed>
 #+END_QUOTE
 
-
-** Tips
-
 To open week-agenda window press C-ca
 To schedule a TODO item press C-c C-s
 Use shift-arrows to change dates
-
-#+BEGIN_SRC emacs-lisp
-
-;; placed in init.el
-
-
-(require 'org)
-(setq exec-path (append exec-path '("/usr/texbin")))
-(require 'ox-latex)
-(unless (boundp 'org-latex-classes)
-  (setq org-latex-classes nil))
-(add-to-list 'org-latex-classes
-             '("article"
-               "\\documentclass{article}"
-               ("\\section{%s}" . "\\section*{%s}")))
-
-;;(setq org-latex-listings 'minted)
-
-(add-to-list 'org-latex-packages-alist '("" "minted"))
-
-
-
-(setq org-export-latex-listings 'minted)
-
-(setq org-latex-listings 'minted)
-
-(setq org-latex-custom-lang-environments
-      '(
-        (emacs-lisp "common-lispcode")
-        ))
-(setq org-latex-minted-options
-      '(("frame" "lines")
-        ("fontsize" "\\scriptsize")
-        ("linenos" "")))
-
-
-(setq org-latex-to-pdf-process
-
-
-
-      '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-        "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-        "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-
-        ))
-
-
-
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '((R . t)
-   (latex . t)))
-;; Use syntax highlighting in source block while editing
-
-
-(setq org-src-fontify-natively t)
-
-;;auto-complete
-
-(require 'auto-complete)
-
-;; Loads latex auto-complete
-(require 'ac-math)
-(add-to-list 'ac-modes 'latex-mode)
-(defun ac-latex-mode-setup ()
-  (setq ac-sources
-        (append '(ac-source-math-latex ac-source-latex-commands  ac-source-math-unicode)
-                ac-sources))
-  )
-(add-hook 'LaTeX-mode-hook 'ac-latex-mode-setup)
-
-#+END_SRC
-
-
-
-Find more here: [[http://orgmode.org/worg/org-tutorials/org-latex-preview.html][Minted]]
 
 
 ** Github
