@@ -1232,6 +1232,17 @@ pi@raspberrypi:~ $ sudo apt-get upgrade
 
 then you can start adding packages like supercollider, jack and others.
 
+** Ethernet set up
+
+[[http://supercollider.github.io/development/building-raspberrypi][Building from Source on Raspberry]]
+
+#+BEGIN_QUOTE
+- connect an ethernet cable from the network router to the rpi
+- insert the sd card and usb soundcard
+- last connect usb power from a 5V@1A power supply
+
+#+END_QUOTE
+
 
 ** Install emacs
 
@@ -1760,17 +1771,6 @@ Password:
 ➜  boot
 #+END_SRC
 
-
-** Hardware set up
-
-[[http://supercollider.github.io/development/building-raspberrypi][Building from Source on Raspberry]]
-
-#+BEGIN_QUOTE
-- connect an ethernet cable from the network router to the rpi
-- insert the sd card and usb soundcard
-- last connect usb power from a 5V@1A power supply
-
-#+END_QUOTE
 
 
 
