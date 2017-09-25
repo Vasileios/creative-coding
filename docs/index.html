@@ -453,6 +453,12 @@ of the music (Cascone, 2003).
 
 <h2 id="images">Images</h2>
 
+<pre><code>
+#+Caption: Wiring MPR121 c_s to Raspberry pi
+#+Name: fig 01
+[[./images/wiringMPR121Raspberry]]
+</code></pre>
+
 <h2 id="ditaa">Ditaa</h2>
 
 <p><strong>Find the path of ditaa.jar in you computer through a lisp program</strong></p>
@@ -1225,6 +1231,409 @@ Interactivity (Noble 2012): Chapter 4: Arduino.</p>
 <p>Follow the instructions here:
 <a href="https://www.raspberrypi.org/documentation/installation/installing-images/README.md" title="installation-guide" target="_blank">installation-guide</a></p>
 
+<h1 id="installing-raspbian-jessie-lite-on-raspberry">Installing raspbian jessie-lite on raspberry</h1>
+
+<h2 id="import-your-sd-card-to-your-mac">Import your SD card to your mac</h2>
+
+<p>Go to check the disk number on <em>About this mac->System report</em></p>
+
+<p>it will be like disk2s1</p>
+
+<p>Then open disk utilities choose the partision of the SD card and unamount it so as to let you erase it.</p>
+
+<p>Then open terminal and write the following</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ sudo dd <span class="nv">bs</span><span class="o">=</span>1m <span class="k">if</span><span class="o">=</span>path_of_your_image.img <span class="nv">of</span><span class="o">=</span>/dev/rdiskn
+</code></pre></div>
+
+<p>Remember to replace <code>n</code> with the number that you noted before!</p>
+
+<p>eject sd card and connect it to raspberry</p>
+
+<h1 id="set-up-network">Set up network</h1>
+
+<p>login from external screen and edit wpa_supplicant.conf</p>
+
+<p>Also enabled SSH while having the raspberry pi on the external monitor...</p>
+
+<p>open raspi config</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ sudo raspi-config
+</code></pre></div>
+
+<p>Go to =Advanced Options=
+and enable ssh and reboot</p>
+
+<p>When you try to connect using ssh pi@raspnberrypi.local you might come across with this warning</p>
+
+<p>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@       WARNING: POSSIBLE DNS SPOOFING DETECTED!          @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+The ECDSA host key for raspberrypi.local has changed,
+and the key for the corresponding IP address fe80::6438:a684:af09:7907%en1
+has a different value. This could either mean that
+DNS SPOOFING is happening or the IP address for the host
+and its host key have changed at the same time.
+Offending key for IP in <em>Users/vasilis</em>.ssh/known_hosts:7
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:2klTIS/Gsubfxiwj9xHnml5H82W77+m9rN8pPJ1pbfU.
+Please contact your system administrator.
+Add correct host key in <em>Users/vasilis</em>.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in <em>Users/vasilis</em>.ssh/known_hosts:19
+ECDSA host key for raspberrypi.local has changed and you have requested strict checking.
+Host key verification failed.</p>
+
+<p>Go and delete previous keys in <code>known_hosts</code> file like pi@raspnberrypi.local</p>
+
+<p>then try again to ssh pi@raspnberrypi.local</p>
+
+<p>and type <code>yes</code> to accept a new permanent key for local.</p>
+
+<p>After that go and update</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>pi@raspberrypi:~ $ sudo apt-get update
+</code></pre></div>
+
+<p>and upgrade</p>
+
+<pre><code>
+pi@raspberrypi:~ $ sudo apt-get upgrade
+</code></pre>
+
+<p>then you can start adding packages like supercollider, jack and others.</p>
+
+<h1 id="install-emacs">Install emacs</h1>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>pi@raspberrypi:~ $ sudo apt-get install <span class="nv">emacs</span><span class="o">=</span>
+</code></pre></div>
+
+<p>quick installation of prelude emacs</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>pi@raspberrypi:~ $ curl -L https://git.io/epre <span class="p">|</span> sh
+</code></pre></div>
+
+<p>run supercollider through emacs</p>
+
+<p>The <code>Meta</code> key in terminal emacs is the <code>ESC</code> key
+So press <code>ESC-x</code> for <code>Meta-x</code></p>
+
+<p>The following syntax is used to rename files with mv:</p>
+
+<p><code>mv (option) filename1.ext filename2.ext</code></p>
+
+<h1 id="run-supercollider-in-emacs">Run SuperCollider in emacs</h1>
+
+<p><a href="http://supercollider.github.io/development/building-raspberrypi" title="raspberrypi_SuperCollider" target="_blank">raspberrypi_SuperCollider</a></p>
+
+<p>create directory <code>packages</code> in <code>~/emacs.d/personal/</code></p>
+
+<p>and <code>mv /directory-of-scel/el/ to /packages-directory/</code></p>
+
+<p>then write in the init.el file</p>
+<div class="highlight"><pre><code class="language-lisp" data-lang="lisp"><span></span><span class="p">(</span><span class="nv">add-to-list</span> <span class="nv">~/.emacs.d/personal/packages/el</span><span class="p">)</span>
+<span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;sclang</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Create an <code>Extensions</code> directory in
+=/usr/local/share/SuperCollider/=</p>
+
+<p>and cp the <code>sc</code> directory from
+=~/supercollider/editors/scel/sc=
+to <code>/usr/local/share/SuperCollider/Extensions/</code></p>
+
+<p>Then type to the terminal</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>pi@raspberrypi:~ $ jackd -P75 -dalsa -dhw:1 -p1024 -n3 -s -r44100 <span class="p">&amp;</span>
+//pi@raspberrypi:~ $ scsynth -u <span class="m">57110</span> <span class="p">&amp;</span>
+pi@raspberrypi:~ $ emacs -sclang
+</code></pre></div>
+
+<p>Copy directories from mac to pi using terminal</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ scp -r /path/to/directory pi@raspberrypi:~/path/to/remote/dir
+</code></pre></div>
+
+<p>example:</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ scp -r /Users/path pi@raspberrypi:~/SC_Stuff
+</code></pre></div>
+
+<h1 id="change-read-only-files-on-emacs">Change read-only files on emacs</h1>
+
+<p><code>M-x toggle-read-only</code></p>
+
+<h1 id="open-raspberrypi3-from-your-emacs-using-tramp">Open raspberrypi3 from your emacs using TRAMP</h1>
+
+<p><code>C-x C-f</code> and type</p>
+
+<p>/ssh:pi@raspberrypi:</p>
+
+<p>then type your raspberry password</p>
+
+<p>pass: <strong><strong><strong>*</strong></strong></strong></p>
+
+<p>and then dired freely, open files and programms using  shell as well to run sclang</p>
+
+<h2 id="edit-and-save-files-using-tramp">Edit and save files using tramp</h2>
+
+<p><code>C-x C-f</code> and type</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>/ssh:pi@raspberrypi<span class="p">|</span>sudo:root@pi@raspberrypi:
+</code></pre></div>
+
+<p>dired to your file, make changes and save!!!</p>
+
+<p>Good luck!! seriously</p>
+
+<h1 id="copy-files-from-raspberrypi-to-mac-and-the-opposite">Copy files from Raspberrypi to mac and the opposite</h1>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>scp /path/to/py/file pi@raspberrypi:~
+</code></pre></div>
+
+<p>Replace raspberrypi with the ip address of the Pi if using the hostname doesn't work.</p>
+
+<p>or from the pi</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>scp macuser@macipaddress:/path/to/py/file ~
+</code></pre></div>
+
+<p>replace macuser and macipaddress with your mac user and mac's ip address.</p>
+
+<p>https://www.raspberrypi.org/forums/viewtopic.php?t=35152&p=296946</p>
+
+<h2 id="use-rsync">Use rsync</h2>
+
+<p>On your mac go to the directory you want to sync using <strong>cd</strong> on your terminal and type the following command:</p>
+
+<p>transfering files from raspberry to mac</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span> Recordings git:<span class="o">(</span>SuperCollider<span class="o">)</span> ✗ rsync -avz -e ssh pi@192.168.1.96:/home/pi/.local/share/SuperCollider/Recordings/ Recordings/
+</code></pre></div>
+
+<p>and</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>voices git:<span class="o">(</span>SuperCollider<span class="o">)</span> ✗ rsync -avz -e ssh pi@192.168.1.96:~/001WorkFiles/voices/ voices/
+pi@192.168.1.96<span class="err">&#39;</span>s password:
+receiving file list ... <span class="k">done</span>
+created directory Weaving-voices
+</code></pre></div>
+
+<p>transfering files from mac to raspberry</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ rsync -avP sounds/ pi@192.168.1.96:~/001WorkFiles/voices/sounds
+</code></pre></div>
+
+<p>Unfortunatelly it doesnt work with the name of the raspberry instead you need to find the ip of raspberry. To find the ip ssh to your raspberry and type:</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ sudo ifconfig
+</code></pre></div>
+
+<p>it will ask for the pass word:</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>pi@192.168.1.96<span class="err">&#39;</span>s password:
+receiving file list ... <span class="k">done</span>
+created directory Recordings
+./
+SC_161215_114846.aiff
+SC_170422_120739.aiff
+SC_170422_135403.aiff
+
+sent <span class="m">88</span> bytes  received <span class="m">11223209</span> bytes  477587.11 bytes/sec
+total size is <span class="m">25854264</span>  speedup is 2.30
+➜  Recordings git:<span class="o">(</span>SuperCollider<span class="o">)</span> ✗
+</code></pre></div>
+
+<h1 id="installing-tmux">Installing tmux</h1>
+
+<p><strong>tmux</strong> is a "terminal multiplexer", it enables a number of terminals (or windows) to be accessed and controlled from a single terminal. tmux is intended to be a simple, modern, BSD-licensed alternative to programs such as GNU screen.</p>
+
+<p>This release runs on <em>OpenBSD</em>, <em>FreeBSD</em>, <em>NetBSD</em>, <em>Linux</em>, <em>OS X</em> and <em>Solaris</em>.</p>
+
+<p>tmux depends on <strong>libevent 2.x</strong>. Download it from:</p>
+
+<p>	http://libevent.org</p>
+
+<p>use this command to install it:</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ sudo apt-get install libevent-dev
+</code></pre></div>
+
+<p>It also depends on <strong>ncurses</strong>, available from:</p>
+
+<p>	http://invisible-island.net/ncurses/</p>
+
+<p>to install ncurse open shell and type:</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ sudo apt-get install libncurses5-dev libncursesw5-dev
+</code></pre></div>
+
+<p>To build and install <strong>tmux</strong> from a release tarball, use:</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ ./configure <span class="o">&amp;&amp;</span> make
+$ sudo make install
+</code></pre></div>
+
+<p>tmux can use the utempter library to update utmp(5), if it is installed - run
+configure with --enable-utempter to enable this.</p>
+
+<p>To get and build the latest <strong>tmux</strong> from version control:</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>	$ git clone https://github.com/tmux/tmux.git
+	$ <span class="nb">cd</span> tmux
+	$ sh autogen.sh
+	$ ./configure <span class="o">&amp;&amp;</span> make
+</code></pre></div>
+
+<p>to run <code>sh autogen.sh</code> you need to install <strong>automake</strong>.</p>
+
+<p><strong>aclocal</strong> is part of the <strong>automake</strong> package.</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ sudo apt-get update
+$ sudo apt-get upgrade
+$ sudo apt-get install automake
+</code></pre></div>
+
+<p>To install <strong>tmux</strong> run the following command:</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ sudo apt-get update
+$ sudo apt-get upgrade
+$ sudo apt-get install tmux
+</code></pre></div>
+
+<p>To run <strong>tmux</strong> open shell and write:</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>tmux
+</code></pre></div>
+
+<p>see the <strong>tmux</strong> manual here <a href="http://man.openbsd.org/OpenBSD-current/man1/tmux.1" title="tmux" target="_blank">tmux</a></p>
+
+<p>and here <a href="https://gist.github.com/MohamedAlaa/2961058" title="tmux-cheatsheet" target="_blank">tmux-cheatsheet</a></p>
+
+<h1 id="switch-to-zsh">Switch to <code>zsh</code></h1>
+
+<p>The <strong>Z shell</strong> (zsh) is a Unix shell [...]. Zsh can be thought of as an extended Bourne shell with a large number of improvements, including some features of bash, ksh, and tcsh<sup class="footnote-ref" id="fnref:https-gist-github-com-derhuerst-12a1558a4b408b3b2b6e"><a rel="footnote" href="#fn:https-gist-github-com-derhuerst-12a1558a4b408b3b2b6e">1</a></sup>.</p>
+
+<h2 id="installing-zsh-on-linux">Installing zsh on Linux</h2>
+
+<p>Some Linux systems come preloaded with zsh. You can check if it exists as well as its version by writing zsh --version in a terminal window. In case this zsh version is ok for you, you're done now!</p>
+
+<p>Determine on which Linux distribution your system is based on. See List of Linux distributions – Wikipedia for a list. Most Linux systems – including Ubuntu – are Debian-based.</p>
+
+<p>Debian-based linux systems</p>
+
+<p>Open a terminal window. Copy & paste the following into the terminal window and hit Return. You may be prompted to enter your password.</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ sudo apt-get update
+$ sudo apt-get upgrade
+$ sudo apt-get install zsh
+</code></pre></div>
+
+<p><strong>You can use zsh now</strong>.</p>
+
+<p>to switch from bash to zsh open shell and run the following command:</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ chsh -s <span class="k">$(</span>which zsh<span class="k">)</span>
+</code></pre></div>
+
+<p>To know which shell are you using, use the following command:</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ <span class="nb">echo</span> <span class="nv">$SHELL</span>
+</code></pre></div>
+
+<p>It will return something like:</p>
+
+<p><code>/bin/bash</code></p>
+
+<p>or</p>
+
+<p><code>/bin/zsh</code></p>
+
+<p>After you know the shell, if the file .bashrc or .zshrc doesn't exist in your home directory (echo $HOME to find out), just create it.</p>
+
+<h1 id="convert-w4a-mp4-etc-to-wav">Convert w4a, mp4, etc to wav</h1>
+
+<p>If you are using bash, you may have a file called .bash_profile where you can put your export command instead (don't know in zsh).</p>
+
+<p>install ffmeg</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ brew install ffmpeg --with-fdk-aac --with-ffplay --with-freetype --with-libass --with-libquvi --with-libvorbis --with-libvpx --with-opus --with-x265
+</code></pre></div>
+
+<p>link brew with python</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>brew link python
+</code></pre></div>
+
+<p>remove existed files</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>rm <span class="s1">&#39;usr/local/Cellar/2to3&#39;</span>
+</code></pre></div>
+
+<p>convert .m4a to .wav</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ ffmpeg -i /Users/vasilis/Documents/001Workfiles/Weaving-voices/sounds/23.3.<span class="se">\ </span>j.m4a  23.3.<span class="se">\ </span>j.wav
+</code></pre></div>
+
+<p>convert all the files into directory with .wma to mp3</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ <span class="k">for</span> file in *.wma<span class="p">;</span> <span class="k">do</span> ffmpeg -i <span class="s2">&quot;</span><span class="si">${</span><span class="nv">file</span><span class="si">}</span><span class="s2">&quot;</span>  -acodec libmp3lame -ab 192k <span class="s2">&quot;</span><span class="si">${</span><span class="nv">file</span><span class="p">/.wma/.mp3</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span> <span class="k">done</span>
+</code></pre></div>
+
+<h1 id="install-adafruit-mpr121-on-raspberry">Install Adafruit MPR121 on Raspberry</h1>
+
+<h1 id="soldering">Soldering</h1>
+
+<p>Prepare the header strip, Add the breakout board, and solde</p>
+
+<p>see more <a href="https://learn.adafruit.com/adafruit-mpr121-12-key-capacitive-touch-sensor-breakout-tutorial/assembly" title="here" target="_blank">here</a></p>
+
+<p>After you've soldered the sensor to the header strip move to wiring sesion:</p>
+
+<h2 id="wiring">Wiring</h2>
+
+<p>Wiring
+Place the MPR121 board into a breadboard and connect its inputs to the electrodes you plan to use.  Then follow the wiring below for your platform to connect the MPR121 to an I2C communication channel.
+Raspberry Pi
+On a Raspberry Pi connect the hardware as follows.
+Note: Make sure you've enabled I2C on your Raspberry Pi!</p>
+
+<p>First make sure that you've installed python.</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>sudo apt-get update
+sudo apt-get install build-essential python-dev python-smbus python-pip git
+</code></pre></div>
+
+<p>Then clone Adafruit_Python_MPR121.git</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span><span class="nb">cd</span> ~
+git clone https://github.com/adafruit/Adafruit_Python_MPR121.git
+</code></pre></div>
+
+<p>and install it</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span><span class="nb">cd</span> Adafruit_Python_MPR121
+sudo python setup.py install
+</code></pre></div>
+
+<h2 id="configuring-i2c">Configuring I2C</h2>
+
+<p>I2C is a very commonly used standard designed to allow one chip to talk to another. So, since the Raspberry Pi can talk I2C we can connect it to a variety of I2C capable chips and modules.
+Here are some of the Adafruit projects that make use of I2C devices and modules:</p>
+
+<p>https://learn.adafruit.com/adafruits-raspberry-pi-lesson-4-gpio-setup/configuring-i2c</p>
+
+<h3 id="testing-i2c">Testing I2C</h3>
+
+<p>Now when you log in you can type the following command to see all the connected devices</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ sudo i2cdetect -y 1
+</code></pre></div>
+
+<h2 id="usage">Usage</h2>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span><span class="nb">cd</span> examples
+sudo python simpletest.py
+</code></pre></div>
+
+<p>These are the output values of 12 capacitive touch inputs</p>
+
+<p>0 = 1
+1 = 2
+2 = 4
+3 = 8
+4 = 16
+5 = 32
+6 = 64
+7 = 128
+8 = 256
+9 = 512
+10 = 1024
+11 = 2048</p>
+
+<h1 id="chage-permission-to-read-only-files">Chage permission to read-only files</h1>
+
+<h2 id="raspberry-pi-1">raspberry pi</h2>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>➜  ~ <span class="nb">cd</span> /Volumes
+➜  /Volumes ls
+Macintosh HD boot
+➜  /Volumes <span class="nb">cd</span> boot
+➜  boot ls
+.
+➜  boot sudo chmod a+w cmdline.txt
+Password:
+➜  boot
+</code></pre></div>
+
 <h2 id="hardware-set-up">Hardware set up</h2>
 
 <p><a href="http://supercollider.github.io/development/building-raspberrypi" title="Building from Source on Raspberry" target="_blank">Building from Source on Raspberry</a></p>
@@ -1332,6 +1741,14 @@ $ pkill jackd <span class="c1">#quit jackd</span>
 <h1 id="suggested-bibliography">Suggested Bibliography</h1>
 
 <h2 id="books">Books</h2>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:https-gist-github-com-derhuerst-12a1558a4b408b3b2b6e">DEFINITION NOT FOUND <a class="footnote-return" href="#fnref:https-gist-github-com-derhuerst-12a1558a4b408b3b2b6e"><sup>[return]</sup></a></li>
+</ol>
+</div>
 
     
 
