@@ -786,46 +786,6 @@ Python
 - IPython notebook is used to analyse data and for data visualisation.
 
 
-** Installation
-
-- install =python 3.5= and anacoda3
-
-call anacoda3 form terminal 
-
-#+BEGIN_SRC shell
-
-➜  ~ source activate anaconda3
-
-#+END_SRC
-
-then call jupyter
-
-#+BEGIN_SRC shell
-
-➜  ~ jupyter notebook
-
-#+END_SRC
-
-Go to emacs and do = M-x ein:notebooklist-login=
-Start IPython notebook server.
-Hit =M-x ein:notebooklist-open= to open notebook list. This will open notebook
-list buffer.
-In the notebook list buffer, you can navigate to your folders to [open], [create], and [delete] notebooks
-
-- install ipython emacs on melpa 'ein'
-
-copy =ein.el= and =ein.py= to the upload directory
-
-#+BEGIN_QUOTE
-open =init.el= and write
-#+END_QUOTE
-
-#+BEGIN_SRC emacs-lisp
-(require 'ein)
-#+END_SRC
-
-** installing
-
 - IPython is the component in the toolset that ties everything together; it provides a robust and productive environment for interactive and exploratory computing.
 
 - ipython noteboook uses a client-server model. This makes it possible to interact with ipython from several different environments. For example, emacs or a web browser.
@@ -848,7 +808,7 @@ IPython Notebooks,and it commonly used for improving the reproducibility and acc
 - YT - for analysing and visualising volumetric data
 - Numba - a very easy to use JIT compiler (just import it and put @jit annotation on functions you want compiled) and for dealing with genuinely big data there is PySpark and Ibis.
 
-* Install ipython on emacs:
+** Install ipython on emacs:
 
 First install anaconda:
 https://www.continuum.io/downloads
