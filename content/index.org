@@ -67,148 +67,6 @@ organising and sharing projects using tools such as mass communication technique
 
 
 
-* SuperCollider
-
-From: [[http://supercollider.github.io][SuperCollider]]
-
-** Basics
-
-SuperCollider is a platform for audio synthesis and algorithmic composition, used by musicians, artists, and researchers working with sound. It is free and open source software available for Windows, macOS, and Linux.
-
-** SuperCollider features three major components:
-
-- *scsynth*, a real-time audio server, forms the core of the platform. It features 400+ unit generators ("UGens") for analysis, synthesis, and processing. Its granularity allows the fluid combination of many known and unknown audio techniques, moving between additive and subtractive synthesis, FM, granular synthesis, FFT, and physical modelling. You can write your own UGens in C++, and users have already contributed several hundred more to the sc3-plugins repository.
-- *sclang*, an interpreted programming language. It is focused on sound, but not limited to any specific domain. sclang controls scsynth via Open Sound Control. You can use it for algorithmic composition and sequencing, finding new sound synthesis methods, connecting your app to external hardware including MIDI controllers, network music, writing GUIs and visual displays, or for your daily programming experiments. It has a stock of user-contributed extensions called Quarks.
-- *scide* is an editor for sclang with an integrated help system.
-
-
-  
-** Nodes
-
-From: [[https://composerprogrammer.com/teaching/supercollider/sctutorial/6.3%2520Nodes.html][composerprogrammer.com]]
-
-The Server has a graph of all the running Synths, which may be organised into Groups for convenience. You can see Synths and Groups being created just by looking at the Server graphics.
-
-A Node means a Synth or a Group. Whenever you press command+period you reset the graph, cleaning out all the Synths and Groups you added, that is, clearing all Nodes.
-
-The initial state of the Node graph on the Server looks like this (do command+period first to destroy any existing nodes so you have the starting state):
-
-#+BEGIN_SRC js
-s.queryAllNodes //run me to see the Nodes on the Server
-#+END_SRC
-
-The two default Nodes are convenient Groups for putting your Synths into.
-
-Group(0) is the absolute root of the tree. All new Synths get placed within this Group somewhere (they might be in subGroups but they will be within the RootNode Group at the top of the hierarchy).
-
-#+BEGIN_SRC js
-r=RootNode.new; //this gets a reference to Group(0)
-#+END_SRC
-
-Group(1) was added as an additional default to receive all created Synths, to avoid cluttering the base of the tree.
-
-#+BEGIN_SRC js
-Group.basicNew(s, 1); //this gets a reference to Group(1)
-#+END_SRC
-
-
-
-
-** Find recordings folder
-
-#+BEGIN_SRC js
-thisProcess.platform.recordingsDir;
-#+END_SRC
-
-
-
-** Synthesis techniques 
-
-
-Introduction to sound design (origin, definition, procedures, application fields).
-
-#+BEGIN_QUOTE
-SuperCollider example:
-Creating a sine wave
-#+END_QUOTE
-
-
-#+BEGIN_SRC js
-{SinOsc.ar(440, 0, 0.3)}.play
-#+END_SRC
-
-#+BEGIN_QUOTE
-Additive synthesis
-#+END_QUOTE
-#+BEGIN_SRC js
-{SinOsc.ar(440, 0, 0.4)+SinOsc.ar(660, 0, 0.3)}.play;
-#+END_SRC
-
-#+BEGIN_QUOTE
-Subtractive synthesis
-#+END_QUOTE
-
-#+BEGIN_SRC js
-{LPF.ar(SinOsc.ar(440, 0, 0.4), 6000, 0.3)}.play;
-#+END_SRC
-
-#+BEGIN_QUOTE
-Granular synthesis
-#+END_QUOTE
-
-#+BEGIN_SRC js
-
-SynthDef(\granular, {|out = 0, trig = 1, dur = 0.1, sndbuf, pos = 0.2, 
-rate = 1, pan = 0, amp = 0.4|
-var env, source;
-env = EnvGen.kr(Env.adsr, 1, doneAcion: 2);
-source = Out.ar(out, GrainBuf.ar(2, Impulse.kr(trig), dur, sndbuf, rate, pos, 2,
-pan, envbuf) * env)
-}).add;
-
-#+END_SRC
-
-
-
-** Input Devices
-
-
-Musical gestures can be expressed through a wide range of body
-movements. Dozens of input devices have been developed to capture
-these gestures. (Roads 1996: 625)
-
-#+BEGIN_QUOTE
-Switch
-Push buttons
-Linear potentiometer or fader
-Trackball
-Joystick
-Game Paddles
-etc
-#+END_QUOTE
-** Instrument design
-
-
-[[http://bela.io][Bela]]
-
-
-Capacitive touch sensor-raspberry pi
-
-[[https://learn.adafruit.com/mpr121-capacitive-touch-sensor-on-raspberry-pi-and-beaglebone-black/overview][MPR121]] 
-
-
-
-
-** Mapping the Data from the Input Device
-
-The message coming from digital input devices are streams of binary
-numbers. A microprocessor inside the receiving symthesizer must decode
-these streams before commanding the synthesis engine  to emit
-sound. (Roads 1996: 625)
-
-
-** Remote Controllers
-
 * Emacs
 
 GNU Emacs
@@ -755,8 +613,150 @@ and this:
  put =\printbibliography= at the end so as to print the references section last on your text.
 
 
+* SuperCollider
 
-* Python 3.5
+From: [[http://supercollider.github.io][SuperCollider]]
+
+** Basics
+
+SuperCollider is a platform for audio synthesis and algorithmic composition, used by musicians, artists, and researchers working with sound. It is free and open source software available for Windows, macOS, and Linux.
+
+** SuperCollider features three major components:
+
+- *scsynth*, a real-time audio server, forms the core of the platform. It features 400+ unit generators ("UGens") for analysis, synthesis, and processing. Its granularity allows the fluid combination of many known and unknown audio techniques, moving between additive and subtractive synthesis, FM, granular synthesis, FFT, and physical modelling. You can write your own UGens in C++, and users have already contributed several hundred more to the sc3-plugins repository.
+- *sclang*, an interpreted programming language. It is focused on sound, but not limited to any specific domain. sclang controls scsynth via Open Sound Control. You can use it for algorithmic composition and sequencing, finding new sound synthesis methods, connecting your app to external hardware including MIDI controllers, network music, writing GUIs and visual displays, or for your daily programming experiments. It has a stock of user-contributed extensions called Quarks.
+- *scide* is an editor for sclang with an integrated help system.
+
+
+  
+** Nodes
+
+From: [[https://composerprogrammer.com/teaching/supercollider/sctutorial/6.3%2520Nodes.html][composerprogrammer.com]]
+
+The Server has a graph of all the running Synths, which may be organised into Groups for convenience. You can see Synths and Groups being created just by looking at the Server graphics.
+
+A Node means a Synth or a Group. Whenever you press command+period you reset the graph, cleaning out all the Synths and Groups you added, that is, clearing all Nodes.
+
+The initial state of the Node graph on the Server looks like this (do command+period first to destroy any existing nodes so you have the starting state):
+
+#+BEGIN_SRC js
+s.queryAllNodes //run me to see the Nodes on the Server
+#+END_SRC
+
+The two default Nodes are convenient Groups for putting your Synths into.
+
+Group(0) is the absolute root of the tree. All new Synths get placed within this Group somewhere (they might be in subGroups but they will be within the RootNode Group at the top of the hierarchy).
+
+#+BEGIN_SRC js
+r=RootNode.new; //this gets a reference to Group(0)
+#+END_SRC
+
+Group(1) was added as an additional default to receive all created Synths, to avoid cluttering the base of the tree.
+
+#+BEGIN_SRC js
+Group.basicNew(s, 1); //this gets a reference to Group(1)
+#+END_SRC
+
+
+
+
+** Find recordings folder
+
+#+BEGIN_SRC js
+thisProcess.platform.recordingsDir;
+#+END_SRC
+
+
+
+** Synthesis techniques 
+
+
+Introduction to sound design (origin, definition, procedures, application fields).
+
+#+BEGIN_QUOTE
+SuperCollider example:
+Creating a sine wave
+#+END_QUOTE
+
+
+#+BEGIN_SRC js
+{SinOsc.ar(440, 0, 0.3)}.play
+#+END_SRC
+
+#+BEGIN_QUOTE
+Additive synthesis
+#+END_QUOTE
+#+BEGIN_SRC js
+{SinOsc.ar(440, 0, 0.4)+SinOsc.ar(660, 0, 0.3)}.play;
+#+END_SRC
+
+#+BEGIN_QUOTE
+Subtractive synthesis
+#+END_QUOTE
+
+#+BEGIN_SRC js
+{LPF.ar(SinOsc.ar(440, 0, 0.4), 6000, 0.3)}.play;
+#+END_SRC
+
+#+BEGIN_QUOTE
+Granular synthesis
+#+END_QUOTE
+
+#+BEGIN_SRC js
+
+SynthDef(\granular, {|out = 0, trig = 1, dur = 0.1, sndbuf, pos = 0.2, 
+rate = 1, pan = 0, amp = 0.4|
+var env, source;
+env = EnvGen.kr(Env.adsr, 1, doneAcion: 2);
+source = Out.ar(out, GrainBuf.ar(2, Impulse.kr(trig), dur, sndbuf, rate, pos, 2,
+pan, envbuf) * env)
+}).add;
+
+#+END_SRC
+
+
+
+** Input Devices
+
+
+Musical gestures can be expressed through a wide range of body
+movements. Dozens of input devices have been developed to capture
+these gestures. (Roads 1996: 625)
+
+#+BEGIN_QUOTE
+Switch
+Push buttons
+Linear potentiometer or fader
+Trackball
+Joystick
+Game Paddles
+etc
+#+END_QUOTE
+** Instrument design
+
+
+[[http://bela.io][Bela]]
+
+
+Capacitive touch sensor-raspberry pi
+
+[[https://learn.adafruit.com/mpr121-capacitive-touch-sensor-on-raspberry-pi-and-beaglebone-black/overview][MPR121]] 
+
+
+
+
+** Mapping the Data from the Input Device
+
+The message coming from digital input devices are streams of binary
+numbers. A microprocessor inside the receiving symthesizer must decode
+these streams before commanding the synthesis engine  to emit
+sound. (Roads 1996: 625)
+
+
+** Remote Controllers
+
+
+* iPython
 
 
 Introduction to Python (https://www.python.org/doc/).

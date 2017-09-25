@@ -163,140 +163,6 @@ and physical computing,
 
 <p>organising and sharing projects using tools such as mass communication techniques Slack-Git.</p>
 
-<h1 id="supercollider">SuperCollider</h1>
-
-<p>From: <a href="http://supercollider.github.io" title="SuperCollider" target="_blank">SuperCollider</a></p>
-
-<h2 id="basics">Basics</h2>
-
-<p>SuperCollider is a platform for audio synthesis and algorithmic composition, used by musicians, artists, and researchers working with sound. It is free and open source software available for Windows, macOS, and Linux.</p>
-
-<h2 id="supercollider-features-three-major-components">SuperCollider features three major components:</h2>
-
-<ul>
-<li><strong>scsynth</strong>, a real-time audio server, forms the core of the platform. It features 400+ unit generators ("UGens") for analysis, synthesis, and processing. Its granularity allows the fluid combination of many known and unknown audio techniques, moving between additive and subtractive synthesis, FM, granular synthesis, FFT, and physical modelling. You can write your own UGens in C++, and users have already contributed several hundred more to the sc3-plugins repository.</li>
-<li><strong>sclang</strong>, an interpreted programming language. It is focused on sound, but not limited to any specific domain. sclang controls scsynth via Open Sound Control. You can use it for algorithmic composition and sequencing, finding new sound synthesis methods, connecting your app to external hardware including MIDI controllers, network music, writing GUIs and visual displays, or for your daily programming experiments. It has a stock of user-contributed extensions called Quarks.</li>
-<li><strong>scide</strong> is an editor for sclang with an integrated help system.</li>
-</ul>
-
-<h2 id="nodes">Nodes</h2>
-
-<p>From: <a href="https://composerprogrammer.com/teaching/supercollider/sctutorial/6.3%2520Nodes.html" title="composerprogrammer.com" target="_blank">composerprogrammer.com</a></p>
-
-<p>The Server has a graph of all the running Synths, which may be organised into Groups for convenience. You can see Synths and Groups being created just by looking at the Server graphics.</p>
-
-<p>A Node means a Synth or a Group. Whenever you press command+period you reset the graph, cleaning out all the Synths and Groups you added, that is, clearing all Nodes.</p>
-
-<p>The initial state of the Node graph on the Server looks like this (do command+period first to destroy any existing nodes so you have the starting state):</p>
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="nx">s</span><span class="p">.</span><span class="nx">queryAllNodes</span> <span class="c1">//run me to see the Nodes on the Server</span>
-</code></pre></div>
-
-<p>The two default Nodes are convenient Groups for putting your Synths into.</p>
-
-<p>Group(0) is the absolute root of the tree. All new Synths get placed within this Group somewhere (they might be in subGroups but they will be within the RootNode Group at the top of the hierarchy).</p>
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="nx">r</span><span class="o">=</span><span class="nx">RootNode</span><span class="p">.</span><span class="k">new</span><span class="p">;</span> <span class="c1">//this gets a reference to Group(0)</span>
-</code></pre></div>
-
-<p>Group(1) was added as an additional default to receive all created Synths, to avoid cluttering the base of the tree.</p>
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="nx">Group</span><span class="p">.</span><span class="nx">basicNew</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">//this gets a reference to Group(1)</span>
-</code></pre></div>
-
-<h2 id="find-recordings-folder">Find recordings folder</h2>
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="nx">thisProcess</span><span class="p">.</span><span class="nx">platform</span><span class="p">.</span><span class="nx">recordingsDir</span><span class="p">;</span>
-</code></pre></div>
-
-<h2 id="synthesis-techniques">Synthesis techniques</h2>
-
-<p>Introduction to sound design (origin, definition, procedures, application fields).</p>
-
-<blockquote>
-<p>
-SuperCollider example:
-</p>
-<p>
-Creating a sine wave
-</p>
-</blockquote>
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="p">{</span><span class="nx">SinOsc</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="mi">440</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">)}.</span><span class="nx">play</span>
-</code></pre></div>
-
-<blockquote>
-<p>
-Additive synthesis
-</p>
-</blockquote>
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="p">{</span><span class="nx">SinOsc</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="mi">440</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">)</span><span class="o">+</span><span class="nx">SinOsc</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="mi">660</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">)}.</span><span class="nx">play</span><span class="p">;</span>
-</code></pre></div>
-
-<blockquote>
-<p>
-Subtractive synthesis
-</p>
-</blockquote>
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="p">{</span><span class="nx">LPF</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="nx">SinOsc</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="mi">440</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">),</span> <span class="mi">6000</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">)}.</span><span class="nx">play</span><span class="p">;</span>
-</code></pre></div>
-
-<blockquote>
-<p>
-Granular synthesis
-</p>
-</blockquote>
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="nx">SynthDef</span><span class="p">(</span><span class="err">\</span><span class="nx">granular</span><span class="p">,</span> <span class="p">{</span><span class="o">|</span><span class="nx">out</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">trig</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">dur</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="nx">sndbuf</span><span class="p">,</span> <span class="nx">pos</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> 
-<span class="nx">rate</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">pan</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">amp</span> <span class="o">=</span> <span class="mf">0.4</span><span class="o">|</span>
-<span class="kd">var</span> <span class="nx">env</span><span class="p">,</span> <span class="nx">source</span><span class="p">;</span>
-<span class="nx">env</span> <span class="o">=</span> <span class="nx">EnvGen</span><span class="p">.</span><span class="nx">kr</span><span class="p">(</span><span class="nx">Env</span><span class="p">.</span><span class="nx">adsr</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">doneAcion</span><span class="o">:</span> <span class="mi">2</span><span class="p">);</span>
-<span class="nx">source</span> <span class="o">=</span> <span class="nx">Out</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="nx">out</span><span class="p">,</span> <span class="nx">GrainBuf</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nx">Impulse</span><span class="p">.</span><span class="nx">kr</span><span class="p">(</span><span class="nx">trig</span><span class="p">),</span> <span class="nx">dur</span><span class="p">,</span> <span class="nx">sndbuf</span><span class="p">,</span> <span class="nx">rate</span><span class="p">,</span> <span class="nx">pos</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span>
-<span class="nx">pan</span><span class="p">,</span> <span class="nx">envbuf</span><span class="p">)</span> <span class="o">*</span> <span class="nx">env</span><span class="p">)</span>
-<span class="p">}).</span><span class="nx">add</span><span class="p">;</span>
-</code></pre></div>
-
-<h2 id="input-devices-1">Input Devices</h2>
-
-<p>Musical gestures can be expressed through a wide range of body
-movements. Dozens of input devices have been developed to capture
-these gestures. (Roads 1996: 625)</p>
-
-<blockquote>
-<p>
-Switch
-</p>
-<p>
-Push buttons
-</p>
-<p>
-Linear potentiometer or fader
-</p>
-<p>
-Trackball
-</p>
-<p>
-Joystick
-</p>
-<p>
-Game Paddles
-</p>
-<p>
-etc
-</p>
-</blockquote>
-
-<h2 id="instrument-design">Instrument design</h2>
-
-<p><a href="http://bela.io" title="Bela" target="_blank">Bela</a></p>
-
-<p>Capacitive touch sensor-raspberry pi</p>
-
-<p><a href="https://learn.adafruit.com/mpr121-capacitive-touch-sensor-on-raspberry-pi-and-beaglebone-black/overview" title="MPR121" target="_blank">MPR121</a></p>
-
-<h2 id="mapping-the-data-from-the-input-device">Mapping the Data from the Input Device</h2>
-
-<p>The message coming from digital input devices are streams of binary
-numbers. A microprocessor inside the receiving symthesizer must decode
-these streams before commanding the synthesis engine  to emit
-sound. (Roads 1996: 625)</p>
-
-<h2 id="remote-controllers">Remote Controllers</h2>
-
 <h1 id="emacs">Emacs</h1>
 
 <p>GNU Emacs
@@ -854,7 +720,141 @@ and this:
 
 <p>put <code>\printbibliography</code> at the end so as to print the references section last on your text.</p>
 
-<h1 id="python-3-5">Python 3.5</h1>
+<h1 id="supercollider">SuperCollider</h1>
+
+<p>From: <a href="http://supercollider.github.io" title="SuperCollider" target="_blank">SuperCollider</a></p>
+
+<h2 id="basics">Basics</h2>
+
+<p>SuperCollider is a platform for audio synthesis and algorithmic composition, used by musicians, artists, and researchers working with sound. It is free and open source software available for Windows, macOS, and Linux.</p>
+
+<h2 id="supercollider-features-three-major-components">SuperCollider features three major components:</h2>
+
+<ul>
+<li><strong>scsynth</strong>, a real-time audio server, forms the core of the platform. It features 400+ unit generators ("UGens") for analysis, synthesis, and processing. Its granularity allows the fluid combination of many known and unknown audio techniques, moving between additive and subtractive synthesis, FM, granular synthesis, FFT, and physical modelling. You can write your own UGens in C++, and users have already contributed several hundred more to the sc3-plugins repository.</li>
+<li><strong>sclang</strong>, an interpreted programming language. It is focused on sound, but not limited to any specific domain. sclang controls scsynth via Open Sound Control. You can use it for algorithmic composition and sequencing, finding new sound synthesis methods, connecting your app to external hardware including MIDI controllers, network music, writing GUIs and visual displays, or for your daily programming experiments. It has a stock of user-contributed extensions called Quarks.</li>
+<li><strong>scide</strong> is an editor for sclang with an integrated help system.</li>
+</ul>
+
+<h2 id="nodes">Nodes</h2>
+
+<p>From: <a href="https://composerprogrammer.com/teaching/supercollider/sctutorial/6.3%2520Nodes.html" title="composerprogrammer.com" target="_blank">composerprogrammer.com</a></p>
+
+<p>The Server has a graph of all the running Synths, which may be organised into Groups for convenience. You can see Synths and Groups being created just by looking at the Server graphics.</p>
+
+<p>A Node means a Synth or a Group. Whenever you press command+period you reset the graph, cleaning out all the Synths and Groups you added, that is, clearing all Nodes.</p>
+
+<p>The initial state of the Node graph on the Server looks like this (do command+period first to destroy any existing nodes so you have the starting state):</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="nx">s</span><span class="p">.</span><span class="nx">queryAllNodes</span> <span class="c1">//run me to see the Nodes on the Server</span>
+</code></pre></div>
+
+<p>The two default Nodes are convenient Groups for putting your Synths into.</p>
+
+<p>Group(0) is the absolute root of the tree. All new Synths get placed within this Group somewhere (they might be in subGroups but they will be within the RootNode Group at the top of the hierarchy).</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="nx">r</span><span class="o">=</span><span class="nx">RootNode</span><span class="p">.</span><span class="k">new</span><span class="p">;</span> <span class="c1">//this gets a reference to Group(0)</span>
+</code></pre></div>
+
+<p>Group(1) was added as an additional default to receive all created Synths, to avoid cluttering the base of the tree.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="nx">Group</span><span class="p">.</span><span class="nx">basicNew</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">//this gets a reference to Group(1)</span>
+</code></pre></div>
+
+<h2 id="find-recordings-folder">Find recordings folder</h2>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="nx">thisProcess</span><span class="p">.</span><span class="nx">platform</span><span class="p">.</span><span class="nx">recordingsDir</span><span class="p">;</span>
+</code></pre></div>
+
+<h2 id="synthesis-techniques">Synthesis techniques</h2>
+
+<p>Introduction to sound design (origin, definition, procedures, application fields).</p>
+
+<blockquote>
+<p>
+SuperCollider example:
+</p>
+<p>
+Creating a sine wave
+</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="p">{</span><span class="nx">SinOsc</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="mi">440</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">)}.</span><span class="nx">play</span>
+</code></pre></div>
+
+<blockquote>
+<p>
+Additive synthesis
+</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="p">{</span><span class="nx">SinOsc</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="mi">440</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">)</span><span class="o">+</span><span class="nx">SinOsc</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="mi">660</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">)}.</span><span class="nx">play</span><span class="p">;</span>
+</code></pre></div>
+
+<blockquote>
+<p>
+Subtractive synthesis
+</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="p">{</span><span class="nx">LPF</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="nx">SinOsc</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="mi">440</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">),</span> <span class="mi">6000</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">)}.</span><span class="nx">play</span><span class="p">;</span>
+</code></pre></div>
+
+<blockquote>
+<p>
+Granular synthesis
+</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="nx">SynthDef</span><span class="p">(</span><span class="err">\</span><span class="nx">granular</span><span class="p">,</span> <span class="p">{</span><span class="o">|</span><span class="nx">out</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">trig</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">dur</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="nx">sndbuf</span><span class="p">,</span> <span class="nx">pos</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> 
+<span class="nx">rate</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">pan</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">amp</span> <span class="o">=</span> <span class="mf">0.4</span><span class="o">|</span>
+<span class="kd">var</span> <span class="nx">env</span><span class="p">,</span> <span class="nx">source</span><span class="p">;</span>
+<span class="nx">env</span> <span class="o">=</span> <span class="nx">EnvGen</span><span class="p">.</span><span class="nx">kr</span><span class="p">(</span><span class="nx">Env</span><span class="p">.</span><span class="nx">adsr</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">doneAcion</span><span class="o">:</span> <span class="mi">2</span><span class="p">);</span>
+<span class="nx">source</span> <span class="o">=</span> <span class="nx">Out</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="nx">out</span><span class="p">,</span> <span class="nx">GrainBuf</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nx">Impulse</span><span class="p">.</span><span class="nx">kr</span><span class="p">(</span><span class="nx">trig</span><span class="p">),</span> <span class="nx">dur</span><span class="p">,</span> <span class="nx">sndbuf</span><span class="p">,</span> <span class="nx">rate</span><span class="p">,</span> <span class="nx">pos</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span>
+<span class="nx">pan</span><span class="p">,</span> <span class="nx">envbuf</span><span class="p">)</span> <span class="o">*</span> <span class="nx">env</span><span class="p">)</span>
+<span class="p">}).</span><span class="nx">add</span><span class="p">;</span>
+</code></pre></div>
+
+<h2 id="input-devices-1">Input Devices</h2>
+
+<p>Musical gestures can be expressed through a wide range of body
+movements. Dozens of input devices have been developed to capture
+these gestures. (Roads 1996: 625)</p>
+
+<blockquote>
+<p>
+Switch
+</p>
+<p>
+Push buttons
+</p>
+<p>
+Linear potentiometer or fader
+</p>
+<p>
+Trackball
+</p>
+<p>
+Joystick
+</p>
+<p>
+Game Paddles
+</p>
+<p>
+etc
+</p>
+</blockquote>
+
+<h2 id="instrument-design">Instrument design</h2>
+
+<p><a href="http://bela.io" title="Bela" target="_blank">Bela</a></p>
+
+<p>Capacitive touch sensor-raspberry pi</p>
+
+<p><a href="https://learn.adafruit.com/mpr121-capacitive-touch-sensor-on-raspberry-pi-and-beaglebone-black/overview" title="MPR121" target="_blank">MPR121</a></p>
+
+<h2 id="mapping-the-data-from-the-input-device">Mapping the Data from the Input Device</h2>
+
+<p>The message coming from digital input devices are streams of binary
+numbers. A microprocessor inside the receiving symthesizer must decode
+these streams before commanding the synthesis engine  to emit
+sound. (Roads 1996: 625)</p>
+
+<h2 id="remote-controllers">Remote Controllers</h2>
+
+<h1 id="ipython">iPython</h1>
 
 <p>Introduction to Python (https://www.python.org/doc/).</p>
 
