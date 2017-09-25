@@ -837,7 +837,10 @@ Ipython package **ein** on MELPA
 
 Data sonification experiment on particle-physics-playground.
 
-For more info see here: https://github.com/particle-physics-playground
+For more info see here: 
+
+[[https://github.com/particle-physics-playground][particle-physics-playground]]
+
   
 - Sending OSC messages to other application
 
@@ -845,7 +848,58 @@ to send osc messages to other application install *python-osc* library
 
 In this case I use SuperCollider port *57120*
 
+#+BEGIN_QUOTE
+SuperCollider
+#+END_QUOTE
 
+#+BEGIN_SRC js
+// BA 28022017
+// Testing osc communication - Receiving data from ipython - 'CMS' (Compact Muon Solenoid) __
+
+s.boot // boot the server
+s.record // record
+s.stopRecording // stop recording
+
+
+// create synthdef
+(
+SynthDef(\ipythontest, {|
+	freq = 440, gate = 1,
+amp = 0.5, out = 0|
+	var env, source;
+	
+	env = EnvGen.kr(Env.adsr, 1, doneAction:2);
+
+	//source = SinOsc.ar(freq*2, 0, amp);
+	source = SinOsc.ar(SinOsc.ar(freq*2, freq*4, freq*2), 0,  amp);
+	// source  = UseWhateverGen.ar();
+
+	
+	Out.ar(out, Pan2.ar(source*env, 0))!2
+}).add;
+
+~x=Synth(\ipythontest, [\freq, 440, \amp, 0.5]); // run the synth
+
+
+// set osc
+
+~a = OSCdef(\oscTest,
+	{
+			| ... msg | msg.postln;
+	
+			~x.set(\freq, msg, \amp, 0.9);
+		//~muons = msg [0] [1..];
+		//~muons.postln;
+
+
+
+		// use the osc messages (msg) for the frequency
+	},
+	'/print' // OSCmessage name 
+);
+)
+
+#+END_SRC
 
 #+BEGIN_SRC python
 

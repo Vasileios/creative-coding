@@ -928,7 +928,9 @@ CERN examples: <em>particle-physics-playground-playground-52de62d</em>
 
 <p>Data sonification experiment on particle-physics-playground.</p>
 
-<p>For more info see here: https://github.com/particle-physics-playground</p>
+<p>For more info see here:</p>
+
+<p><a href="https://github.com/particle-physics-playground" title="particle-physics-playground" target="_blank">particle-physics-playground</a></p>
 
 <ul>
 <li>Sending OSC messages to other application</li>
@@ -937,6 +939,58 @@ CERN examples: <em>particle-physics-playground-playground-52de62d</em>
 <p>to send osc messages to other application install <strong>python-osc</strong> library</p>
 
 <p>In this case I use SuperCollider port <strong>57120</strong></p>
+
+<blockquote>
+<p>
+SuperCollider
+</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="c1">// BA 28022017</span>
+<span class="c1">// Testing osc communication - Receiving data from ipython - &#39;CMS&#39; (Compact Muon Solenoid) __</span>
+
+<span class="nx">s</span><span class="p">.</span><span class="nx">boot</span> <span class="c1">// boot the server</span>
+<span class="nx">s</span><span class="p">.</span><span class="nx">record</span> <span class="c1">// record</span>
+<span class="nx">s</span><span class="p">.</span><span class="nx">stopRecording</span> <span class="c1">// stop recording</span>
+
+
+<span class="c1">// create synthdef</span>
+<span class="p">(</span>
+<span class="nx">SynthDef</span><span class="p">(</span><span class="err">\</span><span class="nx">ipythontest</span><span class="p">,</span> <span class="p">{</span><span class="o">|</span>
+	<span class="nx">freq</span> <span class="o">=</span> <span class="mi">440</span><span class="p">,</span> <span class="nx">gate</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+<span class="nx">amp</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="nx">out</span> <span class="o">=</span> <span class="mi">0</span><span class="o">|</span>
+	<span class="kd">var</span> <span class="nx">env</span><span class="p">,</span> <span class="nx">source</span><span class="p">;</span>
+
+	<span class="nx">env</span> <span class="o">=</span> <span class="nx">EnvGen</span><span class="p">.</span><span class="nx">kr</span><span class="p">(</span><span class="nx">Env</span><span class="p">.</span><span class="nx">adsr</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">doneAction</span><span class="o">:</span><span class="mi">2</span><span class="p">);</span>
+
+	<span class="c1">//source = SinOsc.ar(freq*2, 0, amp);</span>
+	<span class="nx">source</span> <span class="o">=</span> <span class="nx">SinOsc</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="nx">SinOsc</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="nx">freq</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="nx">freq</span><span class="o">*</span><span class="mi">4</span><span class="p">,</span> <span class="nx">freq</span><span class="o">*</span><span class="mi">2</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span>  <span class="nx">amp</span><span class="p">);</span>
+	<span class="c1">// source  = UseWhateverGen.ar();</span>
+
+
+	<span class="nx">Out</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="nx">out</span><span class="p">,</span> <span class="nx">Pan2</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="nx">source</span><span class="o">*</span><span class="nx">env</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span><span class="o">!</span><span class="mi">2</span>
+<span class="p">}).</span><span class="nx">add</span><span class="p">;</span>
+
+<span class="o">~</span><span class="nx">x</span><span class="o">=</span><span class="nx">Synth</span><span class="p">(</span><span class="err">\</span><span class="nx">ipythontest</span><span class="p">,</span> <span class="p">[</span><span class="err">\</span><span class="nx">freq</span><span class="p">,</span> <span class="mi">440</span><span class="p">,</span> <span class="err">\</span><span class="nx">amp</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]);</span> <span class="c1">// run the synth</span>
+
+
+<span class="c1">// set osc</span>
+
+<span class="o">~</span><span class="nx">a</span> <span class="o">=</span> <span class="nx">OSCdef</span><span class="p">(</span><span class="err">\</span><span class="nx">oscTest</span><span class="p">,</span>
+	<span class="p">{</span>
+			<span class="o">|</span> <span class="p">...</span> <span class="nx">msg</span> <span class="o">|</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">postln</span><span class="p">;</span>
+
+			<span class="o">~</span><span class="nx">x</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="err">\</span><span class="nx">freq</span><span class="p">,</span> <span class="nx">msg</span><span class="p">,</span> <span class="err">\</span><span class="nx">amp</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">);</span>
+		<span class="c1">//~muons = msg [0] [1..];</span>
+		<span class="c1">//~muons.postln;</span>
+
+
+
+		<span class="c1">// use the osc messages (msg) for the frequency</span>
+	<span class="p">},</span>
+	<span class="s1">&#39;/print&#39;</span> <span class="c1">// OSCmessage name </span>
+<span class="p">);</span>
+<span class="p">)</span>
+</code></pre></div>
 <div class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="c1">#VA_exp_280217_001</span>
 
 
