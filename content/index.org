@@ -983,6 +983,10 @@ import cms_tools as cms
 
 
 
+#+END_SRC
+
+#+BEGIN_SRC python
+ 
 In [3]
 infile = open('../particle-physics-playground-Sonification-Example_001/data/small_cms_test_file.dat')
 
@@ -1136,6 +1140,12 @@ for collision in collisions:
         photons_E.append(E)
 
   
+
+
+
+#+END_SRC
+
+#+BEGIN_SRC python
 
 In [18]
 import time
