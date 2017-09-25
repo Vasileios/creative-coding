@@ -913,6 +913,97 @@ open <code>init.el</code> and write
 <div class="highlight"><pre><code class="language-emacs-lisp" data-lang="emacs-lisp"><span></span><span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;ein</span><span class="p">)</span>
 </code></pre></div>
 
+<h2 id="installing">installing</h2>
+
+<ul>
+<li>IPython is the component in the toolset that ties everything together; it provides a robust and productive environment for interactive and exploratory computing.</li>
+</ul>
+
+<ul>
+<li>ipython noteboook uses a client-server model. This makes it possible to interact with ipython from several different environments. For example, emacs or a web browser.</li>
+</ul>
+
+<p>For more info see: https://ipython.org</p>
+
+<p>Two other key components are <a href="https://jupyter" title="Jupyter Notebooks" target="_blank">Jupyter Notebooks</a> and <a href="https://www.continuum.io" title="Anaconda" target="_blank">Anaconda</a>. Jupyter provides Mathematica like notebooks and Anaconda is a package management system.</p>
+
+<p>Jupyter Notebooks, originally called
+IPython Notebooks,and it commonly used for improving the reproducibility and accessiblity of scientific research.</p>
+
+<h2 id="other-math-science-data-oriented-python-tools">Other math/science/data oriented Python tools</h2>
+
+<ul>
+<li>Scikit - machine learning</li>
+<li>Scikit-image & PIL/Pillow - image processing</li>
+<li>Blaze - data transformation pipelines & simplified interactions with various data stores</li>
+<li>Bokeh - Interactive web visualisations</li>
+<li>Sympy - symbolic algebra (also see Sage)</li>
+<li>YT - for analysing and visualising volumetric data</li>
+<li>Numba - a very easy to use JIT compiler (just import it and put @jit annotation on functions you want compiled) and for dealing with genuinely big data there is PySpark and Ibis.</li>
+</ul>
+
+<h1 id="install-ipython-on-emacs">Install ipython on emacs:</h1>
+
+<p>First install anaconda:
+https://www.continuum.io/downloads
+check your python version in terminal <code>python --version</code> i.e <em>3.5</em>, and download anaconda3.</p>
+
+<p>After downloaded anaconda open terminal and <code>cd</code> to anacoda3 directory and type:</p>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh"><span></span>bash Anaconda3-4.3.0-MacOSX-x86_64.sh
+</code></pre></div>
+
+<p>press yes for anaconda3 to add the <code>PATH</code> to your /.bash_profile/</p>
+
+<p>The next step is to:</p>
+
+<ul>
+<li>install ipython on emacs. One of the packages is called <em><a href="https://github.com/tkf/emacs-ipython-notebook" title="ein" target="_blank">ein</a></em> and you can install it through  <strong>melpa</strong>.</li>
+</ul>
+
+<p>copy <strong>ein.el</strong> and <strong>ein.py</strong> to your emacs upload directory</p>
+
+<ul>
+<li>open =.emacs.d= and write</li>
+</ul>
+<div class="highlight"><pre><code class="language-lisp" data-lang="lisp"><span></span><span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;ein</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Start IPython notebook server.
+Go to terminal and write: <code>jupyter notebook</code> then copy the <em>token</em> and paste it as the password to login to the server.</p>
+
+<p>On emacs hit <code>M-x ein:notebooklist-login</code> and press <em>return</em> to use the <code>localhost:8888</code>, server and use the token (password) to login.</p>
+
+<p>i.e <code>password: 8b4cae6477dbcfc426a2d9030c8bfdfc7d7503cba9180ab8</code></p>
+
+<p>*Term output example*:</p>
+
+<p>[I 01:49:54.596 NotebookApp] Serving
+notebooks from local directory: <em>Users/usr_name
+[I 01:49:54.596 NotebookApp] 0 active kernels
+[I 01:49:54.597 NotebookApp] The Jupyter Notebook is running at:
+http://localhost:8888</em>?token=8b4cae6477dbcfc426a2d9030c8bfdfc7d7503cba9180ab8
+[I 01:49:54.597 NotebookApp] Use Control-C to stop this server and shut
+down all kernels (twice to skip confirmation).
+[C 01:49:54.626 NotebookApp]</p>
+
+<p>Copy/paste this URL into your browser when you connect for the first time,
+    to login with a token:</p>
+
+<p>http://localhost:8888/?token=8b
+4cae6477dbcfc426a2d9030c8bfdfc7d7503cba9180ab8</p>
+
+<p>If you successfully logged in to the server;</p>
+
+<p>Hit <code>M-x ein:notebooklist-open</code> to open the notebook list. This will open a notebook list buffer.</p>
+
+<p>In the notebook list buffer, you can open notebooks by hitting [Open], [Dir] for directories, create new notebook [New notebook], delete notebook [Delete].</p>
+
+<p><strong>NOTE*
+You can also check <a href="http://orgmode.org/worg/org-contrib/babel/languages/ob-doc-python.html" title="ob-python" target="_blank">ob-python</a> package for *source code block ipython in org-mode</strong></p>
+
+<p>You can start testing ipython using these examples:
+ <em><a href="https://github.com/particle-physics-playground/playground" title="particle-physics-playground-playground-52de62d" target="_blank">particle-physics-playground-playground-52de62d</a></em></p>
+
 <blockquote>
 <p>
 CERN examples: <em>particle-physics-playground-playground-52de62d</em>

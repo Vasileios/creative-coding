@@ -824,6 +824,94 @@ open =init.el= and write
 (require 'ein)
 #+END_SRC
 
+** installing
+
+- IPython is the component in the toolset that ties everything together; it provides a robust and productive environment for interactive and exploratory computing.
+
+- ipython noteboook uses a client-server model. This makes it possible to interact with ipython from several different environments. For example, emacs or a web browser.
+
+For more info see: https://ipython.org
+
+Two other key components are [[https://jupyter.org][Jupyter Notebooks]] and [[https://www.continuum.io][Anaconda]]. Jupyter provides Mathematica like notebooks and Anaconda is a package management system.
+
+Jupyter Notebooks, originally called
+IPython Notebooks,and it commonly used for improving the reproducibility and accessiblity of scientific research.
+
+
+** Other math/science/data oriented Python tools
+
+- Scikit - machine learning
+- Scikit-image & PIL/Pillow - image processing
+- Blaze - data transformation pipelines & simplified interactions with various data stores
+- Bokeh - Interactive web visualisations
+- Sympy - symbolic algebra (also see Sage)
+- YT - for analysing and visualising volumetric data
+- Numba - a very easy to use JIT compiler (just import it and put @jit annotation on functions you want compiled) and for dealing with genuinely big data there is PySpark and Ibis.
+
+* Install ipython on emacs:
+
+First install anaconda:
+https://www.continuum.io/downloads
+check your python version in terminal =python --version= i.e /3.5/, and download anaconda3.
+
+After downloaded anaconda open terminal and =cd= to anacoda3 directory and type:
+
+#+BEGIN_SRC sh
+bash Anaconda3-4.3.0-MacOSX-x86_64.sh
+#+END_SRC
+
+press yes for anaconda3 to add the =PATH= to your /.bash_profile/
+
+The next step is to:
+
+- install ipython on emacs. One of the packages is called /[[https://github.com/tkf/emacs-ipython-notebook][ein]]/ and you can install it through  *melpa*.
+
+copy *ein.el* and *ein.py* to your emacs upload directory
+
+- open =.emacs.d= and write
+
+#+BEGIN_SRC lisp
+(require 'ein)
+#+END_SRC
+
+Start IPython notebook server.
+Go to terminal and write: =jupyter notebook= then copy the /token/ and paste it as the password to login to the server.
+
+On emacs hit =M-x ein:notebooklist-login= and press /return/ to use the =localhost:8888=, server and use the token (password) to login.
+
+i.e =password: 8b4cae6477dbcfc426a2d9030c8bfdfc7d7503cba9180ab8=
+
+*Term output example*:
+
+#+Begin_SRC sh
+[I 01:49:54.596 NotebookApp] Serving
+notebooks from local directory: /Users/usr_name
+[I 01:49:54.596 NotebookApp] 0 active kernels
+[I 01:49:54.597 NotebookApp] The Jupyter Notebook is running at:
+http://localhost:8888/?token=8b4cae6477dbcfc426a2d9030c8bfdfc7d7503cba9180ab8
+[I 01:49:54.597 NotebookApp] Use Control-C to stop this server and shut
+down all kernels (twice to skip confirmation).
+[C 01:49:54.626 NotebookApp]
+
+    Copy/paste this URL into your browser when you connect for the first time,
+    to login with a token:
+
+        http://localhost:8888/?token=8b
+4cae6477dbcfc426a2d9030c8bfdfc7d7503cba9180ab8
+#+End_SRC
+If you successfully logged in to the server;
+
+Hit =M-x ein:notebooklist-open= to open the notebook list. This will open a notebook list buffer.
+
+In the notebook list buffer, you can open notebooks by hitting [Open], [Dir] for directories, create new notebook [New notebook], delete notebook [Delete].
+
+*NOTE*
+You can also check [[http://orgmode.org/worg/org-contrib/babel/languages/ob-doc-python.html][ob-python]] package for *source code block ipython in org-mode*
+
+You can start testing ipython using these examples:
+ /[[https://github.com/particle-physics-playground/playground][particle-physics-playground-playground-52de62d]]/
+
+
 #+BEGIN_QUOTE
 CERN examples: /particle-physics-playground-playground-52de62d/
 
