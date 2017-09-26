@@ -214,7 +214,7 @@ Example-images
 ** Ditaa
 
 
-#+BEGIN_QUOTE
+#+BEGIN_Example
 #+BEGIN_SRC ditta :file image/awesome.png
 
    _
@@ -225,7 +225,7 @@ Example-images
 
 #+END_SRC
 
-#+END_QUOTE
+#+END_Example
 
 *Find the path of ditaa.jar in you computer through a lisp program*
 
