@@ -338,9 +338,9 @@ Example-images
 
 <p><code>#+END_SRC</code></p>
 
-<p><strong>Find the path of ditaa.jar in you computer through a lisp program</strong></p>
-
 <p><code>C-c C-c</code> to evaluate lisp code inside source block</p>
+
+<p><strong>Find the path of ditaa.jar in you computer through a lisp program</strong></p>
 <div class="highlight"><pre><code class="language-emacs-lisp" data-lang="emacs-lisp"><span></span><span class="p">(</span><span class="nf">expand-file-name</span>
              <span class="s">&quot;ditaa.jar&quot;</span>
       <span class="p">(</span><span class="nf">file-name-as-directory</span>
@@ -394,10 +394,10 @@ Example-images
 
 <p>Evaluate source code. Press C-c C-c inside the block and see the results.</p>
 
-<p>#+BEGIN_Example
- echo "Hello $USER! Today is `date`"
- exit
- #+END_Example</p>
+<p>#+BEGIN_SRC shell
+ echo "Hello $USER! Today is `date`"</p>
+
+<p>#+END_SRC</p>
 
 <h2 id="latex-integrator">LaTeX integrator</h2>
 

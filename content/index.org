@@ -226,9 +226,10 @@ Example-images
 =#+END_SRC=
 
 
+=C-c C-c= to evaluate lisp code inside source block
+
 *Find the path of ditaa.jar in you computer through a lisp program*
 
-=C-c C-c= to evaluate lisp code inside source block
 
 #+BEGIN_SRC emacs-lisp
 
@@ -291,10 +292,10 @@ Then close the source block with:
 
 Evaluate source code. Press C-c C-c inside the block and see the results.
 
- #+BEGIN_Example
+ #+BEGIN_SRC shell
  echo "Hello $USER! Today is `date`"
- exit
- #+END_Example
+ 
+ #+END_SRC
 
 ** LaTeX integrator
 
