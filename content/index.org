@@ -437,11 +437,11 @@ in magit press h to bring the popoup and choose rebase -r and then -p
 
 *Install aspell from brew*
 
-#+BEGIN_Example
+#+BEGIN_SRC shell
 
 $ brew install aspell --with-lang-en --with-lang-el --with-lang-de
 
-#+END_Example
+#+END_SRC
 
 for English, Hellenic and Deutsch languages.
 
