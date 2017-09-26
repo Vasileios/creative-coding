@@ -213,6 +213,20 @@ Example-images
 
 ** Ditaa
 
+
+#+BEGIN_QUOTE
+#+BEGIN_SRC ditta :file image/awesome.png
+
+   _
+  /_\__      _____  ___  ___  _ __ ___   ___
+ //_\\ \ /\ / / _ \/ __|/ _ \| '_ ` _ \ / _ \
+/  _  \ V  V /  __/\__ \ (_) | | | | | |  __/
+\_/ \_/\_/\_/ \___||___/\___/|_| |_| |_|\___|
+
+#+END_SRC
+
+#+END_QUOTE
+
 *Find the path of ditaa.jar in you computer through a lisp program*
 
 =C-c C-c= to evaluate lisp code inside source block
