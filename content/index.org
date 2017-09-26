@@ -214,8 +214,8 @@ Example-images
 ** Ditaa
 
 
-#+BEGIN_Example
-#+BEGIN_SRC ditta :file image/awesome.png
+
+=#+BEGIN_SRC ditta :file image/awesome.png=
 
    _
   /_\__      _____  ___  ___  _ __ ___   ___
@@ -223,9 +223,8 @@ Example-images
 /  _  \ V  V /  __/\__ \ (_) | | | | | |  __/
 \_/ \_/\_/\_/ \___||___/\___/|_| |_| |_|\___|
 
-#+END_SRC
+=#+END_SRC=
 
-#+END_Example
 
 *Find the path of ditaa.jar in you computer through a lisp program*
 
