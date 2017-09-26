@@ -45,9 +45,7 @@ design, recycle old toys and instruments, and transformed them to an alternate i
 
 *creative programming environments:*
 
-- Emacs as a basic editor and Git file sharing
-(https://github.com/magit/magit), 
-
+- Emacs as the editor
 - SuperCollider, and
 - Python 
 - C++ and openFrameworks
@@ -65,7 +63,11 @@ and physical computing,
 
 ** Organising and sharing
 
-organising and sharing projects using tools such as mass communication techniques Slack-Git.
+organising and sharing projects using tools such as mass communication
+techniques Slack-Git.  Git-Magit file sharing
+
+[[https://github.com/magit/magit%20][Magit]]
+
 
 
 
