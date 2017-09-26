@@ -183,24 +183,31 @@ or a video url
 Use *pipes - vertical bars* to make tables
 
 Example: Start with pipes and some text:
-/| some | | Data |/
+
+=| some | | Data |=
 
 then hit return, pipe (vertical bar), hyphen and tab to extend the table verticaly
 
-Press tab and arrows to make arrangements for the table
+Press tab and the arrows keys to make arrangements on the table
 
 | Some | Data  |
 |------+-------|
-|  234 | rocks |
-| 1200 | start |
+|  234 | muons |
+| 1200 | jets  |
 
 ** Images & Graphics
 ** Images
 
+To insert and image do the following:
+
+#+BEGIN_QUOTE
+Example-images
+#+END_QUOTE
+
 #+BEGIN_EXAMPLE
-#+Caption: Wiring MPR121 c_s to Raspberry pi
-#+Name: fig 01
-[[./images/wiringMPR121Raspberry]]
+#+Caption: This is my image
+#+Name: Fig 1
+[[./images/myimage]]
 #+END_EXAMPLE
 
 
