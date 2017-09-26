@@ -40,9 +40,10 @@ design, recycle old toys and instruments, and transformed them to an alternate i
 * Methodology and tools
 ** Programming languages-environments
 
-Investigation on different environments and to create interconnection.
+- Investigation on different environments 
+- create interconnection.
 
-creative programming environments:
+*creative programming environments:*
 
 - Emacs as a basic editor and Git file sharing
 (https://github.com/magit/magit), 
