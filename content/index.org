@@ -339,7 +339,7 @@ Use shift-arrows to change dates
 
 ** Github
 
-Introduction to Environments (Github, Bitbucket) for organizing and sharing files-Git.
+Introduction to Environments (Github or Bitbucket) for organizing and sharing files-Git.
 Set up an account with Slack and Github.
 
 #+BEGIN_QUOTE
@@ -368,9 +368,13 @@ Https://gist.github.com/davfre/8313299
  
 ** install package magit
 
-Backup rep online in GITLAB, BITBUCKET
+#+BEGIN_QUOTE
+Magit
+#+END_QUOTE
 
-create an ssh key to gain access into your repositories in Bitbucker
+Backup rep online in GIThub
+
+First, create an ssh key to gain access into your repositories in Github
 
  Concatanate keys from term
 
@@ -385,14 +389,6 @@ Press =C-x m= to display information about the current Git repository
 
 =s= to stage rep
 
-
- 
-** Create and concatenate (link) keys on term
-
-create an shh key in GitHub and then open terminal
-
-ie. //cat id_rsa.pub | pbcopy
-
  
 ** create .git file inside a folder
 
@@ -400,13 +396,18 @@ Dired to the folder you want to create the .git file and press
 
 =M-x magit-init= and press =y=
 
- This is a way to say to projectile what is a project and so it will
+Then press M-x magit-remote-add
 
-make your search quicker.
+add remote rep to master or origin
 
-Press =C-cpp= to open projectile
+You can =commit= files by clicking =c c= 
+Write a cooment and =commit= with =C-c C-c=
 
+The next step is to push to  a remote branch on Github.
 
+Press =Shift-p p= to push to a remote branch (master).
+
+ 
 Create a new branch
 
 and then =magit-set-to-upstream= origin
@@ -526,24 +527,41 @@ quit emacs and open again and type
 try using the abrev key and press tab to expant your text.
 
 
-** Searching Help
+** Searching 
 
+Press =C-s= to search with I-search.
+
+You can also try:
 
 C-h f (or M-x describe-function) will show you the bindings for a command.
-You are correct, C-h b (or M-x describe-bindings) will show you all bindings. C-h m (M-x describe-mode) is also handy to list bindings by mode.
-You might also try C-h k (M-x describe-key) to show what command is bound to a key. For instance, on my machine save-buffers-kill-emacs isn't bound to anything, but C-h k C-x C-c tells me that C-x C-c is bound to save-buffers-kill-terminal. It will list all bindings for the command at the same time.
+C-h b (or M-x describe-bindings) will show you all bindings.
+C-h m (M-x describe-mode) is also handy to list bindings by mode.
+You might also try C-h k (M-x describe-key) to show what command is bound to a key.
 
 
-helm swoop
+See also =helm swoop=
 
-help C-h
 
+There is also the =projectile=. To use projectile make sure you have created a
+.git repo into your project. 
+
+Press =C-cpp= to open projectile
+and search for projects
  
 ** Export references to pdf with org-mode - bibtex
 
 Use bibtex package for citation.
 
 First put the bellow code in your ./emacs
+
+#+BEGIN_SRC emacs-lisp
+;; Bibtex-latex export citation
+(setq org-latex-pdf-process
+      '("latexmk -pdflatex='pdflatex -interaction nonstopmode' -pdf -bibtex -f %f"))
+
+#+END_SRC
+
+Your next step is to create a .bib file with your citations and name it i.e: test-bib-refs
 
 Below is an example of bibtex style
 

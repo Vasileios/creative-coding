@@ -458,7 +458,7 @@ Use shift-arrows to change dates</p>
 
 <h2 id="github">Github</h2>
 
-<p>Introduction to Environments (Github, Bitbucket) for organizing and sharing files-Git.
+<p>Introduction to Environments (Github or Bitbucket) for organizing and sharing files-Git.
 Set up an account with Slack and Github.</p>
 
 <blockquote>
@@ -489,9 +489,15 @@ Https://gist.github.com/davfre/8313299</p>
 
 <h2 id="install-package-magit">install package magit</h2>
 
-<p>Backup rep online in GITLAB, BITBUCKET</p>
+<blockquote>
+<p>
+Magit
+</p>
+</blockquote>
 
-<p>create an ssh key to gain access into your repositories in Bitbucker</p>
+<p>Backup rep online in GIThub</p>
+
+<p>First, create an ssh key to gain access into your repositories in Github</p>
 
 <p>Concatanate keys from term</p>
 
@@ -505,23 +511,22 @@ Https://gist.github.com/davfre/8313299</p>
 
 <p><code>s</code> to stage rep</p>
 
-<h2 id="create-and-concatenate-link-keys-on-term">Create and concatenate (link) keys on term</h2>
-
-<p>create an shh key in GitHub and then open terminal</p>
-
-<p>ie. //cat id_rsa.pub | pbcopy</p>
-
 <h2 id="create-git-file-inside-a-folder">create .git file inside a folder</h2>
 
 <p>Dired to the folder you want to create the .git file and press</p>
 
 <p><code>M-x magit-init</code> and press <code>y</code></p>
 
-<p>This is a way to say to projectile what is a project and so it will</p>
+<p>Then press M-x magit-remote-add</p>
 
-<p>make your search quicker.</p>
+<p>add remote rep to master or origin</p>
 
-<p>Press <code>C-cpp</code> to open projectile</p>
+<p>You can <code>commit</code> files by clicking <code>c c</code> 
+Write a cooment and <code>commit</code> with <code>C-c C-c</code></p>
+
+<p>The next step is to push to  a remote branch on Github.</p>
+
+<p>Press <code>Shift-p p</code> to push to a remote branch (master).</p>
 
 <p>Create a new branch</p>
 
@@ -633,21 +638,36 @@ put the following on the first line of the buffer:</p>
 
 <p>try using the abrev key and press tab to expant your text.</p>
 
-<h2 id="searching-help">Searching Help</h2>
+<h2 id="searching">Searching</h2>
+
+<p>Press <code>C-s</code> to search with I-search.</p>
+
+<p>You can also try:</p>
 
 <p>C-h f (or M-x describe-function) will show you the bindings for a command.
-You are correct, C-h b (or M-x describe-bindings) will show you all bindings. C-h m (M-x describe-mode) is also handy to list bindings by mode.
-You might also try C-h k (M-x describe-key) to show what command is bound to a key. For instance, on my machine save-buffers-kill-emacs isn't bound to anything, but C-h k C-x C-c tells me that C-x C-c is bound to save-buffers-kill-terminal. It will list all bindings for the command at the same time.</p>
+C-h b (or M-x describe-bindings) will show you all bindings.
+C-h m (M-x describe-mode) is also handy to list bindings by mode.
+You might also try C-h k (M-x describe-key) to show what command is bound to a key.</p>
 
-<p>helm swoop</p>
+<p>See also <code>helm swoop</code></p>
 
-<p>help C-h</p>
+<p>There is also the <code>projectile</code>. To use projectile make sure you have created a
+.git repo into your project.</p>
+
+<p>Press <code>C-cpp</code> to open projectile
+and search for projects</p>
 
 <h2 id="export-references-to-pdf-with-org-mode-bibtex">Export references to pdf with org-mode - bibtex</h2>
 
 <p>Use bibtex package for citation.</p>
 
 <p>First put the bellow code in your ./emacs</p>
+<div class="highlight"><pre><code class="language-emacs-lisp" data-lang="emacs-lisp"><span></span><span class="c1">;; Bibtex-latex export citation</span>
+<span class="p">(</span><span class="k">setq</span> <span class="nv">org-latex-pdf-process</span>
+      <span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;latexmk -pdflatex=&#39;pdflatex -interaction nonstopmode&#39; -pdf -bibtex -f %f&quot;</span><span class="p">))</span>
+</code></pre></div>
+
+<p>Your next step is to create a .bib file with your citations and name it i.e: test-bib-refs</p>
 
 <p>Below is an example of bibtex style</p>
 <div class="highlight"><pre><code class="language-latex" data-lang="latex"><span></span>@ARTICLE<span class="nb">{</span>2011ApJS..192....9T,
