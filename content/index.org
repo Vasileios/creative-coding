@@ -8,34 +8,38 @@ title: Creative coding
 ** Introduction
 
 My research imperatives run along the threads of transmediation,
-intersemiotic translation, post-disciplinarity and the general concerns of Human Computer Interaction (HCI). 
+intersemiotic translation, post-disciplinarity (interdisciplinarity, multidiscplinary) and the general concerns of Human Computer Interaction (HCI). 
 
 #+BEGIN_QUOTE
-*Key words:* big-data, data, creative-coding, emacs, interaction, machine learning, org-mode, real-time, streaming, web 
+*Key words:* big-data, connectivity, data, creative-coding, emacs, interaction, interdisciplinary, interactive design, interconnectio, machine learning, multidisciplinary, org-mode, real-time, streaming, web 
 #+END_QUOTE
 
-* Mental objectives
+* Objectives
 
-The basic elements of programming in general (logic, loops, functions, objects,
-classes).Discussion on concepts of *object-oriented programming, interactivity, interactive design, connectivity and interconnection*
+This blog communicates the experience of building tools for
+interactive and data-driven
+audiovisuality using creative coding environments and techniques.
 
-- Notes for emacs, SuperCollider, Raspberry pi
+This blog contains some basic information and tips (installations and usage) about emacs, SuperCollider, Raspberry pi.
 
-- Programming languages
+Programming languages: 
 
-C++, Shell, Python, emacs-lisp, SuperCollider
+- C++,
+- Shell,
+- Python,
+- emacs-lisp,
+- SuperCollider
 
--  Interactive installations
+** Usage
 
-Use of circuits and how to hack them. A great opportunity to learn,
-design, recycle old toys and instruments, and transformed them to an alternate instrument.
 
--  Machine learning
-
- method of data analysis
-
- data sonification, visualisation
-
+- Interactive installations
+- Computer Graphics
+- Computer Music
+- Machine learning
+- data analysis
+- sonification
+- visualisation
 
 * Methodology and tools
 ** Programming languages-environments
@@ -65,10 +69,6 @@ and physical computing,
 
 organising and sharing projects using tools such as mass communication
 techniques Slack-Git.  Git-Magit file sharing
-
-[[https://github.com/magit/magit%20][Magit]]
-
-
 
 
 * Emacs
@@ -198,7 +198,7 @@ Press tab and the arrows keys to make arrangements on the table
 ** Images & Graphics
 ** Images
 
-To insert and image do the following:
+To insert an image with descriptions do the following:
 
 #+BEGIN_QUOTE
 Example-images
@@ -291,9 +291,9 @@ Then close the source block with:
 Evaluate source code. Press C-c C-c inside the block and see the results.
 
  #+BEGIN_SRC shell
- echo "Hello $USER! Today is `date`"
  
- #+END_SRC
+echo "Hello $USER! Today is `date`"
+  #+END_SRC
 
 ** LaTeX integrator
 
@@ -306,7 +306,7 @@ q = 2 * 4 + 1 - 2 &= 7 \\
          q &=7
 \end{align*}
 
-** Shortcuts
+** Shortcuts Tips
 
 write down =<s= and press =tab= to open src blocks,
 
@@ -378,11 +378,25 @@ Https://guides.github.com/activities/hello-world/,
 Https://gist.github.com/davfre/8313299
 
  
-** install package magit
+** install package magit and usage
 
 #+BEGIN_QUOTE
 Magit
 #+END_QUOTE
+
+Download 
+[[https://github.com/magit/magit%20][Magit]]
+
+Install Magit from MELPA
+
+Dired to the folder you want to create the .git file and press
+
+=M-x magit-init= and press =y=
+
+Then press M-x magit-remote-add
+
+add remote rep to master or origin
+
 
 Backup rep online in GIThub
 
@@ -395,34 +409,18 @@ ie. //cat id_rsa.pub | pbcopy
 
 Press =C-x m= to display information about the current Git repository
 
-=P-p= to push rep to bitbucket
+Press =C-x g= for magit-status 
 
-=c-c= to commint
+=s= to stage files
 
-=s= to stage rep
+=c-c=  (write a comment) and then press =C-c C-c= to commit
 
- 
-** create .git file inside a folder
-
-Dired to the folder you want to create the .git file and press
-
-=M-x magit-init= and press =y=
-
-Then press M-x magit-remote-add
-
-add remote rep to master or origin
-
-You can =commit= files by clicking =c c= 
-Write a cooment and =commit= with =C-c C-c=
 
 The next step is to push to  a remote branch on Github.
 
 Press =Shift-p p= to push to a remote branch (master).
 
- 
-Create a new branch
-
-and then =magit-set-to-upstream= origin
+=P-p= to push to remote
 
 
 ** Pull requests
@@ -647,9 +645,10 @@ and this:
 
 
 
-** Note
 
- put =\printbibliography= at the end so as to print the references section last on your text.
+#+BEGIN_QUOTE
+ *Note: put =\printbibliography= at the end so as to print the references section last on your text.
+#+END_QUOTE
 
 
 * SuperCollider

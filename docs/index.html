@@ -91,43 +91,43 @@
 <h2 id="introduction">Introduction</h2>
 
 <p>My research imperatives run along the threads of transmediation,
-intersemiotic translation, post-disciplinarity and the general concerns of Human Computer Interaction (HCI).</p>
+intersemiotic translation, post-disciplinarity (interdisciplinarity, multidiscplinary) and the general concerns of Human Computer Interaction (HCI).</p>
 
 <blockquote>
 <p>
-<strong>Key words:</strong> big-data, data, creative-coding, emacs, interaction, machine learning, org-mode, real-time, streaming, web 
+<strong>Key words:</strong> big-data, connectivity, data, creative-coding, emacs, interaction, interdisciplinary, interactive design, interconnectio, machine learning, multidisciplinary, org-mode, real-time, streaming, web 
 </p>
 </blockquote>
 
-<h1 id="mental-objectives">Mental objectives</h1>
+<h1 id="objectives">Objectives</h1>
 
-<p>The basic elements of programming in general (logic, loops, functions, objects,
-classes).Discussion on concepts of <strong>object-oriented programming, interactivity, interactive design, connectivity and interconnection</strong></p>
+<p>This blog communicates the experience of building tools for
+interactive and data-driven
+audiovisuality using creative coding environments and techniques.</p>
+
+<p>This blog contains some basic information and tips (installations and usage) about emacs, SuperCollider, Raspberry pi.</p>
+
+<p>Programming languages:</p>
 
 <ul>
-<li>Notes for emacs, SuperCollider, Raspberry pi</li>
+<li>C++,</li>
+<li>Shell,</li>
+<li>Python,</li>
+<li>emacs-lisp,</li>
+<li>SuperCollider</li>
 </ul>
 
-<ul>
-<li>Programming languages</li>
-</ul>
-
-<p>C++, Shell, Python, emacs-lisp, SuperCollider</p>
+<h2 id="usage">Usage</h2>
 
 <ul>
 <li>Interactive installations</li>
-</ul>
-
-<p>Use of circuits and how to hack them. A great opportunity to learn,
-design, recycle old toys and instruments, and transformed them to an alternate instrument.</p>
-
-<ul>
+<li>Computer Graphics</li>
+<li>Computer Music</li>
 <li>Machine learning</li>
+<li>data analysis</li>
+<li>sonification</li>
+<li>visualisation</li>
 </ul>
-
-<p>method of data analysis</p>
-
-<p>data sonification, visualisation</p>
 
 <h1 id="methodology-and-tools">Methodology and tools</h1>
 
@@ -164,8 +164,6 @@ and physical computing,
 
 <p>organising and sharing projects using tools such as mass communication
 techniques Slack-Git.  Git-Magit file sharing</p>
-
-<p><a href="https://github.com/magit/magit%20" title="Magit" target="_blank">Magit</a></p>
 
 <h1 id="emacs">Emacs</h1>
 
@@ -312,7 +310,7 @@ QUATATION
 
 <h2 id="images">Images</h2>
 
-<p>To insert and image do the following:</p>
+<p>To insert an image with descriptions do the following:</p>
 
 <blockquote>
 <p>
@@ -392,10 +390,10 @@ Example-images
 
 <p>Evaluate source code. Press C-c C-c inside the block and see the results.</p>
 
-<p>#+BEGIN_SRC shell
- echo "Hello $USER! Today is `date`"</p>
+<p>#+BEGIN_SRC shell</p>
 
-<p>#+END_SRC</p>
+<p>echo "Hello $USER! Today is `date`"
+  #+END_SRC</p>
 
 <h2 id="latex-integrator">LaTeX integrator</h2>
 
@@ -409,7 +407,7 @@ q = 2 * 4 + 1 - 2 &= 7 \\
          q &=7
 \end{align*}</p>
 
-<h2 id="shortcuts">Shortcuts</h2>
+<h2 id="shortcuts-tips">Shortcuts Tips</h2>
 
 <p>write down <code>&lt;s</code> and press <code>tab</code> to open src blocks,</p>
 
@@ -495,13 +493,26 @@ Slack-Git.</p>
 <p>Https://guides.github.com/activities/hello-world/,
 Https://gist.github.com/davfre/8313299</p>
 
-<h2 id="install-package-magit">install package magit</h2>
+<h2 id="install-package-magit-and-usage">install package magit and usage</h2>
 
 <blockquote>
 <p>
 Magit
 </p>
 </blockquote>
+
+<p>Download 
+<a href="https://github.com/magit/magit%20" title="Magit" target="_blank">Magit</a></p>
+
+<p>Install Magit from MELPA</p>
+
+<p>Dired to the folder you want to create the .git file and press</p>
+
+<p><code>M-x magit-init</code> and press <code>y</code></p>
+
+<p>Then press M-x magit-remote-add</p>
+
+<p>add remote rep to master or origin</p>
 
 <p>Backup rep online in GIThub</p>
 
@@ -513,32 +524,17 @@ Magit
 
 <p>Press <code>C-x m</code> to display information about the current Git repository</p>
 
-<p><code>P-p</code> to push rep to bitbucket</p>
+<p>Press <code>C-x g</code> for magit-status</p>
 
-<p><code>c-c</code> to commint</p>
+<p><code>s</code> to stage files</p>
 
-<p><code>s</code> to stage rep</p>
-
-<h2 id="create-git-file-inside-a-folder">create .git file inside a folder</h2>
-
-<p>Dired to the folder you want to create the .git file and press</p>
-
-<p><code>M-x magit-init</code> and press <code>y</code></p>
-
-<p>Then press M-x magit-remote-add</p>
-
-<p>add remote rep to master or origin</p>
-
-<p>You can <code>commit</code> files by clicking <code>c c</code> 
-Write a cooment and <code>commit</code> with <code>C-c C-c</code></p>
+<p><code>c-c</code>  (write a comment) and then press <code>C-c C-c</code> to commit</p>
 
 <p>The next step is to push to  a remote branch on Github.</p>
 
 <p>Press <code>Shift-p p</code> to push to a remote branch (master).</p>
 
-<p>Create a new branch</p>
-
-<p>and then <code>magit-set-to-upstream</code> origin</p>
+<p><code>P-p</code> to push to remote</p>
 
 <h2 id="pull-requests">Pull requests</h2>
 
@@ -749,9 +745,11 @@ and this:
 </p>
 </blockquote>
 
-<h2 id="note">Note</h2>
-
-<p>put <code>\printbibliography</code> at the end so as to print the references section last on your text.</p>
+<blockquote>
+<p>
+ *Note: put <code>\printbibliography</code> at the end so as to print the references section last on your text.
+</p>
+</blockquote>
 
 <h1 id="supercollider">SuperCollider</h1>
 
@@ -1838,7 +1836,7 @@ Here are some of the Adafruit projects that make use of I2C devices and modules:
 <div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ sudo i2cdetect -y 1
 </code></pre></div>
 
-<h2 id="usage">Usage</h2>
+<h2 id="usage-1">Usage</h2>
 <div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span><span class="nb">cd</span> examples
 sudo python simpletest.py
 </code></pre></div>
