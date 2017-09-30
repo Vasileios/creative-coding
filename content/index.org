@@ -30,6 +30,15 @@ Programming languages:
 - emacs-lisp,
 - SuperCollider
 
+*Input devices*
+
+- midi controllers, 
+- OSC communication,
+- microcontrollers (arduino),
+and physical computing,
+- sensor usage, 
+- multitouch technologies, etc. 
+
 ** Usage
 
 
@@ -41,14 +50,7 @@ Programming languages:
 - sonification
 - visualisation
 
-** Input devices 
 
-- midi controllers, 
-- OSC communication,
-- microcontrollers (arduino),
-and physical computing,
-- sensor usage, 
-- multitouch technologies, etc. 
 
 ** Organising and sharing
 
