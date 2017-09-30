@@ -253,11 +253,9 @@ Example: hit =h= and =o= if you want to *export and open as html*.
 
 Export Beamer: =C-c C-e l P=     =(org-beamer-export-to-pdf)=
 
-Export as LaTeX and then process to PDF.
+Export PDF: =C-c C-e l O=
 
-=C-c C-e l O=
-
-Export as LaTeX and then process and open PDF file.
+Export as LaTeX,  and open PDF file.
 
 ** Source Code
 
@@ -443,8 +441,6 @@ Git failed...
 Git refusing to merge unrelated histories
 
 in magit press h to bring the popoup and choose rebase -r and then -p
-
-** Auto-correct
 
  
 ** Install Dictionaries -emacs
