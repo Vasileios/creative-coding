@@ -11,7 +11,7 @@ My research imperatives run along the threads of transmediation,
 intersemiotic translation, post-disciplinarity (interdisciplinarity, multidiscplinary) and the general concerns of Human Computer Interaction (HCI). 
 
 #+BEGIN_QUOTE
-*Key words:* big-data, connectivity, data, creative-coding, emacs, interaction, interdisciplinary, interactive design, interconnectio, machine learning, multidisciplinary, org-mode, real-time, streaming, web 
+*Key words:* big-data, connectivity, data, creative-coding, emacs, interaction, interdisciplinary, interconnection, machine learning, multidisciplinary, real-time, streaming, web 
 #+END_QUOTE
 
 * Objectives
@@ -40,21 +40,6 @@ Programming languages:
 - data analysis
 - sonification
 - visualisation
-
-* Methodology and tools
-** Programming languages-environments
-
-- Investigation on different environments 
-- create interconnection.
-
-*creative programming environments:*
-
-- Emacs as the editor
-- SuperCollider, and
-- Python 
-- C++ and openFrameworks
-
-for data analysis sonification, visualisation.
 
 ** Input devices 
 
