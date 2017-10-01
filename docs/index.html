@@ -1406,19 +1406,19 @@ Host key verification failed.
 <p>To solve the problem try to delete previous keys in <code>known_hosts</code> file like pi@raspnberrypi.local</p>
 
 <p>then try to login</p>
-<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>ssh pi@raspnberrypi.local
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ ssh pi@raspnberrypi.local
 </code></pre></div>
 
 <p>and type <code>yes</code> to accept a new permanent key for local.</p>
 
 <p>After that go and update</p>
-<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>pi@raspberrypi:~ $ sudo apt-get update
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ pi@raspberrypi:~ $ sudo apt-get update
 </code></pre></div>
 
 <p>and upgrade</p>
 
 <pre><code>
-pi@raspberrypi:~ $ sudo apt-get upgrade
+$ pi@raspberrypi:~ $ sudo apt-get upgrade
 </code></pre>
 
 <p>then you can start installing software such as SuperCollider, emacs etc.</p>

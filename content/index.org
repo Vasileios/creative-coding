@@ -1357,7 +1357,7 @@ To solve the problem try to delete previous keys in =known_hosts= file like pi@r
 
 then try to login 
 #+BEGIN_SRC shell
-ssh pi@raspnberrypi.local
+$ ssh pi@raspnberrypi.local
 #+END_SRC 
 
 
@@ -1366,12 +1366,12 @@ and type =yes= to accept a new permanent key for local.
 After that go and update
 
 #+BEGIN_SRC shell
-pi@raspberrypi:~ $ sudo apt-get update
+$ pi@raspberrypi:~ $ sudo apt-get update
 #+END_SRC
 and upgrade
 
 #+BEGIN_EXAMPLE
-pi@raspberrypi:~ $ sudo apt-get upgrade
+$ pi@raspberrypi:~ $ sudo apt-get upgrade
 #+END_EXAMPLE
 
 then you can start installing software such as SuperCollider, emacs etc.
