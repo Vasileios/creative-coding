@@ -1402,9 +1402,11 @@ Offending ECDSA key in <em>Users/vasilis</em>.ssh/known_hosts:19
 ECDSA host key for raspberrypi.local has changed and you have requested strict checking.
 Host key verification failed.</p>
 
-<p>Go and delete previous keys in <code>known_hosts</code> file like pi@raspnberrypi.local</p>
+<p>To solve the problem try to delete previous keys in <code>known_hosts</code> file like pi@raspnberrypi.local</p>
 
-<p>then try again to ssh pi@raspnberrypi.local</p>
+<p>then try to login</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>ssh pi@raspnberrypi.local
+</code></pre></div>
 
 <p>and type <code>yes</code> to accept a new permanent key for local.</p>
 
@@ -1418,7 +1420,7 @@ Host key verification failed.</p>
 pi@raspberrypi:~ $ sudo apt-get upgrade
 </code></pre>
 
-<p>then you can start adding packages like supercollider, jack and others.</p>
+<p>then you can start installing software such as SuperCollider, emacs etc.</p>
 
 <h2 id="ethernet-set-up">Ethernet set up</h2>
 

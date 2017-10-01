@@ -1350,9 +1350,13 @@ ECDSA host key for raspberrypi.local has changed and you have requested strict c
 Host key verification failed.
 #+End_SRC
 
-Go and delete previous keys in =known_hosts= file like pi@raspnberrypi.local
+To solve the problem try to delete previous keys in =known_hosts= file like pi@raspnberrypi.local
 
-then try again to ssh pi@raspnberrypi.local
+then try to login 
+#+BEGIN_SRC shell
+ssh pi@raspnberrypi.local
+#+END_SRC 
+
 
 and type =yes= to accept a new permanent key for local.
 
@@ -1367,7 +1371,7 @@ and upgrade
 pi@raspberrypi:~ $ sudo apt-get upgrade
 #+END_EXAMPLE
 
-then you can start adding packages like supercollider, jack and others.
+then you can start installing software such as SuperCollider, emacs etc.
 
 ** Ethernet set up
 
