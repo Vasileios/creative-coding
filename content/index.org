@@ -1344,9 +1344,11 @@ Someone could be eavesdropping on you right now (man-in-the-middle attack)!
 It is also possible that a host key has just been changed.
 The fingerprint for the ECDSA key sent by the remote host is
 h. Please contact your system administrator.
-Add correct host key in /Users/vasilis/.ssh/known_hosts to get rid of this message.
+Add correct host key in /Users/vasilis/.ssh/known_hosts to get rid of this
+ message.
 Offending ECDSA key in /Users/vasilis/.ssh/known_hosts:19
-ECDSA host key for raspberrypi.local has changed and you have requested strict checking.
+ECDSA host key for raspberrypi.local has changed and you have requested strict
+ checking.
 Host key verification failed.
 
 #+END_SRC
