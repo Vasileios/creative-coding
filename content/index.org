@@ -1506,7 +1506,7 @@ and =mv /directory-of-scel/el/ to /packages-directory/=
 
 then write in the init.el file
 
-#+BEGIN_SRC lisp
+#+BEGIN_SRC emacs-lisp
 
 (add-to-list ~/.emacs.d/personal/packages/el)
 (require 'sclang)
