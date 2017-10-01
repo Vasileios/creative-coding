@@ -1394,20 +1394,17 @@ IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
 Someone could be eavesdropping on you right now <span class="o">(</span>man-in-the-middle attack<span class="o">)</span>!
 It is also possible that a host key has just been changed.
 The fingerprint <span class="k">for</span> the ECDSA key sent by the remote host is
-h
-Please contact your system administrator.
+h. Please contact your system administrator.
 Add correct host key in /Users/vasilis/.ssh/known_hosts to get rid of this message.
 Offending ECDSA key in /Users/vasilis/.ssh/known_hosts:19
 ECDSA host key <span class="k">for</span> raspberrypi.local has changed and you have requested strict checking.
 Host key verification failed.
+</code></pre></div>
 
-<span class="c1">#+End_SRC</span>
+<p>To solve the problem try to delete previous keys in <code>known_hosts</code> file like pi@raspnberrypi.local</p>
 
-To solve the problem try to delete previous keys <span class="nv">in</span> <span class="o">=</span><span class="nv">known_hosts</span><span class="o">=</span> file like pi@raspnberrypi.local
-
-<span class="k">then</span> try to login 
-<span class="c1">#+BEGIN_SRC shell</span>
-ssh pi@raspnberrypi.local
+<p>then try to login</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>ssh pi@raspnberrypi.local
 </code></pre></div>
 
 <p>and type <code>yes</code> to accept a new permanent key for local.</p>
@@ -1841,8 +1838,6 @@ sudo python simpletest.py
 11 = 2048</p>
 
 <h2 id="chage-permission-to-read-only-files">Chage permission to read-only files</h2>
-
-<h2 id="raspberry-pi-1">raspberry pi</h2>
 <div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>➜  ~ <span class="nb">cd</span> /Volumes
 ➜  /Volumes ls
 Macintosh HD boot
