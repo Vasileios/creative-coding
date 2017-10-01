@@ -1378,34 +1378,36 @@ Interactivity (Noble 2012): Chapter 4: Arduino.</p>
 and enable ssh and reboot</p>
 
 <p>When you try to connect using ssh pi@raspnberrypi.local you might come across with this warning</p>
-
-<p>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @       WARNING: POSSIBLE DNS SPOOFING DETECTED!          @
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-The ECDSA host key for raspberrypi.local has changed,
-and the key for the corresponding IP address uu
+The ECDSA host key <span class="k">for</span> raspberrypi.local has changed,
+and the key <span class="k">for</span> the corresponding IP address uu
 has a different value. This could either mean that
-DNS SPOOFING is happening or the IP address for the host
+DNS SPOOFING is happening or the IP address <span class="k">for</span> the host
 and its host key have changed at the same time.
-Offending key for IP in <em>Users/user</em>.ssh/known_hosts:7
+Offending key <span class="k">for</span> IP in /Users/user/.ssh/known_hosts:7
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
-Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+Someone could be eavesdropping on you right now <span class="o">(</span>man-in-the-middle attack<span class="o">)</span>!
 It is also possible that a host key has just been changed.
-The fingerprint for the ECDSA key sent by the remote host is
+The fingerprint <span class="k">for</span> the ECDSA key sent by the remote host is
 h
 Please contact your system administrator.
-Add correct host key in <em>Users/vasilis</em>.ssh/known_hosts to get rid of this message.
-Offending ECDSA key in <em>Users/vasilis</em>.ssh/known_hosts:19
-ECDSA host key for raspberrypi.local has changed and you have requested strict checking.
-Host key verification failed.</p>
+Add correct host key in /Users/vasilis/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /Users/vasilis/.ssh/known_hosts:19
+ECDSA host key <span class="k">for</span> raspberrypi.local has changed and you have requested strict checking.
+Host key verification failed.
 
-<p>To solve the problem try to delete previous keys in <code>known_hosts</code> file like pi@raspnberrypi.local</p>
+<span class="c1">#+End_SRC</span>
 
-<p>then try to login</p>
-<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>ssh pi@raspnberrypi.local
+To solve the problem try to delete previous keys <span class="nv">in</span> <span class="o">=</span><span class="nv">known_hosts</span><span class="o">=</span> file like pi@raspnberrypi.local
+
+<span class="k">then</span> try to login 
+<span class="c1">#+BEGIN_SRC shell</span>
+ssh pi@raspnberrypi.local
 </code></pre></div>
 
 <p>and type <code>yes</code> to accept a new permanent key for local.</p>
