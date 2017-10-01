@@ -1325,7 +1325,7 @@ and enable ssh and reboot
 
 When you try to connect using ssh pi@raspnberrypi.local you might come across with this warning
 
-#+Begin_Example
+#+Begin_SRC shell
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @       WARNING: POSSIBLE DNS SPOOFING DETECTED!          @
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -1348,7 +1348,7 @@ Add correct host key in /Users/vasilis/.ssh/known_hosts to get rid of this messa
 Offending ECDSA key in /Users/vasilis/.ssh/known_hosts:19
 ECDSA host key for raspberrypi.local has changed and you have requested strict checking.
 Host key verification failed.
-#+End_Example
+#+End_SRC
 
 Go and delete previous keys in =known_hosts= file like pi@raspnberrypi.local
 
