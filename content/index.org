@@ -1584,9 +1584,8 @@ and then dired freely, open files and programms using  shell as well to run scla
 /ssh:pi@raspberrypi|sudo:root@pi@raspberrypi:
 #+END_SRC
 
-dired to your file, make changes and save!!!
+dired to your file, make changes and save it!!!
 
-Good luck!! seriously
 
 ** Copy files from Raspberrypi to mac and the opposite
 
