@@ -8,19 +8,22 @@ title: Creative coding
 ** Introduction
 
 My research imperatives run along the threads of transmediation,
-intersemiotic translation, post-disciplinarity (interdisciplinarity, multidiscplinary) and the general concerns of Human Computer Interaction (HCI). 
+intersemiotic translation, post-disciplinarity (interdisciplinarity, multidiscplinarity) and the general concerns of Human Computer Interaction (HCI). 
 
 #+BEGIN_QUOTE
 *Key words:* big-data, connectivity, data, creative-coding, emacs, interaction, interdisciplinary, interconnection, machine learning, multidisciplinary, real-time, streaming, web 
 #+END_QUOTE
 
-* Objectives
+* About
 
 This blog communicates the experience of building tools for
 interactive and data-driven
 audiovisuality using creative coding environments and techniques.
 
-This blog contains some basic information and tips (installations and usage) about emacs, SuperCollider, Raspberry pi.
+It contains some basic information and tips (installations and usage) about emacs, SuperCollider, Raspberry pi.
+
+Creative coding examples are enclosed in code blocks on the write
+panel of this page. 
 
 Programming languages: 
 
@@ -30,7 +33,11 @@ Programming languages:
 - emacs-lisp,
 - SuperCollider
 
-*Input devices*
+There is also be a discusion on some devices and protocols for
+interaction and communcation between user and machine as well as
+between machine and machine.
+ 
+Some examples are:
 
 - midi controllers, 
 - OSC communication,
