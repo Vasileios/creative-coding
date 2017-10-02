@@ -22,7 +22,7 @@ audiovisuality using creative coding environments and techniques.
 
 It contains some basic information and tips (installations and usage) about emacs, SuperCollider, Raspberry pi.
 
-Creative coding examples are enclosed in code blocks on the write
+Creative coding examples are enclosed in code blocks on the right
 panel of this page. 
 
 Programming languages: 
