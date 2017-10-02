@@ -33,7 +33,7 @@ Programming languages:
 - emacs-lisp,
 - SuperCollider
 
-There is also be a discusion on some devices and protocols for
+There is also a discusion about devices and protocols used for
 interaction and communcation between user and machine as well as
 between machine and machine.
  
