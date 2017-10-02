@@ -1413,6 +1413,8 @@ next step is to install supercollider in emacs
 
 ** Install SupeCollider on RPI
 
+Installation guide from: [[http://supercollider.github.io/development/building-raspberrypi][Building SC on RPI]]
+
 #+BEGIN_SRC shell
 $ ssh pi@raspberrypi.local #from your laptop, default password is raspberry
 $ sudo raspi-config #change password, expand file system, reboot and log in again with ssh
