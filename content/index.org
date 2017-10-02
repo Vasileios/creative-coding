@@ -53,17 +53,16 @@ and physical computing,
 - Computer Graphics
 - Computer Music
 - Machine learning
-- data analysis
-- sonification
-- visualisation
+- Data driven creativity
+- Sonification
+- Visualisation
 
 
 
 ** Organising and sharing
 
 organising and sharing projects using tools such as mass communication
-techniques Slack-Git.  Git-Magit file sharing
-
+techniques Git.
 
 * Emacs
 
