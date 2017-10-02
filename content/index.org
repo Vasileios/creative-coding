@@ -1912,7 +1912,7 @@ rm 'usr/local/Cellar/2to3'
 convert .m4a to .wav
 
 #+BEGIN_SRC shell
-$ ffmpeg -i /Users/vasilis/Documents/001Workfiles/Weaving-voices/sounds/23.3.\ j.m4a  23.3.\ j.wav
+$ ffmpeg -i /Users/sounds/23.3.\ j.m4a  23.3.\ j.wav
 #+END_SRC
 
 convert all the files into directory with .wma to mp3
