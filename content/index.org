@@ -1665,6 +1665,109 @@ total size is 25854264  speedup is 2.30
 
 
 
+** Install Adafruit MPR121 on Raspberry
+
+** Soldering
+
+Prepare the header strip, Add the breakout board, and solde
+
+see more [[https://learn.adafruit.com/adafruit-mpr121-12-key-capacitive-touch-sensor-breakout-tutorial/assembly][here]]
+
+After you've soldered the sensor to the header strip move to wiring sesion:
+
+** Wiring
+
+Wiring
+Place the MPR121 board into a breadboard and connect its inputs to the electrodes you plan to use.  Then follow the wiring below for your platform to connect the MPR121 to an I2C communication channel.
+Raspberry Pi
+On a Raspberry Pi connect the hardware as follows.
+Note: Make sure you've enabled I2C on your Raspberry Pi!
+
+
+
+First make sure that you've installed python.
+
+#+BEGIN_SRC shell
+sudo apt-get update
+sudo apt-get install build-essential python-dev python-smbus python-pip git
+
+#+END_SRC
+
+Then clone Adafruit_Python_MPR121.git
+
+#+BEGIN_SRC shell
+cd ~
+git clone https://github.com/adafruit/Adafruit_Python_MPR121.git
+#+END_SRC
+
+and install it
+
+#+BEGIN_SRC shell
+cd Adafruit_Python_MPR121
+sudo python setup.py install
+
+#+END_SRC
+
+** Configuring I2C
+
+I2C is a very commonly used standard designed to allow one chip to talk to another. So, since the Raspberry Pi can talk I2C we can connect it to a variety of I2C capable chips and modules.
+Here are some of the Adafruit projects that make use of I2C devices and modules:
+
+https://learn.adafruit.com/adafruits-raspberry-pi-lesson-4-gpio-setup/configuring-i2c
+
+
+*** Testing I2C
+
+Now when you log in you can type the following command to see all the connected devices
+
+#+BEGIN_SRC shell
+$ sudo i2cdetect -y 1
+#+END_SRC
+
+
+** Usage
+
+#+BEGIN_SRC shell
+cd examples
+sudo python simpletest.py
+#+END_SRC
+
+These are the output values of 12 capacitive touch inputs
+
+0 = 1
+1 = 2
+2 = 4
+3 = 8
+4 = 16
+5 = 32
+6 = 64
+7 = 128
+8 = 256
+9 = 512
+10 = 1024
+11 = 2048
+
+** Chage permission to read-only files 
+
+
+#+BEGIN_SRC shell
+➜  ~ cd /Volumes
+➜  /Volumes ls
+Macintosh HD boot
+➜  /Volumes cd boot
+➜  boot ls
+.
+➜  boot sudo chmod a+w cmdline.txt
+Password:
+➜  boot
+#+END_SRC
+
+
+
+
+
+* Shell
+
 ** Installing tmux
 
 *tmux* is a "terminal multiplexer", it enables a number of terminals (or windows) to be accessed and controlled from a single terminal. tmux is intended to be a simple, modern, BSD-licensed alternative to programs such as GNU screen.
@@ -1817,105 +1920,6 @@ convert all the files into directory with .wma to mp3
 #+BEGIN_SRC shell
 $ for file in *.wma; do ffmpeg -i "${file}"  -acodec libmp3lame -ab 192k "${file/.wma/.mp3}"; done
 #+END_SRC
-
-** Install Adafruit MPR121 on Raspberry
-
-** Soldering
-
-Prepare the header strip, Add the breakout board, and solde
-
-see more [[https://learn.adafruit.com/adafruit-mpr121-12-key-capacitive-touch-sensor-breakout-tutorial/assembly][here]]
-
-After you've soldered the sensor to the header strip move to wiring sesion:
-
-** Wiring
-
-Wiring
-Place the MPR121 board into a breadboard and connect its inputs to the electrodes you plan to use.  Then follow the wiring below for your platform to connect the MPR121 to an I2C communication channel.
-Raspberry Pi
-On a Raspberry Pi connect the hardware as follows.
-Note: Make sure you've enabled I2C on your Raspberry Pi!
-
-
-
-First make sure that you've installed python.
-
-#+BEGIN_SRC shell
-sudo apt-get update
-sudo apt-get install build-essential python-dev python-smbus python-pip git
-
-#+END_SRC
-
-Then clone Adafruit_Python_MPR121.git
-
-#+BEGIN_SRC shell
-cd ~
-git clone https://github.com/adafruit/Adafruit_Python_MPR121.git
-#+END_SRC
-
-and install it
-
-#+BEGIN_SRC shell
-cd Adafruit_Python_MPR121
-sudo python setup.py install
-
-#+END_SRC
-
-** Configuring I2C
-
-I2C is a very commonly used standard designed to allow one chip to talk to another. So, since the Raspberry Pi can talk I2C we can connect it to a variety of I2C capable chips and modules.
-Here are some of the Adafruit projects that make use of I2C devices and modules:
-
-https://learn.adafruit.com/adafruits-raspberry-pi-lesson-4-gpio-setup/configuring-i2c
-
-
-*** Testing I2C
-
-Now when you log in you can type the following command to see all the connected devices
-
-#+BEGIN_SRC shell
-$ sudo i2cdetect -y 1
-#+END_SRC
-
-
-** Usage
-
-#+BEGIN_SRC shell
-cd examples
-sudo python simpletest.py
-#+END_SRC
-
-These are the output values of 12 capacitive touch inputs
-
-0 = 1
-1 = 2
-2 = 4
-3 = 8
-4 = 16
-5 = 32
-6 = 64
-7 = 128
-8 = 256
-9 = 512
-10 = 1024
-11 = 2048
-
-** Chage permission to read-only files 
-
-
-#+BEGIN_SRC shell
-➜  ~ cd /Volumes
-➜  /Volumes ls
-Macintosh HD boot
-➜  /Volumes cd boot
-➜  boot ls
-.
-➜  boot sudo chmod a+w cmdline.txt
-Password:
-➜  boot
-#+END_SRC
-
-
 
 
 * Suggested Bibliography
