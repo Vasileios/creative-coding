@@ -33,8 +33,8 @@ Programming languages:
 - emacs-lisp,
 - SuperCollider
 
-There is also a discusion about devices and protocols used for
-interaction and communcation between user and machine as well as
+There is also a discusion about devices and protocols which are used
+for the interaction and communcation between user and machine as well as
 between machine and machine.
  
 Some examples are:
