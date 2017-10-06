@@ -1353,6 +1353,64 @@ ipython notebook
 
 <p><a href="https://sketchfab.com/models/d494a64f23414fcf8eb7c4a9329d400c" title="Data Visualisation 3D" target="_blank">Data Visualisation 3D</a></p>
 
+<h2 id="ipython-realtime-data">Ipython - realtime data</h2>
+
+<p>Watching the number of flights on your emacs:</p>
+
+<p>This experiment tested on python 3.5 and emacs - ipython notebook (ein).</p>
+
+<p>For ipython notebook installation see this webpage <a href="https://ipython" title="ipython" target="_blank">ipython</a>.</p>
+
+<p>To run this example you need to install some external modes</p>
+
+<p><a href="https://pypi.python.org/pypi/requests/" title="requests" target="_blank">requests</a>
+and
+<a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/" title="BeautifulSoup" target="_blank">BeautifulSoup</a></p>
+
+<p>If you use pip (recommended) open the terminal and type</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ pip install requests
+</code></pre></div>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ pip install beautifulsoup4
+</code></pre></div>
+
+<p>Go to the web page to scrape the number of flights</p>
+
+<p>https://www.flightradar24.com/56.16,-49.51/7</p>
+
+<p>The number is updated every 8 seconds.</p>
+
+<p>To be able to collect the number of flights in real time, go and find the .js file in the webpage. To find the js file go to:
+Chrome - more tools- developer tools - network - there you'll find the requests under the name <em>feed.js</em>.</p>
+
+<p>Now, run the below code in you ipython notebook. (code taken from <a href="http://stackoverflow.com/questions/39489168/how-to-scrape-real-time-streaming-data-with-python" title="here)" target="_blank">here)</a></p>
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">def</span> <span class="nf">get_count</span><span class="p">():</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://data-live.flightradar24.com/zones/fcgi/feed.js?bounds=59.09,52.64,-58.77,-47.71&amp;faa=1&amp;mlat=1&amp;flarm=1&amp;adsb=1&amp;gnd=1&amp;air=1&amp;vehicles=1&amp;estimated</span>
+<span class="o">=</span><span class="mi">1</span><span class="o">&amp;</span><span class="n">maxage</span><span class="o">=</span><span class="mi">7200</span><span class="o">&amp;</span><span class="n">gliders</span><span class="o">=</span><span class="mi">1</span><span class="o">&amp;</span><span class="n">stats</span><span class="o">=</span><span class="mi">1</span><span class="s2">&quot;</span>
+
+    <span class="c1"># Request with fake header, otherwise you will get an 403 HTTP error</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s1">&#39;Mozilla/5.0&#39;</span><span class="p">})</span>
+
+    <span class="c1"># Parse the JSON</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1"># Iterate over the elements to get the number of total flights</span>
+    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;stats&quot;</span><span class="p">][</span><span class="s2">&quot;total&quot;</span><span class="p">]:</span>
+        <span class="n">counter</span> <span class="o">+=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;stats&quot;</span><span class="p">][</span><span class="s2">&quot;total&quot;</span><span class="p">][</span><span class="n">element</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">counter</span>
+
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">get_count</span><span class="p">())</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Watch <a href="https://youtu.be/FDFaKzh0WLg" title="here" target="_blank">here</a> a screen capture</p>
+
 <h1 id="micro-computing">Micro-computing</h1>
 
 <h2 id="physical-computing">Physical computing</h2>

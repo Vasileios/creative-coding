@@ -1290,6 +1290,72 @@ For 3D modeling yt see here:
 
 [[https://sketchfab.com/models/d494a64f23414fcf8eb7c4a9329d400c][Data Visualisation 3D]]
 
+** Ipython - realtime data
+
+Watching the number of flights on your emacs:
+
+This experiment tested on python 3.5 and emacs - ipython notebook (ein).
+
+For ipython notebook installation see this webpage [[https://ipython.org][ipython]].
+
+To run this example you need to install some external modes
+
+[[https://pypi.python.org/pypi/requests/][requests]]
+and
+[[https://www.crummy.com/software/BeautifulSoup/bs4/doc/][BeautifulSoup]]
+
+If you use pip (recommended) open the terminal and type
+
+#+BEGIN_SRC shell
+$ pip install requests
+#+END_SRC
+#+BEGIN_SRC shell
+$ pip install beautifulsoup4
+#+END_SRC
+
+
+Go to the web page to scrape the number of flights
+
+https://www.flightradar24.com/56.16,-49.51/7
+
+The number is updated every 8 seconds.
+
+To be able to collect the number of flights in real time, go and find the .js file in the webpage. To find the js file go to:
+Chrome - more tools- developer tools - network - there you'll find the requests under the name /feed.js/.
+
+Now, run the below code in you ipython notebook. (code taken from [[http://stackoverflow.com/questions/39489168/how-to-scrape-real-time-streaming-data-with-python][here)]]
+
+#+BEGIN_SRC python
+import requests
+from bs4 import BeautifulSoup
+import time
+
+def get_count():
+    url = "https://data-live.flightradar24.com/zones/fcgi/feed.js?bounds=59.09,52.64,-58.77,-47.71&faa=1&mlat=1&flarm=1&adsb=1&gnd=1&air=1&vehicles=1&estimated
+=1&maxage=7200&gliders=1&stats=1"
+
+    # Request with fake header, otherwise you will get an 403 HTTP error
+    r = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
+
+    # Parse the JSON
+    data = r.json()
+    counter = 0
+
+    # Iterate over the elements to get the number of total flights
+    for element in data["stats"]["total"]:
+        counter += data["stats"]["total"][element]
+
+    return counter
+
+while True:
+    print(get_count())
+    time.sleep(8)
+#+END_SRC
+
+
+Watch [[https://youtu.be/FDFaKzh0WLg][here]] a screen capture
+
+
 * Micro-computing
 
 
