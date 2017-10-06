@@ -1309,6 +1309,43 @@ ipython notebook
 <span class="c1"># # Plot the quantities</span>
 </code></pre></div>
 
+<h2 id="magnetic-storm-sonification">Magnetic Storm Sonification</h2>
+
+<h2 id="yt-visualisation">YT visualisation</h2>
+
+<h2 id="an-example-with-enzo-data">An example with enzo data</h2>
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s1">&#39;/Users/experiments/yt_pics&#39;</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">yt</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">yt</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;/Users/experiments/Enzo_64/DD0043/data0043&quot;</span><span class="p">)</span>
+
+<span class="n">sc</span> <span class="o">=</span> <span class="n">yt</span><span class="o">.</span><span class="n">create_scene</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">lens_type</span><span class="o">=</span><span class="s1">&#39;perspective&#39;</span><span class="p">)</span>
+
+<span class="c1"># Get a reference to the VolumeSource associated with this scene</span>
+<span class="c1"># It is the first source associated with the scene, so we can refer to it</span>
+<span class="c1"># using index 0.</span>
+<span class="n">source</span> <span class="o">=</span> <span class="n">sc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Set the bounds of the transfer function</span>
+<span class="n">source</span><span class="o">.</span><span class="n">tfh</span><span class="o">.</span><span class="n">set_bounds</span><span class="p">((</span><span class="mf">3e-31</span><span class="p">,</span> <span class="mf">5e-27</span><span class="p">))</span>
+
+<span class="c1"># set that the transfer function should be evaluated in log space</span>
+<span class="n">source</span><span class="o">.</span><span class="n">tfh</span><span class="o">.</span><span class="n">set_log</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="c1"># Make underdense regions appear opaque</span>
+<span class="n">source</span><span class="o">.</span><span class="n">tfh</span><span class="o">.</span><span class="n">grey_opacity</span> <span class="o">=</span> <span class="bp">True</span>
+
+<span class="c1"># Plot the transfer function, along with the CDF of the density field to</span>
+<span class="c1"># see how the transfer function corresponds to structure in the CDF</span>
+<span class="n">source</span><span class="o">.</span><span class="n">tfh</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;transfer_function.png&#39;</span><span class="p">,</span> <span class="n">profile_field</span><span class="o">=</span><span class="s1">&#39;density&#39;</span><span class="p">)</span>
+
+<span class="c1"># save the image, flooring especially bright pixels for better contrast</span>
+<span class="n">sc</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;rendering2.png&#39;</span><span class="p">,</span> <span class="n">sigma_clip</span><span class="o">=</span><span class="mf">6.0</span><span class="p">)</span>
+</code></pre></div>
+
 <h1 id="micro-computing">Micro-computing</h1>
 
 <h2 id="physical-computing">Physical computing</h2>
