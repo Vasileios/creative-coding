@@ -1285,6 +1285,10 @@ sc.save('rendering2.png', sigma_clip=6.0)
 
 #+END_SRC
 
+For 3D modeling yt see here:
+
+[[https://sketchfab.com/vasilis/models%20][Data Visualisation 3D]]
+
 * Micro-computing
 
 
