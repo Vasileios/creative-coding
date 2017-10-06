@@ -11,7 +11,8 @@ My research imperatives run along the threads of transmediation,
 intersemiotic translation, post-disciplinarity (interdisciplinarity, multidiscplinarity) and the general concerns of Human Computer Interaction (HCI). 
 
 #+BEGIN_QUOTE
-*Key words:* big-data, connectivity, data, creative-coding, emacs, interaction, interdisciplinarity, interconnection, machine learning, multidisciplinarity, real-time, streaming, web 
+*Key words:* big-data, connectivity, interdisciplinarity,
+interconnection, machine learning, multidisciplinarity, real-time, sonification,streaming, visualisation, web 
 #+END_QUOTE
 
 * About
