@@ -5,7 +5,7 @@ title: Creative coding
 
 * Creative coding
 
-** Introduction
+** About
 
 My research imperatives run along the threads of transmediation,
 intersemiotic translation, post-disciplinarity (interdisciplinarity, multidiscplinarity) and the general concerns of Human Computer Interaction (HCI). 
@@ -132,9 +132,9 @@ The Dactyl ( -uu ) is a metrical pattern known as a "foot" which comprises one l
 See more about [[http://www.princeton.edu/~achaney/tmve/wiki100k/docs/Dactylic_hexameter.html][Dactylic Hexameter]]
 
 
-* About
+* Code and tips
 
-This blog communicates the experience of building tools for
+This section communicates the experience of building tools for
 interactive and data-driven
 audiovisuality using creative coding environments and techniques.
 
