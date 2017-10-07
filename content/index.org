@@ -2035,6 +2035,25 @@ $ for file in *.wma; do ffmpeg -i "${file}"  -acodec libmp3lame -ab 192k "${file
 #+END_SRC
 
 
+* Science and art
+
+The L-Systems, also known as Lindenmayer Systems, are a class of algorithms for the production of structures based on recursive rewriting rules. “The L-systems are widely used in the composition of graphics mainly for the production of complex forms of plants as well as the imitation of other natural forms ”(Prusinkiewicz and Lindenmayer 1990; Rozenberg and Grzegorz 1992).
+The technique of the L-systems is akin to other techniques such as Fractals and Generative Grammars. The L-systems have also been used to a limited extent for the production of musical structures. The proposed thesis will attempt the direct application of the L-systems onto the digital composition of sound signal.
+In this case, the L-systems will be used for the development of new
+methods of Granular Synthesis which combine features of the technique
+of micro montage. There was made a depth research on Phasor, Patterns,
+(Dseq, Pbind) , GrainBuf, Wavelet Transform techniques. The
+implementation of this work was done with the software
+SuperCollider[fn::form Agiomyrgianakis V.Undergraduate thesis. 2012 "ΜΙΑ ΤΕΧΝΙΚΗ ΣΥΝΘΕΣΗΣ ΗΧΟΥ ΒΑΣΙΣΜΕΝΗ ΣΤΑ
+L-SYSTEMS"].
+
+* Symbolism in creative writing
+
+PhD thesis title: *Audiovisual works in response to creative writing*
+
+The section is about 
+
+
 * Suggested Bibliography
 
 ** Books
