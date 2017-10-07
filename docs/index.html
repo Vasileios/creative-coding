@@ -1975,11 +1975,71 @@ implementation of this work was done with the software
 SuperCollider"(form Agiomyrgianakis V.Undergraduate thesis. 2012 "ΜΙΑ ΤΕΧΝΙΚΗ ΣΥΝΘΕΣΗΣ ΗΧΟΥ ΒΑΣΙΣΜΕΝΗ ΣΤΑ
 L-SYSTEMS").</p>
 
+<p>This is the L-system with the axiom and the production rules:</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="nx">a</span> <span class="o">=</span> <span class="nx">LSys</span><span class="p">(</span><span class="s2">&quot;F&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;F&quot;</span> <span class="o">-&gt;</span><span class="s2">&quot;F+F--/]&amp;F+F&quot;</span><span class="p">,</span> <span class="s2">&quot;F&quot;</span> <span class="o">-&gt;</span> <span class="s2">&quot;]/F+&amp;FF+-&quot;</span><span class="p">]);</span>
+</code></pre></div>
+
+<p>The line below shows how I have collected the symbols from the L-system and replaced them with numbers.
+           ~ls = [
+           “F” -> (1),
+           “+” -> (2),
+           “-“ -> (3),
+           “/“ -> (5),
+           “]” -> (8),
+           “&” -> (13)
+           ];</p>
+
+<p>Finally, I have used patterns in SuperCollider to manipulate the arguments of the synth.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span></span> <span class="nx">Pbind</span><span class="p">(</span><span class="err">\</span><span class="nx">ls</span><span class="p">,</span> <span class="err">\</span><span class="nx">instrument</span><span class="p">,</span> <span class="err">\</span><span class="nx">synth01</span><span class="p">,</span>
+ <span class="err">\</span><span class="nx">volume</span><span class="p">,</span><span class="nx">Pseq</span><span class="p">(</span><span class="o">~</span><span class="nx">ls</span><span class="o">*</span><span class="mf">0.05</span><span class="p">),</span>
+ <span class="err">\</span><span class="nx">frequency</span><span class="p">,</span> <span class="nx">Pseq</span><span class="p">(</span><span class="o">~</span><span class="nx">ls</span><span class="o">*</span><span class="mi">440</span><span class="p">)).</span><span class="nx">play</span><span class="p">;</span>
+</code></pre></div>
+
 <h1 id="symbolism-in-creative-writing">Symbolism in creative writing</h1>
 
 <p>PhD thesis title: <strong>Audiovisual works in response to creative writing</strong></p>
 
-<p>The section is about</p>
+<p>It is worth noticing how in my Haiku series there are notions of
+visual and audio fragmenta- tion, generative systems, chaos and
+complexity as well as other conceptual influences. For instance, in my
+following works I have been inspired by the Jungian approach to
+symbolic interpretation. I have interrelated the symbolism of Nekyia
+in Homer's narrative of Odysseus' descent into Hades, with the descent
+into the unconsciousness as Jung analysed it (in the collection of
+journalistic inter- views in the book C.G Jung Speaking (1987) in the
+case of the modern artist). In Aranea I translat- ed an archetypical
+story of pride into a video game; expressing psychological complexes,
+like the Icarus' complex or narcissism, in relation to the concept of
+hubris and nemesis as they are found in the story of Arachne.</p>
+
+<h2 id="video-musique">Video musique</h2>
+
+<p><a href="https://www.youtube.com/watch?v=vlDzi6H7j0k" title="Peripatetic Haiku" target="_blank">Peripatetic Haiku</a></p>
+
+<p><a href="https://www.youtube.com/watch?v=4yNuc9I7qXo" title="Nekyia" target="_blank">Nekyia</a></p>
+
+<p><a href="https://www.youtube.com/watch?v=Hizd1t4ne7k" title="Aranea game play" target="_blank">Aranea game play</a></p>
+
+<h2 id="short-video-series">Short video series</h2>
+
+<p><a href="https://www.youtube.com/watch?v=AfheDpQ5yYY" title="Spooky Walk" target="_blank">Spooky Walk</a></p>
+
+<p><a href="https://www.youtube.com/watch?v=SoFzl5Z_NDg" title="Delphi trip" target="_blank">Delphi trip</a></p>
+
+<h2 id="text-driven-creativity">Text Driven Creativity</h2>
+
+<p>In this piece I also developed some algorithmic approaches to map text to sound, using the SuperCollider language. I have used the same method of collecting characters as I have done with L-systems in chapter 2. In particular, I experimented with the idea of using the letters of Homer's Nekyia text and mapping them to numeric values. These values could then be easily used to deter- mine the parameters of the sound such as, frequency, amplitude, timbre and rhythm.
+In my effort to represent the ancient Greek and English versions of
+Nekyia I have built two lists of collected characters. With the
+resulting algorithm it is possible to use a large quantity of val- ues
+which result from encoding the text serially. According to the text
+which is encoded the quality of the output ranges from rhythmic and
+melodic to chaotic. Theoretically, if we played the rhythmic patterns
+of a paragraph of the original text we could retrieve the rhythmical
+structure of the ancient Greek version of The Odyssey which, in this
+case, is the dactylic hexameter. 
+To represent the rhythmic scheme of The Odyssey written in ancient
+Greek I have used its scansion system. The Dactyl ( -uu ) is a metrical pattern known as a "foot" which comprises one long syllable followed by two short syllables.</p>
 
 <h1 id="suggested-bibliography">Suggested Bibliography</h1>
 
