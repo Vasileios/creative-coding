@@ -21,7 +21,8 @@ This blog communicates the experience of building tools for
 interactive and data-driven
 audiovisuality using creative coding environments and techniques.
 
-It contains some basic information and tips (installations and usage) about emacs, SuperCollider, Raspberry pi.
+It contains some basic information and tips (installations and usage)
+about emacs, ipython notebook, SuperCollider, Raspberry pi.
 
 Creative coding examples are enclosed in code blocks on the right
 panel of this page. 
