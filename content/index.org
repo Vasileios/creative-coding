@@ -27,9 +27,11 @@ interconnection, machine learning, multidisciplinarity, real-time, sonification,
 #+END_QUOTE
 
 
-* Science and art
+* Science and art-Scientific data and sound/music-image 
 
-Biology and sound/music
+** Biology and sound/music
+
+Data driven sonification visualisation.
 
 "The L-Systems, also known as Lindenmayer Systems, are a class of algorithms for the production of structures based on recursive rewriting rules. “The L-systems are widely used in the composition of graphics mainly for the production of complex forms of plants as well as the imitation of other natural forms ”(Prusinkiewicz and Lindenmayer 1990; Rozenberg and Grzegorz 1992).
 The technique of the L-systems is akin to other techniques such as Fractals and Generative Grammars. The L-systems have also been used to a limited extent for the production of musical structures. The proposed thesis will attempt the direct application of the L-systems onto the digital composition of sound signal.
@@ -66,11 +68,15 @@ Finally, I have used patterns in SuperCollider to manipulate the arguments of th
 
 #+END_SRC
          
-- Scientific data and sound/music-image 
- 
-Data driven sonification visualisation.
 
-* Symbolism in creative writing
+ Astronomy and sound/music-image
+
+
+- Cms
+- Magnetic Storm
+- enzo
+
+** Symbolism in creative writing
 
 PhD thesis title: *Audiovisual works in response to creative writing*
 
