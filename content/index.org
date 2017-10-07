@@ -1481,6 +1481,14 @@ while True:
 Watch [[https://youtu.be/FDFaKzh0WLg][here]] a screen capture
 
 
+* openFrameworks
+
+** MSAFluids-Kinect
+
+
+
+** MSAFluids-data visualisation
+
 * Micro-computing
 
 
