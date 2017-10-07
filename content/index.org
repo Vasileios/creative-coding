@@ -2077,17 +2077,15 @@ Finally, I have used patterns in SuperCollider to manipulate the arguments of th
 PhD thesis title: *Audiovisual works in response to creative writing*
 
 It is worth noticing how in my Haiku series there are notions of
-visual and audio fragmenta- tion, generative systems, chaos and
-complexity as well as other conceptual influences. For instance, in my
-following works I have been inspired by the Jungian approach to
-symbolic interpretation. I have interrelated the symbolism of Nekyia
+visual and audio fragmentation, generative systems, chaos and
+complexity as well as other conceptual influences. I have been inspired by the Jungian approach to
+symbolic interpretation. For example, I have interrelated the symbolism of Nekyia
 in Homer's narrative of Odysseus' descent into Hades, with the descent
 into the unconsciousness as Jung analysed it (in the collection of
 journalistic inter- views in the book C.G Jung Speaking (1987) in the
-case of the modern artist). In Aranea I translat- ed an archetypical
-story of pride into a video game; expressing psychological complexes,
-like the Icarus' complex or narcissism, in relation to the concept of
-hubris and nemesis as they are found in the story of Arachne. 
+case of the modern artist). In In my work "Aranea" I translated an
+archetypical story of pride into a video game; expressing psychological complexes,
+like the Icarus' complex or narcissism, in relation to the concept of hubris and nemesis as they are found in the story of Arachne. 
 
 ** Video musique
 
@@ -2111,7 +2109,7 @@ hubris and nemesis as they are found in the story of Arachne.
 I have developed an algorithm so as to map text to
 sound, using the SuperCollider language. In particular, I experimented
 with the idea of using the letters of Homer's Odyssey the  Nekyia
-chapter. I have mapped the text to numeric values. These values could then be easily used to deter mine the parameters of the sound such as, frequency, amplitude, timbre and rhythm.
+chapter. I have mapped the text to numeric values. These values could then be easily used to determine the parameters of the sound such as, frequency, amplitude, timbre and rhythm.
 In my effort to represent the ancient Greek and English versions of
 Nekyia I have built two lists of collected characters. With the
 resulting algorithm it is possible to use a large quantity of values
