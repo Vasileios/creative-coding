@@ -334,7 +334,7 @@ Example-images
 
 
 
-=#+BEGIN_SRC ditta :file image/awesome.png=
+=#+BEGIN_SRC ditaa :file image/awesome.png=
 
    _
   /_\__      _____  ___  ___  _ __ ___   ___
