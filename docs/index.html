@@ -113,85 +113,6 @@ interconnection, machine learning, multidisciplinarity, real-time, sonification,
 </p>
 </blockquote>
 
-<h1 id="science-and-art-scientific-data-and-sound-music-image">Science and art-Scientific data and sound/music-image</h1>
-
-<h2 id="biology-and-sound-music">Biology and sound/music</h2>
-
-<p>Data driven sonification visualisation.</p>
-
-<p>"The L-Systems, also known as Lindenmayer Systems, are a class of algorithms for the production of structures based on recursive rewriting rules. “The L-systems are widely used in the composition of graphics mainly for the production of complex forms of plants as well as the imitation of other natural forms ”(Prusinkiewicz and Lindenmayer 1990; Rozenberg and Grzegorz 1992).
-The technique of the L-systems is akin to other techniques such as Fractals and Generative Grammars. The L-systems have also been used to a limited extent for the production of musical structures. The proposed thesis will attempt the direct application of the L-systems onto the digital composition of sound signal.
-In this case, the L-systems will be used for the development of new
-methods of Granular Synthesis which combine features of the technique
-of micro montage. There was made a depth research on Phasor, Patterns,
-(Dseq, Pbind) , GrainBuf, Wavelet Transform techniques. The
-implementation of this work was done with the software
-SuperCollider"(form Agiomyrgianakis V.Undergraduate thesis. 2012 "ΜΙΑ ΤΕΧΝΙΚΗ ΣΥΝΘΕΣΗΣ ΗΧΟΥ ΒΑΣΙΣΜΕΝΗ ΣΤΑ
-L-SYSTEMS").</p>
-
-<p>This is the L-system with the axiom and the production rules:</p>
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="nx">a</span> <span class="o">=</span> <span class="nx">LSys</span><span class="p">(</span><span class="s2">&quot;F&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;F&quot;</span> <span class="o">-&gt;</span><span class="s2">&quot;F+F--/]&amp;F+F&quot;</span><span class="p">,</span> <span class="s2">&quot;F&quot;</span> <span class="o">-&gt;</span> <span class="s2">&quot;]/F+&amp;FF+-&quot;</span><span class="p">]);</span>
-</code></pre></div>
-
-<p>The line below shows how I have collected the symbols from the L-system and replaced them with numbers.
-           ~ls = [
-           “F” -> (1),
-           “+” -> (2),
-           “-“ -> (3),
-           “/“ -> (5),
-           “]” -> (8),
-           “&” -> (13)
-           ];</p>
-
-<p>Finally, I have used patterns in SuperCollider to manipulate the arguments of the synth.</p>
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span></span> <span class="nx">Pbind</span><span class="p">(</span><span class="err">\</span><span class="nx">ls</span><span class="p">,</span> <span class="err">\</span><span class="nx">instrument</span><span class="p">,</span> <span class="err">\</span><span class="nx">synth01</span><span class="p">,</span>
- <span class="err">\</span><span class="nx">volume</span><span class="p">,</span><span class="nx">Pseq</span><span class="p">(</span><span class="o">~</span><span class="nx">ls</span><span class="o">*</span><span class="mf">0.05</span><span class="p">),</span>
- <span class="err">\</span><span class="nx">frequency</span><span class="p">,</span> <span class="nx">Pseq</span><span class="p">(</span><span class="o">~</span><span class="nx">ls</span><span class="o">*</span><span class="mi">440</span><span class="p">)).</span><span class="nx">play</span><span class="p">;</span>
-</code></pre></div>
-
-<h2 id="astronomy-and-sound-music-image">Astronomy and sound/music-image</h2>
-
-<ul>
-<li>Cms</li>
-<li>Magnetic Storm</li>
-<li>enzo</li>
-</ul>
-
-<h2 id="literature-and-sound-music-image">Literature and sound/music-image</h2>
-
-<ul>
-<li><strong>Text Driven Creativity</strong></li>
-</ul>
-
-<p>I have developed an algorithm so as to map text to
-sound, using the SuperCollider language. In particular, I experimented
-with the idea of using the letters of Homer's Odyssey the  Nekyia
-chapter. I have mapped the text to numeric values. These values could then be easily used to determine the parameters of the sound such as, frequency, amplitude, timbre and rhythm.
-In my effort to represent the ancient Greek and English versions of
-Nekyia I have built two lists of collected characters. With the
-resulting algorithm it is possible to use a large quantity of values
-which result from encoding the text serially. According to the text
-which is encoded the quality of the output ranges from rhythmic and
-melodic to chaotic. Theoretically, if we played the rhythmic patterns
-of a paragraph of the original text we could retrieve the rhythmical
-structure of the ancient Greek version of The Odyssey which, in this
-case, is the dactylic hexameter. 
-To represent the rhythmic scheme of The Odyssey written in ancient
-Greek I have used its scansion system.</p>
-
-<blockquote>
-<p>
-Scansion system example:
-</p>
-<p>
---|-uu|-uu|-uu|--|--
-</p>
-</blockquote>
-
-<p>The Dactyl ( -uu ) is a metrical pattern known as a "foot" which comprises one long syllable followed by two short syllables.</p>
-
-<p>See more about <a href="http://www.princeton.edu/~achaney/tmve/wiki100k/docs/Dactylic_hexameter.html" title="Dactylic Hexameter" target="_blank">Dactylic Hexameter</a></p>
-
 <h1 id="symbolism-in-creative-writing">Symbolism in creative writing</h1>
 
 <p>PhD thesis title: <strong>Audiovisual works in response to creative writing</strong></p>
@@ -291,6 +212,85 @@ her into a spider. (Riley, 1893, Fable 1)</p>
 </blockquote>
 
 <p>Click the link on the right panel to watch short video series.</p>
+
+<h1 id="science-and-art-scientific-data-and-sound-music-image">Science and art-Scientific data and sound/music-image</h1>
+
+<h2 id="biology-and-sound-music">Biology and sound/music</h2>
+
+<p>Data driven sonification visualisation.</p>
+
+<p>"The L-Systems, also known as Lindenmayer Systems, are a class of algorithms for the production of structures based on recursive rewriting rules. “The L-systems are widely used in the composition of graphics mainly for the production of complex forms of plants as well as the imitation of other natural forms ”(Prusinkiewicz and Lindenmayer 1990; Rozenberg and Grzegorz 1992).
+The technique of the L-systems is akin to other techniques such as Fractals and Generative Grammars. The L-systems have also been used to a limited extent for the production of musical structures. The proposed thesis will attempt the direct application of the L-systems onto the digital composition of sound signal.
+In this case, the L-systems will be used for the development of new
+methods of Granular Synthesis which combine features of the technique
+of micro montage. There was made a depth research on Phasor, Patterns,
+(Dseq, Pbind) , GrainBuf, Wavelet Transform techniques. The
+implementation of this work was done with the software
+SuperCollider"(form Agiomyrgianakis V.Undergraduate thesis. 2012 "ΜΙΑ ΤΕΧΝΙΚΗ ΣΥΝΘΕΣΗΣ ΗΧΟΥ ΒΑΣΙΣΜΕΝΗ ΣΤΑ
+L-SYSTEMS").</p>
+
+<p>This is the L-system with the axiom and the production rules:</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="nx">a</span> <span class="o">=</span> <span class="nx">LSys</span><span class="p">(</span><span class="s2">&quot;F&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;F&quot;</span> <span class="o">-&gt;</span><span class="s2">&quot;F+F--/]&amp;F+F&quot;</span><span class="p">,</span> <span class="s2">&quot;F&quot;</span> <span class="o">-&gt;</span> <span class="s2">&quot;]/F+&amp;FF+-&quot;</span><span class="p">]);</span>
+</code></pre></div>
+
+<p>The line below shows how I have collected the symbols from the L-system and replaced them with numbers.
+           ~ls = [
+           “F” -> (1),
+           “+” -> (2),
+           “-“ -> (3),
+           “/“ -> (5),
+           “]” -> (8),
+           “&” -> (13)
+           ];</p>
+
+<p>Finally, I have used patterns in SuperCollider to manipulate the arguments of the synth.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span></span> <span class="nx">Pbind</span><span class="p">(</span><span class="err">\</span><span class="nx">ls</span><span class="p">,</span> <span class="err">\</span><span class="nx">instrument</span><span class="p">,</span> <span class="err">\</span><span class="nx">synth01</span><span class="p">,</span>
+ <span class="err">\</span><span class="nx">volume</span><span class="p">,</span><span class="nx">Pseq</span><span class="p">(</span><span class="o">~</span><span class="nx">ls</span><span class="o">*</span><span class="mf">0.05</span><span class="p">),</span>
+ <span class="err">\</span><span class="nx">frequency</span><span class="p">,</span> <span class="nx">Pseq</span><span class="p">(</span><span class="o">~</span><span class="nx">ls</span><span class="o">*</span><span class="mi">440</span><span class="p">)).</span><span class="nx">play</span><span class="p">;</span>
+</code></pre></div>
+
+<h2 id="astronomy-and-sound-music-image">Astronomy and sound/music-image</h2>
+
+<ul>
+<li>Cms</li>
+<li>Magnetic Storm</li>
+<li>enzo</li>
+</ul>
+
+<h2 id="literature-and-sound-music-image">Literature and sound/music-image</h2>
+
+<ul>
+<li><strong>Text Driven Creativity</strong></li>
+</ul>
+
+<p>I have developed an algorithm so as to map text to
+sound, using the SuperCollider language. In particular, I experimented
+with the idea of using the letters of Homer's Odyssey the  Nekyia
+chapter. I have mapped the text to numeric values. These values could then be easily used to determine the parameters of the sound such as, frequency, amplitude, timbre and rhythm.
+In my effort to represent the ancient Greek and English versions of
+Nekyia I have built two lists of collected characters. With the
+resulting algorithm it is possible to use a large quantity of values
+which result from encoding the text serially. According to the text
+which is encoded the quality of the output ranges from rhythmic and
+melodic to chaotic. Theoretically, if we played the rhythmic patterns
+of a paragraph of the original text we could retrieve the rhythmical
+structure of the ancient Greek version of The Odyssey which, in this
+case, is the dactylic hexameter. 
+To represent the rhythmic scheme of The Odyssey written in ancient
+Greek I have used its scansion system.</p>
+
+<blockquote>
+<p>
+Scansion system example:
+</p>
+<p>
+--|-uu|-uu|-uu|--|--
+</p>
+</blockquote>
+
+<p>The Dactyl ( -uu ) is a metrical pattern known as a "foot" which comprises one long syllable followed by two short syllables.</p>
+
+<p>See more about <a href="http://www.princeton.edu/~achaney/tmve/wiki100k/docs/Dactylic_hexameter.html" title="Dactylic Hexameter" target="_blank">Dactylic Hexameter</a></p>
 
 <h1 id="code-and-tips">Code and tips</h1>
 
