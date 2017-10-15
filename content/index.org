@@ -98,11 +98,20 @@ like the Icarus' complex or narcissism, in relation to the concept of hubris and
 
 =The procedure of precise cutting and recombining,the basis of the 1950s musique concrète.=
 
+#+BEGIN_QUOTE
+[[https://www.youtube.com/watch?v=vlDzi6H7j0k][Peripatetic Haiku]]
+#+END_QUOTE
+
+- Haiku
 
 For the first pieces of my portfolio I decided to use Haiku poems as a source of inspiration to create audio and visuals. My first aim was to decide how to draw audiovisual material from a text source. I chose to work with Haiku poems because of their immediacy and their richness in meaning. In my opinion, Haiku are an ideal form to express experiences with a minimum of words by means of symbolism and metaphor. As Gibbs describes in his book The poetics of mind:
 The empirical work in cognitive science strongly indicates that many facets of everyday thought and language are indeed metaphorical, enough so that we should recognise metaphor as a primary mode of thought. (Gibbs, 1994, p.122)
 
-[[https://www.youtube.com/watch?v=vlDzi6H7j0k][Peripatetic Haiku]]
+- Nekyia
+
+#+BEGIN_QUOTE
+[[https://www.youtube.com/watch?v=4yNuc9I7qXo][Nekyia]]
+#+END_QUOTE
 
 For this part of my work I decided to experiment with a larger poetic form; so I chose Homer's The Odyssey. The book or the rhapsody I chose to audio-visually represent is Book XI or Rhapsody Λ and more specifically Nekyia. This section is characterised by Jung as a symbol of the descent into the unconsciousness. He used this event as the symbol of describing the psychological condition of the modern artist, especially the art of Pablo Picasso:
 When I say "he", I mean that personality in Picasso which suffers the
@@ -113,9 +122,12 @@ of ugliness and evil. (Jay, Jung, 2012, p. 54 )
 
 I have been inspired by Jung's thought about "katabasis and katalysis and the recognition of the bipolarity in human nature as well as the necessity of conflicting pairs of opposites" (Van den Berk 2012, p.111). In my audiovisual interpretation of Nekyia I have represented pairs of opposites such as light against dark, white against black, male against female, oar against shovel. 
 
-[[https://www.youtube.com/watch?v=4yNuc9I7qXo][Nekyia]]
 
 ** Interactive enviroments
+
+#+BEGIN_QUOTE
+[[https://www.youtube.com/watch?v=Hizd1t4ne7k][Aranea game play]]
+#+END_QUOTE
 
 In my portfolio work of creative responses to text, I thought it would be interesting to experiment with story-telling in videogames; so I used a well-known myth from the Greek tradition. In particular, I chose, as a central story, a part of the myth of goddess Athena, in which we find the story of Arachne (which is the Greek word for ‘spider’), as described by Ovid in his Metamorphoses (Riley, 1893). According to Book VI of Ovid Metamorphoses, the story is about:
 ...the maiden Arachne who lived in Colophon, an opulent city of
@@ -129,9 +141,6 @@ her into a spider. (Riley, 1893, Fable 1)
 Aesthetically I have been influenced by the Limbo video game, (2010), by Playhead.
 
 Click the link below to watch a screencast of the gameplay.
-
-[[https://www.youtube.com/watch?v=Hizd1t4ne7k][Aranea game play]]
-
 
 ** Short video series
 
