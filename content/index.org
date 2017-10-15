@@ -105,7 +105,12 @@ like the Icarus' complex or narcissism, in relation to the concept of hubris and
 - Haiku
 
 For the first pieces of my portfolio I decided to use Haiku poems as a source of inspiration to create audio and visuals. My first aim was to decide how to draw audiovisual material from a text source. I chose to work with Haiku poems because of their immediacy and their richness in meaning. In my opinion, Haiku are an ideal form to express experiences with a minimum of words by means of symbolism and metaphor. As Gibbs describes in his book The poetics of mind:
-The empirical work in cognitive science strongly indicates that many facets of everyday thought and language are indeed metaphorical, enough so that we should recognise metaphor as a primary mode of thought. (Gibbs, 1994, p.122)
+The empirical work in cognitive science strongly indicates that many
+facets of everyday thought and language are indeed metaphorical,
+enough so that we should recognise metaphor as a primary mode of
+thought. (Gibbs, 1994, p.122)
+
+Click the link on the right panel to watch Haiku series.
 
 - Nekyia
 
@@ -122,6 +127,7 @@ of ugliness and evil. (Jay, Jung, 2012, p. 54 )
 
 I have been inspired by Jung's thought about "katabasis and katalysis and the recognition of the bipolarity in human nature as well as the necessity of conflicting pairs of opposites" (Van den Berk 2012, p.111). In my audiovisual interpretation of Nekyia I have represented pairs of opposites such as light against dark, white against black, male against female, oar against shovel. 
 
+Click the link on the right panel to watch Nekyia.
 
 ** Interactive enviroments
 
@@ -142,7 +148,7 @@ her into a spider. (Riley, 1893, Fable 1)
 
 Aesthetically I have been influenced by the Limbo video game, (2010), by Playhead.
 
-Click the link below to watch a screencast of the gameplay.
+Click the link on the right panel to watch a screencast of the gameplay.
 
 ** Short video series
 
@@ -151,6 +157,7 @@ Click the link below to watch a screencast of the gameplay.
 
 [[https://www.youtube.com/watch?v=SoFzl5Z_NDg][Delphi trip]]
 #+END_QUOTE
+Click the link on the right panel to watch short video series.
 
 ** Text Driven Creativity
 
