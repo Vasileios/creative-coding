@@ -78,7 +78,7 @@ Finally, I have used patterns in SuperCollider to manipulate the arguments of th
 
 ** Literature and sound/music-image
 
-* Text Driven Creativity
+- *Text Driven Creativity*
 
 I have developed an algorithm so as to map text to
 sound, using the SuperCollider language. In particular, I experimented
