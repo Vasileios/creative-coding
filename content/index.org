@@ -125,6 +125,8 @@ I have been inspired by Jung's thought about "katabasis and katalysis and the re
 
 ** Interactive enviroments
 
+- Aranea
+
 #+BEGIN_QUOTE
 [[https://www.youtube.com/watch?v=Hizd1t4ne7k][Aranea game play]]
 #+END_QUOTE
@@ -144,10 +146,11 @@ Click the link below to watch a screencast of the gameplay.
 
 ** Short video series
 
-
+#+BEGIN_QUOTE
 [[https://www.youtube.com/watch?v=AfheDpQ5yYY][Spooky Walk]]
 
 [[https://www.youtube.com/watch?v=SoFzl5Z_NDg][Delphi trip]]
+#+END_QUOTE
 
 ** Text Driven Creativity
 
