@@ -97,7 +97,7 @@ Click the link on the right panel to watch a screencast of the gameplay.
 [[https://www.youtube.com/watch?v=Hizd1t4ne7k][Aranea game play]]
 #+END_QUOTE
 
-In my portfolio work of creative responses to text, I thought it would be interesting to experiment with story-telling in videogames; so I used a well-known myth from the Greek tradition. In particular, I chose, as a central story, a part of the myth of goddess Athena, in which we find the story of Arachne (which is the Greek word for ‘spider’), as described by Ovid in his Metamorphoses (Riley, 1893). According to Book VI of Ovid Metamorphoses, the story is about:
+In my portfolio work of creative responses to text, I thought it would be interesting to experiment with story-telling in videogames; so I used a well-known myth from the Greek tradition. In particular, I chose, as a central story, a part of the myth of Goddess Athena, in which we find the story of Arachne (which is the Greek word for ‘spider’), as described by Ovid in his Metamorphoses (Riley, 1893). According to Book VI of Ovid Metamorphoses, the story is about:
 ...the maiden Arachne who lived in Colophon, an opulent city of
 Lydia...Arachne, vain-glorious of her ingenuity, challenges Minerva,
 Athena to take part in a contest of skill in her art. The Goddess
