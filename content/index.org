@@ -167,6 +167,116 @@ Finally, I have used patterns in SuperCollider to manipulate the arguments of th
 
 - Cms
 - NOA'S ENIGMA
+#+BEGIN_SRC js
+// =====================================================================
+// SuperCollider Workspace
+// =====================================================================
+// Data driven sonification of Magnetic storm
+
+//load data files
+
+~files = "~/Documents/data/MagneticStorm12-15\ March2016_NOA\'s\ magnetometer/*.dat.txt".pathMatch;
+
+//:load and collect data
+	"load data".postln;
+	(
+~load = { | path |
+	var data;
+	// select only these rows which contain 7 columns exactly:
+	data = CSVFileReader.read(path) select: { | row, column |
+		row.size == 7;
+	};
+// collect 2 to 4 rows from the list and replace symbols such as "+"
+	data.flop[2..4].flop collect: { | row |
+		row collect: { | string |
+			string.replace("+", "").interpret;
+		}
+	};
+};
+	)	
+//: Create Synths
+
+1.wait;
+"create and add synthdef 1".postln;
+
+(
+// first load sound sample in the buffer
+
+	~buffers = Buffer.read(s,"~/Documents/sounds/PianoPhrase01.wav");
+
+// Create synthdef granulator
+
+	SynthDef(\granulatorAn, {| gate = 1, freq = 1000, freq2 = 5000, freqblow = 10, rq = 0.25, modfreq = 122, ind = 0.5, amp = 0.5, bufnum, envbuf, trig = 1, dur = 0.01, rate = 1, pos = 0.3, pan = 0, vol = 0.1|
+        var env, modulator, source;
+
+		modulator= SinOsc.kr(modfreq,0,10*modfreq*ind, freq);
+
+		env = EnvGen.kr(
+Env.perc,
+gate, doneAction: 2);
+
+        source = GrainBuf.ar(2, Dust.kr(trig), dur*LFNoise1.ar(1).range(1, 3), bufnum, BufRateScale.kr(bufnum)*(modulator/440)*rate, pos, 2, LFNoise1.ar(pan).range(-1, 1), envbuf)*env;		source = LPF.ar(source, freq2);
+Out.ar(0, source*vol)!2
+	}).add;
+
+
+
+// Create synthdef klank
+	
+SynthDef(\klank01, {|out = 0, gate = 1, vol = 0.0001, freq = 440, freq3 = 999, freq2 = 444  decay = 0.02, cutoff = 2000, amp = 0.01, trig = 1,
+         freqs (#[100, 200, 300, 600]), 
+         amps (#[0.3, 0.2, 1, 0.05]),
+         rings (#[1, 0.1, 0.5, 2]), pan = 0|
+         var env, source, filter;
+         env = EnvGen.kr(Env([0, 0.8, 0], [2, 2]), gate, doneAction: 2);
+         source = DynKlank.ar(`[freqs*freq, amps, rings], 
+Dust.ar(trig)+WhiteNoise.ar(amp)+SinOsc.ar(SinOsc.ar(freq*2, freq2, freq3), 0,
+ 0.3)*SinOsc.ar(SinOsc.ar(freq*2.43, freq2*2/35+12, 1.2.rand+[2000, 200.202]), 0, 
+0.3)*0.003);
+	//	 source = Decay.ar(source, decay, mul: amp).softclip;
+
+	source = LPF.ar(source, cutoff, 0.4, amp).softclip;
+	source =  LeakDC.ar(source, 0.995);
+
+         Out.ar(out, Pan2.ar(source*env*vol, pan))
+}).add;
+	)
+
+// load from files the first
+		(
+			{
+	var data;
+	data = ~load.(~files.first);
+
+			10.wait;
+			
+			"run data: storm starts".postln;
+			
+	data do: { | row |
+	
+		var addr = NetAddr("127.0.0.1", 12345);
+		"TO - SYNTH".postln;
+	
+		~nodedkl =	[Synth( \granulatorAn, [\bufnum, ~buffers, dur: 0.3, \trig,
+			row[0].abs.postln, \dur, row[0].abs.sin.postln, \pos,  
+row[0].abs.cos.postln,
+ \rate, 1, \freq2, row[1].pow(2).postln, \vol, 1, \pan, row[0].abs.sin.postln, 
+\envbuf, -1]);,
+
+
+		 Synth(\klank01, [\freq, row[0].abs.tan.postln, \freq2, row[1].abs.squared.postln, \freq3, row[2].abs.squared.postln, \cutoff, 6000,  //row[1].abs.pow(2).postln,
+\amp, row[1].abs.tan.postln, \legato, 1, \vol, 1]);
+	];
+		
+	
+		0.1.wait;//100  miliseconds
+	}
+		
+}.fork;
+	
+		)
+#+END_SRC
+
 - enzo
 
 ** Literature and sound/music-image
