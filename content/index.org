@@ -292,7 +292,7 @@ row[1].abs.squared.postln, \freq3, row[2].abs.squared.postln, \cutoff, 6000,
 I have developed an algorithm so as to map text to
 sound, using the SuperCollider language. In particular, I experimented
 with the idea of using the letters of Homer's Odyssey the  Nekyia
-chapter. I have mapped the text to numeric values. These values could then be easily used to determine the parameters of the sound such as, frequency, amplitude, timbre and rhythm.
+chapter. I have mapped the text to numeric values. These values could then be easily used to manipulate the parameters of the sound such as, frequency, amplitude, timbre and rhythm.
 In my effort to represent the ancient Greek and English versions of
 Nekyia I have built two lists of collected characters. With the
 resulting algorithm it is possible to use a large quantity of values
