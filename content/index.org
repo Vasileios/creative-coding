@@ -229,13 +229,16 @@ Out.ar(0, source*vol)!2
 
 // Create synthdef klank
 	
-SynthDef(\klank01, {|out = 0, gate = 1, vol = 0.0001, freq = 440, freq3 = 999, freq2 = 444  decay = 0.02, cutoff = 2000, amp = 0.01, trig = 1,
-         freqs (#[100, 200, 300, 600]), 
-         amps (#[0.3, 0.2, 1, 0.05]),
-         rings (#[1, 0.1, 0.5, 2]), pan = 0|
-         var env, source, filter;
+SynthDef(\klank01, {|out = 0, gate = 1, vol = 0.0001, freq = 
+440, freq3 = 999, freq2 = 444  decay = 0.02, cutoff = 2000, amp = 0.01, trig = 1,
+ freqs (#[100, 200, 300, 600]), 
+ amps (#[0.3, 0.2, 1, 0.05]),  
+ rings (#[1, 0.1, 0.5, 2]), pan = 0|
+
+ var env, source, filter;
          env = EnvGen.kr(Env([0, 0.8, 0], [2, 2]), gate, doneAction: 2);
-         source = DynKlank.ar(`[freqs*freq, amps, rings], 
+        
+ source = DynKlank.ar(`[freqs*freq, amps, rings], 
 Dust.ar(trig)+WhiteNoise.ar(amp)+SinOsc.ar(SinOsc.ar(freq*2, freq2, freq3), 0,
  0.3)*SinOsc.ar(SinOsc.ar(freq*2.43, freq2*2/35+12, 1.2.rand+[2000, 200.202]), 0, 
 0.3)*0.003);
