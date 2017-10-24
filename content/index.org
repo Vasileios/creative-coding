@@ -206,7 +206,11 @@ Finally, I have used patterns in SuperCollider to manipulate the arguments of th
 
 // Create synthdef granulator
 
-	SynthDef(\granulatorAn, {| gate = 1, freq = 1000, freq2 = 5000, freqblow = 10, rq = 0.25, modfreq = 122, ind = 0.5, amp = 0.5, bufnum, envbuf, trig = 1, dur = 0.01, rate = 1, pos = 0.3, pan = 0, vol = 0.1|
+	SynthDef(\granulatorAn, {| gate = 1, freq = 1000, freq2 
+= 5000, freqblow = 10, rq = 0.25, 
+modfreq = 122, ind = 0.5, amp = 0.5, bufnum, envbuf, trig = 1, 
+dur = 0.01, rate = 1, pos = 0.3, pan = 0, vol = 0.1|
+
         var env, modulator, source;
 
 		modulator= SinOsc.kr(modfreq,0,10*modfreq*ind, freq);
@@ -215,7 +219,9 @@ Finally, I have used patterns in SuperCollider to manipulate the arguments of th
 Env.perc,
 gate, doneAction: 2);
 
-        source = GrainBuf.ar(2, Dust.kr(trig), dur*LFNoise1.ar(1).range(1, 3), bufnum, BufRateScale.kr(bufnum)*(modulator/440)*rate, pos, 2, LFNoise1.ar(pan).range(-1, 1), envbuf)*env;		source = LPF.ar(source, freq2);
+        source = GrainBuf.ar(2, Dust.kr(trig), dur*LFNoise1.ar(1).range(1, 3), 
+bufnum, BufRateScale.kr(bufnum)*(modulator/440)*rate, pos, 2, 
+LFNoise1.ar(pan).range(-1, 1), envbuf)*env;		source = LPF.ar(source, freq2);
 Out.ar(0, source*vol)!2
 	}).add;
 
@@ -264,7 +270,9 @@ row[0].abs.cos.postln,
 \envbuf, -1]);,
 
 
-		 Synth(\klank01, [\freq, row[0].abs.tan.postln, \freq2, row[1].abs.squared.postln, \freq3, row[2].abs.squared.postln, \cutoff, 6000,  //row[1].abs.pow(2).postln,
+		 Synth(\klank01, [\freq, row[0].abs.tan.postln, \freq2, 
+row[1].abs.squared.postln, \freq3, row[2].abs.squared.postln, \cutoff, 6000,  
+//row[1].abs.pow(2).postln,
 \amp, row[1].abs.tan.postln, \legato, 1, \vol, 1]);
 	];
 		
