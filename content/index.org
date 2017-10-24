@@ -236,13 +236,11 @@ SynthDef(\klank01, {|out = 0, gate = 1, vol = 0.0001, freq =
  rings (#[1, 0.1, 0.5, 2]), pan = 0|
 
  var env, source, filter;
-         env = EnvGen.kr(Env([0, 0.8, 0], [2, 2]), gate, doneAction: 2);
-        
- source = DynKlank.ar(`[freqs*freq, amps, rings], 
+         env = EnvGen.kr(Env([0, 0.8, 0], [2, 2]), gate, doneAction: 2);        
+source = DynKlank.ar(`[freqs*freq, amps, rings], 
 Dust.ar(trig)+WhiteNoise.ar(amp)+SinOsc.ar(SinOsc.ar(freq*2, freq2, freq3), 0,
  0.3)*SinOsc.ar(SinOsc.ar(freq*2.43, freq2*2/35+12, 1.2.rand+[2000, 200.202]), 0, 
 0.3)*0.003);
-	//	 source = Decay.ar(source, decay, mul: amp).softclip;
 
 	source = LPF.ar(source, cutoff, 0.4, amp).softclip;
 	source =  LeakDC.ar(source, 0.995);

@@ -325,13 +325,11 @@ L-SYSTEMS").</p>
  <span class="nx">rings</span> <span class="p">(</span><span class="err">#</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]),</span> <span class="nx">pan</span> <span class="o">=</span> <span class="mi">0</span><span class="o">|</span>
 
  <span class="kd">var</span> <span class="nx">env</span><span class="p">,</span> <span class="nx">source</span><span class="p">,</span> <span class="nx">filter</span><span class="p">;</span>
-         <span class="nx">env</span> <span class="o">=</span> <span class="nx">EnvGen</span><span class="p">.</span><span class="nx">kr</span><span class="p">(</span><span class="nx">Env</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]),</span> <span class="nx">gate</span><span class="p">,</span> <span class="nx">doneAction</span><span class="o">:</span> <span class="mi">2</span><span class="p">);</span>
-
- <span class="nx">source</span> <span class="o">=</span> <span class="nx">DynKlank</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="sb">`[freqs*freq, amps, rings], </span>
+         <span class="nx">env</span> <span class="o">=</span> <span class="nx">EnvGen</span><span class="p">.</span><span class="nx">kr</span><span class="p">(</span><span class="nx">Env</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]),</span> <span class="nx">gate</span><span class="p">,</span> <span class="nx">doneAction</span><span class="o">:</span> <span class="mi">2</span><span class="p">);</span>        
+<span class="nx">source</span> <span class="o">=</span> <span class="nx">DynKlank</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="sb">`[freqs*freq, amps, rings], </span>
 <span class="sb">Dust.ar(trig)+WhiteNoise.ar(amp)+SinOsc.ar(SinOsc.ar(freq*2, freq2, freq3), 0,</span>
 <span class="sb"> 0.3)*SinOsc.ar(SinOsc.ar(freq*2.43, freq2*2/35+12, 1.2.rand+[2000, 200.202]), 0, </span>
 <span class="sb">0.3)*0.003);</span>
-<span class="sb">	//	 source = Decay.ar(source, decay, mul: amp).softclip;</span>
 
 <span class="sb">	source = LPF.ar(source, cutoff, 0.4, amp).softclip;</span>
 <span class="sb">	source =  LeakDC.ar(source, 0.995);</span>
