@@ -122,7 +122,7 @@ Click the link on the right panel to watch short video series.
 
 * Science and art-Scientific data and sound/music-image 
 
-** Biology and sound/music
+** Biology and sound/music-image
 
 Data driven sonification visualisation.
 
