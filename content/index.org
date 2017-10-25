@@ -2055,7 +2055,8 @@ void ofApp::setupGui(){
 }
 //--------------------------------------------------------------
 void ofApp::update() {
-    
+    //OSC receive from SuperCollider
+
     while (receiver.hasWaitingMessages()) {
         ofxOscMessage m;
         receiver.getNextMessage(m);
@@ -2318,28 +2319,6 @@ void ofApp::keyPressed (int key) {
             
     }
 }
-
-
- //--------------------------------------------------------------
-/*
- void ofApp::mouseMoved(int x, int y ){
- ofVec2f eventPos = ofVec2f(x, y);
- ofVec2f mouseNorm = ofVec2f(eventPos) / ofGetWindowSize();
- ofVec2f mouseVel = ofVec2f(eventPos - pMouse) / ofGetWindowSize();
- addToFluid(mouseNorm, mouseVel, true, true);
- pMouse = eventPos;
- }
- //--------------------------------------------------------------
- 
- void ofApp::mouseDragged(int x, int y, int button)
- {
- ofVec2f eventPos = ofVec2f(x, y);
- ofVec2f mouseNorm = ofVec2f(eventPos) / ofGetWindowSize();
- ofVec2f mouseVel = ofVec2f(eventPos - pMouse) / ofGetWindowSize();
- addToFluid(mouseNorm, mouseVel, false, true);
- pMouse = eventPos;
- }
- */
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button)
 {}
