@@ -237,15 +237,17 @@ L-SYSTEMS").</p>
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="nx">a</span> <span class="o">=</span> <span class="nx">LSys</span><span class="p">(</span><span class="s2">&quot;F&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;F&quot;</span> <span class="o">-&gt;</span><span class="s2">&quot;F+F--/]&amp;F+F&quot;</span><span class="p">,</span> <span class="s2">&quot;F&quot;</span> <span class="o">-&gt;</span> <span class="s2">&quot;]/F+&amp;FF+-&quot;</span><span class="p">]);</span>
 </code></pre></div>
 
-<p>The line below shows how I have collected the symbols from the L-system and replaced them with numbers.
-           ~ls = [
-           “F” -> (1),
-           “+” -> (2),
-           “-“ -> (3),
-           “/“ -> (5),
-           “]” -> (8),
-           “&” -> (13)
-           ];</p>
+<p>The line below shows how I have collected the symbols from the
+L-system and replaced them with numbers.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span></span><span class="o">~</span><span class="nx">ls</span> <span class="o">=</span> <span class="p">[</span>
+           <span class="err">“</span><span class="nx">F</span><span class="err">”</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+           <span class="err">“</span><span class="o">+</span><span class="err">”</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="mi">2</span><span class="p">),</span>
+           <span class="err">“</span><span class="o">-</span><span class="err">“</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="mi">3</span><span class="p">),</span>
+           <span class="err">“</span><span class="o">/</span><span class="err">“</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="mi">5</span><span class="p">),</span>
+           <span class="err">“</span><span class="p">]</span><span class="err">”</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="mi">8</span><span class="p">),</span>
+           <span class="err">“</span><span class="o">&amp;</span><span class="err">”</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="mi">13</span><span class="p">)</span>
+           <span class="p">];</span>
+</code></pre></div>
 
 <p>Finally, I have used patterns in SuperCollider to manipulate the arguments of the synth.</p>
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span></span> <span class="nx">Pbind</span><span class="p">(</span><span class="err">\</span><span class="nx">ls</span><span class="p">,</span> <span class="err">\</span><span class="nx">instrument</span><span class="p">,</span> <span class="err">\</span><span class="nx">synth01</span><span class="p">,</span>
@@ -288,13 +290,12 @@ L-SYSTEMS").</p>
 	<span class="p">)</span>
 <span class="c1">//: Create Synths</span>
 
-<span class="mi">1</span><span class="p">.</span><span class="nx">wait</span><span class="p">;</span>
 <span class="s2">&quot;create and add synthdef 1&quot;</span><span class="p">.</span><span class="nx">postln</span><span class="p">;</span>
 
 <span class="p">(</span>
-<span class="c1">// first load sound sample in the buffer</span>
+<span class="c1">// first load the sound sample in the buffer</span>
 
-	<span class="o">~</span><span class="nx">buffers</span> <span class="o">=</span> <span class="nx">Buffer</span><span class="p">.</span><span class="nx">read</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span><span class="s2">&quot;~/Documents/sounds/PianoPhrase01.wav&quot;</span><span class="p">);</span>
+	<span class="o">~</span><span class="nx">buffers</span> <span class="o">=</span> <span class="nx">Buffer</span><span class="p">.</span><span class="nx">read</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span><span class="s2">&quot;~/Documents/sounds/PianoSample01.wav&quot;</span><span class="p">);</span>
 
 <span class="c1">// Create synthdef granulator</span>
 

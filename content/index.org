@@ -143,8 +143,11 @@ This is the L-system with the axiom and the production rules:
 a = LSys("F", ["F" ->"F+F--/]&F+F", "F" -> "]/F+&FF+-"]);
 #+END_SRC        
    
-The line below shows how I have collected the symbols from the L-system and replaced them with numbers.
-           ~ls = [
+The line below shows how I have collected the symbols from the
+L-system and replaced them with numbers.
+
+#+BEGIN_SRC js
+~ls = [
            “F” -> (1),
            “+” -> (2),
            “-“ -> (3),
@@ -152,6 +155,8 @@ The line below shows how I have collected the symbols from the L-system and repl
            “]” -> (8),
            “&” -> (13)
            ];
+#+END_SRC
+           
 
 Finally, I have used patterns in SuperCollider to manipulate the arguments of the synth.
 
@@ -200,13 +205,12 @@ magnetometer/*.dat.txt".pathMatch;
 	)
 //: Create Synths
 
-1.wait;
 "create and add synthdef 1".postln;
 
 (
-// first load sound sample in the buffer
+// first load the sound sample in the buffer
 
-	~buffers = Buffer.read(s,"~/Documents/sounds/PianoPhrase01.wav");
+	~buffers = Buffer.read(s,"~/Documents/sounds/PianoSample01.wav");
 
 // Create synthdef granulator
 
