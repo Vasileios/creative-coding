@@ -256,7 +256,7 @@ Dust.ar(trig)+WhiteNoise.ar(amp)+SinOsc.ar(SinOsc.ar(freq*2, freq2, freq3), 0,
 }).add;
 	)
 
-// load from files the first
+// load from the data files the first one
 		(
 			{
 	var data;
