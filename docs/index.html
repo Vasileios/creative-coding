@@ -328,50 +328,51 @@ L-system and replaced them with numbers.</p>
 
  <span class="kd">var</span> <span class="nx">env</span><span class="p">,</span> <span class="nx">source</span><span class="p">,</span> <span class="nx">filter</span><span class="p">;</span>
          <span class="nx">env</span> <span class="o">=</span> <span class="nx">EnvGen</span><span class="p">.</span><span class="nx">kr</span><span class="p">(</span><span class="nx">Env</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]),</span> <span class="nx">gate</span><span class="p">,</span> <span class="nx">doneAction</span><span class="o">:</span> <span class="mi">2</span><span class="p">);</span>
-<span class="nx">source</span> <span class="o">=</span> <span class="nx">DynKlank</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="sb">`[freqs*freq, amps, rings],</span>
-<span class="sb">Dust.ar(trig)+WhiteNoise.ar(amp)+SinOsc.ar(SinOsc.ar(freq*2, freq2, freq3), 0,</span>
-<span class="sb">0.3)*SinOsc.ar(SinOsc.ar(freq*2.43, freq2*2/35+12, 1.2.rand+[2000, 200.202]), 0,</span>
-<span class="sb">0.3)*0.003);</span>
 
-<span class="sb">	source = LPF.ar(source, cutoff, 0.4, amp).softclip;</span>
-<span class="sb">	source =  LeakDC.ar(source, 0.995);</span>
+<span class="nx">source</span> <span class="o">=</span> <span class="nx">DynKlank</span><span class="p">.</span><span class="nx">ar</span><span class="p">([</span><span class="nx">freqs</span><span class="o">*</span><span class="nx">freq</span><span class="p">,</span> <span class="nx">amps</span><span class="p">,</span> <span class="nx">rings</span><span class="p">],</span>
+<span class="nx">Dust</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="nx">trig</span><span class="p">)</span><span class="o">+</span><span class="nx">WhiteNoise</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="nx">amp</span><span class="p">)</span><span class="o">+</span><span class="nx">SinOsc</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="nx">SinOsc</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="nx">freq</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="nx">freq2</span><span class="p">,</span> <span class="nx">freq3</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span>
+<span class="mf">0.3</span><span class="p">)</span><span class="o">*</span><span class="nx">SinOsc</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="nx">SinOsc</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="nx">freq</span><span class="o">*</span><span class="mf">2.43</span><span class="p">,</span> <span class="nx">freq2</span><span class="o">*</span><span class="mi">2</span><span class="o">/</span><span class="mi">35</span><span class="o">+</span><span class="mi">12</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">.</span><span class="nx">rand</span><span class="o">+</span><span class="p">[</span><span class="mi">2000</span><span class="p">,</span> <span class="mf">200.202</span><span class="p">]),</span> <span class="mi">0</span><span class="p">,</span>
+<span class="mf">0.3</span><span class="p">)</span><span class="o">*</span><span class="mf">0.003</span><span class="p">);</span>
 
-<span class="sb">         Out.ar(out, Pan2.ar(source*env*vol, pan))</span>
-<span class="sb">}).add;</span>
-<span class="sb">	)</span>
+	<span class="nx">source</span> <span class="o">=</span> <span class="nx">LPF</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="nx">source</span><span class="p">,</span> <span class="nx">cutoff</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="nx">amp</span><span class="p">).</span><span class="nx">softclip</span><span class="p">;</span>
+	<span class="nx">source</span> <span class="o">=</span>  <span class="nx">LeakDC</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="nx">source</span><span class="p">,</span> <span class="mf">0.995</span><span class="p">);</span>
 
-<span class="sb">// load from files the first</span>
-<span class="sb">		(</span>
-<span class="sb">			{</span>
-<span class="sb">	var data;</span>
-<span class="sb">	data = ~load.(~files.first);</span>
+         <span class="nx">Out</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="nx">out</span><span class="p">,</span> <span class="nx">Pan2</span><span class="p">.</span><span class="nx">ar</span><span class="p">(</span><span class="nx">source</span><span class="o">*</span><span class="nx">env</span><span class="o">*</span><span class="nx">vol</span><span class="p">,</span> <span class="nx">pan</span><span class="p">))</span>
+<span class="p">}).</span><span class="nx">add</span><span class="p">;</span>
+	<span class="p">)</span>
 
-<span class="sb">			10.wait;</span>
+<span class="c1">// load from files the first</span>
+		<span class="p">(</span>
+			<span class="p">{</span>
+	<span class="kd">var</span> <span class="nx">data</span><span class="p">;</span>
+	<span class="nx">data</span> <span class="o">=</span> <span class="o">~</span><span class="nx">load</span><span class="p">.(</span><span class="o">~</span><span class="nx">files</span><span class="p">.</span><span class="nx">first</span><span class="p">);</span>
 
-<span class="sb">			&quot;run data: storm starts&quot;.postln;</span>
+			<span class="mi">10</span><span class="p">.</span><span class="nx">wait</span><span class="p">;</span>
 
-<span class="sb">	data do: { | row |</span>
+			<span class="s2">&quot;run data: storm starts&quot;</span><span class="p">.</span><span class="nx">postln</span><span class="p">;</span>
 
-<span class="sb">		var addr = NetAddr(&quot;127.0.0.1&quot;, 12345);</span>
-<span class="sb">		&quot;TO - SYNTH&quot;.postln;</span>
+	<span class="nx">data</span> <span class="k">do</span><span class="o">:</span> <span class="p">{</span> <span class="o">|</span> <span class="nx">row</span> <span class="o">|</span>
 
-<span class="sb">// Parameter mapping</span>
+		<span class="kd">var</span> <span class="nx">addr</span> <span class="o">=</span> <span class="nx">NetAddr</span><span class="p">(</span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span> <span class="mi">12345</span><span class="p">);</span>
+		<span class="s2">&quot;TO - SYNTH&quot;</span><span class="p">.</span><span class="nx">postln</span><span class="p">;</span>
 
-<span class="sb">~nodedkl = [Synth( </span><span class="err">\</span><span class="sb">granulatorAn, [</span><span class="err">\</span><span class="sb">bufnum, ~buffers, dur: 0.3, </span><span class="err">\</span><span class="sb">trig,</span>
-<span class="sb">row[0].abs.postln, </span><span class="err">\</span><span class="sb">dur, row[0].abs.sin.postln, </span><span class="err">\</span><span class="sb">pos,</span>
-<span class="sb">row[0].abs.cos.postln, </span><span class="err">\</span><span class="sb">rate, 1, </span><span class="err">\</span><span class="sb">freq2, row[1].pow(2).postln, </span><span class="err">\</span><span class="sb">vol, 1, </span><span class="err">\</span><span class="sb">pan,</span>
-<span class="sb">row[0].abs.sin.postln,</span><span class="err">\</span><span class="sb">envbuf, -1]);,</span>
+<span class="c1">// Parameter mapping</span>
 
-<span class="sb">Synth(</span><span class="err">\</span><span class="sb">klank01, [</span><span class="err">\</span><span class="sb">freq, row[0].abs.tan.postln, </span><span class="err">\</span><span class="sb">freq2,</span>
-<span class="sb">row[1].abs.squared.postln, </span><span class="err">\</span><span class="sb">freq3, row[2].abs.squared.postln, </span><span class="err">\</span><span class="sb">cutoff, 6000,</span>
-<span class="err">\</span><span class="sb">amp, row[1].abs.tan.postln, </span><span class="err">\</span><span class="sb">legato, 1, </span><span class="err">\</span><span class="sb">vol, 1]);];</span>
+<span class="o">~</span><span class="nx">nodedkl</span> <span class="o">=</span> <span class="p">[</span><span class="nx">Synth</span><span class="p">(</span> <span class="err">\</span><span class="nx">granulatorAn</span><span class="p">,</span> <span class="p">[</span><span class="err">\</span><span class="nx">bufnum</span><span class="p">,</span> <span class="o">~</span><span class="nx">buffers</span><span class="p">,</span> <span class="nx">dur</span><span class="o">:</span> <span class="mf">0.3</span><span class="p">,</span> <span class="err">\</span><span class="nx">trig</span><span class="p">,</span>
+<span class="nx">row</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">abs</span><span class="p">.</span><span class="nx">postln</span><span class="p">,</span> <span class="err">\</span><span class="nx">dur</span><span class="p">,</span> <span class="nx">row</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">abs</span><span class="p">.</span><span class="nx">sin</span><span class="p">.</span><span class="nx">postln</span><span class="p">,</span> <span class="err">\</span><span class="nx">pos</span><span class="p">,</span>
+<span class="nx">row</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">abs</span><span class="p">.</span><span class="nx">cos</span><span class="p">.</span><span class="nx">postln</span><span class="p">,</span> <span class="err">\</span><span class="nx">rate</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="err">\</span><span class="nx">freq2</span><span class="p">,</span> <span class="nx">row</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">).</span><span class="nx">postln</span><span class="p">,</span> <span class="err">\</span><span class="nx">vol</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="err">\</span><span class="nx">pan</span><span class="p">,</span>
+<span class="nx">row</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">abs</span><span class="p">.</span><span class="nx">sin</span><span class="p">.</span><span class="nx">postln</span><span class="p">,</span><span class="err">\</span><span class="nx">envbuf</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]);,</span>
 
-<span class="sb">		0.1.wait;//100  miliseconds</span>
-<span class="sb">	}</span>
+<span class="nx">Synth</span><span class="p">(</span><span class="err">\</span><span class="nx">klank01</span><span class="p">,</span> <span class="p">[</span><span class="err">\</span><span class="nx">freq</span><span class="p">,</span> <span class="nx">row</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">abs</span><span class="p">.</span><span class="nx">tan</span><span class="p">.</span><span class="nx">postln</span><span class="p">,</span> <span class="err">\</span><span class="nx">freq2</span><span class="p">,</span>
+<span class="nx">row</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">abs</span><span class="p">.</span><span class="nx">squared</span><span class="p">.</span><span class="nx">postln</span><span class="p">,</span> <span class="err">\</span><span class="nx">freq3</span><span class="p">,</span> <span class="nx">row</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="nx">abs</span><span class="p">.</span><span class="nx">squared</span><span class="p">.</span><span class="nx">postln</span><span class="p">,</span> <span class="err">\</span><span class="nx">cutoff</span><span class="p">,</span> <span class="mi">6000</span><span class="p">,</span>
+<span class="err">\</span><span class="nx">amp</span><span class="p">,</span> <span class="nx">row</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">abs</span><span class="p">.</span><span class="nx">tan</span><span class="p">.</span><span class="nx">postln</span><span class="p">,</span> <span class="err">\</span><span class="nx">legato</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="err">\</span><span class="nx">vol</span><span class="p">,</span> <span class="mi">1</span><span class="p">]);];</span>
 
-<span class="sb">}.fork;</span>
+		<span class="mf">0.1</span><span class="p">.</span><span class="nx">wait</span><span class="p">;</span><span class="c1">//100  miliseconds</span>
+	<span class="p">}</span>
 
-<span class="sb">)</span>
+<span class="p">}.</span><span class="nx">fork</span><span class="p">;</span>
+
+<span class="p">)</span>
 </code></pre></div>
 
 <ul>
