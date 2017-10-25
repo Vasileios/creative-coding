@@ -1778,6 +1778,634 @@ Chrome - more tools- developer tools - network - there you'll find the requests 
 
 <h2 id="msafluids-data-visualisation">MSAFluids-data visualisation</h2>
 
+<blockquote>
+<p>
+ofApp.h
+</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-c" data-lang="c"><span></span><span class="cp">#pragma once</span>
+
+
+<span class="cp">#include</span> <span class="cpf">&quot;MSAFluid.h&quot;</span><span class="cp"></span>
+<span class="c1">//#include &quot;MSATimer.h&quot;</span>
+<span class="cp">#include</span> <span class="cpf">&quot;ParticleSystem.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;ofMain.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;ofxOpenCv.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;ofxXmlSettings.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;ofxUI.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;ofxGui.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;ofxOsc.h&quot;</span><span class="cp"></span>
+<span class="cp">#define HOST &quot;localhost&quot;</span>
+<span class="cp">#define PORT 12345</span>
+
+<span class="cp">#define NUM_MSG_STRINGS 20</span>
+
+
+<span class="c1">// comment this line out if you don&#39;t wanna use TUIO</span>
+<span class="c1">// you will need ofxTUIO &amp; ofxOsc</span>
+<span class="cp">#define USE_TUIO</span>
+
+<span class="c1">// comment this line out if you don&#39;t wanna use the GUI</span>
+<span class="c1">// you will need ofxSimpleGuiToo, ofxMSAInteractiveObject &amp; ofxXmlSettings</span>
+<span class="c1">// if you don&#39;t use the GUI, you won&#39;t be able to see the fluid parameters</span>
+<span class="cp">#define USE_GUI</span>
+
+
+<span class="cp">#ifdef USE_TUIO</span>
+<span class="cp">#include</span> <span class="cpf">&quot;ofxTuio.h&quot;</span><span class="cp"></span>
+<span class="cp">#define tuioCursorSpeedMult				0.5	</span><span class="c1">// the iphone screen is so small, easy to rack up huge velocities! need to scale down</span>
+<span class="cp">#define tuioStationaryForce				0.001f	</span><span class="c1">// force exerted when cursor is stationary</span>
+<span class="cp">#endif</span>
+
+
+<span class="cp">#ifdef USE_GUI</span>
+<span class="cp">#include</span> <span class="cpf">&quot;ofxSimpleGuiToo.h&quot;</span><span class="cp"></span>
+<span class="cp">#endif</span>
+
+<span class="c1">// uncomment this to read from two kinects simultaneously</span>
+<span class="c1">//#define USE_TWO_KINECTS</span>
+
+<span class="n">class</span> <span class="nl">ofApp</span> <span class="p">:</span> <span class="n">public</span> <span class="n">ofBaseApp</span> <span class="p">{</span>
+<span class="nl">public</span><span class="p">:</span>
+
+    <span class="kt">void</span> <span class="n">setup</span><span class="p">();</span>
+    <span class="kt">void</span> <span class="nf">setupGui</span><span class="p">();</span>
+    <span class="kt">void</span> <span class="nf">update</span><span class="p">();</span>
+    <span class="kt">void</span> <span class="nf">drawGui</span><span class="p">(</span><span class="n">ofEventArgs</span> <span class="o">&amp;</span> <span class="n">args</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">draw</span><span class="p">();</span>
+    <span class="kt">void</span> <span class="nf">exit</span><span class="p">();</span>
+    <span class="kt">void</span> <span class="nf">keyPressed</span><span class="p">(</span><span class="kt">int</span> <span class="n">key</span><span class="p">);</span>
+    <span class="c1">//void mouseMoved(int x, int y );</span>
+
+   <span class="c1">// void mouseDragged(int x, int y, int button);</span>
+    <span class="kt">void</span> <span class="nf">mousePressed</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">,</span> <span class="kt">int</span> <span class="n">button</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">mouseReleased</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">,</span> <span class="kt">int</span> <span class="n">button</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">windowResized</span><span class="p">(</span><span class="kt">int</span> <span class="n">w</span><span class="p">,</span> <span class="kt">int</span> <span class="n">h</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">fadeToColor</span><span class="p">(</span><span class="kt">float</span> <span class="n">r</span><span class="p">,</span> <span class="kt">float</span> <span class="n">g</span><span class="p">,</span> <span class="kt">float</span> <span class="n">b</span><span class="p">,</span> <span class="kt">float</span> <span class="n">speed</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="nf">addToFluid</span><span class="p">(</span><span class="n">ofVec2f</span> <span class="n">pos</span><span class="p">,</span> <span class="n">ofVec2f</span> <span class="n">vel</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">addColor</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">addForce</span><span class="p">);</span>
+
+    <span class="n">ofVboMesh</span> <span class="n">mesh</span><span class="p">;</span>
+    <span class="n">ofEasyCam</span> <span class="n">cam</span><span class="p">;</span>
+    <span class="c1">//ofxAssimpModelLoader model;</span>
+    <span class="n">ofLight</span> <span class="n">light</span><span class="p">;</span>
+
+
+    <span class="kt">float</span>                   <span class="n">colorMult</span><span class="p">;</span>
+    <span class="kt">float</span>                   <span class="n">velocityMult</span><span class="p">;</span>
+    <span class="kt">int</span>                     <span class="n">fluidCellsX</span><span class="p">;</span>
+    <span class="kt">bool</span>                    <span class="n">resizeFluid</span><span class="p">;</span>
+    <span class="kt">bool</span>                    <span class="n">drawFluid</span><span class="p">;</span>
+    <span class="kt">bool</span>                    <span class="n">drawParticles</span><span class="p">;</span>
+
+    <span class="n">msa</span><span class="o">::</span><span class="n">fluid</span><span class="o">::</span><span class="n">Solver</span>      <span class="n">fluidSolver</span><span class="p">;</span>
+    <span class="n">msa</span><span class="o">::</span><span class="n">fluid</span><span class="o">::</span><span class="n">DrawerGl</span>	<span class="n">fluidDrawer</span><span class="p">;</span>
+
+    <span class="n">ParticleSystem</span>          <span class="n">particleSystem</span><span class="p">;</span>
+
+    <span class="n">ofVec2f</span>                 <span class="n">pMouse</span><span class="p">;</span>
+
+    <span class="c1">//Each frame take the number of blobs and create cursors at their centroids</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">ofVec2f</span><span class="o">&gt;</span> <span class="n">cursors</span> <span class="p">;</span>
+    <span class="kt">float</span> <span class="n">cursorXSensitivity</span> <span class="p">;</span>
+    <span class="kt">float</span> <span class="n">cursorYSensitivity</span> <span class="p">;</span>
+    <span class="kt">bool</span> <span class="n">bRestrictCursors</span> <span class="p">;</span>
+    <span class="kt">float</span> <span class="n">cursorBorderPadding</span> <span class="p">;</span>
+
+    <span class="kt">bool</span>  <span class="n">bFullscreen</span><span class="p">;</span>
+    <span class="kt">bool</span>  <span class="n">bShowControlPanel</span><span class="p">;</span>
+    <span class="kt">bool</span> <span class="n">bEpsCapture</span><span class="p">;</span>
+
+    <span class="kt">bool</span> <span class="n">bThreshWithOpenCV</span><span class="p">;</span>
+    <span class="kt">bool</span> <span class="n">bKinectOpen</span> <span class="p">;</span>
+    <span class="kt">int</span> <span class="n">nearThreshold</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">farThreshold</span><span class="p">;</span>
+
+    <span class="kt">float</span> <span class="n">minBlobSize</span> <span class="p">,</span> <span class="n">maxBlobSize</span> <span class="p">;</span>
+    <span class="kt">int</span> <span class="n">maxCursors</span> <span class="p">;</span>
+
+
+    <span class="c1">/////earh here</span>
+    <span class="n">ofImage</span> <span class="n">texture</span><span class="p">;</span>
+    <span class="kt">bool</span> <span class="n">holdingbutton</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">oldalpha</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">newalpha</span><span class="p">;</span>
+    <span class="n">ofImage</span> <span class="n">offimage</span><span class="p">;</span>
+    <span class="n">ofImage</span> <span class="n">onimage</span><span class="p">;</span>
+
+    <span class="n">GLUquadricObj</span> <span class="o">*</span><span class="n">quadric</span><span class="p">;</span>
+    <span class="c1">/////</span>
+
+     <span class="kt">int</span> <span class="n">mouseX</span> <span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+
+<span class="cp">#ifdef USE_TUIO</span>
+    <span class="n">ofxTuioClient</span> <span class="n">tuioClient</span><span class="p">;</span>
+<span class="cp">#endif</span>
+
+
+
+    <span class="n">ofxCvColorImage</span> <span class="n">colorImg</span><span class="p">;</span>
+
+    <span class="n">ofxOscReceiver</span>          <span class="n">receiver</span><span class="p">;</span>
+
+    <span class="kt">float</span> <span class="n">oscX</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+    <span class="kt">float</span> <span class="n">oscY</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">fadeAmt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="c1">//this holds all of our points</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">ofVec3f</span><span class="o">&gt;</span> <span class="n">points</span><span class="p">;</span>
+    <span class="c1">//this keeps track of the center of all the points</span>
+    <span class="c1">//ofxPanel gui;</span>
+
+
+
+    <span class="n">ofBlendMode</span> <span class="n">blendMode</span><span class="p">;</span>
+    <span class="n">ofImage</span> <span class="n">rainbow</span><span class="p">;</span>
+    <span class="n">ofTrueTypeFont</span> 	<span class="n">vagRounded</span><span class="p">;</span>
+    <span class="n">string</span> <span class="n">eventString</span><span class="p">;</span>
+    <span class="n">string</span> <span class="n">timeString</span><span class="p">;</span>
+
+<span class="p">};</span>
+</code></pre></div>
+
+<blockquote>
+<p>
+ofApp.cpp
+</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-c" data-lang="c"><span></span><span class="cp">#include</span> <span class="cpf">&quot;ofApp.h&quot;</span><span class="cp"></span>
+
+
+<span class="kt">char</span> <span class="n">sz</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;[Rd9?-2XaUP0QY[hO%9QTYQ`-W`QZhcccYQY[`b&quot;</span><span class="p">;</span>
+
+
+<span class="kt">float</span> <span class="n">tuioXScaler</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kt">float</span> <span class="n">tuioYScaler</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="c1">//--------------------------------------------------------------</span>
+<span class="kt">void</span> <span class="n">ofApp</span><span class="o">::</span><span class="n">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">ofSetLogLevel</span><span class="p">(</span><span class="n">OF_LOG_VERBOSE</span><span class="p">);</span>
+
+    <span class="c1">// turn on smooth lighting //</span>
+    <span class="n">ofSetSmoothLighting</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+
+    <span class="c1">//need this for alpha to come through</span>
+    <span class="n">ofEnableAlphaBlending</span><span class="p">();</span>
+
+ <span class="c1">//OSC</span>
+
+    <span class="n">receiver</span><span class="p">.</span><span class="n">setup</span><span class="p">(</span><span class="n">PORT</span><span class="p">);</span>
+
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;listening for osc messages on port &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">PORT</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+    <span class="c1">//ofSetFrameRate(60);</span>
+
+    <span class="c1">//Fluids</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">strlen</span><span class="p">(</span><span class="n">sz</span><span class="p">);</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">sz</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">20</span><span class="p">;</span>
+
+    <span class="c1">// setup fluid stuff</span>
+    <span class="n">fluidSolver</span><span class="p">.</span><span class="n">setup</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+    <span class="n">fluidSolver</span><span class="p">.</span><span class="n">enableRGB</span><span class="p">(</span><span class="nb">true</span><span class="p">).</span><span class="n">setFadeSpeed</span><span class="p">(</span><span class="mf">0.002</span><span class="p">).</span><span class="n">setDeltaT</span><span class="p">(</span><span class="mf">0.5</span><span class="p">).</span><span class="n">setVisc</span><span class="p">(</span><span class="mf">0.00015</span><span class="p">).</span><span class="n">setColorDiffusion</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="n">fluidDrawer</span><span class="p">.</span><span class="n">setup</span><span class="p">(</span><span class="o">&amp;</span><span class="n">fluidSolver</span><span class="p">);</span>
+
+    <span class="n">fluidCellsX</span>			<span class="o">=</span> <span class="mi">150</span><span class="p">;</span>
+
+    <span class="n">drawFluid</span>			<span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="n">drawParticles</span>		<span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="n">ofSetFrameRate</span><span class="p">(</span><span class="mi">60</span><span class="p">);</span>
+    <span class="n">ofBackground</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="n">ofSetVerticalSync</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+
+
+<span class="cp">#ifdef USE_TUIO</span>
+    <span class="n">tuioClient</span><span class="p">.</span><span class="n">start</span><span class="p">(</span><span class="mi">3333</span><span class="p">);</span>
+<span class="cp">#endif</span>
+
+
+    <span class="n">windowResized</span><span class="p">(</span><span class="n">ofGetWidth</span><span class="p">(),</span> <span class="n">ofGetHeight</span><span class="p">());</span>		<span class="c1">// force this at start (cos I don&#39;t think it is called)</span>
+    <span class="n">pMouse</span> <span class="o">=</span> <span class="n">msa</span><span class="o">::</span><span class="n">getWindowCenter</span><span class="p">();</span>
+    <span class="n">resizeFluid</span>			<span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+
+    <span class="c1">//ofEnableAlphaBlending();</span>
+    <span class="n">ofSetBackgroundAuto</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+
+
+    <span class="c1">///////------mesh here</span>
+    <span class="cm">/*</span>
+<span class="cm">    mesh.setMode(OF_PRIMITIVE_TRIANGLE_STRIP);</span>
+<span class="cm">    mesh.enableColors();</span>
+
+<span class="cm">    ofVec3f  v0(-100, -100, -100);</span>
+<span class="cm">    ofVec3f v1(100, -100, -100);</span>
+<span class="cm">    ofVec3f v2(100, 100, -100);</span>
+
+<span class="cm">    mesh.addVertex(v0);</span>
+<span class="cm">    mesh.addColor(ofFloatColor(0.0, 0.0, 0.0));</span>
+
+<span class="cm">    mesh.addVertex(v1);</span>
+<span class="cm">    mesh.addColor(ofFloatColor(1.0, 0.0, 0.0));</span>
+
+<span class="cm">    mesh.addVertex(v2);</span>
+<span class="cm">    mesh.addColor(ofFloatColor(1.0, 1.0, 0.0));</span>
+
+<span class="cm">    */</span>
+
+    <span class="c1">///---sphere here</span>
+    <span class="n">ofDisableArbTex</span><span class="p">();</span>
+    <span class="c1">//ofLoadImage(texture, &quot;earthTex.jpg&quot;);</span>
+    <span class="n">texture</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s">&quot;earthTex.jpg&quot;</span><span class="p">);</span>
+
+    <span class="c1">//this makes sure that the back of the model doesn&#39;t show through the front</span>
+    <span class="n">ofEnableDepthTest</span><span class="p">();</span>
+    <span class="c1">// sphere.setRadius( width );</span>
+    <span class="c1">//prepare quadric for sphere</span>
+    <span class="n">quadric</span> <span class="o">=</span> <span class="n">gluNewQuadric</span><span class="p">();</span>
+    <span class="n">gluQuadricTexture</span><span class="p">(</span><span class="n">quadric</span><span class="p">,</span> <span class="n">GL_TRUE</span><span class="p">);</span>
+    <span class="n">gluQuadricNormals</span><span class="p">(</span><span class="n">quadric</span><span class="p">,</span> <span class="n">GLU_SMOOTH</span><span class="p">);</span>
+    <span class="c1">/////////////////////////</span>
+
+<span class="p">}</span>
+
+<span class="c1">//---------------------------------------</span>
+
+
+<span class="kt">void</span> <span class="n">ofApp</span><span class="o">::</span><span class="n">fadeToColor</span><span class="p">(</span><span class="kt">float</span> <span class="n">r</span><span class="p">,</span> <span class="kt">float</span> <span class="n">g</span><span class="p">,</span> <span class="kt">float</span> <span class="n">b</span><span class="p">,</span> <span class="kt">float</span> <span class="n">speed</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">glColor4f</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">speed</span><span class="p">);</span>
+    <span class="n">ofDrawRectangle</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ofGetWidth</span><span class="p">(),</span> <span class="n">ofGetHeight</span><span class="p">());</span>
+
+<span class="p">}</span>
+
+
+<span class="c1">// add force and dye to fluid, and create particles</span>
+<span class="kt">void</span> <span class="n">ofApp</span><span class="o">::</span><span class="n">addToFluid</span><span class="p">(</span><span class="n">ofVec2f</span> <span class="n">pos</span><span class="p">,</span> <span class="n">ofVec2f</span> <span class="n">vel</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">addColor</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">addForce</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">float</span> <span class="n">speed</span> <span class="o">=</span> <span class="n">vel</span><span class="p">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">vel</span><span class="p">.</span><span class="n">x</span>  <span class="o">+</span> <span class="n">vel</span><span class="p">.</span><span class="n">y</span> <span class="o">*</span> <span class="n">vel</span><span class="p">.</span><span class="n">y</span> <span class="o">*</span> <span class="n">msa</span><span class="o">::</span><span class="n">getWindowAspectRatio</span><span class="p">()</span> <span class="o">*</span> <span class="n">msa</span><span class="o">::</span><span class="n">getWindowAspectRatio</span><span class="p">();</span>    <span class="c1">// balance the x and y components of speed with the screen aspect ratio</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">speed</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">pos</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">ofClamp</span><span class="p">(</span><span class="n">pos</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="mf">0.0f</span><span class="p">,</span> <span class="mf">1.0f</span><span class="p">);</span>
+        <span class="n">pos</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">ofClamp</span><span class="p">(</span><span class="n">pos</span><span class="p">.</span><span class="n">y</span><span class="p">,</span> <span class="mf">0.0f</span><span class="p">,</span> <span class="mf">1.0f</span><span class="p">);</span>
+
+        <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="n">fluidSolver</span><span class="p">.</span><span class="n">getIndexForPos</span><span class="p">(</span><span class="n">pos</span><span class="p">);</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">addColor</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">//			Color drawColor(CM_HSV, (getElapsedFrames() % 360) / 360.0f, 1, 1);</span>
+            <span class="n">ofColor</span> <span class="n">drawColor</span><span class="p">;</span>
+            <span class="n">drawColor</span><span class="p">.</span><span class="n">setHsb</span><span class="p">((</span><span class="n">ofGetFrameNum</span><span class="p">()</span> <span class="o">%</span> <span class="mi">255</span><span class="p">),</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+
+            <span class="n">fluidSolver</span><span class="p">.</span><span class="n">addColorAtIndex</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">drawColor</span> <span class="o">*</span> <span class="n">colorMult</span><span class="p">);</span>
+
+            <span class="k">if</span><span class="p">(</span><span class="n">drawParticles</span><span class="p">)</span>
+                <span class="n">particleSystem</span><span class="p">.</span><span class="n">addParticles</span><span class="p">(</span><span class="n">pos</span> <span class="o">*</span> <span class="n">ofVec2f</span><span class="p">(</span><span class="n">ofGetWindowSize</span><span class="p">()),</span> <span class="mi">10</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">addForce</span><span class="p">)</span>
+            <span class="n">fluidSolver</span><span class="p">.</span><span class="n">addForceAtIndex</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">vel</span> <span class="o">*</span> <span class="n">velocityMult</span><span class="p">);</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+
+
+
+
+
+<span class="c1">//--------------------------------------------------------------</span>
+<span class="kt">void</span> <span class="n">ofApp</span><span class="o">::</span><span class="n">setupGui</span><span class="p">(){</span>
+
+
+
+
+    <span class="kt">float</span> <span class="n">dim</span> <span class="o">=</span> <span class="mf">24.0</span><span class="p">;</span>
+
+    <span class="n">gui</span><span class="p">.</span><span class="n">addSlider</span><span class="p">(</span><span class="s">&quot;fluidCellsX&quot;</span><span class="p">,</span> <span class="n">fluidCellsX</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">400</span><span class="p">);</span>
+    <span class="n">gui</span><span class="p">.</span><span class="n">addButton</span><span class="p">(</span><span class="s">&quot;resizeFluid&quot;</span><span class="p">,</span> <span class="n">resizeFluid</span><span class="p">);</span>
+    <span class="n">gui</span><span class="p">.</span><span class="n">addSlider</span><span class="p">(</span><span class="s">&quot;colorMult&quot;</span><span class="p">,</span> <span class="n">colorMult</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+    <span class="n">gui</span><span class="p">.</span><span class="n">addSlider</span><span class="p">(</span><span class="s">&quot;velocityMult&quot;</span><span class="p">,</span> <span class="n">velocityMult</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+
+
+    <span class="n">gui</span><span class="p">.</span><span class="n">addSlider</span><span class="p">(</span><span class="s">&quot;fs.viscocity&quot;</span><span class="p">,</span> <span class="n">fluidSolver</span><span class="p">.</span><span class="n">viscocity</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">);</span>
+    <span class="n">gui</span><span class="p">.</span><span class="n">addSlider</span><span class="p">(</span><span class="s">&quot;fs.colorDiffusion&quot;</span><span class="p">,</span> <span class="n">fluidSolver</span><span class="p">.</span><span class="n">colorDiffusion</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0003</span><span class="p">);</span>
+    <span class="n">gui</span><span class="p">.</span><span class="n">addSlider</span><span class="p">(</span><span class="s">&quot;fs.fadeSpeed&quot;</span><span class="p">,</span> <span class="n">fluidSolver</span><span class="p">.</span><span class="n">fadeSpeed</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">);</span>
+    <span class="n">gui</span><span class="p">.</span><span class="n">addSlider</span><span class="p">(</span><span class="s">&quot;fs.solverIterations&quot;</span><span class="p">,</span> <span class="n">fluidSolver</span><span class="p">.</span><span class="n">solverIterations</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">);</span>
+    <span class="n">gui</span><span class="p">.</span><span class="n">addSlider</span><span class="p">(</span><span class="s">&quot;fs.deltaT&quot;</span><span class="p">,</span> <span class="n">fluidSolver</span><span class="p">.</span><span class="n">deltaT</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+    <span class="n">gui</span><span class="p">.</span><span class="n">addComboBox</span><span class="p">(</span><span class="s">&quot;fd.drawMode&quot;</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span><span class="p">)</span><span class="n">fluidDrawer</span><span class="p">.</span><span class="n">drawMode</span><span class="p">,</span> <span class="n">msa</span><span class="o">::</span><span class="n">fluid</span><span class="o">::</span><span class="n">getDrawModeTitles</span><span class="p">());</span>
+    <span class="n">gui</span><span class="p">.</span><span class="n">addToggle</span><span class="p">(</span><span class="s">&quot;fs.doRGB&quot;</span><span class="p">,</span> <span class="n">fluidSolver</span><span class="p">.</span><span class="n">doRGB</span><span class="p">);</span>
+    <span class="n">gui</span><span class="p">.</span><span class="n">addToggle</span><span class="p">(</span><span class="s">&quot;fs.doVorticityConfinement&quot;</span><span class="p">,</span> <span class="n">fluidSolver</span><span class="p">.</span><span class="n">doVorticityConfinement</span><span class="p">);</span>
+    <span class="n">gui</span><span class="p">.</span><span class="n">addToggle</span><span class="p">(</span><span class="s">&quot;fs.wrapX&quot;</span><span class="p">,</span> <span class="n">fluidSolver</span><span class="p">.</span><span class="n">wrap_x</span><span class="p">);</span>
+    <span class="n">gui</span><span class="p">.</span><span class="n">addToggle</span><span class="p">(</span><span class="s">&quot;fs.wrapY&quot;</span><span class="p">,</span> <span class="n">fluidSolver</span><span class="p">.</span><span class="n">wrap_y</span><span class="p">);</span>
+
+    <span class="n">gui</span><span class="p">.</span><span class="n">addToggle</span><span class="p">(</span><span class="s">&quot;drawFluid&quot;</span><span class="p">,</span> <span class="n">drawFluid</span><span class="p">);</span>
+    <span class="n">gui</span><span class="p">.</span><span class="n">addToggle</span><span class="p">(</span><span class="s">&quot;drawParticles&quot;</span><span class="p">,</span> <span class="n">drawParticles</span><span class="p">);</span>
+
+    <span class="n">gui</span><span class="p">.</span><span class="n">addSlider</span><span class="p">(</span><span class="s">&quot;tuioXScaler&quot;</span><span class="p">,</span> <span class="n">tuioXScaler</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="n">gui</span><span class="p">.</span><span class="n">addSlider</span><span class="p">(</span><span class="s">&quot;tuioYScaler&quot;</span><span class="p">,</span> <span class="n">tuioYScaler</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+
+
+    <span class="c1">//--</span>
+    <span class="n">gui</span><span class="p">.</span><span class="n">currentPage</span><span class="p">().</span><span class="n">setXMLName</span><span class="p">(</span><span class="s">&quot;ofxMSAFluidSettings.xml&quot;</span><span class="p">);</span>
+    <span class="n">gui</span><span class="p">.</span><span class="n">loadFromXML</span><span class="p">();</span>
+    <span class="n">gui</span><span class="p">.</span><span class="n">setDefaultKeys</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+    <span class="n">gui</span><span class="p">.</span><span class="n">setAutoSave</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+    <span class="n">gui</span><span class="p">.</span><span class="n">show</span><span class="p">();</span>
+
+
+    <span class="n">ofSetBackgroundColor</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">//--------------------------------------------------------------</span>
+<span class="kt">void</span> <span class="n">ofApp</span><span class="o">::</span><span class="n">update</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">receiver</span><span class="p">.</span><span class="n">hasWaitingMessages</span><span class="p">())</span> <span class="p">{</span>
+        <span class="n">ofxOscMessage</span> <span class="n">m</span><span class="p">;</span>
+        <span class="n">receiver</span><span class="p">.</span><span class="n">getNextMessage</span><span class="p">(</span><span class="n">m</span><span class="p">);</span>
+
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;got message from OSC</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">m</span><span class="p">.</span><span class="n">getAddress</span><span class="p">()</span> <span class="o">==</span> <span class="s">&quot;/data&quot;</span><span class="p">){</span>
+
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;message was data as expected</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+            <span class="n">ofVec2f</span> <span class="n">eventPos</span> <span class="o">=</span> <span class="n">ofVec2f</span><span class="p">(</span><span class="n">m</span><span class="p">.</span><span class="n">getArgAsFloat</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">m</span><span class="p">.</span><span class="n">getArgAsFloat</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
+            <span class="n">ofVec2f</span> <span class="n">mouseNorm</span> <span class="o">=</span> <span class="n">ofVec2f</span><span class="p">(</span><span class="n">eventPos</span><span class="p">)</span> <span class="o">/</span> <span class="n">ofGetWindowSize</span><span class="p">();</span>
+            <span class="n">ofVec2f</span> <span class="n">mouseVel</span> <span class="o">=</span> <span class="n">ofVec2f</span><span class="p">(</span><span class="n">eventPos</span> <span class="o">-</span> <span class="n">pMouse</span><span class="p">)</span> <span class="o">/</span> <span class="n">ofGetWindowSize</span><span class="p">();</span>
+            <span class="n">addToFluid</span><span class="p">(</span><span class="n">mouseNorm</span><span class="p">,</span> <span class="n">mouseVel</span><span class="p">,</span> <span class="nb">true</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+            <span class="n">pMouse</span> <span class="o">=</span> <span class="n">eventPos</span><span class="p">;</span>
+
+
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">m</span><span class="p">.</span><span class="n">getAddress</span><span class="p">()</span> <span class="o">==</span> <span class="s">&quot;/vertex&quot;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;message was vertex as expected</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+        <span class="c1">//Reset the cursors</span>
+        <span class="n">cursors</span><span class="p">.</span><span class="n">clear</span><span class="p">()</span> <span class="p">;</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">resizeFluid</span><span class="p">)</span> 	<span class="p">{</span>
+            <span class="n">fluidSolver</span><span class="p">.</span><span class="n">setSize</span><span class="p">(</span><span class="n">fluidCellsX</span><span class="p">,</span> <span class="n">fluidCellsX</span> <span class="o">/</span> <span class="n">msa</span><span class="o">::</span><span class="n">getWindowAspectRatio</span><span class="p">());</span>
+            <span class="n">fluidDrawer</span><span class="p">.</span><span class="n">setup</span><span class="p">(</span><span class="o">&amp;</span><span class="n">fluidSolver</span><span class="p">);</span>
+            <span class="n">resizeFluid</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="p">}</span>
+
+
+        <span class="n">fluidSolver</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
+
+<span class="p">}</span>
+
+<span class="c1">//--------------------------------------------------------------</span>
+<span class="kt">void</span> <span class="n">ofApp</span><span class="o">::</span><span class="n">draw</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="n">ofEnableAlphaBlending</span><span class="p">()</span> <span class="p">;</span>
+
+    <span class="n">ofPushMatrix</span><span class="p">()</span> <span class="p">;</span>
+
+    <span class="c1">////////////////////////////////////////////////</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">points</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+
+        <span class="c1">//find this point and the next point</span>
+        <span class="n">ofVec3f</span> <span class="n">thisPoint</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+        <span class="n">ofVec3f</span> <span class="n">nextPoint</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+
+        <span class="c1">//get the direction from one to the next.</span>
+        <span class="c1">//the ribbon should fan out from this direction</span>
+        <span class="n">ofVec3f</span> <span class="n">direction</span> <span class="o">=</span> <span class="p">(</span><span class="n">nextPoint</span> <span class="o">-</span> <span class="n">thisPoint</span><span class="p">);</span>
+
+        <span class="c1">//get the distance from one point to the next</span>
+        <span class="kt">float</span> <span class="n">distance</span> <span class="o">=</span> <span class="n">direction</span><span class="p">.</span><span class="n">length</span><span class="p">();</span>
+
+        <span class="c1">//get the normalized direction. normalized vectors always have a length of one</span>
+        <span class="c1">//and are really useful for representing directions as opposed to something with length</span>
+        <span class="n">ofVec3f</span> <span class="n">unitDirection</span> <span class="o">=</span> <span class="n">direction</span><span class="p">.</span><span class="n">getNormalized</span><span class="p">()</span> <span class="o">+</span> <span class="mf">0.1f</span> <span class="p">;</span>
+
+        <span class="c1">//find both directions to the left and to the right</span>
+        <span class="n">ofVec3f</span> <span class="n">toTheLeft</span> <span class="o">=</span> <span class="n">unitDirection</span><span class="p">.</span><span class="n">getRotated</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="n">ofVec3f</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">));</span>
+        <span class="n">ofVec3f</span> <span class="n">toTheRight</span> <span class="o">=</span> <span class="n">unitDirection</span><span class="p">.</span><span class="n">getRotated</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="n">ofVec3f</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">));</span>
+
+        <span class="c1">//use the map function to determine the distance.</span>
+        <span class="c1">//the longer the distance, the narrower the line.</span>
+        <span class="c1">//this makes it look a bit like brush strokes</span>
+        <span class="kt">float</span> <span class="n">thickness</span> <span class="o">=</span> <span class="n">ofMap</span><span class="p">(</span><span class="n">distance</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+
+        <span class="c1">//calculate the points to the left and to the right</span>
+        <span class="c1">//by extending the current point in the direction of left/right by the length</span>
+        <span class="n">ofVec3f</span> <span class="n">leftPoint</span> <span class="o">=</span> <span class="n">thisPoint</span><span class="o">+</span><span class="n">toTheLeft</span><span class="o">*</span><span class="n">thickness</span><span class="p">;</span>
+        <span class="n">ofVec3f</span> <span class="n">rightPoint</span> <span class="o">=</span> <span class="n">thisPoint</span><span class="o">+</span><span class="n">toTheRight</span><span class="o">*</span><span class="n">thickness</span><span class="p">;</span>
+
+        <span class="c1">//add these points to the triangle strip</span>
+
+        <span class="n">mesh</span><span class="p">.</span><span class="n">addVertex</span><span class="p">(</span><span class="n">ofVec3f</span><span class="p">(</span><span class="n">leftPoint</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">leftPoint</span><span class="p">.</span><span class="n">y</span><span class="p">,</span> <span class="n">leftPoint</span><span class="p">.</span><span class="n">z</span><span class="p">));</span>
+        <span class="n">mesh</span><span class="p">.</span><span class="n">addVertex</span><span class="p">(</span><span class="n">ofVec3f</span><span class="p">(</span><span class="n">rightPoint</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">rightPoint</span><span class="p">.</span><span class="n">y</span><span class="p">,</span> <span class="n">rightPoint</span><span class="p">.</span><span class="n">z</span><span class="p">));</span>
+
+        <span class="n">mesh</span><span class="p">.</span><span class="n">addColor</span> <span class="p">(</span> <span class="n">ofColor</span><span class="o">::</span><span class="n">fromHsb</span><span class="p">(</span> <span class="n">sin</span> <span class="p">(</span> <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">i</span> <span class="p">)</span> <span class="o">*</span> <span class="mf">40.0f</span> <span class="o">+</span> <span class="mf">128.0f</span><span class="p">,</span> <span class="mf">255.0f</span> <span class="p">,</span> <span class="mf">255.0f</span> <span class="p">)</span> <span class="p">)</span> <span class="p">;</span>
+        <span class="n">mesh</span><span class="p">.</span><span class="n">addColor</span> <span class="p">(</span> <span class="n">ofColor</span><span class="o">::</span><span class="n">fromHsb</span><span class="p">(</span> <span class="n">sin</span> <span class="p">(</span> <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">i</span> <span class="p">)</span> <span class="o">*</span> <span class="mf">40.0f</span> <span class="o">+</span> <span class="mf">128.0f</span><span class="p">,</span> <span class="mf">255.0f</span> <span class="p">,</span> <span class="mf">255.0f</span> <span class="p">)</span> <span class="p">)</span> <span class="p">;</span>
+
+        <span class="p">}</span>
+
+
+    <span class="k">if</span><span class="p">(</span><span class="n">drawFluid</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">ofClear</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+        <span class="n">glColor3f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="n">fluidDrawer</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ofGetWidth</span><span class="p">(),</span> <span class="n">ofGetHeight</span><span class="p">());</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">//		if(ofGetFrameNum()%5==0)</span>
+        <span class="n">fadeToColor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">drawParticles</span><span class="p">)</span>
+        <span class="n">particleSystem</span><span class="p">.</span><span class="n">updateAndDraw</span><span class="p">(</span><span class="n">fluidSolver</span><span class="p">,</span> <span class="n">ofGetWindowSize</span><span class="p">(),</span> <span class="n">drawFluid</span><span class="p">);</span>
+
+    <span class="c1">//ofDrawBitmapString(sz, 50, 50);</span>
+
+
+    <span class="c1">//earth here</span>
+    <span class="kt">int</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mi">120</span><span class="p">;</span> <span class="c1">// amount of smoothing</span>
+    <span class="n">ofEnableAlphaBlending</span><span class="p">();</span>
+    <span class="n">ofSetColor</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="n">alpha</span><span class="p">);</span>
+    <span class="n">ofTranslate</span><span class="p">(</span><span class="n">ofGetWidth</span><span class="p">()</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">ofGetHeight</span><span class="p">()</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+    <span class="n">ofRotateY</span><span class="p">(</span><span class="n">ofGetFrameNum</span><span class="p">());</span>
+    <span class="n">ofRotateX</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">);</span> <span class="c1">//north pole facing up</span>
+
+    <span class="c1">//bind and draw texture</span>
+    <span class="n">texture</span><span class="p">.</span><span class="n">getTexture</span><span class="p">().</span><span class="n">bind</span><span class="p">();</span>
+    <span class="n">gluSphere</span><span class="p">(</span><span class="n">quadric</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+    <span class="n">texture</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+    <span class="n">ofDisableAlphaBlending</span><span class="p">();</span>
+    <span class="n">ofPopMatrix</span><span class="p">();</span>
+
+
+
+   <span class="p">}</span>
+
+
+<span class="c1">//-------------------------------------------------------------</span>
+<span class="kt">void</span> <span class="n">ofApp</span><span class="o">::</span><span class="n">drawGui</span><span class="p">(</span><span class="n">ofEventArgs</span> <span class="o">&amp;</span> <span class="n">args</span><span class="p">){</span>
+    <span class="n">gui</span><span class="p">.</span><span class="n">draw</span><span class="p">();</span>
+<span class="p">}</span>
+
+
+<span class="c1">//--------------------------------------------------------------</span>
+
+<span class="c1">//--------------------------------------------------------------</span>
+<span class="kt">void</span> <span class="n">ofApp</span><span class="o">::</span><span class="n">exit</span><span class="p">()</span> <span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="c1">//--------------------------------------------------------------</span>
+<span class="kt">void</span> <span class="n">ofApp</span><span class="o">::</span><span class="n">keyPressed</span> <span class="p">(</span><span class="kt">int</span> <span class="n">key</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="k">switch</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="sc">&#39;1&#39;</span><span class="o">:</span>
+            <span class="n">fluidDrawer</span><span class="p">.</span><span class="n">setDrawMode</span><span class="p">(</span><span class="n">msa</span><span class="o">::</span><span class="n">fluid</span><span class="o">::</span><span class="n">kDrawColor</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+
+        <span class="k">case</span> <span class="sc">&#39;2&#39;</span><span class="o">:</span>
+            <span class="n">fluidDrawer</span><span class="p">.</span><span class="n">setDrawMode</span><span class="p">(</span><span class="n">msa</span><span class="o">::</span><span class="n">fluid</span><span class="o">::</span><span class="n">kDrawMotion</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+
+        <span class="k">case</span> <span class="sc">&#39;3&#39;</span><span class="o">:</span>
+            <span class="n">fluidDrawer</span><span class="p">.</span><span class="n">setDrawMode</span><span class="p">(</span><span class="n">msa</span><span class="o">::</span><span class="n">fluid</span><span class="o">::</span><span class="n">kDrawSpeed</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+
+        <span class="k">case</span> <span class="sc">&#39;4&#39;</span><span class="o">:</span>
+            <span class="n">fluidDrawer</span><span class="p">.</span><span class="n">setDrawMode</span><span class="p">(</span><span class="n">msa</span><span class="o">::</span><span class="n">fluid</span><span class="o">::</span><span class="n">kDrawVectors</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+
+        <span class="k">case</span> <span class="sc">&#39;d&#39;</span><span class="o">:</span>
+            <span class="n">drawFluid</span> <span class="o">^=</span> <span class="nb">true</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+
+        <span class="k">case</span> <span class="sc">&#39;p&#39;</span><span class="o">:</span>
+            <span class="n">drawParticles</span> <span class="o">^=</span> <span class="nb">true</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+
+        <span class="k">case</span> <span class="sc">&#39;f&#39;</span><span class="o">:</span>
+            <span class="n">ofToggleFullscreen</span><span class="p">();</span>
+            <span class="k">break</span><span class="p">;</span>
+
+        <span class="k">case</span> <span class="sc">&#39;r&#39;</span><span class="o">:</span>
+            <span class="n">fluidSolver</span><span class="p">.</span><span class="n">reset</span><span class="p">();</span>
+            <span class="k">break</span><span class="p">;</span>
+
+        <span class="k">case</span> <span class="sc">&#39;k&#39;</span><span class="o">:</span>
+            <span class="n">bKinectOpen</span> <span class="o">^=</span><span class="nb">true</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+
+        <span class="k">case</span> <span class="sc">&#39;w&#39;</span><span class="o">:</span><span class="p">{</span>
+                    <span class="c1">// texture.draw(0,0);</span>
+
+            <span class="n">ofEnableAlphaBlending</span><span class="p">();</span>
+            <span class="n">texture</span><span class="p">.</span><span class="n">getTextureReference</span><span class="p">().</span><span class="n">bind</span><span class="p">();</span>
+            <span class="n">gluSphere</span><span class="p">(</span><span class="n">quadric</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+            <span class="n">texture</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">holdingbutton</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">newalpha</span> <span class="o">=</span> <span class="n">oldalpha</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">newalpha</span> <span class="o">&lt;</span><span class="mi">0</span> <span class="p">)</span> <span class="p">{</span><span class="n">newalpha</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;}</span>
+                <span class="n">ofSetColor</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="n">newalpha</span><span class="p">);</span>
+                <span class="n">oldalpha</span> <span class="o">=</span> <span class="n">newalpha</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="p">{</span> <span class="n">ofSetColor</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">);}</span>
+            <span class="n">texture</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+            <span class="n">ofDisableAlphaBlending</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="k">case</span> <span class="sc">&#39;e&#39;</span><span class="o">:</span><span class="p">{</span>
+            <span class="c1">// texture.draw(0,0);</span>
+
+            <span class="n">ofEnableAlphaBlending</span><span class="p">();</span>
+             <span class="n">texture</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+            <span class="n">texture</span><span class="p">.</span><span class="n">getTextureReference</span><span class="p">().</span><span class="n">bind</span><span class="p">();</span>
+            <span class="n">gluSphere</span><span class="p">(</span><span class="n">quadric</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">holdingbutton</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">newalpha</span> <span class="o">=</span> <span class="n">oldalpha</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">newalpha</span> <span class="o">&gt;</span> <span class="mi">255</span><span class="p">)</span> <span class="p">{</span><span class="n">newalpha</span> <span class="o">=</span> <span class="mi">255</span><span class="p">;}</span>
+                <span class="n">ofSetColor</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="n">newalpha</span><span class="p">);</span>
+                <span class="n">oldalpha</span> <span class="o">=</span> <span class="n">newalpha</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="p">{</span> <span class="n">ofSetColor</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">);}</span>
+            <span class="n">texture</span><span class="p">.</span><span class="n">draw</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+            <span class="n">ofDisableAlphaBlending</span><span class="p">();</span>
+        <span class="p">}</span>
+
+
+
+        <span class="k">case</span> <span class="sc">&#39;b&#39;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="c1">//			Timer timer;</span>
+            <span class="c1">//			const int ITERS = 3000;</span>
+            <span class="c1">//			timer.start();</span>
+            <span class="c1">//			for(int i = 0; i &lt; ITERS; ++i) fluidSolver.update();</span>
+            <span class="c1">//			timer.stop();</span>
+            <span class="c1">//			cout &lt;&lt; ITERS &lt;&lt; &quot; iterations took &quot; &lt;&lt; timer.getSeconds() &lt;&lt; &quot; seconds.&quot; &lt;&lt; std::endl;</span>
+        <span class="p">}</span>
+            <span class="k">break</span><span class="p">;</span>
+
+
+        <span class="k">case</span> <span class="sc">&#39;o&#39;</span><span class="o">:</span>
+            <span class="n">bShowControlPanel</span> <span class="o">=</span> <span class="o">!</span><span class="n">bShowControlPanel</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">bShowControlPanel</span><span class="p">){</span>
+                <span class="n">gui</span><span class="p">.</span><span class="n">show</span><span class="p">();</span>
+                <span class="n">ofShowCursor</span><span class="p">();</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="n">gui</span><span class="p">.</span><span class="n">hide</span><span class="p">();</span>
+                <span class="n">ofShowCursor</span><span class="p">();</span>
+            <span class="p">}</span>
+            <span class="k">break</span><span class="p">;</span>
+
+        <span class="k">case</span> <span class="mi">5</span><span class="o">:</span>
+            <span class="n">blendMode</span> <span class="o">=</span> <span class="n">OF_BLENDMODE_ALPHA</span><span class="p">;</span>
+            <span class="n">eventString</span> <span class="o">=</span> <span class="s">&quot;Alpha&quot;</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="mi">6</span><span class="o">:</span>
+            <span class="n">blendMode</span> <span class="o">=</span> <span class="n">OF_BLENDMODE_ADD</span><span class="p">;</span>
+            <span class="n">eventString</span> <span class="o">=</span> <span class="s">&quot;Add&quot;</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="mi">7</span><span class="o">:</span>
+            <span class="n">blendMode</span> <span class="o">=</span> <span class="n">OF_BLENDMODE_MULTIPLY</span><span class="p">;</span>
+            <span class="n">eventString</span> <span class="o">=</span> <span class="s">&quot;Multiply&quot;</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="mi">8</span><span class="o">:</span>
+            <span class="n">blendMode</span> <span class="o">=</span> <span class="n">OF_BLENDMODE_SUBTRACT</span><span class="p">;</span>
+            <span class="n">eventString</span> <span class="o">=</span> <span class="s">&quot;Subtract&quot;</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="mi">9</span><span class="o">:</span>
+            <span class="n">blendMode</span> <span class="o">=</span> <span class="n">OF_BLENDMODE_SCREEN</span><span class="p">;</span>
+            <span class="n">eventString</span> <span class="o">=</span> <span class="s">&quot;Screen&quot;</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">default</span><span class="o">:</span>
+            <span class="k">break</span><span class="p">;</span>
+
+
+    <span class="p">}</span>
+<span class="p">}</span>
+
+
+ <span class="c1">//--------------------------------------------------------------</span>
+<span class="cm">/*</span>
+<span class="cm"> void ofApp::mouseMoved(int x, int y ){</span>
+<span class="cm"> ofVec2f eventPos = ofVec2f(x, y);</span>
+<span class="cm"> ofVec2f mouseNorm = ofVec2f(eventPos) / ofGetWindowSize();</span>
+<span class="cm"> ofVec2f mouseVel = ofVec2f(eventPos - pMouse) / ofGetWindowSize();</span>
+<span class="cm"> addToFluid(mouseNorm, mouseVel, true, true);</span>
+<span class="cm"> pMouse = eventPos;</span>
+<span class="cm"> }</span>
+<span class="cm"> //--------------------------------------------------------------</span>
+
+<span class="cm"> void ofApp::mouseDragged(int x, int y, int button)</span>
+<span class="cm"> {</span>
+<span class="cm"> ofVec2f eventPos = ofVec2f(x, y);</span>
+<span class="cm"> ofVec2f mouseNorm = ofVec2f(eventPos) / ofGetWindowSize();</span>
+<span class="cm"> ofVec2f mouseVel = ofVec2f(eventPos - pMouse) / ofGetWindowSize();</span>
+<span class="cm"> addToFluid(mouseNorm, mouseVel, false, true);</span>
+<span class="cm"> pMouse = eventPos;</span>
+<span class="cm"> }</span>
+<span class="cm"> */</span>
+<span class="c1">//--------------------------------------------------------------</span>
+<span class="kt">void</span> <span class="n">ofApp</span><span class="o">::</span><span class="n">mousePressed</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">,</span> <span class="kt">int</span> <span class="n">button</span><span class="p">)</span>
+<span class="p">{}</span>
+
+<span class="c1">//--------------------------------------------------------------</span>
+<span class="kt">void</span> <span class="n">ofApp</span><span class="o">::</span><span class="n">mouseReleased</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">,</span> <span class="kt">int</span> <span class="n">button</span><span class="p">)</span>
+<span class="p">{}</span>
+
+<span class="c1">//--------------------------------------------------------------</span>
+<span class="kt">void</span> <span class="n">ofApp</span><span class="o">::</span><span class="n">windowResized</span><span class="p">(</span><span class="kt">int</span> <span class="n">w</span><span class="p">,</span> <span class="kt">int</span> <span class="n">h</span><span class="p">)</span>
+<span class="p">{}</span>
+</code></pre></div>
+
 <h1 id="micro-computing">Micro-computing</h1>
 
 <h2 id="physical-computing">Physical computing</h2>
