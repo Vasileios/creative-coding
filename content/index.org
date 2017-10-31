@@ -971,15 +971,15 @@ another example:
 #+END_SRC
 
 
- #+BEGIN_QUOTE
+#+BEGIN_QUOTE
 then use these latex commands inside your org file
- #+END_QUOTE
+#+END_QUOTE
 
-#+BEGIN_Example
+#+BEGIN_QUOTE
 #+LaTeX_HEADER: \usepackage[natbib]{biblatex}
 #+LATEX_HEADER: \bibliographystyle{plain}
 #+LATEX_HEADER: \bibliography{test-bib-refs}
-#+END_Example
+#+END_QUOTE
 
 
 - Tests in org file
