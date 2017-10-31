@@ -1019,7 +1019,11 @@ and search for projects</p>
 
 <p>Your next step is to create a .bib file with your citations and name it i.e: test-bib-refs</p>
 
-<p>Below is an example of bibtex style</p>
+<blockquote>
+<p>
+Example of bibtex style
+</p>
+</blockquote>
 <div class="highlight"><pre><code class="language-latex" data-lang="latex"><span></span>@ARTICLE<span class="nb">{</span>2011ApJS..192....9T,
    author = <span class="nb">{{</span>Turk<span class="nb">}</span>, M.~J. and <span class="nb">{</span>Smith<span class="nb">}</span>, B.~D. and <span class="nb">{</span>Oishi<span class="nb">}</span>, J.~S. and <span class="nb">{</span>Skory<span class="nb">}</span>, S. and
      <span class="nb">{</span>Skillman<span class="nb">}</span>, S.~W. and <span class="nb">{</span>Abel<span class="nb">}</span>, T. and <span class="nb">{</span>Norman<span class="nb">}</span>, M.~L.<span class="nb">}</span>,
@@ -1042,7 +1046,7 @@ archivePrefix = &quot;arXiv&quot;,
 
 <blockquote>
 <p>
-and this:
+another example:
 </p>
 </blockquote>
 <div class="highlight"><pre><code class="language-latex" data-lang="latex"><span></span>@InProceedings<span class="nb">{</span> alejandro<span class="nb">_</span>weinstein-proc-scipy-2016,
@@ -1055,7 +1059,9 @@ and this:
 <span class="nb">}</span>
 </code></pre></div>
 
-<p>then use these latex commands inside your org file</p>
+<p>#+BEGIN_QUOTE
+ then use these latex commands inside your org file
+ #+END_QUOTE</p>
 
 <pre><code>&lt;p&gt;
 #+LaTeX_HEADER: \usepackage[natbib]{biblatex}

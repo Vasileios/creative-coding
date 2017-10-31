@@ -926,7 +926,9 @@ First put the bellow code in your ./emacs
 
 Your next step is to create a .bib file with your citations and name it i.e: test-bib-refs
 
-Below is an example of bibtex style
+#+BEGIN_QUOTE
+Example of bibtex style
+#+END_QUOTE
 
 
 #+BEGIN_SRC latex
@@ -952,7 +954,7 @@ archivePrefix = "arXiv",
 #+END_SRC
 
 #+BEGIN_QUOTE
-and this:
+another example:
 #+END_QUOTE
 
 
@@ -968,7 +970,10 @@ and this:
 
 #+END_SRC
 
+
+ #+BEGIN_QUOTE
  then use these latex commands inside your org file
+ #+END_QUOTE
 
 #+BEGIN_Example
 #+LaTeX_HEADER: \usepackage[natbib]{biblatex}
