@@ -1,7 +1,7 @@
 #themesdir = "/themes/docuapi"
 languageCode = "en-us"
 baseurl= "https://vasileios.github.io/creative-coding"
-title = "Creative coding"
+title = "Creative Coding"
 
 # Code higlighting settings
 pygmentsCodefences = true
