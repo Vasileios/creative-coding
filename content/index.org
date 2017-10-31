@@ -976,11 +976,13 @@ and this:
 #+LATEX_HEADER: \bibliography{test-bib-refs}
 #+END_Example
 
-** Tests
 
-** Test1 slide
+- Tests in org file
 
-   - This is test1 
+#+BEGIN_QUOTE
+Latex
+#+END_QUOTE
+   
 
 #+BEGIN_QUOTE
 \cite{2011ApJS..192....9T}.
