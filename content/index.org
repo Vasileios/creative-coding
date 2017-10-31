@@ -982,7 +982,9 @@ then use these latex commands inside your org file
 #+END_QUOTE
 
 
-- Tests in org file
+#+BEGIN_QUOTE
+Tests in org file
+#+END_QUOTE 
 
 #+BEGIN_QUOTE
 Latex
@@ -993,7 +995,10 @@ Latex
 \cite{2011ApJS..192....9T}.
 #+END_QUOTE
 
-   - This is test2
+#+BEGIN_QUOTE
+This is test2
+#+END_QUOTE
+   
 
 #+BEGIN_QUOTE
 \cite{alejandro_weinstein-proc-scipy-2016}.
