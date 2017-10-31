@@ -374,7 +374,6 @@ The Dactyl ( -uu ) is a metrical pattern known as a "foot" which comprises one l
 See more about [[http://www.princeton.edu/~achaney/tmve/wiki100k/docs/Dactylic_hexameter.html][Dactylic Hexameter]]
 
 
-
 * Code and tips
 
 This section communicates the experience of building tools for
@@ -1017,7 +1016,6 @@ This is test2
  *Note: put =\printbibliography= at the end so as to print the references section last on your text.
 #+END_QUOTE
 
-
 * SuperCollider
 
 From: [[http://supercollider.github.io][SuperCollider]]
@@ -1159,7 +1157,6 @@ sound. (Roads 1996: 625)
 
 
 ** Remote Controllers
-
 
 * iPython
 
@@ -1729,7 +1726,6 @@ while True:
 
 
 Watch [[https://youtu.be/FDFaKzh0WLg][here]] a screen capture
-
 
 * openFrameworks
 
@@ -2863,7 +2859,6 @@ Macintosh HD boot
 Password:
 ➜  boot
 #+END_SRC
-
 
 
 
