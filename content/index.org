@@ -972,7 +972,7 @@ another example:
 
 
  #+BEGIN_QUOTE
- then use these latex commands inside your org file
+then use these latex commands inside your org file
  #+END_QUOTE
 
 #+BEGIN_Example
