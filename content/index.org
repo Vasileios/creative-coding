@@ -1098,7 +1098,7 @@ Subtractive synthesis
 #+END_QUOTE
 
 #+BEGIN_SRC js
-{LPF.ar(SinOsc.ar(440, 0, 0.4), 6000, 0.3)}.play;
+{LPF.ar(Saw.ar(440, 0.4), [3520, 4400, 5280], 0.3)}.play;
 #+END_SRC
 
 #+BEGIN_QUOTE
