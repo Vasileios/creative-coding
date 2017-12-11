@@ -2862,6 +2862,13 @@ Password:
 
 
 
+** erase sd card
+
+Open terminal and type:
+
+#+BEGIN_SRC shell
+diskutil eraseVolume ExFAT MyName diskX
+#+END_SRC
 
 * Shell
 
