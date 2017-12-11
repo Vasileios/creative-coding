@@ -2870,6 +2870,8 @@ Open terminal and type:
 diskutil eraseVolume ExFAT MyName diskX
 #+END_SRC
 
+change diskX to your disk number; i.e. =disk2s1=
+
 * Shell
 
 ** Installing tmux
