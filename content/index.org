@@ -2394,9 +2394,13 @@ Follow the instructions here:
 
 ** Import your SD card to your mac
 
+identify the disk (not partition) of your SD card. e.g. disk4 (not
+disk4s1)
+
+=diskutil list=
+
 Go to check the disk number on /About this mac->System report/
 
-it will be like disk2s1
 
 Then open disk utilities choose the partision of the SD card and unamount it so as to let you erase it.
 
@@ -2408,6 +2412,8 @@ $ sudo dd bs=1m if=path_of_your_image.img of=/dev/rdiskn
 
 
 Remember to replace =n= with the number that you noted before!
+
+use Activity Monitor on Mac to see the progress.
 
 eject sd card and connect it to raspberry
 
@@ -2494,10 +2500,14 @@ then you can start installing software such as SuperCollider, emacs etc.
 ** Install emacs
 
 #+BEGIN_SRC shell
-pi@raspberrypi:~ $ sudo apt-get install emacs=
+pi@raspberrypi:~ $ sudo apt-get install emacs
 #+END_SRC
 
-quick installation of prelude emacs
+quick installation of prelude emacs.
+
+Install Git first;
+
+=sudo apt-get install git=
 
 #+BEGIN_SRC shell
 pi@raspberrypi:~ $ curl -L https://git.io/epre | sh

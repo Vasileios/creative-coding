@@ -2448,9 +2448,12 @@ Interactivity (Noble 2012): Chapter 4: Arduino.</p>
 
 <h2 id="import-your-sd-card-to-your-mac">Import your SD card to your mac</h2>
 
-<p>Go to check the disk number on <em>About this mac->System report</em></p>
+<p>identify the disk (not partition) of your SD card. e.g. disk4 (not
+disk4s1)</p>
 
-<p>it will be like disk2s1</p>
+<p><code>diskutil list</code></p>
+
+<p>Go to check the disk number on <em>About this mac->System report</em></p>
 
 <p>Then open disk utilities choose the partision of the SD card and unamount it so as to let you erase it.</p>
 
@@ -2459,6 +2462,8 @@ Interactivity (Noble 2012): Chapter 4: Arduino.</p>
 </code></pre></div>
 
 <p>Remember to replace <code>n</code> with the number that you noted before!</p>
+
+<p>use Activity Monitor on Mac to see the progress.</p>
 
 <p>eject sd card and connect it to raspberry</p>
 
@@ -2539,10 +2544,14 @@ $ pi@raspberrypi:~ $ sudo apt-get upgrade
 </blockquote>
 
 <h2 id="install-emacs">Install emacs</h2>
-<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>pi@raspberrypi:~ $ sudo apt-get install <span class="nv">emacs</span><span class="o">=</span>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>pi@raspberrypi:~ $ sudo apt-get install emacs
 </code></pre></div>
 
-<p>quick installation of prelude emacs</p>
+<p>quick installation of prelude emacs.</p>
+
+<p>Install Git first;</p>
+
+<p><code>sudo apt-get install git</code></p>
 <div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>pi@raspberrypi:~ $ curl -L https://git.io/epre <span class="p">|</span> sh
 </code></pre></div>
 
