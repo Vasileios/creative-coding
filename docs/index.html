@@ -2455,7 +2455,14 @@ disk4s1)</p>
 
 <p>Go to check the disk number on <em>About this mac->System report</em></p>
 
-<p>Then open disk utilities choose the partision of the SD card and unamount it so as to let you erase it.</p>
+<p>Then open disk utilities choose the partision of the SD card and
+unamount it so as to let you erase it.</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ sudo dd <span class="k">if</span><span class="o">=</span>raspbian jessie.img <span class="nv">of</span><span class="o">=</span>/dev/disk2 <span class="nv">bs</span><span class="o">=</span>1m
+dd: /dev/disk2: Resource busy
+$ diskutil umountDisk disk2
+Unmount of all volumes on disk2 was successful
+$ sudo dd <span class="k">if</span><span class="o">=</span>ro519-rc6-1876M.img <span class="nv">of</span><span class="o">=</span>/dev/disk2 <span class="nv">bs</span><span class="o">=</span>1m
+</code></pre></div>
 
 <p>Then open terminal and write the following</p>
 <div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ sudo dd <span class="nv">bs</span><span class="o">=</span>1m <span class="k">if</span><span class="o">=</span>path_of_your_image.img <span class="nv">of</span><span class="o">=</span>/dev/rdiskn
@@ -2658,7 +2665,7 @@ $ pkill jackd <span class="c1">#quit jackd</span>
 <p>and <code>mv /directory-of-scel/el/ to /packages-directory/</code></p>
 
 <p>then write in the init.el file</p>
-<div class="highlight"><pre><code class="language-emacs-lisp" data-lang="emacs-lisp"><span></span><span class="p">(</span><span class="nv">add-to-list</span> <span class="nv">~/.emacs.d/personal/packages/el</span><span class="p">)</span>
+<div class="highlight"><pre><code class="language-emacs-lisp" data-lang="emacs-lisp"><span></span><span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;load-path</span> <span class="s">&quot;~/.emacs.d/personal/packages/el&quot;</span><span class="p">)</span>
 <span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;sclang</span><span class="p">)</span>
 </code></pre></div>
 

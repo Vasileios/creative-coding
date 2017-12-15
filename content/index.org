@@ -2402,7 +2402,15 @@ disk4s1)
 Go to check the disk number on /About this mac->System report/
 
 
-Then open disk utilities choose the partision of the SD card and unamount it so as to let you erase it.
+Then open disk utilities choose the partision of the SD card and
+unamount it so as to let you erase it.
+#+BEGIN_SRC shell
+$ sudo dd if=raspbian jessie.img of=/dev/disk2 bs=1m
+dd: /dev/disk2: Resource busy
+$ diskutil umountDisk disk2
+Unmount of all volumes on disk2 was successful
+$ sudo dd if=ro519-rc6-1876M.img of=/dev/disk2 bs=1m
+#+END_SRC
 
 Then open terminal and write the following
 
@@ -2623,7 +2631,7 @@ then write in the init.el file
 
 #+BEGIN_SRC emacs-lisp
 
-(add-to-list ~/.emacs.d/personal/packages/el)
+(add-to-list 'load-path "~/.emacs.d/personal/packages/el")
 (require 'sclang)
 
 #+END_SRC
