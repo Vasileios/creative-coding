@@ -1259,7 +1259,8 @@ i.e =password: 8b6cae64f7dbcfc425a2dsf30cretfdfc7d730dcba9180ab8=
 #+BEGIN_QUOTE
 Choose *Shell* to see the output
 #+END_QUOTE
-#+Begin_SRC shell
+
+#+BEGIN_SRC shell
 
 [I 01:49:54.596 NotebookApp] Serving
 notebooks from local directory: /Users/usr_name
@@ -1274,7 +1275,7 @@ down all kernels (twice to skip confirmation).
     to login with a token:
 
   http://localhost:8888/?token=8b6cae64f7dbcfc425a2dsf30cretfdfc7d730dcba9180ab8
-#+End_SRC
+#+END_SRC
 
 If you successfully logged in to the server;
 
@@ -2460,6 +2461,10 @@ login from external screen and edit wpa_supplicant.conf
 Also enabled SSH while having the raspberry pi on the external monitor...
 
 open raspi config
+
+#+BEGIN_QUOTE
+Choose *Shell*
+#+END_QUOTE
 
 #+BEGIN_SRC shell
 $ sudo raspi-config
