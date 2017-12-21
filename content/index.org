@@ -1160,6 +1160,7 @@ sound. (Roads 1996: 625)
 
 * iPython
 
+Choose the *Python* mode on the right panel of the screen to see the code.
 
 Introduction to Python (https://www.python.org/doc/).
 
@@ -1218,6 +1219,10 @@ check your python version in terminal =python --version= i.e /3.5/, and download
 
 After downloaded anaconda open terminal and =cd= to anacoda3 directory and type:
 
+#+BEGIN_QUOTE
+choose Shell as the language to see the code
+#+END_QUOTE
+
 #+BEGIN_SRC sh
 bash Anaconda3-4.3.0-MacOSX-x86_64.sh
 #+END_SRC
@@ -1232,6 +1237,9 @@ copy *ein.el* and *ein.py* to your emacs upload directory
 
 - open =.emacs.d= and write
 
+#+BEGIN_QUOTE
+choose 'emacs-lisp' as the language to see the code
+#+END_QUOTE
 #+BEGIN_SRC lisp
 (require 'ein)
 #+END_SRC
