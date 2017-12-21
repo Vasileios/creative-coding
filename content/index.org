@@ -741,7 +741,7 @@ Magit
 Download 
 [[https://github.com/magit/magit%20][Magit]]
 
-Install Magit from MELPA
+Install Magit using MELPA
 
 Dired to the folder you want to create the .git file and press
 
@@ -756,7 +756,7 @@ Backup rep online in GIThub
 
 First, create an ssh key to gain access into your repositories in Github
 
- Concatanate keys from term
+ Concatanate keys on terminal
 
 ie. //cat id_rsa.pub | pbcopy
 
