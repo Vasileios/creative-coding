@@ -1255,7 +1255,8 @@ On emacs hit =M-x ein:notebooklist-login= and press /return/ to use the =localho
 
 i.e =password: 8b6cae64f7dbcfc425a2dsf30cretfdfc7d730dcba9180ab8=
 
-*Term output example*:
+*Term output example*
+
 #+BEGIN_QUOTE
 Choose *Shell* to see the output
 #+END_QUOTE
