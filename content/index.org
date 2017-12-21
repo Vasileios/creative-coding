@@ -1162,6 +1162,10 @@ sound. (Roads 1996: 625)
 
 Choose the *Python* mode on the right panel of the screen to see the code.
 
+#+BEGIN_QUOTE
+Choose the *Python* mode on the right panel of the screen to see the code.
+#+END_QUOTE
+
 Introduction to Python (https://www.python.org/doc/).
 
 
