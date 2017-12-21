@@ -1160,10 +1160,10 @@ sound. (Roads 1996: 625)
 
 * iPython
 
-Choose the *Python* mode on the right panel of the screen to see the code.
+Choose  *Python* to see the code.
 
 #+BEGIN_QUOTE
-Choose the *Python* mode on the right panel of the screen to see the code.
+Choose  *Python* to see the code.
 #+END_QUOTE
 
 Introduction to Python (https://www.python.org/doc/).
@@ -1224,7 +1224,7 @@ check your python version in terminal =python --version= i.e /3.5/, and download
 After downloaded anaconda open terminal and =cd= to anacoda3 directory and type:
 
 #+BEGIN_QUOTE
-choose Shell as the language to see the code
+Choose *Shell* to see the code
 #+END_QUOTE
 
 #+BEGIN_SRC sh
@@ -1242,7 +1242,7 @@ copy *ein.el* and *ein.py* to your emacs upload directory
 - open =.emacs.d= and write
 
 #+BEGIN_QUOTE
-choose 'emacs-lisp' as the language to see the code
+Choose *emacs-lisp* to see the code
 #+END_QUOTE
 #+BEGIN_SRC lisp
 (require 'ein)
@@ -1256,7 +1256,9 @@ On emacs hit =M-x ein:notebooklist-login= and press /return/ to use the =localho
 i.e =password: 8b6cae64f7dbcfc425a2dsf30cretfdfc7d730dcba9180ab8=
 
 *Term output example*:
-
+#+BEGIN_QUOTE
+Choose *Shell* to see the output
+#+END_QUOTE
 #+Begin_SRC shell
 
 [I 01:49:54.596 NotebookApp] Serving
@@ -1314,7 +1316,7 @@ to send osc messages to other application install *python-osc* library
 In this case I use SuperCollider port *57120*
 
 #+BEGIN_QUOTE
-SuperCollider
+Choose *SuperCollider*
 #+END_QUOTE
 
 #+BEGIN_SRC js
@@ -1370,7 +1372,9 @@ amp = 0.5, out = 0|
 #+BEGIN_QUOTE
 ipython notebook
 #+END_QUOTE
-
+#+BEGIN_QUOTE
+Choose *Python*
+#+END_QUOTE
 #+BEGIN_SRC python
 
 #VA_exp_280217_001
@@ -1635,6 +1639,10 @@ for i in photons_E:
 
 ** An example with enzo data
 
+#+BEGIN_QUOTE
+Choose *Python*
+#+END_QUOTE
+
 #+BEGIN_SRC python :session myssesion2 :exports both
 
 import os
@@ -1689,7 +1697,9 @@ and
 [[https://www.crummy.com/software/BeautifulSoup/bs4/doc/][BeautifulSoup]]
 
 If you use pip (recommended) open the terminal and type
-
+#+BEGIN_QUOTE
+Choose *Shell*
+#+END_QUOTE
 #+BEGIN_SRC shell
 $ pip install requests
 #+END_SRC
@@ -1708,7 +1718,9 @@ To be able to collect the number of flights in real time, go and find the .js fi
 Chrome - more tools- developer tools - network - there you'll find the requests under the name /feed.js/.
 
 Now, run the below code in you ipython notebook. (code taken from [[http://stackoverflow.com/questions/39489168/how-to-scrape-real-time-streaming-data-with-python][here)]]
-
+#+BEGIN_QUOTE
+Choose *Python*
+#+END_QUOTE
 #+BEGIN_SRC python
 import requests
 from bs4 import BeautifulSoup
@@ -1746,6 +1758,10 @@ Watch [[https://youtu.be/FDFaKzh0WLg][here]] a screen capture
 
 
 ** MSAFluids-data visualisation
+
+#+BEGIN_QUOTE
+Choose *C++*
+#+END_QUOTE
 #+BEGIN_QUOTE
 ofApp.h
 #+END_QUOTE
@@ -2519,6 +2535,9 @@ then you can start installing software such as SuperCollider, emacs etc.
 
 ** Install emacs
 
+#+BEGIN_QUOTE
+Choose *Shell*
+#+END_QUOTE
 #+BEGIN_SRC shell
 pi@raspberrypi:~ $ sudo apt-get install emacs
 #+END_SRC
@@ -2526,8 +2545,10 @@ pi@raspberrypi:~ $ sudo apt-get install emacs
 quick installation of prelude emacs.
 
 Install Git first;
+#+BEGIN_SRC shell
+pi@raspberrypi:~ $ sudo apt-get install git
+#+END_SRC 
 
-=sudo apt-get install git=
 
 #+BEGIN_SRC shell
 pi@raspberrypi:~ $ curl -L https://git.io/epre | sh
@@ -2542,6 +2563,9 @@ next step is to install supercollider in emacs
 
 Installation guide from: [[http://supercollider.github.io/development/building-raspberrypi][Building SC on RPI]]
 
+#+BEGIN_QUOTE
+Choose *Shell*
+#+END_QUOTE
 #+BEGIN_SRC shell
 $ ssh pi@raspberrypi.local #from your laptop, default password is raspberry
 $ sudo raspi-config #change password, expand file system, reboot and log in again with ssh
@@ -2641,6 +2665,9 @@ and =mv /directory-of-scel/el/ to /packages-directory/=
 
 then write in the init.el file
 
+#+BEGIN_QUOTE
+Choose *emacs-lisp*
+#+END_QUOTE
 #+BEGIN_SRC emacs-lisp
 
 (add-to-list 'load-path "~/.emacs.d/personal/packages/el")
@@ -2657,7 +2684,9 @@ and cp the =sc= directory from
 to =/usr/local/share/SuperCollider/Extensions/=
 
 Then type to the terminal
-
+#+BEGIN_QUOTE
+Choose *Shell*
+#+END_QUOTE
 #+BEGIN_SRC shell
 pi@raspberrypi:~ $ jackd -P75 -dalsa -dhw:1 -p1024 -n3 -s -r44100 &
 //pi@raspberrypi:~ $ scsynth -u 57110 &
@@ -2690,10 +2719,10 @@ $ scp -r /Users/path pi@raspberrypi:~/SC_Stuff
 ** Open raspberrypi3 from  emacs using TRAMP
 
 =C-x C-f= and type
-
-#+Begin_SRC shell
+<Choose *Shell*
+#+Begin_Quote
  /ssh:pi@raspberrypi:
-#+End_SRC
+#+End_Quote
 
 then type your raspberry password
 
@@ -2707,28 +2736,28 @@ and then dired freely, open files and programms using  shell as well to run scla
 
 =C-x C-f= and type
 
-#+BEGIN_SRC shell
+
+#+BEGIN_Quote
 /ssh:pi@raspberrypi|sudo:root@pi@raspberrypi:
-#+END_SRC
+#+END_Quote
 
 dired to your file, make changes and save it!!!
 
 
 ** Copy files from Raspberrypi to mac and the opposite
 
-
-#+BEGIN_SRC shell
+#+BEGIN_QUOTE
 scp /path/to/py/file pi@raspberrypi:~
-#+END_SRC
+#+END_QUOTE
 
 Replace raspberrypi with the ip address of the Pi if using the hostname doesn't work.
 
 or from the pi
 
-#+BEGIN_SRC shell
-scp macuser@macipaddress:/path/to/py/file ~
 
-#+END_SRC
+#+BEGIN_Quote
+scp macuser@macipaddress:/path/to/py/file ~
+#+END_Quote
 
 replace macuser and macipaddress with your mac user and mac's ip address.
 
@@ -2747,6 +2776,9 @@ On your mac go to the directory you want to sync using *cd* on your terminal and
 
 transfering files from raspberry to mac
 
+#+BEGIN_QUOTE
+Choose *Shell*
+#+END_QUOTE
 #+BEGIN_SRC shell
  Recordings git:(SuperCollider) ✗ rsync -avz -e ssh pi@192.168.1.96:/home/pi/.local/share/SuperCollider/Recordings/ Recordings/
 
@@ -2815,6 +2847,9 @@ Note: Make sure you've enabled I2C on your Raspberry Pi!
 
 First make sure that you've installed python.
 
+#+BEGIN_QUOTE
+Choose *Shell*
+#+END_QUOTE
 #+BEGIN_SRC shell
 sudo apt-get update
 sudo apt-get install build-essential python-dev python-smbus python-pip git
@@ -2848,6 +2883,9 @@ https://learn.adafruit.com/adafruits-raspberry-pi-lesson-4-gpio-setup/configurin
 
 Now when you log in you can type the following command to see all the connected devices
 
+#+BEGIN_QUOTE
+Choose *Shell*
+#+END_QUOTE
 #+BEGIN_SRC shell
 $ sudo i2cdetect -y 1
 #+END_SRC
@@ -2855,6 +2893,9 @@ $ sudo i2cdetect -y 1
 
 ** Usage
 
+#+BEGIN_QUOTE
+Choose *Shell*
+#+END_QUOTE
 #+BEGIN_SRC shell
 cd examples
 sudo python simpletest.py
@@ -2877,7 +2918,9 @@ These are the output values of 12 capacitive touch inputs
 
 ** Chage permission to read-only files 
 
-
+#+BEGIN_QUOTE
+Choose *Shell*
+#+END_QUOTE
 #+BEGIN_SRC shell
 ➜  ~ cd /Volumes
 ➜  /Volumes ls
@@ -2895,6 +2938,10 @@ Password:
 ** erase sd card
 
 Open terminal and type:
+
+#+BEGIN_QUOTE
+Choose *Shell*
+#+END_QUOTE
 
 #+BEGIN_SRC shell
 diskutil eraseVolume ExFAT MyName diskX
@@ -2915,6 +2962,10 @@ tmux depends on *libevent 2.x*. Download it from:
 	http://libevent.org
 
 use this command to install it:
+
+#+BEGIN_QUOTE
+Choose *Shell*
+#+END_QUOTE
 
 #+BEGIN_SRC shell
 $ sudo apt-get install libevent-dev
@@ -2992,6 +3043,10 @@ Debian-based linux systems
 
 Open a terminal window. Copy & paste the following into the terminal window and hit Return. You may be prompted to enter your password.
 
+#+BEGIN_QUOTE
+Choose *Shell*
+#+END_QUOTE
+
 #+BEGIN_SRC shell
 $ sudo apt-get update
 $ sudo apt-get upgrade
@@ -3028,6 +3083,10 @@ If you are using bash, you may have a file called .bash_profile where
 you can put your export command instead (don't know in zsh).
 
 ** Convert w4a, mp4, etc to wav
+
+#+BEGIN_QUOTE
+Choose *Shell*
+#+END_QUOTE
 
 install ffmeg
 #+BEGIN_SRC shell
