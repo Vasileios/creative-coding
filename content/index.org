@@ -609,6 +609,9 @@ Export Beamer: =C-c C-e l P=     =(org-beamer-export-to-pdf)=
 
 Export PDF: =C-c C-e l O=
 
+To export and open pdf make sure you have installed Mactex with extras
+no the basic version.
+
 Export as LaTeX,  and open PDF file.
 
 ** Source Code
