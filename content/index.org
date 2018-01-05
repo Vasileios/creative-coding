@@ -795,16 +795,14 @@ a folder with the name *project2* in your other computer.
 To change the repo address go to your .git folder inside your poroject
 and open =config= file. Then change the repo address to the new one.
 
-i.e
+i.e in =config= replace the old url with the new one:
 
-#+BEGIN_QUOTE
-...
 [remote "origin"]
-url = git@github.com:User/project2.git
-...
-#+END_QUOTE
 
-*issues*
+// old url = git@github.com:User/project1.git 
+url = git@github.com:User/project2.git
+
+*other issues*
 
 - Git refusing to merge unrelated histories
 
