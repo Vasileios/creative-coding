@@ -783,7 +783,7 @@ Press =Shift-p p= to push to a remote branch (master).
 ** Pull requests
 
 If you use more than one computers for the same repo you need to pull
-first and then to push in case of updating locations.
+first and then to push to remote repo.
 
 On magit press =F= and =p= to pull to master.
 Then you are able to push into the location of this exact repository.
