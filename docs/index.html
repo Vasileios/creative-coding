@@ -90,8 +90,8 @@
 
 <h2 id="about">About</h2>
 
-<p>My research imperatives run along the threads of transmediation,
-intersemiotic translation, post-disciplinarity (interdisciplinarity, multidiscplinarity) and the general concerns of Human Computer Interaction (HCI).</p>
+<p>My research imperatives run along the threads of trans-mediation,
+inter-semiotic translation, post-disciplinarity (interdisciplinarity, multidiscplinarity) and the general concerns of Human Computer Interaction (HCI).</p>
 
 <p>A large part of my contemporary practices in creating audiovisual
 materials is through creative coding. In coding there is the
@@ -899,13 +899,22 @@ Magit
 first and then to push to remote repo.</p>
 
 <p>On magit press <code>F</code> and <code>p</code> to pull to master.
-Then you are able to push into the location of this exact repository.
-You might need to change the url of your repo in your other
-computer as well in case you didn't choose the same name for the folder where
-your project is located. This happens, in case you first created the repo in
-your laptop in a folder named <strong>project1</strong> and built your site i.e hugo, and then pull this repo into
-a folder with the name <strong>project2</strong> in your other computer. 
-To change the repo address go to your .git folder inside your poroject
+Then you are able to push into the location of this exact repository
+from your other computer. If later you want to upadate changes in your
+first computer you need to pull again and then push.</p>
+
+<p><strong>NOTE</strong></p>
+
+<p>You might need to change the url of your repo in your first
+computer in case you didn't choose the same name for the folder where
+your project is located in your second computer. This happens, in case
+you first created the repo for example, in
+your laptop, in a folder named <strong>project1</strong> and built your site i.e hugo, and then pull this repo into
+a folder with the name <strong>project2</strong> in your other computer.</p>
+
+<p>This seems a little bit tricky but it worths the try.</p>
+
+<p>To change the repo address go to your .git folder inside your poroject
 and open <code>config</code> file. Then change the repo address to the new one.</p>
 
 <p>i.e in <code>config</code> replace the old url with the new one:</p>
@@ -915,6 +924,9 @@ and open <code>config</code> file. Then change the repo address to the new one.<
 <p><del>url = git@github.com:User/project1.git</del></p>
 
 <p>url = git@github.com:User/project2.git</p>
+
+<p>After you did this you will be able to push again from your first
+computer.</p>
 
 <p><strong>other issues</strong></p>
 
@@ -931,7 +943,7 @@ git rebase --continue</p>
 
 <p>Git refusing to merge unrelated histories</p>
 
-<p>in magit press h to bring the popoup and choose rebase -r and then -p</p>
+<p>in magit press h to bring the popoup window and choose rebase -r and then -p</p>
 
 <h2 id="install-dictionaries-emacs">Install Dictionaries -emacs</h2>
 

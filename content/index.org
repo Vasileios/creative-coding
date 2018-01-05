@@ -7,8 +7,8 @@ title: Creative Coding
 
 ** About
 
-My research imperatives run along the threads of transmediation,
-intersemiotic translation, post-disciplinarity (interdisciplinarity, multidiscplinarity) and the general concerns of Human Computer Interaction (HCI). 
+My research imperatives run along the threads of trans-mediation,
+inter-semiotic translation, post-disciplinarity (interdisciplinarity, multidiscplinarity) and the general concerns of Human Computer Interaction (HCI). 
 
 A large part of my contemporary practices in creating audiovisual
 materials is through creative coding. In coding there is the
@@ -786,12 +786,21 @@ If you use more than one computers for the same repo you need to pull
 first and then to push to remote repo.
 
 On magit press =F= and =p= to pull to master.
-Then you are able to push into the location of this exact repository.
-You might need to change the url of your repo in your other
-computer as well in case you didn't choose the same name for the folder where
-your project is located. This happens, in case you first created the repo in
-your laptop in a folder named *project1* and built your site i.e hugo, and then pull this repo into
-a folder with the name *project2* in your other computer. 
+Then you are able to push into the location of this exact repository
+from your other computer. If later you want to upadate changes in your
+first computer you need to pull again and then push.
+
+*NOTE*
+
+You might need to change the url of your repo in your first
+computer in case you didn't choose the same name for the folder where
+your project is located in your second computer. This happens, in case
+you first created the repo for example, in
+your laptop, in a folder named *project1* and built your site i.e hugo, and then pull this repo into
+a folder with the name *project2* in your other computer.
+ 
+This seems a little bit tricky but it worths the try.
+
 To change the repo address go to your .git folder inside your poroject
 and open =config= file. Then change the repo address to the new one.
 
@@ -802,6 +811,9 @@ i.e in =config= replace the old url with the new one:
 +url = git@github.com:User/project1.git+ 
 
 url = git@github.com:User/project2.git
+
+After you did this you will be able to push again from your first
+computer.
 
 *other issues*
 
@@ -816,7 +828,7 @@ Git failed...
 
 Git refusing to merge unrelated histories
 
-in magit press h to bring the popoup and choose rebase -r and then -p
+in magit press h to bring the popoup window and choose rebase -r and then -p
 
  
 ** Install Dictionaries -emacs
