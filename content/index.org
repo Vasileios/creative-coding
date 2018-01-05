@@ -1089,7 +1089,53 @@ to run the programm.
 
 you will see a 'hello world' message.
 
- 
+ *Create and Run a programm*
+
+On emacs create a folder [use dired to the direction you want to create
+the folder and press =Shift-+=
+and give a name] then dired to the folder and create 5 source files:
+
+- main.cpp, which reffers to the main programm,
+- Point.h, which is the header file for the Point class,
+- Point.cpp, which is the implementation file for the Point class,
+- Line.h, header file for the Line class,
+- Line.cpp, which is the implementation file for the Line
+  class.
+Compiling source code
+
+Compile its source code using the -c flag with the compiler.
+
+i.e. 
+
+#+BEGIN_SRC shell
+% g++ -c main.cpp
+% g++ -c Point.cpp
+% g++ -c Line.cpp
+#+END_SRC
+
+This process generates object files =.o=
+
+You need next to link the object files into an executable
+
+#+BEGIN_SRC shell
+% g++ -c main.cpp
+#+END_SRC 
+
+*Create a makefile*
+
+open emacs and dired to the folder with the .cpp and .o files and
+create a =makefile=. This file genereates the executable =main=
+
+The one part is to set the =variables= you need to use in a simple makefile. These are variables
+which specify the C++ compiler and linker, as well as, flags
+for the compiler, etc.
+
+and the other part is to set the =targets= which can be files to be
+generated. 
+
+To comment a make file use =#=
+
+
 
 * SuperCollider
 
