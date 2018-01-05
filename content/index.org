@@ -799,7 +799,8 @@ i.e in =config= replace the old url with the new one:
 
 [remote "origin"]
 
-// old url = git@github.com:User/project1.git 
++url = git@github.com:User/project1.git+ 
+
 url = git@github.com:User/project2.git
 
 *other issues*
