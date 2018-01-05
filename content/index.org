@@ -1024,11 +1024,11 @@ This is test2
 #+BEGIN_QUOTE
 G++ -------
 #+END_QUOTE
-Create  folder *hello_world* 
+Create a folder *hello_world* 
 and cd in this folder and create file *hello_world.cpp*
 
 ............................
- use the below code to .cpp file
+ copy the below code and paste it inside *hello_world.cpp* file
 
 #+BEGIN_SRC c++
 #include <iostream>
