@@ -609,6 +609,9 @@ Export Beamer: =C-c C-e l P=     =(org-beamer-export-to-pdf)=
 
 Export PDF: =C-c C-e l O=
 
+To export and open pdf make sure you have installed Mactex with extras
+no the basic version.
+
 Export as LaTeX,  and open PDF file.
 
 ** Source Code
@@ -1007,7 +1010,7 @@ This is test2
 
 #+BEGIN_QUOTE
 \printbibliography
-#+END_QUOTE
+#+END_QUOTE 
 
 
 
@@ -1015,6 +1018,37 @@ This is test2
 #+BEGIN_QUOTE
  *Note: put =\printbibliography= at the end so as to print the references section last on your text.
 #+END_QUOTE
+
+** Emacs-G++
+
+#+BEGIN_QUOTE
+G++
+#+END_QUOTE
+Create  folder *hello_world* 
+and cd in this folder and create file *hello_world.cpp*
+
+............................
+ use the below code to .cpp file
+
+#+BEGIN_SRC c++
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "hello world!" << endl;
+    return 0;
+}
+#+END_SRC
+
+The next step is to create a *makefile* and use the bellow code
+
+#+BEGIN_QUOTE 
+hello_world: hello_world.cpp
+[TAB]g++ -Wall -g hello_world.cpp -o hello_world
+#+END_QUote
+
+then go back to the *hello_world.cpp* and press C-x c
+to run the programm.
 
 * SuperCollider
 

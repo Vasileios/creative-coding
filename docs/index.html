@@ -714,6 +714,9 @@ Example-images
 
 <p>Export PDF: <code>C-c C-e l O</code></p>
 
+<p>To export and open pdf make sure you have installed Mactex with extras
+no the basic version.</p>
+
 <p>Export as LaTeX,  and open PDF file.</p>
 
 <h2 id="source-code">Source Code</h2>
@@ -1118,6 +1121,42 @@ This is test2
  *Note: put <code>\printbibliography</code> at the end so as to print the references section last on your text.
 </p>
 </blockquote>
+
+<h2 id="emacs-g">Emacs-G++</h2>
+
+<blockquote>
+<p>
+G++
+</p>
+</blockquote>
+
+<p>Create  folder <strong>hello_world</strong> 
+and cd in this folder and create file <strong>hello_world.cpp</strong></p>
+
+<p>............................
+ use the below code to .cpp file</p>
+<div class="highlight"><pre><code class="language-c" data-lang="c"><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="n">using</span> <span class="n">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;hello world!&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>The next step is to create a <strong>makefile</strong> and use the bellow code</p>
+
+<blockquote>
+<p>
+hello_world: hello_world.cpp
+</p>
+<p>
+[TAB]g++ -Wall -g hello_world.cpp -o hello_world
+</p>
+</blockquote>
+
+<p>then go back to the <strong>hello_world.cpp</strong> and press C-x c
+to run the programm.</p>
 
 <h1 id="supercollider">SuperCollider</h1>
 
