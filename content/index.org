@@ -1022,7 +1022,7 @@ This is test2
 ** Emacs-G++
 
 #+BEGIN_QUOTE
-G++ -------
+G++ Hello_World
 #+END_QUOTE
 Create a folder *hello_world* 
 and cd in this folder and create file *hello_world.cpp*
@@ -1031,6 +1031,8 @@ and cd in this folder and create file *hello_world.cpp*
  copy the below code and paste it inside *hello_world.cpp* file
 
 #+BEGIN_SRC c++
+/*hello_world.cpp*/
+
 #include <iostream>
 using namespace std;
 
@@ -1049,6 +1051,11 @@ hello_world: hello_world.cpp
 
 then go back to the *hello_world.cpp* and press C-x c
 to run the programm.
+
+
+you will see a 'hello world' message.
+
+ 
 
 * SuperCollider
 
