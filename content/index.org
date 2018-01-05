@@ -1022,7 +1022,7 @@ This is test2
 ** Emacs-G++
 
 #+BEGIN_QUOTE
-G++
+G++ -------
 #+END_QUOTE
 Create  folder *hello_world* 
 and cd in this folder and create file *hello_world.cpp*
