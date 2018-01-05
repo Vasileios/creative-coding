@@ -1203,23 +1203,26 @@ generated.</p>
 <ul>
 <li>Targets</li>
 </ul>
-<!-- Targets needed to bring the executable up to date -->
 
-<p>main: main.o Point.o Rectangle.o</p>
+<p><code>#Targets needed to bring the executable up to date</code></p>
 
-<p>[TAB]	$(Comp) $(CompFL) -o main main.o Point.o Line.o</p>
-<!-- If we haven't set the variables Comp and CompFL the code would be like -->
-<!-- this: -->
-<!-- g++ -Wall -g -o main main.o Point.o Line.o -->
-<!-- The main.o target can be written more simply -->
+<p><code>main: main.o Point.o Rectangle.o</code></p>
 
-<p>main.o: main.cpp Point.h Line.h</p>
+<p><code>[TAB]	$(Comp) $(CompFL) -o main main.o Point.o Line.o</code></p>
 
-<p>[TAB]	$(Comp) $(CompFL) -c main.cpp</p>
+<p><code># If we haven't set the variables Comp and CompFL the code would be like=
+=# this:=
+=# g++ -Wall -g -o main main.o Point.o Line.o</code></p>
 
-<p>Point.o: Point.h</p>
+<p><code># The main.o target can be written more simply</code></p>
 
-<p>Line.o: Line.h Point.h</p>
+<p><code>main.o: main.cpp Point.h Line.h</code></p>
+
+<p><code>[TAB]	$(Comp) $(CompFL) -c main.cpp</code></p>
+
+<p><code>Point.o: Point.h</code></p>
+
+<p><code>Line.o: Line.h Point.h</code></p>
 
 <p>To comment a make file use <code>#</code></p>
 

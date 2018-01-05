@@ -1147,26 +1147,26 @@ generated.
 
 - Targets
 
-# Targets needed to bring the executable up to date
+ =#Targets needed to bring the executable up to date=
 
-main: main.o Point.o Rectangle.o
+=main: main.o Point.o Rectangle.o=
 
-[TAB]	$(Comp) $(CompFL) -o main main.o Point.o Line.o
+=[TAB]	$(Comp) $(CompFL) -o main main.o Point.o Line.o=
 
-# If we haven't set the variables Comp and CompFL the code would be like
-# this:
-# g++ -Wall -g -o main main.o Point.o Line.o
+=# If we haven't set the variables Comp and CompFL the code would be like=
+=# this:=
+=# g++ -Wall -g -o main main.o Point.o Line.o=
 
 
-# The main.o target can be written more simply
+=# The main.o target can be written more simply=
 
-main.o: main.cpp Point.h Line.h
+=main.o: main.cpp Point.h Line.h=
 
-[TAB]	$(Comp) $(CompFL) -c main.cpp
+=[TAB]	$(Comp) $(CompFL) -c main.cpp=
 
-Point.o: Point.h
+=Point.o: Point.h=
 
-Line.o: Line.h Point.h
+=Line.o: Line.h Point.h=
 
 
 To comment a make file use =#=
