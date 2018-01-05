@@ -1149,7 +1149,7 @@ to run the programm.</p>
 
 <p>you will see a 'hello world' message.</p>
 
-<p><strong>Create and Run a programm</strong></p>
+<p><strong>Create and Run a programm with more source file</strong></p>
 
 <p>On emacs create a folder [use dired to the direction you want to create
 the folder and press =Shift-+=
@@ -1162,8 +1162,9 @@ and give a name] then dired to the folder and create 5 source files:</p>
 <li>Line.h, header file for the Line class,</li>
 <li>Line.cpp, which is the implementation file for the Line</li>
   class.
-Compiling source code
 </ul>
+
+<p><strong>Compiling source code</strong></p>
 
 <p>Compile its source code using the -c flag with the compiler.</p>
 
@@ -1173,8 +1174,8 @@ Compiling source code
 % g++ -c Line.cpp</code></pre></div>
 <p>This process generates object files <code>.o</code></p>
 
-<p>You need next to link the object files into an executable</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">% g++ -c main.cpp</code></pre></div>
+<p>The next step is to link the object files into an executable</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">% g++ -o main main.o Point.o Line.o</code></pre></div>
 <p><strong>Create a makefile</strong></p>
 
 <p>open emacs and dired to the folder with the .cpp and .o files and
@@ -1184,10 +1185,44 @@ create a <code>makefile</code>. This file genereates the executable <code>main</
 which specify the C++ compiler and linker, as well as, flags
 for the compiler, etc.</p>
 
+<ul>
+<li>Variables</li>
+</ul>
+
+<p>Compiler</p>
+
+<p><code>Comp </code> g++=</p>
+
+<p>Compiler Flags</p>
+
+<p><code>CompFL </code> -Wall -g=</p>
+
 <p>and the other part is to set the <code>targets</code> which can be files to be
 generated.</p>
 
+<ul>
+<li>Targets</li>
+</ul>
+<!-- Targets needed to bring the executable up to date -->
+
+<p>main: main.o Point.o Rectangle.o
+[TAB]	$(Comp) $(CompFL) -o main main.o Point.o Line.o</p>
+<!-- If we haven't set the variables Comp and CompFL the code would be like -->
+<!-- this: -->
+<!-- g++ -Wall -g -o main main.o Point.o Line.o -->
+<!-- The main.o target can be written more simply -->
+
+<p>main.o: main.cpp Point.h Line.h
+[TAB]	$(Comp) $(CompFL) -c main.cpp</p>
+
+<p>Point.o: Point.h</p>
+
+<p>Line.o: Line.h Point.h</p>
+
 <p>To comment a make file use <code>#</code></p>
+
+<p>After creating the makefile choose the main.cpp file and press <code>C-x c=
+and then hit =enter</code> to begin the compilation.</p>
 
 <h1 id="supercollider">SuperCollider</h1>
 

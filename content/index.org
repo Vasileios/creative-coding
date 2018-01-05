@@ -1089,7 +1089,7 @@ to run the programm.
 
 you will see a 'hello world' message.
 
- *Create and Run a programm*
+ *Create and Run a programm with more source file*
 
 On emacs create a folder [use dired to the direction you want to create
 the folder and press =Shift-+=
@@ -1101,7 +1101,8 @@ and give a name] then dired to the folder and create 5 source files:
 - Line.h, header file for the Line class,
 - Line.cpp, which is the implementation file for the Line
   class.
-Compiling source code
+
+*Compiling source code*
 
 Compile its source code using the -c flag with the compiler.
 
@@ -1115,10 +1116,10 @@ i.e.
 
 This process generates object files =.o=
 
-You need next to link the object files into an executable
+The next step is to link the object files into an executable
 
 #+BEGIN_SRC shell
-% g++ -c main.cpp
+% g++ -o main main.o Point.o Line.o
 #+END_SRC 
 
 *Create a makefile*
@@ -1130,12 +1131,46 @@ The one part is to set the =variables= you need to use in a simple makefile. The
 which specify the C++ compiler and linker, as well as, flags
 for the compiler, etc.
 
+
+ - Variables
+ 
+Compiler
+
+=Comp = g++=
+
+Compiler Flags
+
+=CompFL = -Wall -g=
+
 and the other part is to set the =targets= which can be files to be
 generated. 
 
+- Targets
+
+# Targets needed to bring the executable up to date
+
+main: main.o Point.o Rectangle.o
+[TAB]	$(Comp) $(CompFL) -o main main.o Point.o Line.o
+
+# If we haven't set the variables Comp and CompFL the code would be like
+# this:
+# g++ -Wall -g -o main main.o Point.o Line.o
+
+
+# The main.o target can be written more simply
+
+main.o: main.cpp Point.h Line.h
+[TAB]	$(Comp) $(CompFL) -c main.cpp
+
+Point.o: Point.h
+
+Line.o: Line.h Point.h
+
+
 To comment a make file use =#=
 
-
+After creating the makefile choose the main.cpp file and press =C-x c=
+and then hit =enter= to begin the compilation.
 
 * SuperCollider
 
