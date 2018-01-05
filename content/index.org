@@ -1150,6 +1150,7 @@ generated.
 # Targets needed to bring the executable up to date
 
 main: main.o Point.o Rectangle.o
+
 [TAB]	$(Comp) $(CompFL) -o main main.o Point.o Line.o
 
 # If we haven't set the variables Comp and CompFL the code would be like
@@ -1160,6 +1161,7 @@ main: main.o Point.o Rectangle.o
 # The main.o target can be written more simply
 
 main.o: main.cpp Point.h Line.h
+
 [TAB]	$(Comp) $(CompFL) -c main.cpp
 
 Point.o: Point.h

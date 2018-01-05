@@ -1205,15 +1205,17 @@ generated.</p>
 </ul>
 <!-- Targets needed to bring the executable up to date -->
 
-<p>main: main.o Point.o Rectangle.o
-[TAB]	$(Comp) $(CompFL) -o main main.o Point.o Line.o</p>
+<p>main: main.o Point.o Rectangle.o</p>
+
+<p>[TAB]	$(Comp) $(CompFL) -o main main.o Point.o Line.o</p>
 <!-- If we haven't set the variables Comp and CompFL the code would be like -->
 <!-- this: -->
 <!-- g++ -Wall -g -o main main.o Point.o Line.o -->
 <!-- The main.o target can be written more simply -->
 
-<p>main.o: main.cpp Point.h Line.h
-[TAB]	$(Comp) $(CompFL) -c main.cpp</p>
+<p>main.o: main.cpp Point.h Line.h</p>
+
+<p>[TAB]	$(Comp) $(CompFL) -c main.cpp</p>
 
 <p>Point.o: Point.h</p>
 
