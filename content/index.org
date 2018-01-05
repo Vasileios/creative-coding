@@ -1046,6 +1046,7 @@ The next step is to create a *makefile* and use the bellow code
 
  
 =hello_world: hello_world.cpp
+
 [TAB]g++ -Wall -g hello_world.cpp -o hello_world=
 
 then go back to the *hello_world.cpp* and press =C-x c=
