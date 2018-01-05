@@ -1027,6 +1027,7 @@ G++
 Create  folder *hello_world* 
 and cd in this folder and create file *hello_world.cpp*
 
+............................
  use the below code to .cpp file
 
 #+BEGIN_SRC c++
