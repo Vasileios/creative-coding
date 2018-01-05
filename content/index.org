@@ -1173,6 +1173,7 @@ To comment a make file use =#=
 
 After creating the makefile choose the main.cpp file and press =C-x c=
 and then hit =enter= to begin the compilation.
+
 * Algorithmic Composition
 
 Algorithm is:
