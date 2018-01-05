@@ -782,6 +782,12 @@ Press =Shift-p p= to push to a remote branch (master).
 
 ** Pull requests
 
+If you use more than one computers for the same repo you need to use
+pull to update both locations.
+
+To pull a repo press =F= on magit and =p= to pull to master
+
+
 *issues*
 
 - Git refusing to merge unrelated histories
