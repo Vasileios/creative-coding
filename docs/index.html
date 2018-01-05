@@ -895,10 +895,35 @@ Magit
 
 <h2 id="pull-requests">Pull requests</h2>
 
-<p>If you use more than one computers for the same repo you need to use
-pull to update both locations.</p>
+<p>If you use more than one computers for the same repo you need to pull
+first and then to push in case of updating locations.</p>
 
-<p>To pull a repo press <code>F</code> on magit and <code>p</code> to pull to master</p>
+<p>On magit press <code>F</code> and <code>p</code> to pull to master.
+Then you are able to push into the location of this exact repository.
+You might need to change the url of your repo in your other
+computer as well in case you didn't choose the same name for the folder where
+your project is located. This happens, in case you first created the repo in
+your laptop in a folder named <strong>project1</strong> and built your site i.e hugo, and then pull this repo into
+a folder with the name <strong>project2</strong> in your other computer. 
+To change the repo address go to your .git folder inside your poroject
+and open <code>config</code> file. Then change the repo address to the new one.</p>
+
+<p>i.e</p>
+
+<blockquote>
+<p>
+...
+</p>
+<p>
+[remote "origin"]
+</p>
+<p>
+url = git@github.com:User/project2.git
+</p>
+<p>
+...
+</p>
+</blockquote>
 
 <p><strong>issues</strong></p>
 
