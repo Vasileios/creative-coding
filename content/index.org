@@ -1163,6 +1163,7 @@ generated.
 =main.o: main.cpp Point.h Line.h=
 
 =[TAB]	$(Comp) $(CompFL) -c main.cpp=
+<<<<<<< HEAD
 
 =Point.o: Point.h=
 
@@ -1240,6 +1241,85 @@ Summarise Nierhaus 2009 (Algorithmic Composition),
 
 Summarise Farnell 2010, Sigman 2011, Tolonen et al. 1998.
 
+=======
+
+=Point.o: Point.h=
+
+=Line.o: Line.h Point.h=
+
+
+To comment a make file use =#=
+
+After creating the makefile choose the main.cpp file and press =C-x c=
+and then hit =enter= to begin the compilation.
+
+* Algorithmic Composition
+
+Algorithm is:
+
+- A set of mathematical instructions that must be followed in a fixed
+  order, and that, especially if given to a computer, will help to calculate an answer to a mathematical
+problem [1].
+-  A systematic procedure that produces – in a finite number of steps
+  the answer to a question or the solution of a problem [2].
+- [...] (especially computing) a set of rules that must be followed
+  when solving a particular problem [4]. (Nierhaus 2009 p.2)
+
+
+Primary principles of automated information
+processing can already be found in the 13th century. Through the works of
+Charles Babbage and Ada Lovelace,
+The history of algorithmic composition has its beginning
+shortly after the turn of the first millennium with a system developed by Guido
+of Arezzo enabling the generation of melodic material from texts, spans over the application
+of algorithmic principles in the developing complex polyphony and is also
+found in the “composition machines” of Athanasius Kircher in the Baroque period.
+Furthermore, first applications of algorithms for compositional tasks can be found
+in the popular “musical dice game” in the 18th century.
+
+Lejaren Hiller at the Experimental Music Studio to Brian Eno’s generative music.
+
+- Markov models
+
+Markov models are for the most part employed in the field of style
+imitation, but also, for example by Hiller and Xenakis, for applications of genuine composition.
+
+- Generative grammars
+
+Chomsky's generative grammars
+generation of musical structure
+
+- Transition networks
+
+David Cope’s program
+“EMI”
+“EMI” generates style imitations after having analyzed a sufficient
+number of compositions of a particular genre.
+
+http://www.computerhistory.org/atchm/algorithmic-music-david-cope-and-emi/
+
+- chaos and self-similarity
+
+Fractals, Lindenmayer systems
+
+- Genetic algorithms
+
+- Cellular automata
+
+- Neural networks
+
+- Artificial intelligence
+
+Summarise Nierhaus 2009 (Algorithmic Composition),
+
+ Roads 1996 (Computer Music Tutorial)
+
+
+** Sound Design
+
+Summarise Farnell 2010, Sigman 2011, Tolonen et al. 1998.
+
+>>>>>>> 3df3b193aa0906f4ee1103b52ef845817887c6e0
 ** SuperCollider
 
 From: [[http://supercollider.github.io][SuperCollider]]
