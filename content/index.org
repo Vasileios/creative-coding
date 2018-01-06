@@ -189,7 +189,7 @@ Finally, I have used patterns in SuperCollider to manipulate the arguments of th
 
 Η μετατροπή επιστημονικών δεδομένων σε ήχο και η χρήση του ήχου ως μεθόδου κατανόησης των φυσικών φαινομένων, αλλά και διδασκαλίας των φυσικών επιστημών, αποτελεί μια μέθοδο, διαθεματική και σύγχρονη.  Αποτελεί δε ένα πολύ χρήσιμο εργαλείο για την εξαγωγή και δημοσίευση πρωτότυπων αποτελεσμάτων. 
 Στην παρούσα εργασία μετατρέπουμε σε ήχο, δεδομένα που περιγράφουν μεταβολές του γεωμαγνητικού πεδίου και ειδικότερα δεδομένα που περιγράφουν την ανάπτυξη και εξέλιξη των μαγνητικών καταιγίδων στο κοντινό μας διάστημα. Στην διαστημική φυσική, οι μαγνητικές καταιγίδες καταγράφονται από επίγεια όργανα, τα μαγνητόμετρα, τα οποία μετρούν μεταβολές του γεωμαγνητικού πεδίου. Χρησιμοποιούμε δεδομένα από τα μαγνητόμετρα του Εθνικού Αστεροσκοπείου Αθηνών τα οποία συλλέγει, διαχειρίζεται και επεξεργάζεται το ερευνητικό πρόγραμμα ENIGMA (Hellenic Geomagnetic Array). Οι μαγνητικές καταιγίδες αποτελούν φαινόμενα που σχετίζονται άμεσα με την ηλιακή δραστηριότητα. Κατά την διάρκεια μιας μαγνητικής καταιγίδας, ενέργεια που φέρεται από τον ηλιακό άνεμο εισέρχεται στο μαγνητικό πεδίο της γης προκαλώντας πλήθος φαινομένων, τα οποία μπορούν να δημιουργήσουν προβλήματα στην λειτουργία των δορυφόρων, στις εργασίες των αστροναυτών στο διάστημα και άλλες ανθρώπινες δραστηριότητες στο έδαφος. Έκφανση των μαγνητικών καταιγίδων στο οπτικό παράθυρο του ηλεκτρομαγνητικού φάσματος αποτελεί το σέλας.
-Η ιδέα της ηχοποίησης μαγνητοσφαιρικών φαινομένων, μοιραία συνδέεται με την ελληνική σκέψη του 6ου αι. π.Χ. όπου οι πυθαγόρειοι, φιλόσοφοι, μαθηματικοί και θεωρητικοί της μουσικής θέλησαν να συνδυάσουν την Αστρονομία με τη Μουσική αναφερόμενοι στη «αρμονία των σφαιρών». Χρησιμοποίησαν τον ήχο ως μέσο για την κατανόηση και την μελέτη φυσικών φαινομένων, με χαρακτηριστικό το παράδειγμα του Αρχύτα ο οποίος συνδύασε την περιστροφή των ουρανίων σωμάτων με συχνότητες, αντιμετωπίζοντας την αρμονία των σφαιρών ως ένα πρόβλημα φυσικής. Ο δε Πλάτωνας αναφέρει την μουσική και αστρονομία ως  αδελφές επιστήμες (Πολιτεία, VII, 530d). 
+Η ιδέα της ηχοποίησης μαγνητοσφαιρικών φαινομένων, μοιραία συνδέεται με την ελληνική σκέψη του 6ου αι. π.Χ. όπου οι πυθαγόρειοι, φιλόσοφοι, μαθηματικοί και θεωρητικοί της μουσικής θέλησαν να συνδυάσουν την Αστρονομία με τη Μουσική αναφερόμενοι στη «αρμονία των σφαιρών». Χρησιμοποίησαν τον ήχο ως μέσο για την κατανόηση και την μελέτη φυσικών φαινομένων, με χαρακτηριστικό το παράδειγμα του Αρχύτα ο οποίος συνδύασε την περιστροφή των ουρανίων σωμάτων με συχνότητες, αντιμετωπίζοντας την αρμονία των σφαιρών ως ένα πρόβλημα φυσικής. Ο δε Πλάτωνας αναφέρει την μουσική και αστρονομία ως  αδελφές επιστήμες (Πολιτεία, VII, 530d). 
 
 *Μέθοδος Επεξεργασίας των Δεδομένων*
 
@@ -1089,9 +1089,158 @@ to run the programm.
 
 you will see a 'hello world' message.
 
- 
+ *Create and Run a programm with more source file*
 
-* SuperCollider
+On emacs create a folder [use dired to the direction you want to create
+the folder and press =Shift-+=
+and give a name] then dired to the folder and create 5 source files:
+
+- main.cpp, which reffers to the main programm,
+- Point.h, which is the header file for the Point class,
+- Point.cpp, which is the implementation file for the Point class,
+- Line.h, header file for the Line class,
+- Line.cpp, which is the implementation file for the Line
+  class.
+
+*Compiling source code*
+
+Compile its source code using the -c flag with the compiler.
+
+i.e. 
+
+#+BEGIN_SRC shell
+% g++ -c main.cpp
+% g++ -c Point.cpp
+% g++ -c Line.cpp
+#+END_SRC
+
+This process generates object files =.o=
+
+The next step is to link the object files into an executable
+
+#+BEGIN_SRC shell
+% g++ -o main main.o Point.o Line.o
+#+END_SRC 
+
+*Create a makefile*
+
+open emacs and dired to the folder with the .cpp and .o files and
+create a =makefile=. This file genereates the executable =main=
+
+The one part is to set the =variables= you need to use in a simple makefile. These are variables
+which specify the C++ compiler and linker, as well as, flags
+for the compiler, etc.
+
+
+ - Variables
+ 
+Compiler
+
+=Comp = g++=
+
+Compiler Flags
+
+=CompFL = -Wall -g=
+
+and the other part is to set the =targets= which can be files to be
+generated. 
+
+- Targets
+
+ =#Targets needed to bring the executable up to date=
+
+=main: main.o Point.o Rectangle.o=
+
+=[TAB]	$(Comp) $(CompFL) -o main main.o Point.o Line.o=
+
+=# If we haven't set the variables Comp and CompFL the code would be like=
+=# this:=
+=# g++ -Wall -g -o main main.o Point.o Line.o=
+
+
+=# The main.o target can be written more simply=
+
+=main.o: main.cpp Point.h Line.h=
+
+=[TAB]	$(Comp) $(CompFL) -c main.cpp=
+
+=Point.o: Point.h=
+
+=Line.o: Line.h Point.h=
+
+
+To comment a make file use =#=
+
+After creating the makefile choose the main.cpp file and press =C-x c=
+and then hit =enter= to begin the compilation.
+
+* Algorithmic Composition
+
+Algorithm is:
+
+- A set of mathematical instructions that must be followed in a fixed
+  order, and that, especially if given to a computer, will help to calculate an answer to a mathematical
+problem [1].
+-  A systematic procedure that produces – in a finite number of steps
+  the answer to a question or the solution of a problem [2].
+- [...] (especially computing) a set of rules that must be followed
+  when solving a particular problem [4]. (Nierhaus 2009 p.2)
+
+
+Primary principles of automated information
+processing can already be found in the 13th century. Through the works of
+Charles Babbage and Ada Lovelace,
+The history of algorithmic composition has its beginning
+shortly after the turn of the first millennium with a system developed by Guido
+of Arezzo enabling the generation of melodic material from texts, spans over the application
+of algorithmic principles in the developing complex polyphony and is also
+found in the “composition machines” of Athanasius Kircher in the Baroque period.
+Furthermore, first applications of algorithms for compositional tasks can be found
+in the popular “musical dice game” in the 18th century.
+
+Lejaren Hiller at the Experimental Music Studio to Brian Eno’s generative music.
+
+- Markov models
+
+Markov models are for the most part employed in the field of style
+imitation, but also, for example by Hiller and Xenakis, for applications of genuine composition.
+
+- Generative grammars
+
+Chomsky's generative grammars
+generation of musical structure
+
+- Transition networks
+
+David Cope’s program
+“EMI”
+“EMI” generates style imitations after having analyzed a sufficient
+number of compositions of a particular genre.
+
+http://www.computerhistory.org/atchm/algorithmic-music-david-cope-and-emi/
+
+- chaos and self-similarity
+
+Fractals, Lindenmayer systems
+
+- Genetic algorithms
+
+- Cellular automata
+
+- Neural networks
+
+- Artificial intelligence
+
+Summarise Nierhaus 2009 (Algorithmic Composition),
+
+ Roads 1996 (Computer Music Tutorial)
+
+
+** Sound Design
+
+Summarise Farnell 2010, Sigman 2011, Tolonen et al. 1998.
+
+** SuperCollider
 
 From: [[http://supercollider.github.io][SuperCollider]]
 
@@ -3200,4 +3349,3 @@ $ for file in *.wma; do ffmpeg -i "${file}"  -acodec libmp3lame -ab 192k "${file
 * Suggested Bibliography
 
 ** Books
-

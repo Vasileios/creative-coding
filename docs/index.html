@@ -278,7 +278,7 @@ L-system and replaced them with numbers.</p>
 
 <p>Η μετατροπή επιστημονικών δεδομένων σε ήχο και η χρήση του ήχου ως μεθόδου κατανόησης των φυσικών φαινομένων, αλλά και διδασκαλίας των φυσικών επιστημών, αποτελεί μια μέθοδο, διαθεματική και σύγχρονη.  Αποτελεί δε ένα πολύ χρήσιμο εργαλείο για την εξαγωγή και δημοσίευση πρωτότυπων αποτελεσμάτων. 
 Στην παρούσα εργασία μετατρέπουμε σε ήχο, δεδομένα που περιγράφουν μεταβολές του γεωμαγνητικού πεδίου και ειδικότερα δεδομένα που περιγράφουν την ανάπτυξη και εξέλιξη των μαγνητικών καταιγίδων στο κοντινό μας διάστημα. Στην διαστημική φυσική, οι μαγνητικές καταιγίδες καταγράφονται από επίγεια όργανα, τα μαγνητόμετρα, τα οποία μετρούν μεταβολές του γεωμαγνητικού πεδίου. Χρησιμοποιούμε δεδομένα από τα μαγνητόμετρα του Εθνικού Αστεροσκοπείου Αθηνών τα οποία συλλέγει, διαχειρίζεται και επεξεργάζεται το ερευνητικό πρόγραμμα ENIGMA (Hellenic Geomagnetic Array). Οι μαγνητικές καταιγίδες αποτελούν φαινόμενα που σχετίζονται άμεσα με την ηλιακή δραστηριότητα. Κατά την διάρκεια μιας μαγνητικής καταιγίδας, ενέργεια που φέρεται από τον ηλιακό άνεμο εισέρχεται στο μαγνητικό πεδίο της γης προκαλώντας πλήθος φαινομένων, τα οποία μπορούν να δημιουργήσουν προβλήματα στην λειτουργία των δορυφόρων, στις εργασίες των αστροναυτών στο διάστημα και άλλες ανθρώπινες δραστηριότητες στο έδαφος. Έκφανση των μαγνητικών καταιγίδων στο οπτικό παράθυρο του ηλεκτρομαγνητικού φάσματος αποτελεί το σέλας.
-Η ιδέα της ηχοποίησης μαγνητοσφαιρικών φαινομένων, μοιραία συνδέεται με την ελληνική σκέψη του 6ου αι. π.Χ. όπου οι πυθαγόρειοι, φιλόσοφοι, μαθηματικοί και θεωρητικοί της μουσικής θέλησαν να συνδυάσουν την Αστρονομία με τη Μουσική αναφερόμενοι στη «αρμονία των σφαιρών». Χρησιμοποίησαν τον ήχο ως μέσο για την κατανόηση και την μελέτη φυσικών φαινομένων, με χαρακτηριστικό το παράδειγμα του Αρχύτα ο οποίος συνδύασε την περιστροφή των ουρανίων σωμάτων με συχνότητες, αντιμετωπίζοντας την αρμονία των σφαιρών ως ένα πρόβλημα φυσικής. Ο δε Πλάτωνας αναφέρει την μουσική και αστρονομία ως  αδελφές επιστήμες (Πολιτεία, VII, 530d).</p>
+Η ιδέα της ηχοποίησης μαγνητοσφαιρικών φαινομένων, μοιραία συνδέεται με την ελληνική σκέψη του 6ου αι. π.Χ. όπου οι πυθαγόρειοι, φιλόσοφοι, μαθηματικοί και θεωρητικοί της μουσικής θέλησαν να συνδυάσουν την Αστρονομία με τη Μουσική αναφερόμενοι στη «αρμονία των σφαιρών». Χρησιμοποίησαν τον ήχο ως μέσο για την κατανόηση και την μελέτη φυσικών φαινομένων, με χαρακτηριστικό το παράδειγμα του Αρχύτα ο οποίος συνδύασε την περιστροφή των ουρανίων σωμάτων με συχνότητες, αντιμετωπίζοντας την αρμονία των σφαιρών ως ένα πρόβλημα φυσικής. Ο δε Πλάτωνας αναφέρει την μουσική και αστρονομία ως  αδελφές επιστήμες (Πολιτεία, VII, 530d).</p>
 
 <p><strong>Μέθοδος Επεξεργασίας των Δεδομένων</strong></p>
 
@@ -1189,7 +1189,173 @@ to run the programm.</p>
 
 <p>you will see a 'hello world' message.</p>
 
-<h1 id="supercollider">SuperCollider</h1>
+<p><strong>Create and Run a programm with more source file</strong></p>
+
+<p>On emacs create a folder [use dired to the direction you want to create
+the folder and press =Shift-+=
+and give a name] then dired to the folder and create 5 source files:</p>
+
+<ul>
+<li>main.cpp, which reffers to the main programm,</li>
+<li>Point.h, which is the header file for the Point class,</li>
+<li>Point.cpp, which is the implementation file for the Point class,</li>
+<li>Line.h, header file for the Line class,</li>
+<li>Line.cpp, which is the implementation file for the Line</li>
+  class.
+</ul>
+
+<p><strong>Compiling source code</strong></p>
+
+<p>Compile its source code using the -c flag with the compiler.</p>
+
+<p>i.e.</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>% g++ -c main.cpp
+% g++ -c Point.cpp
+% g++ -c Line.cpp
+</code></pre></div>
+
+<p>This process generates object files =.o=</p>
+
+<p>The next step is to link the object files into an executable</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>% g++ -o main main.o Point.o Line.o
+</code></pre></div>
+
+<p><strong>Create a makefile</strong></p>
+
+<p>open emacs and dired to the folder with the .cpp and .o files and
+create a <code>makefile</code>. This file genereates the executable <code>main</code></p>
+
+<p>The one part is to set the <code>variables</code> you need to use in a simple makefile. These are variables
+which specify the C++ compiler and linker, as well as, flags
+for the compiler, etc.</p>
+
+<ul>
+<li>Variables</li>
+</ul>
+
+<p>Compiler</p>
+
+<p><code>Comp </code> g++=</p>
+
+<p>Compiler Flags</p>
+
+<p><code>CompFL </code> -Wall -g=</p>
+
+<p>and the other part is to set the <code>targets</code> which can be files to be
+generated.</p>
+
+<ul>
+<li>Targets</li>
+</ul>
+
+<p><code>#Targets needed to bring the executable up to date</code></p>
+
+<p><code>main: main.o Point.o Rectangle.o</code></p>
+
+<p><code>[TAB]	$(Comp) $(CompFL) -o main main.o Point.o Line.o</code></p>
+
+<p><code># If we haven't set the variables Comp and CompFL the code would be like=
+=# this:=
+=# g++ -Wall -g -o main main.o Point.o Line.o</code></p>
+
+<p><code># The main.o target can be written more simply</code></p>
+
+<p><code>main.o: main.cpp Point.h Line.h</code></p>
+
+<p><code>[TAB]	$(Comp) $(CompFL) -c main.cpp</code></p>
+
+<p><code>Point.o: Point.h</code></p>
+
+<p><code>Line.o: Line.h Point.h</code></p>
+
+<p>To comment a make file use <code>#</code></p>
+
+<p>After creating the makefile choose the main.cpp file and press <code>C-x c=
+and then hit =enter</code> to begin the compilation.</p>
+
+<h1 id="algorithmic-composition">Algorithmic Composition</h1>
+
+<p>Algorithm is:</p>
+
+<ul>
+<li>A set of mathematical instructions that must be followed in a fixed</li>
+  order, and that, especially if given to a computer, will help to calculate an answer to a mathematical
+problem [1].
+<li>A systematic procedure that produces – in a finite number of steps</li>
+  the answer to a question or the solution of a problem [2].
+<li>[...] (especially computing) a set of rules that must be followed</li>
+  when solving a particular problem [4]. (Nierhaus 2009 p.2)
+</ul>
+
+<p>Primary principles of automated information
+processing can already be found in the 13th century. Through the works of
+Charles Babbage and Ada Lovelace,
+The history of algorithmic composition has its beginning
+shortly after the turn of the first millennium with a system developed by Guido
+of Arezzo enabling the generation of melodic material from texts, spans over the application
+of algorithmic principles in the developing complex polyphony and is also
+found in the “composition machines” of Athanasius Kircher in the Baroque period.
+Furthermore, first applications of algorithms for compositional tasks can be found
+in the popular “musical dice game” in the 18th century.</p>
+
+<p>Lejaren Hiller at the Experimental Music Studio to Brian Eno’s generative music.</p>
+
+<ul>
+<li>Markov models</li>
+</ul>
+
+<p>Markov models are for the most part employed in the field of style
+imitation, but also, for example by Hiller and Xenakis, for applications of genuine composition.</p>
+
+<ul>
+<li>Generative grammars</li>
+</ul>
+
+<p>Chomsky's generative grammars
+generation of musical structure</p>
+
+<ul>
+<li>Transition networks</li>
+</ul>
+
+<p>David Cope’s program
+“EMI”
+“EMI” generates style imitations after having analyzed a sufficient
+number of compositions of a particular genre.</p>
+
+<p>http://www.computerhistory.org/atchm/algorithmic-music-david-cope-and-emi/</p>
+
+<ul>
+<li>chaos and self-similarity</li>
+</ul>
+
+<p>Fractals, Lindenmayer systems</p>
+
+<ul>
+<li>Genetic algorithms</li>
+</ul>
+
+<ul>
+<li>Cellular automata</li>
+</ul>
+
+<ul>
+<li>Neural networks</li>
+</ul>
+
+<ul>
+<li>Artificial intelligence</li>
+</ul>
+
+<p>Summarise Nierhaus 2009 (Algorithmic Composition),</p>
+
+<p>Roads 1996 (Computer Music Tutorial)</p>
+
+<h2 id="sound-design">Sound Design</h2>
+
+<p>Summarise Farnell 2010, Sigman 2011, Tolonen et al. 1998.</p>
+
+<h2 id="supercollider">SuperCollider</h2>
 
 <p>From: <a href="http://supercollider.github.io" title="SuperCollider" target="_blank">SuperCollider</a></p>
 
