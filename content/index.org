@@ -8,7 +8,7 @@ title: Creative Coding
 ** About
 
 My research imperatives run along the threads of trans-mediation,
-inter-semiotic translation, post-disciplinarity (interdisciplinarity, multidiscplinarity) and the general concerns of Human Computer Interaction (HCI). 
+inter-semiotic translation, post-disciplinarity (interdisciplinarity, multidiscplinarity) and the general concerns of Human Computer Interaction (HCI).
 
 A large part of my contemporary practices in creating audiovisual
 materials is through creative coding. In coding there is the
@@ -23,7 +23,7 @@ the artistic and individual cognitive style of each person.
 
 #+BEGIN_QUOTE
 *Key words:* big-data, connectivity, interdisciplinarity,
-interconnection, machine learning, multidisciplinarity, real-time, sonification,streaming, visualisation, web 
+interconnection, machine learning, multidisciplinarity, real-time, sonification,streaming, visualisation, web
 #+END_QUOTE
 
 * Symbolism in creative writing
@@ -42,7 +42,7 @@ into the unconsciousness as Jung analysed it (in the collection of
 journalistic interviews in the book C.G Jung Speaking (1987) in the
 case of the modern artist). In In my work "Aranea" I translated an
 archetypical story of pride into a video game; expressing psychological complexes,
-like the Icarus' complex or narcissism, in relation to the concept of hubris and nemesis as they are found in the story of Arachne. 
+like the Icarus' complex or narcissism, in relation to the concept of hubris and nemesis as they are found in the story of Arachne.
 
 ** Frozen fragments
 
@@ -65,6 +65,9 @@ facets of everyday thought and language are indeed metaphorical,
 enough so that we should recognise metaphor as a primary mode of
 thought. (Gibbs, 1994, p.122)
 
+I have used diverse methods and techniques to compose audiovisual materials. One of them is algorithmic composition and more specifically chaos and self similarity. For instance, I used L-systems to generate musical phrases and melodic structures as well as other stochastic processes.
+
+L-systems, in my opinion, are poetically related to Haiku because both they can provide a large output simply with the use of a few lines.
 
 - *Nekyia*
 
@@ -83,7 +86,35 @@ world, but is fatefully drawn into the dark; who follows not the
 accepted ideas of goodness and beauty, but the demonical attractions
 of ugliness and evil. (Jay, Jung, 2012, p. 54 )
 
-I have been inspired by Jung's thought about "katabasis and katalysis and the recognition of the bipolarity in human nature as well as the necessity of conflicting pairs of opposites" (Van den Berk 2012, p.111). In my audiovisual interpretation of Nekyia I have represented pairs of opposites such as light against dark, white against black, male against female, oar against shovel. 
+I have been inspired by Jung's thought about "katabasis and katalysis and the recognition of the bipolarity in human nature as well as the necessity of conflicting pairs of opposites" (Van den Berk 2012, p.111). In my audiovisual interpretation of Nekyia I have represented pairs of opposites such as light against dark, white against black, male against female, oar against shovel.
+
+
+- *Text Driven Creativity*
+
+For this work,I have developed an algorithm so as to map text to
+sound, using the SuperCollider language. In particular, I experimented
+with the idea of using the letters of Homer's Odyssey the  Nekyia
+chapter. I have mapped the text to numeric values. These values could then be easily used to manipulate the parameters of the sound such as, frequency, amplitude, timbre and rhythm.
+In my effort to represent the ancient Greek and English versions of
+Nekyia I have built two lists of collected characters. With the
+resulting algorithm it is possible to use a large quantity of values
+which result from encoding the text serially. According to the text
+which is encoded the quality of the output ranges from rhythmic and
+melodic to chaotic. Theoretically, if we played the rhythmic patterns
+of a paragraph of the original text we could retrieve the rhythmical
+structure of the ancient Greek version of The Odyssey which, in this
+case, is the dactylic hexameter.
+To represent the rhythmic scheme of The Odyssey written in ancient
+Greek I have used its scansion system.
+
+#+BEGIN_QUOTE
+Scansion system example:
+--|-uu|-uu|-uu|--|--
+#+END_QUOTE
+
+The Dactyl ( -uu ) is a metrical pattern known as a "foot" which comprises one long syllable followed by two short syllables.
+
+See more about [[http://www.princeton.edu/~achaney/tmve/wiki100k/docs/Dactylic_hexameter.html][Dactylic Hexameter]]
 
 
 
@@ -141,8 +172,8 @@ L-SYSTEMS").
 This is the L-system with the axiom and the production rules:
 #+BEGIN_SRC js
 a = LSys("F", ["F" ->"F+F--/]&F+F", "F" -> "]/F+&FF+-"]);
-#+END_SRC        
-   
+#+END_SRC
+
 The line below shows how I have collected the symbols from the
 L-system and replaced them with numbers.
 
@@ -156,7 +187,7 @@ L-system and replaced them with numbers.
            “&” -> (13)
            ];
 #+END_SRC
-           
+
 
 Finally, I have used patterns in SuperCollider to manipulate the arguments of the synth.
 
@@ -167,7 +198,7 @@ Finally, I have used patterns in SuperCollider to manipulate the arguments of th
  \frequency, Pseq(~ls*440)).play;
 
 #+END_SRC
-         
+
 
 ** Astronomy and sound/music-image
 
@@ -179,7 +210,7 @@ Finally, I have used patterns in SuperCollider to manipulate the arguments of th
 
 *Σύνθεση ήχου σε πραγματικό χρόνο από δεδομένα περιγραφής μαγνητικών καταιγίδων.*
 
-Β. Αγιομυργιανάκης 1, Φ.Α. Μεταλληνού 2 , Γ. Ζάννος 1 
+Β. Αγιομυργιανάκης 1, Φ.Α. Μεταλληνού 2 , Γ. Ζάννος 1
 
 1. Τμήμα Τεχνών Ήχου και Εικόνας, Ιόνιο Πανεπιστήμιο.
 2. Ινστιτούτο Αστρονομίας, Αστροφυσικής, Διαστημικών Εφαρμογών και Τηλεπισκόπισης, Εθνικό Αστεροσκοπείο Αθηνών.
@@ -187,9 +218,9 @@ Finally, I have used patterns in SuperCollider to manipulate the arguments of th
 
 *Περίληψη*
 
-Η μετατροπή επιστημονικών δεδομένων σε ήχο και η χρήση του ήχου ως μεθόδου κατανόησης των φυσικών φαινομένων, αλλά και διδασκαλίας των φυσικών επιστημών, αποτελεί μια μέθοδο, διαθεματική και σύγχρονη.  Αποτελεί δε ένα πολύ χρήσιμο εργαλείο για την εξαγωγή και δημοσίευση πρωτότυπων αποτελεσμάτων. 
+Η μετατροπή επιστημονικών δεδομένων σε ήχο και η χρήση του ήχου ως μεθόδου κατανόησης των φυσικών φαινομένων, αλλά και διδασκαλίας των φυσικών επιστημών, αποτελεί μια μέθοδο, διαθεματική και σύγχρονη.  Αποτελεί δε ένα πολύ χρήσιμο εργαλείο για την εξαγωγή και δημοσίευση πρωτότυπων αποτελεσμάτων.
 Στην παρούσα εργασία μετατρέπουμε σε ήχο, δεδομένα που περιγράφουν μεταβολές του γεωμαγνητικού πεδίου και ειδικότερα δεδομένα που περιγράφουν την ανάπτυξη και εξέλιξη των μαγνητικών καταιγίδων στο κοντινό μας διάστημα. Στην διαστημική φυσική, οι μαγνητικές καταιγίδες καταγράφονται από επίγεια όργανα, τα μαγνητόμετρα, τα οποία μετρούν μεταβολές του γεωμαγνητικού πεδίου. Χρησιμοποιούμε δεδομένα από τα μαγνητόμετρα του Εθνικού Αστεροσκοπείου Αθηνών τα οποία συλλέγει, διαχειρίζεται και επεξεργάζεται το ερευνητικό πρόγραμμα ENIGMA (Hellenic Geomagnetic Array). Οι μαγνητικές καταιγίδες αποτελούν φαινόμενα που σχετίζονται άμεσα με την ηλιακή δραστηριότητα. Κατά την διάρκεια μιας μαγνητικής καταιγίδας, ενέργεια που φέρεται από τον ηλιακό άνεμο εισέρχεται στο μαγνητικό πεδίο της γης προκαλώντας πλήθος φαινομένων, τα οποία μπορούν να δημιουργήσουν προβλήματα στην λειτουργία των δορυφόρων, στις εργασίες των αστροναυτών στο διάστημα και άλλες ανθρώπινες δραστηριότητες στο έδαφος. Έκφανση των μαγνητικών καταιγίδων στο οπτικό παράθυρο του ηλεκτρομαγνητικού φάσματος αποτελεί το σέλας.
-Η ιδέα της ηχοποίησης μαγνητοσφαιρικών φαινομένων, μοιραία συνδέεται με την ελληνική σκέψη του 6ου αι. π.Χ. όπου οι πυθαγόρειοι, φιλόσοφοι, μαθηματικοί και θεωρητικοί της μουσικής θέλησαν να συνδυάσουν την Αστρονομία με τη Μουσική αναφερόμενοι στη «αρμονία των σφαιρών». Χρησιμοποίησαν τον ήχο ως μέσο για την κατανόηση και την μελέτη φυσικών φαινομένων, με χαρακτηριστικό το παράδειγμα του Αρχύτα ο οποίος συνδύασε την περιστροφή των ουρανίων σωμάτων με συχνότητες, αντιμετωπίζοντας την αρμονία των σφαιρών ως ένα πρόβλημα φυσικής. Ο δε Πλάτωνας αναφέρει την μουσική και αστρονομία ως  αδελφές επιστήμες (Πολιτεία, VII, 530d). 
+Η ιδέα της ηχοποίησης μαγνητοσφαιρικών φαινομένων, μοιραία συνδέεται με την ελληνική σκέψη του 6ου αι. π.Χ. όπου οι πυθαγόρειοι, φιλόσοφοι, μαθηματικοί και θεωρητικοί της μουσικής θέλησαν να συνδυάσουν την Αστρονομία με τη Μουσική αναφερόμενοι στη «αρμονία των σφαιρών». Χρησιμοποίησαν τον ήχο ως μέσο για την κατανόηση και την μελέτη φυσικών φαινομένων, με χαρακτηριστικό το παράδειγμα του Αρχύτα ο οποίος συνδύασε την περιστροφή των ουρανίων σωμάτων με συχνότητες, αντιμετωπίζοντας την αρμονία των σφαιρών ως ένα πρόβλημα φυσικής. Ο δε Πλάτωνας αναφέρει την μουσική και αστρονομία ως  αδελφές επιστήμες (Πολιτεία, VII, 530d).
 
 *Μέθοδος Επεξεργασίας των Δεδομένων*
 
@@ -199,10 +230,10 @@ Finally, I have used patterns in SuperCollider to manipulate the arguments of th
 Το πλαίσιο για τη χαρτογράφηση παραμέτρων μαγνητικής καταιγίδας σε ήχο περιγράφεται από την ακόλουθη διαδικασία πέντε λειτουργιών: (1) τη εισαγωγή δεδομένων απο τα αρχεία, (2) την επιλογή των στηλών προς χρήση, (3) την κατασκευή του συνθετητή, (4) την παραμετροποίηση και αποστολή των ροών στις παραμέτρους του συνθετητή, (5) απλοποίηση της διαδικασίας ηχοποίησης με τη χρήση γραφιστικών διεπαφής χρήστη-υπολογιστή απο έξυπνες συσκευές.
 Επιπλέον, παρουσιάζουμε τα εργαλεία μας για ηχοποίηση και καλλιτεχνική παρέμβαση για παρουσιάσεις σε πραγματικό χρόνο κάνοντας χρήση γραφιστικών διεπαφών χρήστη-υπολογιστή (GUIs). Για παράδειγμα, δημιουργήσαμε λειτουργίες και κλάσεις που ενσωματώνουν τον κώδικα και με το πρωτόκολλο επικοινωνίας Open Sound Control (OSC) καταφέραμε να ελέγχουμε τη διαδικασία ηχοποίησης μέσω έξυπνων συσκευών. Η εφαρμογή που χρησιμοποιήσαμε για έξυπνες συσκευές είναι το TouchOSC.
 
-*Συμπεράσματα* 
+*Συμπεράσματα*
 
- Η εργασία αυτή σκοπεύει στην ανάδειξη της ηχοποίησης ως μεθόδου ανάλυσης επιστημονικών δεδομένων και ειδικότερα δεδομένων που περιγράφουν την ανάπτυξη και εξασθένιση μαγνητικών καταιγίδων στο γεωδιάστημα. Με την κατασκευή αλγορίθμου στο SuperCollider καταφέραμε να ηχοποιήσουμε τα δεδομένα και παράλληλα να εξερευνήσουμε την αισθητική δυνατότητα  της ηχοποίησης δεδομένων για παραστάσεις σε πραγματικό χρόνο. Μέσω της χρήσης γραφιστικών διεπαφών χρήστη-υπολογιστή (GUIs) διανθήσαμε την ηχοποίηση σε πραγματικό χρόνο φτιάχνοντας με την δική μας ερμηνεία, μία αφήγηση. 
-Τα αποτελέσματα της συγκεκριμένης έρευνας στοχεύουν στη βελτίωση των παρόντων, αλλά και η ανάπτυξη νέων, τεχνικών ηχοποίησης, ενισχύοντας έτσι την διεπιστημονική συνεργασία στην διάχυση της επιστήμης. Επιπλέον, τα αποτελέσματα μπορούν να χρησιμοποιηθούν στην δημόσια κατανόηση της διαστημικής φυσικής προς το ευρύ κοινό, αλλά και στην διδασκαλία της σε ειδικές ομάδες, όπως σε άτομα με προβλήματα όρασης. Αρχικά αποτελέσματα, έχουν ήδη παρουσιαστεί στο ευρύ κοινό, στην «Βραδιά του Ερευνητή» (Ελληνικός Κόσμος, Αθήνα 29 Σεπτέμβρη 2017), όπου ο ήχος μιας μαγνητικής καταιγίδας μας θύμισε τον άνεμο, καθώς παρουσιάζει μεταβολές στην ένταση, την συχνότητα και την χροιά. 
+ Η εργασία αυτή σκοπεύει στην ανάδειξη της ηχοποίησης ως μεθόδου ανάλυσης επιστημονικών δεδομένων και ειδικότερα δεδομένων που περιγράφουν την ανάπτυξη και εξασθένιση μαγνητικών καταιγίδων στο γεωδιάστημα. Με την κατασκευή αλγορίθμου στο SuperCollider καταφέραμε να ηχοποιήσουμε τα δεδομένα και παράλληλα να εξερευνήσουμε την αισθητική δυνατότητα  της ηχοποίησης δεδομένων για παραστάσεις σε πραγματικό χρόνο. Μέσω της χρήσης γραφιστικών διεπαφών χρήστη-υπολογιστή (GUIs) διανθήσαμε την ηχοποίηση σε πραγματικό χρόνο φτιάχνοντας με την δική μας ερμηνεία, μία αφήγηση.
+Τα αποτελέσματα της συγκεκριμένης έρευνας στοχεύουν στη βελτίωση των παρόντων, αλλά και η ανάπτυξη νέων, τεχνικών ηχοποίησης, ενισχύοντας έτσι την διεπιστημονική συνεργασία στην διάχυση της επιστήμης. Επιπλέον, τα αποτελέσματα μπορούν να χρησιμοποιηθούν στην δημόσια κατανόηση της διαστημικής φυσικής προς το ευρύ κοινό, αλλά και στην διδασκαλία της σε ειδικές ομάδες, όπως σε άτομα με προβλήματα όρασης. Αρχικά αποτελέσματα, έχουν ήδη παρουσιαστεί στο ευρύ κοινό, στην «Βραδιά του Ερευνητή» (Ελληνικός Κόσμος, Αθήνα 29 Σεπτέμβρη 2017), όπου ο ήχος μιας μαγνητικής καταιγίδας μας θύμισε τον άνεμο, καθώς παρουσιάζει μεταβολές στην ένταση, την συχνότητα και την χροιά.
 
 *Ευχαριστίες*
 
@@ -211,7 +242,7 @@ Finally, I have used patterns in SuperCollider to manipulate the arguments of th
 *Αναφορές*
 
 Hermann, Thomas, and Helge Ritter. 1999. “Listen to Your Data: Model-Based Sonification
-for Data Analysis.” In Advances in Intelligent Computing and Multimedia Systems. 
+for Data Analysis.” In Advances in Intelligent Computing and Multimedia Systems.
 https://pub.uni-bielefeld.de/publication/2017409.
 
 Kramer, Gregory. 1994. Auditory Display: Sonification, Audification,
@@ -219,7 +250,7 @@ And Auditory Interfaces. Edited by * EDITOR. Reading, Mass: Westview Press.
 
 Madhyastha, Tara. and Reed, Daniel. 1994. A frame-work for
 sonification design. In Auditory Display, G. Kramer (ed.),
-Addison-Wesley. 
+Addison-Wesley.
 
 Roads, Curtis. 2001. Microsound. Cambridge, Mass.: MIT Press.
 
@@ -344,36 +375,7 @@ row[1].abs.squared.postln, \freq3, row[2].abs.squared.postln, \cutoff, 6000,
 )
 #+END_SRC
 
-** Literature and sound/music-image
-
-- *Text Driven Creativity*
-
-I have developed an algorithm so as to map text to
-sound, using the SuperCollider language. In particular, I experimented
-with the idea of using the letters of Homer's Odyssey the  Nekyia
-chapter. I have mapped the text to numeric values. These values could then be easily used to manipulate the parameters of the sound such as, frequency, amplitude, timbre and rhythm.
-In my effort to represent the ancient Greek and English versions of
-Nekyia I have built two lists of collected characters. With the
-resulting algorithm it is possible to use a large quantity of values
-which result from encoding the text serially. According to the text
-which is encoded the quality of the output ranges from rhythmic and
-melodic to chaotic. Theoretically, if we played the rhythmic patterns
-of a paragraph of the original text we could retrieve the rhythmical
-structure of the ancient Greek version of The Odyssey which, in this
-case, is the dactylic hexameter. 
-To represent the rhythmic scheme of The Odyssey written in ancient
-Greek I have used its scansion system. 
-
-#+BEGIN_QUOTE
-Scansion system example:
---|-uu|-uu|-uu|--|--
-#+END_QUOTE
-
-The Dactyl ( -uu ) is a metrical pattern known as a "foot" which comprises one long syllable followed by two short syllables. 
-
-See more about [[http://www.princeton.edu/~achaney/tmve/wiki100k/docs/Dactylic_hexameter.html][Dactylic Hexameter]]
-
-
+*
 * Code and tips
 
 This section communicates the experience of building tools for
@@ -384,9 +386,9 @@ It contains some basic information and tips (installations and usage)
 about emacs, ipython notebook, SuperCollider, Raspberry pi.
 
 Creative coding examples are enclosed in code blocks on the right
-panel of this page. 
+panel of this page.
 
-Programming languages: 
+Programming languages:
 
 - C++,
 - Shell,
@@ -397,15 +399,15 @@ Programming languages:
 There is also a discusion about devices and protocols which are used
 for the interaction and communcation between user and machine as well as
 between machine and machine.
- 
+
 Some examples are:
 
-- midi controllers, 
+- midi controllers,
 - OSC communication,
 - microcontrollers (arduino),
 and physical computing,
-- sensor usage, 
-- multitouch technologies, etc. 
+- sensor usage,
+- multitouch technologies, etc.
 
 ** Usage
 
@@ -512,7 +514,7 @@ Write your text *inside* the below symbols:
 
 *Bold*, /italics/, =verbatim=, +strikethrough+
 
-** Linking 
+** Linking
 
  Press =C-c C-l= to *link* objects (files)
 
@@ -648,7 +650,7 @@ Then close the source block with:
 Evaluate source code. Press C-c C-c inside the block and see the results.
 
  #+BEGIN_SRC shell
- 
+
 echo "Hello $USER! Today is `date`"
   #+END_SRC
 
@@ -734,14 +736,14 @@ Git:
 Https://guides.github.com/activities/hello-world/,
 Https://gist.github.com/davfre/8313299
 
- 
+
 ** install package magit and usage
 
 #+BEGIN_QUOTE
 Magit
 #+END_QUOTE
 
-Download 
+Download
 [[https://github.com/magit/magit%20][Magit]]
 
 Install Magit using MELPA
@@ -766,7 +768,7 @@ ie. //cat id_rsa.pub | pbcopy
 
 Press =C-x m= to display information about the current Git repository
 
-Press =C-x g= for magit-status 
+Press =C-x g= for magit-status
 
 =s= to stage files
 
@@ -800,7 +802,7 @@ your project is located in your second computer. This happens, in case
 you first created the repo for example, in
 your laptop, in a folder named *project1* and built your site i.e hugo, and then pull this repo into
 a folder with the name *project2* in your other computer.
- 
+
 To change the repo address go to your .git folder inside your poroject
 and open =config= file. Then change the repo address to the new one.
 
@@ -808,7 +810,7 @@ i.e in =config= replace the old url with the new one:
 
 [remote "origin"]
 
-+url = git@github.com:User/project1.git+ 
++url = git@github.com:User/project1.git+
 
 url = git@github.com:User/project2.git
 
@@ -830,7 +832,7 @@ Git refusing to merge unrelated histories
 
 in magit press h to bring the popoup window and choose rebase -r and then -p
 
- 
+
 ** Install Dictionaries -emacs
 
 *Install aspell from brew*
@@ -897,7 +899,7 @@ put the following on the first line of the buffer:
 #+BEGIN_SRC lisp
 (setq ispell-list-command "--list")
 #+END_SRC
- 
+
 ** text expansion
 
 install YASnippet using MELPA
@@ -925,7 +927,7 @@ quit emacs and open again and type
 try using the abrev key and press tab to expant your text.
 
 
-** Searching 
+** Searching
 
 Press =C-s= to search with I-search.
 
@@ -941,11 +943,11 @@ See also =helm swoop=
 
 
 There is also the =projectile=. To use projectile make sure you have created a
-.git repo into your project. 
+.git repo into your project.
 
 Press =C-cpp= to open projectile
 and search for projects
- 
+
 ** Export references to pdf with org-mode - bibtex
 
 Use bibtex package for citation.
@@ -1020,12 +1022,12 @@ then use these latex commands inside your org file
 
 #+BEGIN_QUOTE
 Tests in org file
-#+END_QUOTE 
+#+END_QUOTE
 
 #+BEGIN_QUOTE
 Latex
 #+END_QUOTE
-   
+
 
 #+BEGIN_QUOTE
 \cite{2011ApJS..192....9T}.
@@ -1034,17 +1036,17 @@ Latex
 #+BEGIN_QUOTE
 This is test2
 #+END_QUOTE
-   
+
 
 #+BEGIN_QUOTE
 \cite{alejandro_weinstein-proc-scipy-2016}.
-#+END_QUOTE   
- 
+#+END_QUOTE
+
 
 
 #+BEGIN_QUOTE
 \printbibliography
-#+END_QUOTE 
+#+END_QUOTE
 
 
 
@@ -1058,7 +1060,7 @@ This is test2
 #+BEGIN_QUOTE
 G++ Hello_World
 #+END_QUOTE
-Create a folder *hello_world* 
+Create a folder *hello_world*
 and cd in this folder and create file *hello_world.cpp*
 
 
@@ -1078,7 +1080,7 @@ int main() {
 
 The next step is to create a *makefile* and use the bellow code
 
- 
+
 =hello_world: hello_world.cpp
 
 [TAB]g++ -Wall -g hello_world.cpp -o hello_world=
@@ -1106,7 +1108,7 @@ and give a name] then dired to the folder and create 5 source files:
 
 Compile its source code using the -c flag with the compiler.
 
-i.e. 
+i.e.
 
 #+BEGIN_SRC shell
 % g++ -c main.cpp
@@ -1120,7 +1122,7 @@ The next step is to link the object files into an executable
 
 #+BEGIN_SRC shell
 % g++ -o main main.o Point.o Line.o
-#+END_SRC 
+#+END_SRC
 
 *Create a makefile*
 
@@ -1133,7 +1135,7 @@ for the compiler, etc.
 
 
  - Variables
- 
+
 Compiler
 
 =Comp = g++=
@@ -1143,7 +1145,7 @@ Compiler Flags
 =CompFL = -Wall -g=
 
 and the other part is to set the =targets= which can be files to be
-generated. 
+generated.
 
 - Targets
 
@@ -1335,7 +1337,7 @@ SuperCollider is a platform for audio synthesis and algorithmic composition, use
 - *scide* is an editor for sclang with an integrated help system.
 
 
-  
+
 ** Nodes
 
 From: [[https://composerprogrammer.com/teaching/supercollider/sctutorial/6.3%2520Nodes.html][composerprogrammer.com]]
@@ -1375,7 +1377,7 @@ thisProcess.platform.recordingsDir;
 
 
 
-** Synthesis techniques 
+** Synthesis techniques
 
 
 Introduction to sound design (origin, definition, procedures, application fields).
@@ -1411,7 +1413,7 @@ Granular synthesis
 
 #+BEGIN_SRC js
 
-SynthDef(\granular, {|out = 0, trig = 1, dur = 0.1, sndbuf, pos = 0.2, 
+SynthDef(\granular, {|out = 0, trig = 1, dur = 0.1, sndbuf, pos = 0.2,
 rate = 1, pan = 0, amp = 0.4|
 var env, source;
 env = EnvGen.kr(Env.adsr, 1, doneAcion: 2);
@@ -1447,7 +1449,7 @@ etc
 
 Capacitive touch sensor-raspberry pi
 
-[[https://learn.adafruit.com/mpr121-capacitive-touch-sensor-on-raspberry-pi-and-beaglebone-black/overview][MPR121]] 
+[[https://learn.adafruit.com/mpr121-capacitive-touch-sensor-on-raspberry-pi-and-beaglebone-black/overview][MPR121]]
 
 
 
@@ -1600,7 +1602,7 @@ CERN examples: /particle-physics-playground-playground-52de62d/
 
 #+END_QUOTE
 
-** Sonifying ems (muons) - ipython - SuperCollider in emacs 
+** Sonifying ems (muons) - ipython - SuperCollider in emacs
 
 Editor: Emacs Version 24.5 (9.0)
 
@@ -1610,11 +1612,11 @@ SuperCollider 3.7
 
 Data sonification experiment on particle-physics-playground.
 
-For more info see here: 
+For more info see here:
 
 [[https://github.com/particle-physics-playground][particle-physics-playground]]
 
-  
+
 - Sending OSC messages to other application
 
 to send osc messages to other application install *python-osc* library
@@ -1640,14 +1642,14 @@ SynthDef(\ipythontest, {|
 	freq = 440, gate = 1,
 amp = 0.5, out = 0|
 	var env, source;
-	
+
 	env = EnvGen.kr(Env.adsr, 1, doneAction:2);
 
 	//source = SinOsc.ar(freq*2, 0, amp);
 	source = SinOsc.ar(SinOsc.ar(freq*2, freq*4, freq*2), 0,  amp);
 	// source  = UseWhateverGen.ar();
 
-	
+
 	Out.ar(out, Pan2.ar(source*env, 0))!2
 }).add;
 
@@ -1659,7 +1661,7 @@ amp = 0.5, out = 0|
 ~a = OSCdef(\oscTest,
 	{
 			| ... msg | msg.postln;
-	
+
 			~x.set(\freq, msg, \amp, 0.9);
 		//~muons = msg [0] [1..];
 		//~muons.postln;
@@ -1668,7 +1670,7 @@ amp = 0.5, out = 0|
 
 		// use the osc messages (msg) for the frequency
 	},
-	'/print' // OSCmessage name 
+	'/print' // OSCmessage name
 );
 )
 
@@ -1710,7 +1712,7 @@ import cms_tools as cms
 #+END_SRC
 
 #+BEGIN_SRC python
- 
+
 In [3]
 infile = open('../particle-physics-playground-Sonification-Example_001/data/small_cms_test_file.dat')
 
@@ -1846,11 +1848,11 @@ muons_E = []
 photons_E = []
 
 for collision in collisions:
-    
+
     jets,muons,electrons,photons,met = collision
-    
+
     njets.append(len(jets))
-    
+
     for jet in jets:
         E,px,py,pz,btag = jet
         jets_E.append(px)
@@ -1858,12 +1860,12 @@ for collision in collisions:
     for muon in muons:
         E,px,py,pz,q = muon
         muons_E.append(E)
-        
+
     for photon in photons:
         E,px,py,pz = photon
         photons_E.append(E)
 
-  
+
 
 
 
@@ -1886,11 +1888,11 @@ muons_E = []
 photons_E = []
 
 for collision in collisions:
-    
+
     jets,muons,electrons,photons,met = collision
-    
+
     njets.append(len(jets))
-    
+
     for jet in jets:
         E,px,py,pz,btag = jet
         jets_E.append(E )
@@ -1898,14 +1900,14 @@ for collision in collisions:
     for muon in muons:
         E,px,py,pz,q = muon
         muons_E.append(E)
-        
+
     for photon in photons:
         E,px,py,pz = photon
         photons_E.append(E)
 
-        
+
              # Set up OSC here
-  
+
 from pythonosc import osc_message_builder
 from pythonosc import udp_client
 
@@ -2117,7 +2119,7 @@ ofApp.h
 
 class ofApp : public ofBaseApp {
 public:
-    
+
     void setup();
     void setupGui();
     void update();
@@ -2126,54 +2128,54 @@ public:
     void exit();
     void keyPressed(int key);
     //void mouseMoved(int x, int y );
-    
+
    // void mouseDragged(int x, int y, int button);
     void mousePressed(int x, int y, int button);
     void mouseReleased(int x, int y, int button);
     void windowResized(int w, int h);
     void fadeToColor(float r, float g, float b, float speed);
     void addToFluid(ofVec2f pos, ofVec2f vel, bool addColor, bool addForce);
-   
+
     ofVboMesh mesh;
     ofEasyCam cam;
     //ofxAssimpModelLoader model;
     ofLight light;
 
-  
+
     float                   colorMult;
     float                   velocityMult;
     int                     fluidCellsX;
     bool                    resizeFluid;
     bool                    drawFluid;
     bool                    drawParticles;
-    
+
     msa::fluid::Solver      fluidSolver;
     msa::fluid::DrawerGl	fluidDrawer;
-    
+
     ParticleSystem          particleSystem;
-    
+
     ofVec2f                 pMouse;
-    
+
     //Each frame take the number of blobs and create cursors at their centroids
     vector<ofVec2f> cursors ;
     float cursorXSensitivity ;
     float cursorYSensitivity ;
     bool bRestrictCursors ;
     float cursorBorderPadding ;
-    
+
     bool  bFullscreen;
     bool  bShowControlPanel;
     bool bEpsCapture;
-    
+
     bool bThreshWithOpenCV;
     bool bKinectOpen ;
     int nearThreshold;
     int farThreshold;
-    
+
     float minBlobSize , maxBlobSize ;
     int maxCursors ;
-    
-    
+
+
     /////earh here
     ofImage texture;
     bool holdingbutton;
@@ -2181,39 +2183,39 @@ public:
     int newalpha;
     ofImage offimage;
     ofImage onimage;
-    
+
     GLUquadricObj *quadric;
     /////
 
      int mouseX =0;
-    
+
 #ifdef USE_TUIO
     ofxTuioClient tuioClient;
 #endif
-    
-    
-    
+
+
+
     ofxCvColorImage colorImg;
-   
+
     ofxOscReceiver          receiver;
-    
+
     float oscX = 0.0;
     float oscY = 0.0;
     int fadeAmt = 0;
-    
+
     //this holds all of our points
     vector<ofVec3f> points;
     //this keeps track of the center of all the points
     //ofxPanel gui;
-    
- 
-    
+
+
+
     ofBlendMode blendMode;
     ofImage rainbow;
     ofTrueTypeFont 	vagRounded;
     string eventString;
     string timeString;
-    
+
 };
 
 #+END_SRC
@@ -2233,76 +2235,76 @@ float tuioYScaler = 1;
 //--------------------------------------------------------------
 void ofApp::setup() {
     ofSetLogLevel(OF_LOG_VERBOSE);
-    
+
     // turn on smooth lighting //
     ofSetSmoothLighting(true);
-    
+
     //need this for alpha to come through
     ofEnableAlphaBlending();
-    
+
  //OSC
-    
+
     receiver.setup(PORT);
-    
+
     cout << "listening for osc messages on port " << PORT << "\n";
 
     //ofSetFrameRate(60);
-    
+
     //Fluids
     for(int i=0; i<strlen(sz); i++) sz[i] += 20;
-    
+
     // setup fluid stuff
     fluidSolver.setup(100, 100);
     fluidSolver.enableRGB(true).setFadeSpeed(0.002).setDeltaT(0.5).setVisc(0.00015).setColorDiffusion(0);
     fluidDrawer.setup(&fluidSolver);
-    
+
     fluidCellsX			= 150;
-    
+
     drawFluid			= true;
     drawParticles		= true;
     ofSetFrameRate(60);
     ofBackground(0);
     ofSetVerticalSync(false);
-    
-    
+
+
 #ifdef USE_TUIO
     tuioClient.start(3333);
 #endif
-    
+
 
     windowResized(ofGetWidth(), ofGetHeight());		// force this at start (cos I don't think it is called)
     pMouse = msa::getWindowCenter();
     resizeFluid			= true;
-    
+
     //ofEnableAlphaBlending();
     ofSetBackgroundAuto(false);
-   
+
 
     ///////------mesh here
     /*
     mesh.setMode(OF_PRIMITIVE_TRIANGLE_STRIP);
     mesh.enableColors();
-    
+
     ofVec3f  v0(-100, -100, -100);
     ofVec3f v1(100, -100, -100);
     ofVec3f v2(100, 100, -100);
-    
+
     mesh.addVertex(v0);
     mesh.addColor(ofFloatColor(0.0, 0.0, 0.0));
-    
+
     mesh.addVertex(v1);
     mesh.addColor(ofFloatColor(1.0, 0.0, 0.0));
-    
+
     mesh.addVertex(v2);
     mesh.addColor(ofFloatColor(1.0, 1.0, 0.0));
-    
+
     */
-    
+
     ///---sphere here
     ofDisableArbTex();
     //ofLoadImage(texture, "earthTex.jpg");
     texture.load("earthTex.jpg");
-    
+
     //this makes sure that the back of the model doesn't show through the front
     ofEnableDepthTest();
     // sphere.setRadius( width );
@@ -2320,7 +2322,7 @@ void ofApp::setup() {
 void ofApp::fadeToColor(float r, float g, float b, float speed) {
     glColor4f(r, g, b, speed);
     ofDrawRectangle(0, 0, ofGetWidth(), ofGetHeight());
-    
+
 }
 
 
@@ -2330,23 +2332,23 @@ void ofApp::addToFluid(ofVec2f pos, ofVec2f vel, bool addColor, bool addForce) {
     if(speed > 0) {
         pos.x = ofClamp(pos.x, 0.0f, 1.0f);
         pos.y = ofClamp(pos.y, 0.0f, 1.0f);
-        
+
         int index = fluidSolver.getIndexForPos(pos);
-        
+
         if(addColor) {
             //			Color drawColor(CM_HSV, (getElapsedFrames() % 360) / 360.0f, 1, 1);
             ofColor drawColor;
             drawColor.setHsb((ofGetFrameNum() % 255), 255, 255);
-            
+
             fluidSolver.addColorAtIndex(index, drawColor * colorMult);
-            
+
             if(drawParticles)
                 particleSystem.addParticles(pos * ofVec2f(ofGetWindowSize()), 10);
         }
-        
+
         if(addForce)
             fluidSolver.addForceAtIndex(index, vel * velocityMult);
-        
+
     }
 }
 
@@ -2356,18 +2358,18 @@ void ofApp::addToFluid(ofVec2f pos, ofVec2f vel, bool addColor, bool addForce) {
 
 //--------------------------------------------------------------
 void ofApp::setupGui(){
-    
-    
-    
-    
+
+
+
+
     float dim = 24.0;
-    
+
     gui.addSlider("fluidCellsX", fluidCellsX, 20, 400);
     gui.addButton("resizeFluid", resizeFluid);
     gui.addSlider("colorMult", colorMult, 0, 100);
     gui.addSlider("velocityMult", velocityMult, 0, 100);
-    
-    
+
+
     gui.addSlider("fs.viscocity", fluidSolver.viscocity, 0.0, 0.01);
     gui.addSlider("fs.colorDiffusion", fluidSolver.colorDiffusion, 0.0, 0.0003);
     gui.addSlider("fs.fadeSpeed", fluidSolver.fadeSpeed, 0.0, 0.1);
@@ -2378,22 +2380,22 @@ void ofApp::setupGui(){
     gui.addToggle("fs.doVorticityConfinement", fluidSolver.doVorticityConfinement);
     gui.addToggle("fs.wrapX", fluidSolver.wrap_x);
     gui.addToggle("fs.wrapY", fluidSolver.wrap_y);
-    
+
     gui.addToggle("drawFluid", drawFluid);
     gui.addToggle("drawParticles", drawParticles);
-    
+
     gui.addSlider("tuioXScaler", tuioXScaler, 0, 2);
     gui.addSlider("tuioYScaler", tuioYScaler, 0, 2);
-    
-    
+
+
     //--
     gui.currentPage().setXMLName("ofxMSAFluidSettings.xml");
     gui.loadFromXML();
     gui.setDefaultKeys(true);
     gui.setAutoSave(true);
     gui.show();
-    
-  
+
+
     ofSetBackgroundColor(0);
 }
 //--------------------------------------------------------------
@@ -2403,69 +2405,69 @@ void ofApp::update() {
     while (receiver.hasWaitingMessages()) {
         ofxOscMessage m;
         receiver.getNextMessage(m);
-        
+
         cout << "got message from OSC\n";
-        
+
         if (m.getAddress() == "/data"){
-            
+
             cout << "message was data as expected\n";
-            
+
             ofVec2f eventPos = ofVec2f(m.getArgAsFloat(0), m.getArgAsFloat(1));
             ofVec2f mouseNorm = ofVec2f(eventPos) / ofGetWindowSize();
             ofVec2f mouseVel = ofVec2f(eventPos - pMouse) / ofGetWindowSize();
             addToFluid(mouseNorm, mouseVel, true, true);
             pMouse = eventPos;
-            
-            
+
+
         } else if (m.getAddress() == "/vertex") {
             cout << "message was vertex as expected\n";
-          
+
         }
     }
 
         //Reset the cursors
         cursors.clear() ;
-        
+
         if(resizeFluid) 	{
             fluidSolver.setSize(fluidCellsX, fluidCellsX / msa::getWindowAspectRatio());
             fluidDrawer.setup(&fluidSolver);
             resizeFluid = false;
         }
 
-   
+
         fluidSolver.update();
-          
+
 }
 
 //--------------------------------------------------------------
 void ofApp::draw() {
-    
+
     ofEnableAlphaBlending() ;
 
     ofPushMatrix() ;
 
     ////////////////////////////////////////////////
     for(int i = 1; i < points.size(); i++){
-        
+
         //find this point and the next point
         ofVec3f thisPoint = points[i-1];
         ofVec3f nextPoint = points[i];
-        
+
         //get the direction from one to the next.
         //the ribbon should fan out from this direction
         ofVec3f direction = (nextPoint - thisPoint);
-        
+
         //get the distance from one point to the next
         float distance = direction.length();
-        
+
         //get the normalized direction. normalized vectors always have a length of one
         //and are really useful for representing directions as opposed to something with length
         ofVec3f unitDirection = direction.getNormalized() + 0.1f ;
-        
+
         //find both directions to the left and to the right
         ofVec3f toTheLeft = unitDirection.getRotated(-90, ofVec3f(0,0,1));
         ofVec3f toTheRight = unitDirection.getRotated(90, ofVec3f(0,0,1));
-        
+
         //use the map function to determine the distance.
         //the longer the distance, the narrower the line.
         //this makes it look a bit like brush strokes
@@ -2475,18 +2477,18 @@ void ofApp::draw() {
         //by extending the current point in the direction of left/right by the length
         ofVec3f leftPoint = thisPoint+toTheLeft*thickness;
         ofVec3f rightPoint = thisPoint+toTheRight*thickness;
-        
+
         //add these points to the triangle strip
-     
+
         mesh.addVertex(ofVec3f(leftPoint.x, leftPoint.y, leftPoint.z));
         mesh.addVertex(ofVec3f(rightPoint.x, rightPoint.y, rightPoint.z));
-        
+
         mesh.addColor ( ofColor::fromHsb( sin ( (float)i ) * 40.0f + 128.0f, 255.0f , 255.0f ) ) ;
         mesh.addColor ( ofColor::fromHsb( sin ( (float)i ) * 40.0f + 128.0f, 255.0f , 255.0f ) ) ;
-    
+
         }
-        
-    
+
+
     if(drawFluid) {
         ofClear(0);
         glColor3f(1, 1, 1);
@@ -2497,29 +2499,29 @@ void ofApp::draw() {
     }
     if(drawParticles)
         particleSystem.updateAndDraw(fluidSolver, ofGetWindowSize(), drawFluid);
-    
+
     //ofDrawBitmapString(sz, 50, 50);
-    
-     
+
+
     //earth here
     int alpha = 120; // amount of smoothing
     ofEnableAlphaBlending();
     ofSetColor(255, 255, 255, alpha);
     ofTranslate(ofGetWidth()/2, ofGetHeight()/2, 0);
-    
+
     ofRotateY(ofGetFrameNum());
     ofRotateX(-90); //north pole facing up
-    
+
     //bind and draw texture
     texture.getTexture().bind();
     gluSphere(quadric, 200, 100, 100);
     texture.draw(0, 0);
-    
+
     ofDisableAlphaBlending();
     ofPopMatrix();
-    
-    
-   
+
+
+
    }
 
 
@@ -2538,47 +2540,47 @@ void ofApp::exit() {
 
 //--------------------------------------------------------------
 void ofApp::keyPressed (int key) {
-    
+
     switch(key) {
         case '1':
             fluidDrawer.setDrawMode(msa::fluid::kDrawColor);
             break;
-            
+
         case '2':
             fluidDrawer.setDrawMode(msa::fluid::kDrawMotion);
             break;
-            
+
         case '3':
             fluidDrawer.setDrawMode(msa::fluid::kDrawSpeed);
             break;
-            
+
         case '4':
             fluidDrawer.setDrawMode(msa::fluid::kDrawVectors);
             break;
-            
+
         case 'd':
             drawFluid ^= true;
             break;
-            
+
         case 'p':
             drawParticles ^= true;
             break;
-            
+
         case 'f':
             ofToggleFullscreen();
             break;
-            
+
         case 'r':
             fluidSolver.reset();
             break;
-            
+
         case 'k':
             bKinectOpen ^=true;
             break;
-            
+
         case 'w':{
                     // texture.draw(0,0);
-            
+
             ofEnableAlphaBlending();
             texture.getTextureReference().bind();
             gluSphere(quadric, 200, 100, 100);
@@ -2593,10 +2595,10 @@ void ofApp::keyPressed (int key) {
             texture.draw(0,0);
             ofDisableAlphaBlending();
         }
-            
+
         case 'e':{
             // texture.draw(0,0);
-            
+
             ofEnableAlphaBlending();
              texture.draw(0,0);
             texture.getTextureReference().bind();
@@ -2612,8 +2614,8 @@ void ofApp::keyPressed (int key) {
             ofDisableAlphaBlending();
         }
 
-            
-            
+
+
         case 'b': {
             //			Timer timer;
             //			const int ITERS = 3000;
@@ -2623,8 +2625,8 @@ void ofApp::keyPressed (int key) {
             //			cout << ITERS << " iterations took " << timer.getSeconds() << " seconds." << std::endl;
         }
             break;
-            
-            
+
+
         case 'o':
             bShowControlPanel = !bShowControlPanel;
             if (bShowControlPanel){
@@ -2635,7 +2637,7 @@ void ofApp::keyPressed (int key) {
                 ofShowCursor();
             }
             break;
-            
+
         case 5:
             blendMode = OF_BLENDMODE_ALPHA;
             eventString = "Alpha";
@@ -2659,7 +2661,7 @@ void ofApp::keyPressed (int key) {
         default:
             break;
 
-            
+
     }
 }
 //--------------------------------------------------------------
@@ -2698,7 +2700,7 @@ Introduction to Raspberry Pi
 
 Use of sensors: touch, movement, elasticity, camera.
 
-*Programming Interactivity* 
+*Programming Interactivity*
 
 experimenting with various sensors.
 
@@ -2707,13 +2709,13 @@ experimenting with Arduino and node.js
 Arduino basic examples:
 (https://www.arduino.cc/en/Tutorial/BuiltInExamples).
 
-Using Python-for OSC communication libraries 
+Using Python-for OSC communication libraries
 
 (https://pypi.python.org/pypi/python-osc) - with SuperCollider.
 
 ** Raspberry Pi
 
- 
+
 Install Linux Raspbian Jessie Lite OS Image on the SD card
 
 Download Raspbian here:
@@ -2810,10 +2812,10 @@ Host key verification failed.
 
 To solve the problem try to delete previous keys in =known_hosts= file like pi@raspnberrypi.local
 
-then try to login 
+then try to login
 #+BEGIN_SRC shell
 $ ssh pi@raspnberrypi.local
-#+END_SRC 
+#+END_SRC
 
 
 and type =yes= to accept a new permanent key for local.
@@ -2857,7 +2859,7 @@ quick installation of prelude emacs.
 Install Git first;
 #+BEGIN_SRC shell
 pi@raspberrypi:~ $ sudo apt-get install git
-#+END_SRC 
+#+END_SRC
 
 
 #+BEGIN_SRC shell
@@ -2930,7 +2932,7 @@ $cmake -L -DCMAKE_BUILD_TYPE="Release" -DBUILD_TESTING=OFF -DSSE=OFF -DSSE2=OFF
 -DSUPERNOVA=OFF -DNOVA_SIMD=ON -DNATIVE=OFF -DSC_ED=OFF
 -DSC_WII=OFF -DSC_IDE=OFF -DSC_QT=OFF -DSC_EL=OFF -DSC_VIM=OFF
 -DCMAKE_C_FLAGS="-mtune=cortex-a7 -mfloat-abi=hard -mfpu=neon
--funsafe-math-optimizations" 
+-funsafe-math-optimizations"
 -DCMAKE_CXX_FLAGS="-mtune=cortex-a7 -mfloat-abi=hard -mfpu=neon
 -funsafe-math-optimizations" ..
 $make -j 4 #leave out flag j4 on single core rpi models
@@ -2949,10 +2951,10 @@ start jack & sclang & test
 #+END_QUOTE
 
 #+BEGIN_SRC shell
-$jackd -P75 -dalsa -dhw:1 -p1024 -n3 -s -r44100 & 
+$jackd -P75 -dalsa -dhw:1 -p1024 -n3 -s -r44100 &
 #edit -dhw:1 to match your soundcard. usually it is 1 for usb, or,jackd -P75-dalsa -dhw:UA25EX -p1024
 -n3 -s -r44100 &
-$sclang #should start sc and compile the class library with 
+$sclang #should start sc and compile the class library with
 only 3 harmless class overwrites warnings
     $s.boot #should boot the server
     $ a= {SinOsc.ar([400, 404])}.play #should play sound in both channels
@@ -3226,7 +3228,7 @@ These are the output values of 12 capacitive touch inputs
 - 10 = 1024
 - 11 = 2048
 
-** Chage permission to read-only files 
+** Chage permission to read-only files
 
 #+BEGIN_QUOTE
 Choose *Shell*
