@@ -838,7 +838,7 @@ in magit press h to bring the popoup window and choose rebase -r and then -p
 
 ** Install Dictionaries -emacs
 
-*Install aspell from brew*
+*Install aspell with brew*
 
 #+BEGIN_SRC shell
 
