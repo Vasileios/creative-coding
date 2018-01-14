@@ -26,131 +26,6 @@ the artistic and individual cognitive style of each person.
 interconnection, machine learning, multidisciplinarity, real-time, sonification,streaming, visualisation, web
 #+END_QUOTE
 
-* Symbolism in creative writing
-
-PhD thesis title: *Audiovisual works in response to creative writing*
-
-I found that by using symbolism and metaphors I can tell a story in my own way. The manipulation of the semiotic process, both in image and music, is crucial for the formal structure of my works and my process of translation.
-
-
-It is worth noticing how in my Haiku series there are notions of
-visual and audio fragmentation, generative systems, chaos and
-complexity as well as other conceptual influences. I have been inspired by the Jungian approach to
-symbolic interpretation. For example, I have interrelated the symbolism of Nekyia
-in Homer's narrative of Odysseus' descent into Hades, with the descent
-into the unconsciousness as Jung analysed it (in the collection of
-journalistic interviews in the book C.G Jung Speaking (1987) in the
-case of the modern artist). In In my work "Aranea" I translated an
-archetypical story of pride into a video game; expressing psychological complexes,
-like the Icarus' complex or narcissism, in relation to the concept of hubris and nemesis as they are found in the story of Arachne.
-
-** Frozen fragments
-
-=The procedure of precise cutting and recombining.
-The basis of the 1950s musique concrète.=
-
-- *Haiku*
-
-#+BEGIN_QUOTE
-[[https://www.youtube.com/watch?v=vlDzi6H7j0k][Peripatetic Haiku]]
-#+END_QUOTE
-
-
-Click the link on the right panel to watch Haiku series.
-
-
-For the first pieces of my portfolio I decided to use Haiku poems as a source of inspiration to create audio and visuals. My first aim was to decide how to draw audiovisual material from a text source. I chose to work with Haiku poems because of their immediacy and their richness in meaning. In my opinion, Haiku are an ideal form to express experiences with a minimum of words by means of symbolism and metaphor. As Gibbs describes in his book The poetics of mind:
-The empirical work in cognitive science strongly indicates that many
-facets of everyday thought and language are indeed metaphorical,
-enough so that we should recognise metaphor as a primary mode of
-thought. (Gibbs, 1994, p.122)
-
-I have used diverse methods and techniques to compose audiovisual materials. One of them is algorithmic composition and more specifically chaos and self similarity. For instance, I used L-systems to generate musical phrases and melodic structures as well as other stochastic processes.
-
-L-systems, in my opinion, are poetically related to Haiku because both they can provide a large output simply with the use of a few lines.
-
-- *Nekyia*
-
-#+BEGIN_QUOTE
-[[https://www.youtube.com/watch?v=4yNuc9I7qXo][Nekyia]]
-#+END_QUOTE
-
-Click the link on the right panel to watch Nekyia.
-
-For this part of my work I decided to experiment with a larger poetic
-form; so I chose Homer's The Odyssey. The book or the rhapsody I chose
-to audio-visually represent is the Book XI or the Rhapsody Λ and more specifically Nekyia. This section is characterised by Jung as a symbol of the descent into the unconsciousness. He used this event as the symbol of describing the psychological condition of the modern artist, especially the art of Pablo Picasso:
-When I say "he", I mean that personality in Picasso which suffers the
-underworld fate - the man in him who does not turn towards the day
-world, but is fatefully drawn into the dark; who follows not the
-accepted ideas of goodness and beauty, but the demonical attractions
-of ugliness and evil. (Jay, Jung, 2012, p. 54 )
-
-I have been inspired by Jung's thought about "katabasis and katalysis and the recognition of the bipolarity in human nature as well as the necessity of conflicting pairs of opposites" (Van den Berk 2012, p.111). In my audiovisual interpretation of Nekyia I have represented pairs of opposites such as light against dark, white against black, male against female, oar against shovel.
-
-
- *Text Driven Creativity*
-
-For this work,I have developed an algorithm so as to map text to
-sound, using the SuperCollider language. In particular, I experimented
-with the idea of using the letters of Homer's Odyssey the  Nekyia
-chapter. I have mapped the text to numeric values. These values could then be easily used to manipulate the parameters of the sound such as, frequency, amplitude, timbre and rhythm.
-In my effort to represent the ancient Greek and English versions of
-Nekyia I have built two lists of collected characters. With the
-resulting algorithm it is possible to use a large quantity of values
-which result from encoding the text serially. According to the text
-which is encoded the quality of the output ranges from rhythmic and
-melodic to chaotic. Theoretically, if we played the rhythmic patterns
-of a paragraph of the original text we could retrieve the rhythmical
-structure of the ancient Greek version of The Odyssey which, in this
-case, is the dactylic hexameter.
-To represent the rhythmic scheme of The Odyssey written in ancient
-Greek I have used its scansion system.
-
-#+BEGIN_QUOTE
-Scansion system example:
---|-uu|-uu|-uu|--|--
-#+END_QUOTE
-
-The Dactyl ( -uu ) is a metrical pattern known as a "foot" which comprises one long syllable followed by two short syllables.
-
-See more about [[http://www.princeton.edu/~achaney/tmve/wiki100k/docs/Dactylic_hexameter.html][Dactylic Hexameter]]
-
-
-
-** Interactive enviroments
-
-- *Aranea*
-
-Click the link on the right panel to watch a screencast of the gameplay.
-
-#+BEGIN_QUOTE
-[[https://www.youtube.com/watch?v=Hizd1t4ne7k][Aranea game play]]
-#+END_QUOTE
-
-In my portfolio work of creative responses to text, I thought it would be interesting to experiment with story-telling in videogames; so I used a well-known myth from the Greek tradition. In particular, I chose, as a central story, a part of the myth of Goddess Athena, in which we find the story of Arachne (which is the Greek word for ‘spider’), as described by Ovid in his Metamorphoses (Riley, 1893). According to Book VI of Ovid Metamorphoses, the story is about:
-...the maiden Arachne who lived in Colophon, an opulent city of
-Lydia...Arachne, vain-glorious of her ingenuity, challenges Minerva,
-Athena to take part in a contest of skill in her art. The Goddess
-accepts the challenge, but being enraged to see herself outdone,
-strikes her rival with her shuttle; upon which, Arachne, in her
-distress, hangs herself. Minerva, touched with compassion, transforms
-her into a spider. (Riley, 1893, Fable 1)
-
-Aesthetically I have been influenced by the Limbo video game, (2010), by Playhead.
-
-
-
-** Short video series
-
-#+BEGIN_QUOTE
-[[https://www.youtube.com/watch?v=AfheDpQ5yYY][Spooky Walk]]
-
-[[https://www.youtube.com/watch?v=SoFzl5Z_NDg][Delphi trip]]
-#+END_QUOTE
-
-Click the link on the right panel to watch short video series.
-
 * Interdisciplinarity
 
 Science and art
@@ -375,6 +250,134 @@ row[1].abs.squared.postln, \freq3, row[2].abs.squared.postln, \cutoff, 6000,
 )
 
 #+END_SRC
+
+** Symbolism in creative writing
+
+PhD thesis title: *Audiovisual works in response to creative writing*
+
+I found that by using symbolism and metaphors I can tell a story in my own way. The manipulation of the semiotic process, both in image and music, is crucial for the formal structure of my works and my process of translation.
+
+
+It is worth noticing how in my Haiku series there are notions of
+visual and audio fragmentation, generative systems, chaos and
+complexity as well as other conceptual influences. I have been inspired by the Jungian approach to
+symbolic interpretation. For example, I have interrelated the symbolism of Nekyia
+in Homer's narrative of Odysseus' descent into Hades, with the descent
+into the unconsciousness as Jung analysed it (in the collection of
+journalistic interviews in the book C.G Jung Speaking (1987) in the
+case of the modern artist). In In my work "Aranea" I translated an
+archetypical story of pride into a video game; expressing psychological complexes,
+like the Icarus' complex or narcissism, in relation to the concept of hubris and nemesis as they are found in the story of Arachne.
+
+*** Algorithmic composition paradigms
+
+ *Frozen fragments*
+
+=The procedure of precise cutting and recombining.
+The basis of the 1950s musique concrète.=
+
+- *Haiku*
+
+#+BEGIN_QUOTE
+[[https://www.youtube.com/watch?v=vlDzi6H7j0k][Peripatetic Haiku]]
+#+END_QUOTE
+
+
+Click the link on the right panel to watch Haiku series.
+
+
+For the first pieces of my portfolio I decided to use Haiku poems as a source of inspiration to create audio and visuals. My first aim was to decide how to draw audiovisual material from a text source. I chose to work with Haiku poems because of their immediacy and their richness in meaning. In my opinion, Haiku are an ideal form to express experiences with a minimum of words by means of symbolism and metaphor. As Gibbs describes in his book The poetics of mind:
+The empirical work in cognitive science strongly indicates that many
+facets of everyday thought and language are indeed metaphorical,
+enough so that we should recognise metaphor as a primary mode of
+thought. (Gibbs, 1994, p.122)
+
+I have used diverse methods and techniques to compose audiovisual materials. One of them is algorithmic composition and more specifically chaos and self similarity. For instance, I used L-systems to generate musical phrases and melodic structures as well as other stochastic processes and sound synthesis techniques.
+
+L-systems, in my opinion, are poetically related to Haiku because both they can provide a large output simply with the use of a few lines.
+
+- *Nekyia*
+
+#+BEGIN_QUOTE
+[[https://www.youtube.com/watch?v=4yNuc9I7qXo][Nekyia]]
+#+END_QUOTE
+
+Click the link on the right panel to watch Nekyia.
+
+For this part of my work I decided to experiment with a larger poetic
+form; so I chose Homer's The Odyssey. The book or the rhapsody I chose
+to audio-visually represent is the Book XI or the Rhapsody Λ and more specifically Nekyia. This section is characterised by Jung as a symbol of the descent into the unconsciousness. He used this event as the symbol of describing the psychological condition of the modern artist, especially the art of Pablo Picasso:
+When I say "he", I mean that personality in Picasso which suffers the
+underworld fate - the man in him who does not turn towards the day
+world, but is fatefully drawn into the dark; who follows not the
+accepted ideas of goodness and beauty, but the demonical attractions
+of ugliness and evil. (Jay, Jung, 2012, p. 54 )
+
+I have been inspired by Jung's thought about "katabasis and katalysis and the recognition of the bipolarity in human nature as well as the necessity of conflicting pairs of opposites" (Van den Berk 2012, p.111). In my audiovisual interpretation of Nekyia I have represented pairs of opposites such as light against dark, white against black, male against female, oar against shovel.
+
+
+ *Text Driven Creativity*
+
+For this work, I have developed an algorithm so as to map text to
+sound, using the SuperCollider language. In particular, I experimented
+with the idea of using the letters of Homer's Odyssey the  Nekyia
+chapter. I have mapped the text to numeric values. These values could then be easily used to manipulate the parameters of the sound such as, frequency, amplitude, timbre and duration.
+In my effort to represent the ancient Greek and English versions of
+Nekyia I have built two lists of collected characters. With the
+resulting algorithm it is possible to use a large quantity of values
+which result from encoding the text serially. According to the text
+which is encoded the quality of the output ranges from rhythmic and
+melodic to chaotic. Theoretically, if we played the rhythmic patterns
+of a paragraph of the original text we could retrieve the rhythmical
+structure of the ancient Greek version of The Odyssey which, in this
+case, is the dactylic hexameter.
+To represent the rhythmic scheme of The Odyssey written in ancient
+Greek I have used its scansion system.
+
+#+BEGIN_QUOTE
+Scansion system example:
+--|-uu|-uu|-uu|--|--
+#+END_QUOTE
+
+The Dactyl ( -uu ) is a metrical pattern known as a "foot" which comprises one long syllable followed by two short syllables.
+
+See more about [[http://www.princeton.edu/~achaney/tmve/wiki100k/docs/Dactylic_hexameter.html][Dactylic Hexameter]]
+
+
+
+*** Interactive environments
+
+- *Aranea*
+
+Click the link on the right panel to watch a screencast of the gameplay.
+
+#+BEGIN_QUOTE
+[[https://www.youtube.com/watch?v=Hizd1t4ne7k][Aranea game play]]
+#+END_QUOTE
+
+In my portfolio work of creative responses to text, I thought it would be interesting to experiment with story-telling in videogames; so I used a well-known myth from the Greek tradition. In particular, I chose, as a central story, a part of the myth of Goddess Athena, in which we find the story of Arachne (which is the Greek word for ‘spider’), as described by Ovid in his Metamorphoses (Riley, 1893). According to Book VI of Ovid Metamorphoses, the story is about:
+...the maiden Arachne who lived in Colophon, an opulent city of
+Lydia...Arachne, vain-glorious of her ingenuity, challenges Minerva,
+Athena to take part in a contest of skill in her art. The Goddess
+accepts the challenge, but being enraged to see herself outdone,
+strikes her rival with her shuttle; upon which, Arachne, in her
+distress, hangs herself. Minerva, touched with compassion, transforms
+her into a spider. (Riley, 1893, Fable 1)
+
+Aesthetically I have been influenced by the Limbo video game, (2010), by Playhead.
+
+
+
+** Short video series
+
+#+BEGIN_QUOTE
+[[https://www.youtube.com/watch?v=AfheDpQ5yYY][Spooky Walk]]
+
+[[https://www.youtube.com/watch?v=SoFzl5Z_NDg][Delphi trip]]
+#+END_QUOTE
+
+Click the link on the right panel to watch short video series.
+
 
 * Code and tips
 
