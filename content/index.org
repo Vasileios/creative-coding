@@ -378,7 +378,6 @@ Aesthetically I have been influenced by the Limbo video game, (2010), by Playhea
 
 Click the link on the right panel to watch short video series.
 
-
 * Code and tips
 
 This section communicates the experience of building tools for
@@ -429,6 +428,173 @@ and physical computing,
 
 organising and sharing projects using tools such as mass communication
 techniques Git.
+
+* Shell
+
+** Installing tmux
+
+*tmux* is a "terminal multiplexer", it enables a number of terminals (or windows) to be accessed and controlled from a single terminal. tmux is intended to be a simple, modern, BSD-licensed alternative to programs such as GNU screen.
+
+This release runs on /OpenBSD/, /FreeBSD/, /NetBSD/, /Linux/, /OS X/ and /Solaris/.
+
+tmux depends on *libevent 2.x*. Download it from:
+
+	http://libevent.org
+
+use this command to install it:
+
+#+BEGIN_QUOTE
+Choose *Shell*
+#+END_QUOTE
+
+#+BEGIN_SRC shell
+$ sudo apt-get install libevent-dev
+#+END_SRC
+
+It also depends on *ncurses*, available from:
+
+	http://invisible-island.net/ncurses/
+
+to install ncurse open shell and type:
+
+#+BEGIN_SRC shell
+$ sudo apt-get install libncurses5-dev libncursesw5-dev
+#+END_SRC
+
+To build and install *tmux* from a release tarball, use:
+
+#+BEGIN_SRC shell
+$ ./configure && make
+$ sudo make install
+#+END_SRC
+
+tmux can use the utempter library to update utmp(5), if it is installed - run
+configure with --enable-utempter to enable this.
+
+To get and build the latest *tmux* from version control:
+
+#+BEGIN_SRC shell
+	$ git clone https://github.com/tmux/tmux.git
+	$ cd tmux
+	$ sh autogen.sh
+	$ ./configure && make
+#+END_SRC
+
+to run =sh autogen.sh= you need to install *automake*.
+
+*aclocal* is part of the *automake* package.
+
+#+BEGIN_SRC shell
+$ sudo apt-get update
+$ sudo apt-get upgrade
+$ sudo apt-get install automake
+#+END_SRC
+
+To install *tmux* run the following command:
+
+#+BEGIN_SRC shell
+$ sudo apt-get update
+$ sudo apt-get upgrade
+$ sudo apt-get install tmux
+#+END_SRC
+
+To run *tmux* open shell and write:
+
+#+BEGIN_SRC shell
+tmux
+#+END_SRC
+
+see the *tmux* manual here [[http://man.openbsd.org/OpenBSD-current/man1/tmux.1][tmux]]
+
+and here [[https://gist.github.com/MohamedAlaa/2961058][tmux-cheatsheet]]
+
+** Switch to =zsh=
+
+The *Z shell* (zsh) is a Unix shell [...]. Zsh can be thought of as an extended Bourne shell with a large number of improvements, including some features of bash, ksh, and tcsh[fn::https://gist.github.com/derhuerst/12a1558a4b408b3b2b6e].
+
+
+** Installing zsh on Linux
+
+Some Linux systems come preloaded with zsh. You can check if it exists as well as its version by writing zsh --version in a terminal window. In case this zsh version is ok for you, you're done now!
+
+Determine on which Linux distribution your system is based on. See List of Linux distributions – Wikipedia for a list. Most Linux systems – including Ubuntu – are Debian-based.
+
+Debian-based linux systems
+
+Open a terminal window. Copy & paste the following into the terminal window and hit Return. You may be prompted to enter your password.
+
+#+BEGIN_QUOTE
+Choose *Shell*
+#+END_QUOTE
+
+#+BEGIN_SRC shell
+$ sudo apt-get update
+$ sudo apt-get upgrade
+$ sudo apt-get install zsh
+#+END_SRC
+
+*You can use zsh now*.
+
+to switch from bash to zsh open shell and run the following command:
+
+#+BEGIN_SRC shell
+$ chsh -s $(which zsh)
+#+END_SRC
+
+
+To know which shell are you using, use the following command:
+
+#+BEGIN_SRC shell
+$ echo $SHELL
+#+END_SRC
+
+
+It will return something like:
+
+=/bin/bash=
+
+or
+
+=/bin/zsh=
+
+After you know the shell, if the file .bashrc or .zshrc doesn't exist in your home directory (echo $HOME to find out), just create it.
+
+If you are using bash, you may have a file called .bash_profile where
+you can put your export command instead (don't know in zsh).
+
+** Convert w4a, mp4, etc to wav
+
+#+BEGIN_QUOTE
+Choose *Shell*
+#+END_QUOTE
+
+install ffmeg
+#+BEGIN_SRC shell
+$ brew install ffmpeg --with-fdk-aac --with-ffplay --with-freetype --with-libass --with-libquvi --with-libvorbis --with-libvpx --with-opus --with-x265
+#+END_SRC
+
+link brew with python
+
+#+BEGIN_SRC shell
+brew link python
+#+END_SRC
+
+remove existed files
+#+BEGIN_SRC shell
+rm 'usr/local/Cellar/2to3'
+#+END_SRC
+
+convert .m4a to .wav
+
+#+BEGIN_SRC shell
+$ ffmpeg -i /Users/sounds/23.3.\ j.m4a  23.3.\ j.wav
+#+END_SRC
+
+convert all the files into directory with .wma to mp3
+
+#+BEGIN_SRC shell
+$ for file in *.wma; do ffmpeg -i "${file}"  -acodec libmp3lame -ab 192k "${file/.wma/.mp3}"; done
+#+END_SRC
 
 * Emacs
 
@@ -1469,7 +1635,6 @@ sound. (Roads 1996: 625)
 dkncknc
 dkcknkndkc
 dbccjd
-
 
 * iPython
 
@@ -3267,173 +3432,6 @@ diskutil eraseVolume ExFAT MyName diskX
 #+END_SRC
 
 change diskX to your disk number; i.e. =disk2s1=
-
-* Shell
-
-** Installing tmux
-
-*tmux* is a "terminal multiplexer", it enables a number of terminals (or windows) to be accessed and controlled from a single terminal. tmux is intended to be a simple, modern, BSD-licensed alternative to programs such as GNU screen.
-
-This release runs on /OpenBSD/, /FreeBSD/, /NetBSD/, /Linux/, /OS X/ and /Solaris/.
-
-tmux depends on *libevent 2.x*. Download it from:
-
-	http://libevent.org
-
-use this command to install it:
-
-#+BEGIN_QUOTE
-Choose *Shell*
-#+END_QUOTE
-
-#+BEGIN_SRC shell
-$ sudo apt-get install libevent-dev
-#+END_SRC
-
-It also depends on *ncurses*, available from:
-
-	http://invisible-island.net/ncurses/
-
-to install ncurse open shell and type:
-
-#+BEGIN_SRC shell
-$ sudo apt-get install libncurses5-dev libncursesw5-dev
-#+END_SRC
-
-To build and install *tmux* from a release tarball, use:
-
-#+BEGIN_SRC shell
-$ ./configure && make
-$ sudo make install
-#+END_SRC
-
-tmux can use the utempter library to update utmp(5), if it is installed - run
-configure with --enable-utempter to enable this.
-
-To get and build the latest *tmux* from version control:
-
-#+BEGIN_SRC shell
-	$ git clone https://github.com/tmux/tmux.git
-	$ cd tmux
-	$ sh autogen.sh
-	$ ./configure && make
-#+END_SRC
-
-to run =sh autogen.sh= you need to install *automake*.
-
-*aclocal* is part of the *automake* package.
-
-#+BEGIN_SRC shell
-$ sudo apt-get update
-$ sudo apt-get upgrade
-$ sudo apt-get install automake
-#+END_SRC
-
-To install *tmux* run the following command:
-
-#+BEGIN_SRC shell
-$ sudo apt-get update
-$ sudo apt-get upgrade
-$ sudo apt-get install tmux
-#+END_SRC
-
-To run *tmux* open shell and write:
-
-#+BEGIN_SRC shell
-tmux
-#+END_SRC
-
-see the *tmux* manual here [[http://man.openbsd.org/OpenBSD-current/man1/tmux.1][tmux]]
-
-and here [[https://gist.github.com/MohamedAlaa/2961058][tmux-cheatsheet]]
-
-** Switch to =zsh=
-
-The *Z shell* (zsh) is a Unix shell [...]. Zsh can be thought of as an extended Bourne shell with a large number of improvements, including some features of bash, ksh, and tcsh[fn::https://gist.github.com/derhuerst/12a1558a4b408b3b2b6e].
-
-
-** Installing zsh on Linux
-
-Some Linux systems come preloaded with zsh. You can check if it exists as well as its version by writing zsh --version in a terminal window. In case this zsh version is ok for you, you're done now!
-
-Determine on which Linux distribution your system is based on. See List of Linux distributions – Wikipedia for a list. Most Linux systems – including Ubuntu – are Debian-based.
-
-Debian-based linux systems
-
-Open a terminal window. Copy & paste the following into the terminal window and hit Return. You may be prompted to enter your password.
-
-#+BEGIN_QUOTE
-Choose *Shell*
-#+END_QUOTE
-
-#+BEGIN_SRC shell
-$ sudo apt-get update
-$ sudo apt-get upgrade
-$ sudo apt-get install zsh
-#+END_SRC
-
-*You can use zsh now*.
-
-to switch from bash to zsh open shell and run the following command:
-
-#+BEGIN_SRC shell
-$ chsh -s $(which zsh)
-#+END_SRC
-
-
-To know which shell are you using, use the following command:
-
-#+BEGIN_SRC shell
-$ echo $SHELL
-#+END_SRC
-
-
-It will return something like:
-
-=/bin/bash=
-
-or
-
-=/bin/zsh=
-
-After you know the shell, if the file .bashrc or .zshrc doesn't exist in your home directory (echo $HOME to find out), just create it.
-
-If you are using bash, you may have a file called .bash_profile where
-you can put your export command instead (don't know in zsh).
-
-** Convert w4a, mp4, etc to wav
-
-#+BEGIN_QUOTE
-Choose *Shell*
-#+END_QUOTE
-
-install ffmeg
-#+BEGIN_SRC shell
-$ brew install ffmpeg --with-fdk-aac --with-ffplay --with-freetype --with-libass --with-libquvi --with-libvorbis --with-libvpx --with-opus --with-x265
-#+END_SRC
-
-link brew with python
-
-#+BEGIN_SRC shell
-brew link python
-#+END_SRC
-
-remove existed files
-#+BEGIN_SRC shell
-rm 'usr/local/Cellar/2to3'
-#+END_SRC
-
-convert .m4a to .wav
-
-#+BEGIN_SRC shell
-$ ffmpeg -i /Users/sounds/23.3.\ j.m4a  23.3.\ j.wav
-#+END_SRC
-
-convert all the files into directory with .wma to mp3
-
-#+BEGIN_SRC shell
-$ for file in *.wma; do ffmpeg -i "${file}"  -acodec libmp3lame -ab 192k "${file/.wma/.mp3}"; done
-#+END_SRC
 
 * Suggested Bibliography
 

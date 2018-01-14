@@ -521,6 +521,148 @@ and physical computing,
 <p>organising and sharing projects using tools such as mass communication
 techniques Git.</p>
 
+<h1 id="shell">Shell</h1>
+
+<h2 id="installing-tmux">Installing tmux</h2>
+
+<p><strong>tmux</strong> is a "terminal multiplexer", it enables a number of terminals (or windows) to be accessed and controlled from a single terminal. tmux is intended to be a simple, modern, BSD-licensed alternative to programs such as GNU screen.</p>
+
+<p>This release runs on <em>OpenBSD</em>, <em>FreeBSD</em>, <em>NetBSD</em>, <em>Linux</em>, <em>OS X</em> and <em>Solaris</em>.</p>
+
+<p>tmux depends on <strong>libevent 2.x</strong>. Download it from:</p>
+
+<p>	http://libevent.org</p>
+
+<p>use this command to install it:</p>
+
+<blockquote>
+<p>
+Choose <strong>Shell</strong>
+</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ sudo apt-get install libevent-dev
+</code></pre></div>
+
+<p>It also depends on <strong>ncurses</strong>, available from:</p>
+
+<p>	http://invisible-island.net/ncurses/</p>
+
+<p>to install ncurse open shell and type:</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ sudo apt-get install libncurses5-dev libncursesw5-dev
+</code></pre></div>
+
+<p>To build and install <strong>tmux</strong> from a release tarball, use:</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ ./configure <span class="o">&amp;&amp;</span> make
+$ sudo make install
+</code></pre></div>
+
+<p>tmux can use the utempter library to update utmp(5), if it is installed - run
+configure with --enable-utempter to enable this.</p>
+
+<p>To get and build the latest <strong>tmux</strong> from version control:</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>	$ git clone https://github.com/tmux/tmux.git
+	$ <span class="nb">cd</span> tmux
+	$ sh autogen.sh
+	$ ./configure <span class="o">&amp;&amp;</span> make
+</code></pre></div>
+
+<p>to run <code>sh autogen.sh</code> you need to install <strong>automake</strong>.</p>
+
+<p><strong>aclocal</strong> is part of the <strong>automake</strong> package.</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ sudo apt-get update
+$ sudo apt-get upgrade
+$ sudo apt-get install automake
+</code></pre></div>
+
+<p>To install <strong>tmux</strong> run the following command:</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ sudo apt-get update
+$ sudo apt-get upgrade
+$ sudo apt-get install tmux
+</code></pre></div>
+
+<p>To run <strong>tmux</strong> open shell and write:</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>tmux
+</code></pre></div>
+
+<p>see the <strong>tmux</strong> manual here <a href="http://man.openbsd.org/OpenBSD-current/man1/tmux.1" title="tmux" target="_blank">tmux</a></p>
+
+<p>and here <a href="https://gist.github.com/MohamedAlaa/2961058" title="tmux-cheatsheet" target="_blank">tmux-cheatsheet</a></p>
+
+<h2 id="switch-to-zsh">Switch to <code>zsh</code></h2>
+
+<p>The <strong>Z shell</strong> (zsh) is a Unix shell [...]. Zsh can be thought of as an extended Bourne shell with a large number of improvements, including some features of bash, ksh, and tcsh<sup class="footnote-ref" id="fnref:https-gist-github-com-derhuerst-12a1558a4b408b3b2b6e"><a rel="footnote" href="#fn:https-gist-github-com-derhuerst-12a1558a4b408b3b2b6e">1</a></sup>.</p>
+
+<h2 id="installing-zsh-on-linux">Installing zsh on Linux</h2>
+
+<p>Some Linux systems come preloaded with zsh. You can check if it exists as well as its version by writing zsh --version in a terminal window. In case this zsh version is ok for you, you're done now!</p>
+
+<p>Determine on which Linux distribution your system is based on. See List of Linux distributions – Wikipedia for a list. Most Linux systems – including Ubuntu – are Debian-based.</p>
+
+<p>Debian-based linux systems</p>
+
+<p>Open a terminal window. Copy & paste the following into the terminal window and hit Return. You may be prompted to enter your password.</p>
+
+<blockquote>
+<p>
+Choose <strong>Shell</strong>
+</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ sudo apt-get update
+$ sudo apt-get upgrade
+$ sudo apt-get install zsh
+</code></pre></div>
+
+<p><strong>You can use zsh now</strong>.</p>
+
+<p>to switch from bash to zsh open shell and run the following command:</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ chsh -s <span class="k">$(</span>which zsh<span class="k">)</span>
+</code></pre></div>
+
+<p>To know which shell are you using, use the following command:</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ <span class="nb">echo</span> <span class="nv">$SHELL</span>
+</code></pre></div>
+
+<p>It will return something like:</p>
+
+<p><code>/bin/bash</code></p>
+
+<p>or</p>
+
+<p><code>/bin/zsh</code></p>
+
+<p>After you know the shell, if the file .bashrc or .zshrc doesn't exist in your home directory (echo $HOME to find out), just create it.</p>
+
+<p>If you are using bash, you may have a file called .bash_profile where
+you can put your export command instead (don't know in zsh).</p>
+
+<h2 id="convert-w4a-mp4-etc-to-wav">Convert w4a, mp4, etc to wav</h2>
+
+<blockquote>
+<p>
+Choose <strong>Shell</strong>
+</p>
+</blockquote>
+
+<p>install ffmeg</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ brew install ffmpeg --with-fdk-aac --with-ffplay --with-freetype --with-libass --with-libquvi --with-libvorbis --with-libvpx --with-opus --with-x265
+</code></pre></div>
+
+<p>link brew with python</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>brew link python
+</code></pre></div>
+
+<p>remove existed files</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>rm <span class="s1">&#39;usr/local/Cellar/2to3&#39;</span>
+</code></pre></div>
+
+<p>convert .m4a to .wav</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ ffmpeg -i /Users/sounds/23.3.<span class="se">\ </span>j.m4a  23.3.<span class="se">\ </span>j.wav
+</code></pre></div>
+
+<p>convert all the files into directory with .wma to mp3</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ <span class="k">for</span> file in *.wma<span class="p">;</span> <span class="k">do</span> ffmpeg -i <span class="s2">&quot;</span><span class="si">${</span><span class="nv">file</span><span class="si">}</span><span class="s2">&quot;</span>  -acodec libmp3lame -ab 192k <span class="s2">&quot;</span><span class="si">${</span><span class="nv">file</span><span class="p">/.wma/.mp3</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span> <span class="k">done</span>
+</code></pre></div>
+
 <h1 id="emacs">Emacs</h1>
 
 <p>GNU Emacs
@@ -3324,148 +3466,6 @@ Choose <strong>Shell</strong>
 </code></pre></div>
 
 <p>change diskX to your disk number; i.e. <code>disk2s1</code></p>
-
-<h1 id="shell">Shell</h1>
-
-<h2 id="installing-tmux">Installing tmux</h2>
-
-<p><strong>tmux</strong> is a "terminal multiplexer", it enables a number of terminals (or windows) to be accessed and controlled from a single terminal. tmux is intended to be a simple, modern, BSD-licensed alternative to programs such as GNU screen.</p>
-
-<p>This release runs on <em>OpenBSD</em>, <em>FreeBSD</em>, <em>NetBSD</em>, <em>Linux</em>, <em>OS X</em> and <em>Solaris</em>.</p>
-
-<p>tmux depends on <strong>libevent 2.x</strong>. Download it from:</p>
-
-<p>	http://libevent.org</p>
-
-<p>use this command to install it:</p>
-
-<blockquote>
-<p>
-Choose <strong>Shell</strong>
-</p>
-</blockquote>
-<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ sudo apt-get install libevent-dev
-</code></pre></div>
-
-<p>It also depends on <strong>ncurses</strong>, available from:</p>
-
-<p>	http://invisible-island.net/ncurses/</p>
-
-<p>to install ncurse open shell and type:</p>
-<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ sudo apt-get install libncurses5-dev libncursesw5-dev
-</code></pre></div>
-
-<p>To build and install <strong>tmux</strong> from a release tarball, use:</p>
-<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ ./configure <span class="o">&amp;&amp;</span> make
-$ sudo make install
-</code></pre></div>
-
-<p>tmux can use the utempter library to update utmp(5), if it is installed - run
-configure with --enable-utempter to enable this.</p>
-
-<p>To get and build the latest <strong>tmux</strong> from version control:</p>
-<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>	$ git clone https://github.com/tmux/tmux.git
-	$ <span class="nb">cd</span> tmux
-	$ sh autogen.sh
-	$ ./configure <span class="o">&amp;&amp;</span> make
-</code></pre></div>
-
-<p>to run <code>sh autogen.sh</code> you need to install <strong>automake</strong>.</p>
-
-<p><strong>aclocal</strong> is part of the <strong>automake</strong> package.</p>
-<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ sudo apt-get update
-$ sudo apt-get upgrade
-$ sudo apt-get install automake
-</code></pre></div>
-
-<p>To install <strong>tmux</strong> run the following command:</p>
-<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ sudo apt-get update
-$ sudo apt-get upgrade
-$ sudo apt-get install tmux
-</code></pre></div>
-
-<p>To run <strong>tmux</strong> open shell and write:</p>
-<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>tmux
-</code></pre></div>
-
-<p>see the <strong>tmux</strong> manual here <a href="http://man.openbsd.org/OpenBSD-current/man1/tmux.1" title="tmux" target="_blank">tmux</a></p>
-
-<p>and here <a href="https://gist.github.com/MohamedAlaa/2961058" title="tmux-cheatsheet" target="_blank">tmux-cheatsheet</a></p>
-
-<h2 id="switch-to-zsh">Switch to <code>zsh</code></h2>
-
-<p>The <strong>Z shell</strong> (zsh) is a Unix shell [...]. Zsh can be thought of as an extended Bourne shell with a large number of improvements, including some features of bash, ksh, and tcsh<sup class="footnote-ref" id="fnref:https-gist-github-com-derhuerst-12a1558a4b408b3b2b6e"><a rel="footnote" href="#fn:https-gist-github-com-derhuerst-12a1558a4b408b3b2b6e">1</a></sup>.</p>
-
-<h2 id="installing-zsh-on-linux">Installing zsh on Linux</h2>
-
-<p>Some Linux systems come preloaded with zsh. You can check if it exists as well as its version by writing zsh --version in a terminal window. In case this zsh version is ok for you, you're done now!</p>
-
-<p>Determine on which Linux distribution your system is based on. See List of Linux distributions – Wikipedia for a list. Most Linux systems – including Ubuntu – are Debian-based.</p>
-
-<p>Debian-based linux systems</p>
-
-<p>Open a terminal window. Copy & paste the following into the terminal window and hit Return. You may be prompted to enter your password.</p>
-
-<blockquote>
-<p>
-Choose <strong>Shell</strong>
-</p>
-</blockquote>
-<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ sudo apt-get update
-$ sudo apt-get upgrade
-$ sudo apt-get install zsh
-</code></pre></div>
-
-<p><strong>You can use zsh now</strong>.</p>
-
-<p>to switch from bash to zsh open shell and run the following command:</p>
-<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ chsh -s <span class="k">$(</span>which zsh<span class="k">)</span>
-</code></pre></div>
-
-<p>To know which shell are you using, use the following command:</p>
-<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ <span class="nb">echo</span> <span class="nv">$SHELL</span>
-</code></pre></div>
-
-<p>It will return something like:</p>
-
-<p><code>/bin/bash</code></p>
-
-<p>or</p>
-
-<p><code>/bin/zsh</code></p>
-
-<p>After you know the shell, if the file .bashrc or .zshrc doesn't exist in your home directory (echo $HOME to find out), just create it.</p>
-
-<p>If you are using bash, you may have a file called .bash_profile where
-you can put your export command instead (don't know in zsh).</p>
-
-<h2 id="convert-w4a-mp4-etc-to-wav">Convert w4a, mp4, etc to wav</h2>
-
-<blockquote>
-<p>
-Choose <strong>Shell</strong>
-</p>
-</blockquote>
-
-<p>install ffmeg</p>
-<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ brew install ffmpeg --with-fdk-aac --with-ffplay --with-freetype --with-libass --with-libquvi --with-libvorbis --with-libvpx --with-opus --with-x265
-</code></pre></div>
-
-<p>link brew with python</p>
-<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>brew link python
-</code></pre></div>
-
-<p>remove existed files</p>
-<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>rm <span class="s1">&#39;usr/local/Cellar/2to3&#39;</span>
-</code></pre></div>
-
-<p>convert .m4a to .wav</p>
-<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ ffmpeg -i /Users/sounds/23.3.<span class="se">\ </span>j.m4a  23.3.<span class="se">\ </span>j.wav
-</code></pre></div>
-
-<p>convert all the files into directory with .wma to mp3</p>
-<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>$ <span class="k">for</span> file in *.wma<span class="p">;</span> <span class="k">do</span> ffmpeg -i <span class="s2">&quot;</span><span class="si">${</span><span class="nv">file</span><span class="si">}</span><span class="s2">&quot;</span>  -acodec libmp3lame -ab 192k <span class="s2">&quot;</span><span class="si">${</span><span class="nv">file</span><span class="p">/.wma/.mp3</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span> <span class="k">done</span>
-</code></pre></div>
 
 <h1 id="suggested-bibliography">Suggested Bibliography</h1>
 
