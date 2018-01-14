@@ -373,59 +373,8 @@ row[1].abs.squared.postln, \freq3, row[2].abs.squared.postln, \cutoff, 6000,
 }.fork;
 
 )
+
 #+END_SRC
-
-*
-
-
-This section communicates the experience of building tools for
-interactive and data-driven
-audiovisuality using creative coding environments and techniques.
-
-It contains some basic information and tips (installations and usage)
-about emacs, ipython notebook, SuperCollider, Raspberry pi.
-
-Creative coding examples are enclosed in code blocks on the right
-panel of this page.
-
-Programming languages:
-
-- C++,
-- Shell,
-- Python,
-- emacs-lisp,
-- SuperCollider
-
-There is also a discusion about devices and protocols which are used
-for the interaction and communcation between user and machine as well as
-between machine and machine.
-
-Some examples are:
-
-- midi controllers,
-- OSC communication,
-- microcontrollers (arduino),
-and physical computing,
-- sensor usage,
-- multitouch technologies, etc.
-
-** Usage
-
-
-- Interactive installations
-- Computer Graphics
-- Computer Music
-- Machine learning
-- Data driven creativity
-- Sonification
-- Visualisation
-
-
-
-** Organising and sharing
-
-organising and sharing projects using tools such as mass communication
-techniques Git.
 
 * Code and tips
 
@@ -1517,7 +1466,6 @@ sound. (Roads 1996: 625)
 dkncknc
 dkcknkndkc
 dbccjd
-
 
 
 * iPython
