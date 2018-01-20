@@ -1307,10 +1307,10 @@ G++ Hello_World
 </p>
 </blockquote>
 
-<p>Create a folder <strong>hello_world*
-and cd in this folder and create file *hello_world.cpp</strong></p>
+<p>Create a folder <strong>hello_world</strong>.
+ cd in this folder and create a file <strong>hello_world.cpp</strong></p>
 
-<p>copy the below code and paste it inside <strong>hello_world.cpp</strong> file</p>
+<p>copy the below code and paste it into <strong>hello_world.cpp</strong> file</p>
 <div class="highlight"><pre><code class="language-c" data-lang="c"><span></span><span class="cm">/*hello_world.cpp*/</span>
 
 <span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
@@ -1322,18 +1322,20 @@ and cd in this folder and create file *hello_world.cpp</strong></p>
 <span class="p">}</span>
 </code></pre></div>
 
-<p>The next step is to create a <strong>makefile</strong> and use the bellow code</p>
+<p>The next step is to create a <strong>makefile</strong>.</p>
+
+<p>Use the bellow code.</p>
 
 <p>=hello_world: hello_world.cpp</p>
 
 <p>[TAB]g++ -Wall -g hello_world.cpp -o hello_world=</p>
 
-<p>then go back to the <strong>hello_world.cpp</strong> and press =C-x c=
+<p>then go back (M-x b) to the <strong>hello_world.cpp</strong> and press =C-x c=
 to run the programm.</p>
 
 <p>you will see a 'hello world' message.</p>
 
-<p><strong>Create and Run a programm with more source file</strong></p>
+<p><strong>Create and Run a programm with multiple source files</strong></p>
 
 <p>On emacs create a folder [use dired to the direction you want to create
 the folder and press =Shift-+=
@@ -1363,6 +1365,8 @@ and give a name] then dired to the folder and create 5 source files:</p>
 <p>The next step is to link the object files into an executable</p>
 <div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>% g++ -o main main.o Point.o Line.o
 </code></pre></div>
+
+<h2 id="makefile">makefile</h2>
 
 <p><strong>Create a makefile</strong></p>
 
@@ -1417,6 +1421,45 @@ generated.</p>
 
 <p>After creating the makefile choose the main.cpp file and press <code>C-x c=
 and then hit =enter</code> to begin the compilation.</p>
+
+<p>Clone the below repository to create a tetraedron
+and also to see an example of how to set up a makefile for OpenGL and GLUT
+framewroks.</p>
+
+<p>SSH: git@github.com:Vasileios/Gpp.git</p>
+
+<h2 id="cmake">cmake</h2>
+
+<ul>
+<li>cmake Conways's Game of Life</li>
+</ul>
+
+<ul>
+<li>Compiling objects with g++ and SFML </li>
+</ul>
+
+<ul>
+<li>cmake</li>
+</ul>
+
+<p>Click the below link to build an SFML project.</p>
+
+<p>Click the below links to download and install sfml:</p>
+
+<p><a href="https://www.sfml-dev.org/download.php" title="SFML download" target="_blank">SFML download</a></p>
+
+<p><a href="https://www.sfml-dev.org/tutorials/2.4/start-osx.php" title="SFML MAC osc" target="_blank">SFML MAC osc</a></p>
+
+<p>You can also read instruction of building SFML with cmake.</p>
+
+<p><a href="https://github.com/SFML/SFML/wiki/Tutorial%253A-Build-your-SFML-project-with-CMake" title="Build SFML project" target="_blank">Build SFML project</a></p>
+
+<p>Clone this <a href="https://github.com/Hopson97/Conway-s-Game-Of-Life" title="repository" target="_blank">repository</a> and to run the famus cellular automata Conway's Game
+of Life.</p>
+
+<p>On terminal, cd to the folder and use this command:</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>cmake -G<span class="s2">&quot;Xcode&quot;</span> -DSFML<span class="o">=</span>/usr/local/include
+</code></pre></div>
 
 <h1 id="algorithmic-composition">Algorithmic Composition</h1>
 
