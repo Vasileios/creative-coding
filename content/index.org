@@ -1387,6 +1387,23 @@ On terminal, cd to the folder and use this command:
 cmake -G"Xcode" -DSFML=/usr/local/include
 #+END_SRC
 
+** Running 3d graphics g++ 
+
+clone this repo 
+
+https://github.com/scanberg/particle-skinning
+
+Requirements - glm, assimp, qt5
+
+#+BEGIN_SRC shell
+brew install qt5
+brew install glm
+brew install assimp
+#+END_SRC
+
+open main.cpp on emacs and hit =C-x c= to make the program.
+
+
 
 * Algorithmic Composition
 
