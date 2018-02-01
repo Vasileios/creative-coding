@@ -50,7 +50,7 @@ The code on the right panel shows the way I mapped numbers to the
 symbols of an L-system. 
 
 #+BEGIN_QUOTE
-L-system
+L-system algorithm
 #+END_QUOTE
 #+BEGIN_SRC js
 a = LSys("F", ["F" ->"F+F--/]&F+F", "F" -> "]/F+&FF+-"]);
