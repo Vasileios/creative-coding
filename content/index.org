@@ -44,14 +44,22 @@ implementation of this work was done with the software
 SuperCollider"(form Agiomyrgianakis V.Undergraduate thesis. 2012 "ΜΙΑ ΤΕΧΝΙΚΗ ΣΥΝΘΕΣΗΣ ΗΧΟΥ ΒΑΣΙΣΜΕΝΗ ΣΤΑ
 L-SYSTEMS").
 
-This is the L-system with the axiom and the production rules:
+This is the L-system in SuperCollider with the axiom and the production rules
+
+The code on the right panel shows the way I mapped numbers to the
+symbols of an L-system. 
+
+#+BEGIN_QUOTE
+L-system
+#+END_QUOTE
 #+BEGIN_SRC js
 a = LSys("F", ["F" ->"F+F--/]&F+F", "F" -> "]/F+&FF+-"]);
 #+END_SRC
 
-The line below shows how I have collected the symbols from the
-L-system and replaced them with numbers.
 
+#+BEGIN_QUOTE
+mapping
+#+END_QUOTE
 #+BEGIN_SRC js
 ~ls = [
            “F” -> (1),
@@ -1466,7 +1474,9 @@ Nierhaus 2009 (Algorithmic Composition),
 
 Roads 1996 (Computer Music Tutorial)
 
+For more info see here:
 
+[[https://vasileios.github.io/ac-sc/el/][Algorithmic Composition]]
 
 ** Sound Design
 
