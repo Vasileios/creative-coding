@@ -50,12 +50,21 @@ The code on the right panel shows the way I mapped numbers to the
 symbols of an L-system. 
 
 #+BEGIN_QUOTE
-L-system algorithm
+L-system SuperCollider
 #+END_QUOTE
+
+<aside class="code">
+L-system algorithm.
+</aside>
+
 #+BEGIN_SRC js
 a = LSys("F", ["F" ->"F+F--/]&F+F", "F" -> "]/F+&FF+-"]);
 #+END_SRC
 
+
+<aside class="code">
+Mapping L-system's symbols to numbers SuperCollider.
+</aside>
 
 #+BEGIN_QUOTE
 mapping
@@ -73,6 +82,10 @@ mapping
 
 
 Finally, I have used patterns in SuperCollider to manipulate the arguments of the synth.
+
+<aside class="code">
+Pbind Patterns
+</aside>
 
 #+BEGIN_QUOTE
 Pbind Pattern
@@ -1390,7 +1403,7 @@ Click the below links to download and install sfml:
 [[https://www.sfml-dev.org/tutorials/2.4/start-osx.php][SFML MAC osc]]
 
  
-You can also read instruction of building SFML with cmake.
+You can also read the instructions of building SFML with cmake:
 
 [[https://github.com/SFML/SFML/wiki/Tutorial%253A-Build-your-SFML-project-with-CMake][Build SFML project]]
 
