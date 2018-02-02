@@ -23,7 +23,6 @@ theme = "docuapi"
 
 [params]
 search = true
-
 # Configure the language example tabs.
 #[[params.language_tabs]]
 #key = "go"

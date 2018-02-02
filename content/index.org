@@ -96,7 +96,7 @@ Pbind Pattern
 
 *Σύνθεση ήχου σε πραγματικό χρόνο από δεδομένα περιγραφής μαγνητικών καταιγίδων.*
 
-Β. Αγιομυργιανάκης 1, Φ.Α. Μεταλληνού 2 , Γ. Ζάννος 1
+Β. Αγιομυργιανάκης[fn::1] , Φ.Α. Μεταλληνού 2 , Γ. Ζάννος 1
 
 1. Τμήμα Τεχνών Ήχου και Εικόνας, Ιόνιο Πανεπιστήμιο.
 2. Ινστιτούτο Αστρονομίας, Αστροφυσικής, Διαστημικών Εφαρμογών και Τηλεπισκόπισης, Εθνικό Αστεροσκοπείο Αθηνών.
@@ -1383,8 +1383,6 @@ SSH: git@github.com:Vasileios/Gpp.git
 
 - cmake
 
-Click the below link to build an SFML project.
-
 Click the below links to download and install sfml: 
 
 [[https://www.sfml-dev.org/download.php][SFML download]]
@@ -1397,7 +1395,7 @@ You can also read instruction of building SFML with cmake.
 [[https://github.com/SFML/SFML/wiki/Tutorial%253A-Build-your-SFML-project-with-CMake][Build SFML project]]
 
 
-Clone this [[https://github.com/Hopson97/Conway-s-Game-Of-Life][repository]] and to run the famus cellular automata Conway's Game
+Clone this [[https://github.com/Hopson97/Conway-s-Game-Of-Life][repository]] and run the famous cellular automata Conway's Game
 of Life.
 
 On terminal, cd to the folder and use this command: 
