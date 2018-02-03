@@ -47,7 +47,7 @@ L-SYSTEMS").
 This is the L-system in SuperCollider with the axiom and the production rules
 
 The code on the right panel shows the way I mapped numbers to the
-symbols of an L-system. 
+symbols of an L-system.
 
 #+BEGIN_QUOTE
 L-system SuperCollider
@@ -1392,17 +1392,17 @@ SSH: git@github.com:Vasileios/Gpp.git
 
 - cmake Conways's Game of Life
 
-- Compiling objects with g++ and SFML 
+- Compiling objects with g++ and SFML
 
 - cmake
 
-Click the below links to download and install sfml: 
+Click the below links to download and install sfml:
 
 [[https://www.sfml-dev.org/download.php][SFML download]]
 
 [[https://www.sfml-dev.org/tutorials/2.4/start-osx.php][SFML MAC osc]]
 
- 
+
 You can also read the instructions of building SFML with cmake:
 
 [[https://github.com/SFML/SFML/wiki/Tutorial%253A-Build-your-SFML-project-with-CMake][Build SFML project]]
@@ -1411,15 +1411,15 @@ You can also read the instructions of building SFML with cmake:
 Clone this [[https://github.com/Hopson97/Conway-s-Game-Of-Life][repository]] and run the famous cellular automata Conway's Game
 of Life.
 
-On terminal, cd to the folder and use this command: 
+On terminal, cd to the folder and use this command:
 
 #+BEGIN_SRC shell
 cmake -G"Xcode" -DSFML=/usr/local/include
 #+END_SRC
 
-** Running 3d graphics g++ 
+** Running 3d graphics g++
 
-clone this repo 
+clone this repo
 
 https://github.com/scanberg/particle-skinning
 
@@ -1459,7 +1459,7 @@ found in the “composition machines” of Athanasius Kircher in the Baroque per
 Furthermore, first applications of algorithms for compositional tasks can be found
 in the popular “musical dice game” in the 18th century.
 
-Lejaren Hiller at the Experimental Music Studio to Brian Eno’s generative music.
+*Paradigms*
 
 - Markov models
 
