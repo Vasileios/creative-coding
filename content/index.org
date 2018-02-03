@@ -1500,9 +1500,6 @@ For more info see here:
 
 [[https://vasileios.github.io/ac-sc/el/][Algorithmic Composition]]
 
-** Sound Design
-
-Summarise Farnell 2010, Sigman 2011, Tolonen et al. 1998.
 
 ** SuperCollider
 
