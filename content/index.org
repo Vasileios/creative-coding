@@ -419,7 +419,7 @@ interactive and data-driven
 audiovisuality using creative coding environments and techniques.
 
 It contains some basic information and tips (installations and usage)
-about emacs, ipython notebook, SuperCollider, Raspberry pi.
+about emacs, ipython notebook, SuperCollider, Raspberry pi, shell and G++.
 
 Creative coding examples are enclosed in code blocks on the right
 panel of this page.
