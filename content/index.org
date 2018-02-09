@@ -67,7 +67,7 @@ Mapping L-system's symbols to numbers SuperCollider.
 </aside>
 
 #+BEGIN_QUOTE
-mapping
+mapping - Assosiations (relate two objects) can be created via the -> operator
 #+END_QUOTE
 #+BEGIN_SRC js
 ~ls = [
