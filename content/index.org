@@ -71,12 +71,12 @@ mapping - Assosiations (relate two objects) can be created via the -> operator
 #+END_QUOTE
 #+BEGIN_SRC js
 ~ls = [
-           “F” -> (1),
-           “+” -> (2),
-           “-“ -> (3),
-           “/“ -> (5),
-           “]” -> (8),
-           “&” -> (13)
+           “F” -> 1,
+           “+” -> 2,
+           “-“ -> 3,
+           “/“ -> 5,
+           “]” -> 8,
+           “&” -> 13
            ];
 #+END_SRC
 
