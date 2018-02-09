@@ -50,7 +50,7 @@ The code on the right panel shows the way I mapped numbers to the
 symbols of an L-system.
 
 #+BEGIN_QUOTE
-L-system SuperCollider
+L-systems SuperCollider
 #+END_QUOTE
 
 <aside class="code">
