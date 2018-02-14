@@ -277,8 +277,6 @@ row[1].abs.squared.postln, \freq3, row[2].abs.squared.postln, \cutoff, 6000,
 		0.1.wait;//100  miliseconds
 	}
 
-}.fork;
-
 )
 
 #+END_SRC
