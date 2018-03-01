@@ -1446,7 +1446,7 @@ generated.
 =main.o: main.cpp Point.h Line.h=
 
 =[TAB]	$(Comp) $(CompFL) -c main.cpp=
-<<<<<<< HEAD
+
 
 =Point.o: Point.h=
 
