@@ -1398,12 +1398,12 @@ The makefile tells =make= how to compile and link a program.
 
 A makefile consists of rules with the following shape:
 
-#+BEGIN_QUOTE
+#+BEGIN_EXAMPLE
 target … : prerequisites …
         recipe
         …
         …
-#+END_QUOTE
+#+END_EXAMPLE
 
 *Create a makefile*
 
