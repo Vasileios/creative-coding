@@ -1394,6 +1394,8 @@ The next step is to link the object files into an executable
 
 ** makefile
 
+The makefile tells =make= how to compile and link a program.
+
 A makefile consists of rules with the following shape:
 
 #+BEGIN_QUOTE
