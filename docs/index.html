@@ -1414,6 +1414,23 @@ and give a name] then dired to the folder and create 5 source files:</p>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">% g++ -o main main.o Point.o Line.o</code></pre></div>
 <h2 id="makefile">makefile</h2>
 
+<p>A makefile consists of rules with the following shape:</p>
+
+<blockquote>
+<p>
+target … : prerequisites …
+</p>
+<p>
+        recipe
+</p>
+<p>
+        …
+</p>
+<p>
+        …
+</p>
+</blockquote>
+
 <p><strong>Create a makefile</strong></p>
 
 <p>open emacs and dired to the folder with the .cpp and .o files and
@@ -1473,6 +1490,8 @@ and also to see an example of how to set up a makefile for OpenGL and GLUT
 framewroks.</p>
 
 <p>SSH: git@github.com:Vasileios/Gpp.git</p>
+
+<p>for more info see <a href="https://www.gnu.org/software/make/manual/make.html" title="GNU makefile" target="_blank">GNU makefile</a></p>
 
 <h2 id="cmake">cmake</h2>
 

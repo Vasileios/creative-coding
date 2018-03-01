@@ -1394,6 +1394,15 @@ The next step is to link the object files into an executable
 
 ** makefile
 
+A makefile consists of rules with the following shape:
+
+#+BEGIN_QUOTE
+target … : prerequisites …
+        recipe
+        …
+        …
+#+END_QUOTE
+
 *Create a makefile*
 
 open emacs and dired to the folder with the .cpp and .o files and
@@ -1452,6 +1461,9 @@ and also to see an example of how to set up a makefile for OpenGL and GLUT
 framewroks.
 
 SSH: git@github.com:Vasileios/Gpp.git
+
+
+for more info see [[https://www.gnu.org/software/make/manual/make.html][GNU makefile]]
 
 **  cmake
 
