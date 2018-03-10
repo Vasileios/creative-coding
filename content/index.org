@@ -1425,15 +1425,15 @@ Compiler Flags
 
 =CompFL = -Wall -g=
 
- - Wall: This enables all the warnings about constructions that some
+ - -Wall: This enables all the warnings about constructions that some
 users consider questionable, and that are easy to avoid (or modify to
 prevent the warning), even in conjunction with macros. This also
 enables some language-specific warnings described in C++ Dialect
 Options and Objective-C and Objective-C++ Dialect Options.
 
- - W: This enables some extra warning flags that are not enabled by Wall. 
+ - -W or -Wextra: This enables some extra warning flags that are not enabled by Wall. 
 
- - Werror: Make the specified warning into an error. 
+ - -Werror: Make the specified warning into an error. 
 
 
 
