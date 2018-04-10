@@ -109,7 +109,7 @@ Pbind Pattern
 
 *Σύνθεση ήχου σε πραγματικό χρόνο από δεδομένα περιγραφής μαγνητικών καταιγίδων.*
 
-<p><var>Β. Αγιομυργιανάκης<var><sup>1</></var> , <var>Φ.Α. Μεταλληνού<var><sup>2</></var> ,<var>Γ. Ζάννος<var><sup>1</></var></p> 
+<p><var>Β. Αγιομυργιανάκης<var><sup>1</></var> , <var>Φ.Α. Μεταλληνού<var><sup>2</></var> ,<var>Γ. Ζάννος<var><sup>1</></var></p>
 
 1. Τμήμα Τεχνών Ήχου και Εικόνας, Ιόνιο Πανεπιστήμιο.
 2. Ινστιτούτο Αστρονομίας, Αστροφυσικής, Διαστημικών Εφαρμογών και Τηλεπισκόπισης, Εθνικό Αστεροσκοπείο Αθηνών.
@@ -383,6 +383,10 @@ Click the link on the right panel to watch a screencast of the gameplay.
 
 #+BEGIN_QUOTE
 [[https://www.youtube.com/watch?v=Hizd1t4ne7k][Aranea game play]]
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+[[https://basmyr.bandcamp.com/releases][Aranea soundtrack]]
 #+END_QUOTE
 
 In my portfolio work of creative responses to text, I thought it would
@@ -1433,9 +1437,9 @@ prevent the warning), even in conjunction with macros. This also
 enables some language-specific warnings described in C++ Dialect
 Options and Objective-C and Objective-C++ Dialect Options.
 
- - -W or -Wextra: This enables some extra warning flags that are not enabled by Wall. 
+ - -W or -Wextra: This enables some extra warning flags that are not enabled by Wall.
 
- - -Werror: Make the specified warning into an error. 
+ - -Werror: Make the specified warning into an error.
 
 
 
