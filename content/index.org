@@ -3175,7 +3175,7 @@ created directory Weaving-voices
 transfering files from mac to raspberry
 
 #+BEGIN_SRC shell
-$ rsync -avP sounds/ pi@192.168.1.96:~/sounds/voices/voicesA/
+$ onedirup~> rsync -avP a_folder_inside_this_dir/ pi@192.168.1.96:~/dir/folder/
 #+END_SRC
 
 Unfortunatelly it doesnt work with the name of the raspberry instead you need to find the ip of raspberry. To find the ip ssh to your raspberry and type:
