@@ -3295,6 +3295,60 @@ These are the output values of 12 capacitive touch inputs
 - 10 = 1024
 - 11 = 2048
 
+** install arduino on raspberrypi3
+
+first update and upgrade raspberry
+
+#+BEGIN_EXAMPLE
+$-> sudo apt-get update && sudo apt-get upgrade
+#+END_EXAMPLE
+
+then install arduino
+
+#+BEGIN_EXAMPLE
+$-> sudo apt-get install arduino
+#+END_EXAMPLE
+
+install serial port
+
+go and open the file config.txt on /boot/ on you raspberry and enable
+serial port
+
+Enable serial port usage by adding  enable_uart=1 to the file
+/boot/config.txt.
+
+then run =nmp install serialport=
+
+update nodejs 9 version
+
+#+BEGIN_EXAMPLE
+$ curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+#+END_EXAMPLE
+
+install nodejs 9 v
+
+#+BEGIN_EXAMPLE
+$ sudo apt-get install -y nodejs
+#+END_EXAMPLE
+
+in case you have node installed you need to remove it and install
+nodejs again
+
+#+BEGIN_EXAMPLE
+$ sudo apt remove node
+$ sudo apt remove nodejs
+$ sudo apt install nodejs
+$ sudo reboot
+#+END_EXAMPLE
+
+install osc-js
+#+BEGIN_EXAMPLE
+$ npm i osc-js
+#+END_EXAMPLE
+
+*tip on serialport - server.js*
+=parser: SerialPort.parsers.Readline=
+
 ** Chage permission to read-only files
 
 #+BEGIN_QUOTE

@@ -3168,6 +3168,55 @@ sudo python simpletest.py</code></pre></div>
 <li>11 = 2048</li>
 </ul>
 
+<h2 id="install-arduino-on-raspberrypi3">install arduino on raspberrypi3</h2>
+
+<p>first update and upgrade raspberry</p>
+
+<pre><code>$-&gt; sudo apt-get update &amp;&amp; sudo apt-get upgrade
+</code></pre>
+
+<p>then install arduino</p>
+
+<pre><code>$-&gt; sudo apt-get install arduino
+</code></pre>
+
+<p>install serial port</p>
+
+<p>go and open the file config.txt on <em>boot</em> on you raspberry and enable
+serial port</p>
+
+<p>Enable serial port usage by adding  enable_uart=1 to the file
+/boot/config.txt.</p>
+
+<p>then run <code>nmp install serialport</code></p>
+
+<p>update nodejs 9 version</p>
+
+<pre><code>$ curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+</code></pre>
+
+<p>install nodejs 9 v</p>
+
+<pre><code>$ sudo apt-get install -y nodejs
+</code></pre>
+
+<p>in case you have node installed you need to remove it and install
+nodejs again</p>
+
+<pre><code>$ sudo apt remove node
+$ sudo apt remove nodejs
+$ sudo apt install nodejs
+$ sudo reboot
+</code></pre>
+
+<p>install osc-js</p>
+
+<pre><code>$ npm i osc-js
+</code></pre>
+
+<p>*tip on serialport - server.js*
+=parser: SerialPort.parsers.Readline=</p>
+
 <h2 id="chage-permission-to-read-only-files">Chage permission to read-only files</h2>
 
 <blockquote>
