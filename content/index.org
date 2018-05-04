@@ -3314,7 +3314,7 @@ install serial port
 go and open the file config.txt on /boot/ on you raspberry and enable
 serial port
 
-Enable serial port usage by adding  enable_uart=1 to the file
+Enable serial port usage by adding  =enable_uart=1= to the file
 /boot/config.txt.
 
 then run =nmp install serialport=
