@@ -3331,7 +3331,7 @@ install nodejs 9 v
 $ sudo apt-get install -y nodejs
 #+END_EXAMPLE
 
-in case you have node installed you need to remove it and install
+in case you have already installed node you need to remove it and install
 nodejs again
 
 #+BEGIN_EXAMPLE
@@ -3341,9 +3341,15 @@ $ sudo apt install nodejs
 $ sudo reboot
 #+END_EXAMPLE
 
-install osc-js
+install johny-five
 #+BEGIN_EXAMPLE
-$ npm i osc-js
+nmp install johnny-five
+#+END_EXAMPLE
+
+install osc
+
+#+BEGIN_EXAMPLE
+$ npm intall osc
 #+END_EXAMPLE
 
 *tip on serialport - server.js*
