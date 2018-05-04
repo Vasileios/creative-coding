@@ -3272,6 +3272,29 @@ install osc
 
 <p><strong>run arduino ide on raspberrypi</strong></p>
 
+<p>install dependencies</p>
+
+<blockquote>
+<p>
+install dependencies
+</p>
+</blockquote>
+
+<pre><code>sudo apt-get install avr-libc libftdi1 avrdude librxtx-java
+</code></pre>
+
+<blockquote>
+<p>
+find and install java
+</p>
+</blockquote>
+
+<pre><code>apt-cache search java | grep openjdk
+</code></pre>
+
+<pre><code>sudo apt-get install openjdk-9-jre
+</code></pre>
+
 <p>Makefile for Arduino sketches. It defines the workflows for compiling code, flashing it to Arduino and even communicating through Serial.</p>
 
 <p>https://github.com/sudar/Arduino-Makefile</p>

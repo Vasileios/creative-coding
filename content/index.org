@@ -3374,7 +3374,28 @@ $ npm intall osc
 
 *run arduino ide on raspberrypi*
 
-Makefile for Arduino sketches. It defines the workflows for compiling code, flashing it to Arduino and even communicating through Serial. 
+install dependencies
+#+BEGIN_QUOTE
+install dependencies
+#+END_QUOTE
+
+#+BEGIN_EXAMPLE
+sudo apt-get install avr-libc libftdi1 avrdude librxtx-java
+#+END_EXAMPLE
+
+#+BEGIN_QUOTE
+find and install java
+#+END_QUOTE
+
+#+BEGIN_EXAMPLE
+apt-cache search java | grep openjdk
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+sudo apt-get install openjdk-9-jre
+#+END_EXAMPLE
+
+Makefile for Arduino sketches. It defines the workflows for compiling code, flashing it to Arduino and even communicating through Serial.
 
 https://github.com/sudar/Arduino-Makefile
 #+BEGIN_QUOTE
