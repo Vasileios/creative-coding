@@ -3172,10 +3172,22 @@ sudo python simpletest.py</code></pre></div>
 
 <p>first update and upgrade raspberry</p>
 
+<blockquote>
+<p>
+update and upgrade raspberry
+</p>
+</blockquote>
+
 <pre><code>$-&gt; sudo apt-get update &amp;&amp; sudo apt-get upgrade
 </code></pre>
 
 <p>then install arduino</p>
+
+<blockquote>
+<p>
+install arduino
+</p>
+</blockquote>
 
 <pre><code>$-&gt; sudo apt-get install arduino
 </code></pre>
@@ -3188,20 +3200,44 @@ serial port</p>
 <p>Enable serial port usage by adding  <code>enable_uart=1</code> to the file
 /boot/config.txt.</p>
 
+<blockquote>
+<p>
+install serial port
+</p>
+</blockquote>
+
 <p>then run <code>nmp install serialport</code></p>
 
 <p>update nodejs 9 version</p>
+
+<blockquote>
+<p>
+update nodejs to 9 version
+</p>
+</blockquote>
 
 <pre><code>$ curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
 </code></pre>
 
 <p>install nodejs 9 v</p>
 
+<blockquote>
+<p>
+install nodejs
+</p>
+</blockquote>
+
 <pre><code>$ sudo apt-get install -y nodejs
 </code></pre>
 
 <p>in case you have already installed node you need to remove it and install
 nodejs again</p>
+
+<blockquote>
+<p>
+remove node and reinstall nodejs
+</p>
+</blockquote>
 
 <pre><code>$ sudo apt remove node
 $ sudo apt remove nodejs
@@ -3211,10 +3247,22 @@ $ sudo reboot
 
 <p>install johny-five</p>
 
+<blockquote>
+<p>
+install johny-five
+</p>
+</blockquote>
+
 <pre><code>nmp install johnny-five
 </code></pre>
 
 <p>install osc</p>
+
+<blockquote>
+<p>
+install osc
+</p>
+</blockquote>
 
 <pre><code>$ npm intall osc
 </code></pre>
@@ -3228,6 +3276,12 @@ $ sudo reboot
 
 <p>https://github.com/sudar/Arduino-Makefile</p>
 
+<blockquote>
+<p>
+install arduino-mk
+</p>
+</blockquote>
+
 <pre><code>sudo apt-get install arduino-mk
 </code></pre>
 
@@ -3236,6 +3290,12 @@ $ sudo reboot
 <p>https://www.emacswiki.org/emacs/ArduinoSupport</p>
 
 <p>Create simple Makefile in the same directory as your .ino file. Contents can be as simple as this (only the include is truly necessary, all other lines can be omitted for simple sketches):</p>
+
+<blockquote>
+<p>
+makefile arduino emacs
+</p>
+</blockquote>
 
 <pre><code>BOARD_TAG = uno (see make show_boards)
 ARDUINO_LIBS = &lt;space separated list of libs, arduino.mk will try to guess&gt;

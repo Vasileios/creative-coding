@@ -3298,13 +3298,17 @@ These are the output values of 12 capacitive touch inputs
 ** install arduino on raspberrypi3
 
 first update and upgrade raspberry
-
+#+BEGIN_QUOTE
+update and upgrade raspberry
+#+END_QUOTE
 #+BEGIN_EXAMPLE
 $-> sudo apt-get update && sudo apt-get upgrade
 #+END_EXAMPLE
 
 then install arduino
-
+#+BEGIN_QUOTE
+install arduino
+#+END_QUOTE
 #+BEGIN_EXAMPLE
 $-> sudo apt-get install arduino
 #+END_EXAMPLE
@@ -3316,24 +3320,32 @@ serial port
 
 Enable serial port usage by adding  =enable_uart=1= to the file
 /boot/config.txt.
-
+#+BEGIN_QUOTE
+install serial port
+#+END_QUOTE
 then run =nmp install serialport=
 
 update nodejs 9 version
-
+#+BEGIN_QUOTE
+update nodejs to 9 version
+#+END_QUOTE
 #+BEGIN_EXAMPLE
 $ curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
 #+END_EXAMPLE
 
 install nodejs 9 v
-
+#+BEGIN_QUOTE
+install nodejs
+#+END_QUOTE
 #+BEGIN_EXAMPLE
 $ sudo apt-get install -y nodejs
 #+END_EXAMPLE
 
 in case you have already installed node you need to remove it and install
 nodejs again
-
+#+BEGIN_QUOTE
+remove node and reinstall nodejs
+#+END_QUOTE
 #+BEGIN_EXAMPLE
 $ sudo apt remove node
 $ sudo apt remove nodejs
@@ -3342,12 +3354,17 @@ $ sudo reboot
 #+END_EXAMPLE
 
 install johny-five
+#+BEGIN_QUOTE
+install johny-five
+#+END_QUOTE
 #+BEGIN_EXAMPLE
 nmp install johnny-five
 #+END_EXAMPLE
 
 install osc
-
+#+BEGIN_QUOTE
+install osc
+#+END_QUOTE
 #+BEGIN_EXAMPLE
 $ npm intall osc
 #+END_EXAMPLE
@@ -3360,7 +3377,9 @@ $ npm intall osc
 Makefile for Arduino sketches. It defines the workflows for compiling code, flashing it to Arduino and even communicating through Serial. 
 
 https://github.com/sudar/Arduino-Makefile
-
+#+BEGIN_QUOTE
+install arduino-mk
+#+END_QUOTE
 #+BEGIN_EXAMPLE
 sudo apt-get install arduino-mk
 #+END_EXAMPLE
@@ -3371,6 +3390,9 @@ https://www.emacswiki.org/emacs/ArduinoSupport
 
 Create simple Makefile in the same directory as your .ino file. Contents can be as simple as this (only the include is truly necessary, all other lines can be omitted for simple sketches):
 
+#+BEGIN_QUOTE
+makefile arduino emacs
+#+END_QUOTE
 #+BEGIN_EXAMPLE
 BOARD_TAG = uno (see make show_boards)
 ARDUINO_LIBS = <space separated list of libs, arduino.mk will try to guess>
