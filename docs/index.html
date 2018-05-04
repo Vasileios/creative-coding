@@ -3222,6 +3222,27 @@ $ sudo reboot
 <p>*tip on serialport - server.js*
 =parser: SerialPort.parsers.Readline=</p>
 
+<p><strong>run arduino ide on raspberrypi</strong></p>
+
+<p>Makefile for Arduino sketches. It defines the workflows for compiling code, flashing it to Arduino and even communicating through Serial.</p>
+
+<p>https://github.com/sudar/Arduino-Makefile</p>
+
+<pre><code>sudo apt-get install arduino-mk
+</code></pre>
+
+<p>Run arduino makefile on emacs</p>
+
+<p>https://www.emacswiki.org/emacs/ArduinoSupport</p>
+
+<p>Create simple Makefile in the same directory as your .ino file. Contents can be as simple as this (only the include is truly necessary, all other lines can be omitted for simple sketches):</p>
+
+<pre><code>BOARD_TAG = uno (see make show_boards)
+ARDUINO_LIBS = &lt;space separated list of libs, arduino.mk will try to guess&gt;
+MONITOR_PORT = /dev/ttyUSB0 (will be automatically guessed from IDE prefs)
+include /usr/share/arduino/Arduino.mk
+</code></pre>
+
 <h2 id="chage-permission-to-read-only-files">Chage permission to read-only files</h2>
 
 <blockquote>

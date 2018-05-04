@@ -3355,6 +3355,29 @@ $ npm intall osc
 *tip on serialport - server.js*
 =parser: SerialPort.parsers.Readline=
 
+*run arduino ide on raspberrypi*
+
+Makefile for Arduino sketches. It defines the workflows for compiling code, flashing it to Arduino and even communicating through Serial. 
+
+https://github.com/sudar/Arduino-Makefile
+
+#+BEGIN_EXAMPLE
+sudo apt-get install arduino-mk
+#+END_EXAMPLE
+
+Run arduino makefile on emacs
+
+https://www.emacswiki.org/emacs/ArduinoSupport
+
+Create simple Makefile in the same directory as your .ino file. Contents can be as simple as this (only the include is truly necessary, all other lines can be omitted for simple sketches):
+
+#+BEGIN_EXAMPLE
+BOARD_TAG = uno (see make show_boards)
+ARDUINO_LIBS = <space separated list of libs, arduino.mk will try to guess>
+MONITOR_PORT = /dev/ttyUSB0 (will be automatically guessed from IDE prefs)
+include /usr/share/arduino/Arduino.mk
+#+END_EXAMPLE
+
 ** Chage permission to read-only files
 
 #+BEGIN_QUOTE
