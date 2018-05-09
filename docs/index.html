@@ -692,6 +692,102 @@ $ sudo apt-get install tmux</code></pre></div>
 
 <p>and here <a href="https://gist.github.com/MohamedAlaa/2961058" title="tmux-cheatsheet" target="_blank">tmux-cheatsheet</a></p>
 
+<h2 id="tmux-for-collaborative-editing">tmux for collaborative editing</h2>
+
+<p>Prerequisites
+tmux version 1.6 or later
+emacs version 23 or later</p>
+
+<p>Put this at the end of ~/.emacs if it’s not already there:</p>
+
+<blockquote>
+<p>
+Put this at the end of ~/.emacs if it’s not already there:
+</p>
+</blockquote>
+
+<pre><code>(require 'server)
+    ;; some systems don't auto-detect the socket dir, so specify it here and for the client:
+    (setq server-socket-dir &quot;/tmp/emacs-shared&quot;)
+    (server-start)
+</code></pre>
+
+<pre><code>;; highlight-changes-mode is very handy when collaborating:
+    (global-highlight-changes-mode t)
+    ;; Keys for moving back and forth between changes, set these to what
+    ;; you prefer:
+    (global-set-key (kbd &quot;&lt;f5&gt;&quot;) 'highlight-changes-previous-change)
+    (global-set-key (kbd &quot;&lt;f6&gt;&quot;) 'highlight-changes-next-change)
+    (global-set-key (kbd &quot;&lt;f7&gt;&quot;) 'highlight-changes-rotate-faces)
+    (global-set-key (kbd &quot;&lt;f8&gt;&quot;) 'highlight-changes-remove-highlight)
+</code></pre>
+
+<p>The, assuming all concerned users are members of the group users (or some other group if you prefer):</p>
+
+<blockquote>
+<p>
+create dir tmux-shared in <em>tmp</em> 
+</p>
+</blockquote>
+
+<pre><code>$ mkdir /tmp/tmux-shared
+$ chgrp users /tmp/tmux-shared
+$ chmod g+ws  /tmp/tmux-shared
+</code></pre>
+
+<p>Start up the host
+Assuming the previous step is done, start up tmux with that directory:</p>
+
+<blockquote>
+<p>
+Start up the host
+</p>
+</blockquote>
+
+<pre><code>$ tmux -S /tmp/tmux-shared/myshare
+</code></pre>
+
+<p>This will log you into a new shell (you can exit as usual with Ctrl+D), from here you start up emacs:</p>
+
+<blockquote>
+<p>
+start up emacs:
+</p>
+</blockquote>
+
+<pre><code>$ emacs
+</code></pre>
+
+<p>on emacs do M-x:server-start</p>
+
+<blockquote>
+<p>
+on emacs do M-x:server-start
+</p>
+</blockquote>
+
+<p><strong>Connecting to the host</strong></p>
+
+<blockquote>
+<p>
+Connecting to the host
+</p>
+</blockquote>
+
+<pre><code>$ tmux -S /tmp/tmux-shared/myshare
+</code></pre>
+
+<p>and then do</p>
+
+<blockquote>
+<p>
+and then do
+</p>
+</blockquote>
+
+<pre><code>$ emacsclient --tty --socket-name /tmp/emacs-shared/server
+</code></pre>
+
 <h2 id="switch-to-zsh">Switch to <code>zsh</code></h2>
 
 <p>The <strong>Z shell</strong> (zsh) is a Unix shell [...]. Zsh can be thought of as an extended Bourne shell with a large number of improvements, including some features of bash, ksh, and tcsh<sup class="footnote-ref" id="fnref:https-gist-github-com-derhuerst-12a1558a4b408b3b2b6e"><a rel="footnote" href="#fn:https-gist-github-com-derhuerst-12a1558a4b408b3b2b6e">1</a></sup>.</p>
