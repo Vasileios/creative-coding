@@ -642,14 +642,14 @@ Put this at the end of ~/.emacs if it’s not already there:
 The, assuming all concerned users are members of the group users (or some other group if you prefer):
 
 #+BEGIN_QUOTE
-create dir tmux-shared in /tmp/ 
+create dir tmux-shared in /tmp/
 #+END_QUOTE
 #+BEGIN_EXAMPLE
 $ mkdir /tmp/tmux-shared
 $ chgrp users /tmp/tmux-shared
 $ chmod g+ws  /tmp/tmux-shared
 #+END_EXAMPLE
-   
+
 Start up the host
 Assuming the previous step is done, start up tmux with that directory:
 
@@ -3454,6 +3454,9 @@ $ npm intall osc
 
 *run arduino ide on raspberrypi*
 
+#+BEGIN_QUOTE
+arduino ide on raspberrypi
+#+END_QUOTE
 install dependencies
 #+BEGIN_QUOTE
 install dependencies
