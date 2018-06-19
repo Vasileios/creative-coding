@@ -2840,7 +2840,7 @@ Introduction to Raspberry Pi
 
   Artistic methods and techniques which give to performers (usually dancers or musicians) control of their medium in real time.
 
- wireless sensors found both in the body of an performer and in the
+ wireless sensors found both in the body of a performer and in the
  theater.
 
 ** Sensors
