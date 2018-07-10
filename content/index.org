@@ -2145,6 +2145,13 @@ This experiment tested on python 3.5 and emacs - ipython notebook (ein).
 
 For ipython notebook installation see this webpage [[https://ipython.org][ipython]].
 
+to update to python 3.6 open shel and run the below command:
+
+#+BEGIN_QUOTE
+# Create a new enviroment
+
+conda create --name py36 python=3.6
+#+END_QUOTE 
 To run this example you need to install some external modes
 
 [[https://pypi.python.org/pypi/requests/][requests]]
