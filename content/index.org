@@ -1657,6 +1657,43 @@ Two other key components are [[https://jupyter.org][Jupyter Notebooks]] and [[ht
 Jupyter Notebooks, originally called
 IPython Notebooks,and it commonly used for improving the reproducibility and accessiblity of scientific research.
 
+To activate another kernel environment with python 3 do the following:
+
+First check jupyter-ipython kernel list by typing the following:
+
+#+BEGIN_QUOTE
+Check python kernel list
+#+END_QUOTE
+
+#+BEGIN_SRC sh
+jupyter kernelspec list
+#+END_SRC
+
+in case you dont see python3 or other python kernel you can create a new one.
+
+To create a new environment do the following:
+
+#+BEGIN_QUOTE
+To create a new environment do the following:
+#+END_QUOTE
+
+#+BEGIN_SRC sh
+conda create -n py36 python=3.6
+source activate py36
+python -m ipykernel install --name py36
+#+END_SRC
+
+then type the below to begin an ipython session:
+
+#+BEGIN_QUOTE
+type the below to begin an ipython session:
+#+END_QUOTE
+
+#+BEGIN_SRC sh
+jupyter notebook
+#+END_SRC
+
+Have fun!!
 
 ** Other math/science/data oriented Python tools
 
