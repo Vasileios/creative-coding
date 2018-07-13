@@ -2220,7 +2220,69 @@ Choose <strong>Python</strong>
 
 <h1 id="javascript">Javascript</h1>
 
-<p>To run a server locally open terminal and run the below command:</p>
+<p>Javascript is the tool to work with browser and used also for interactive
+programming purposes.</p>
+
+<p><strong>Getting started with Javascript</strong></p>
+
+<p>Learn about javascript <a href="https://www.w3schools.com/jS/default.asp" title="here" target="_blank">here</a> and also <a href="https://www.codecademy.com/learn/learn-javascript" title="here" target="_blank">here</a></p>
+
+<p>Lets get started with p5.js examples such as <a href="https://p5js.org/examples/image-pointillism.html" title="pointillism" target="_blank">pointillism</a></p>
+
+<p>Create an html file i.e index.html
+and copy paste the below code:</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">html</span><span class="p"></span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p"></span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p"></span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">language</span><span class="o">=</span><span class="s">&#34;javascript&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;libraries/p5.js&#34;</span><span class="p"></span><span class="p">&gt;&lt;</span><span class="p">/</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="c">&lt;!-- uncomment lines below to include extra p5 libraries --&gt;</span>
+  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">language</span><span class="o">=</span><span class="s">&#34;javascript&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;libraries/p5.dom.js&#34;</span><span class="p"></span><span class="p">&gt;&lt;</span><span class="p">/</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">language</span><span class="o">=</span><span class="s">&#34;javascript&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;libraries/p5.sound.js&#34;</span><span class="p"></span><span class="p">&gt;&lt;</span><span class="p">/</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">language</span><span class="o">=</span><span class="s">&#34;javascript&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;sketch.js&#34;</span><span class="p"></span><span class="p">&gt;&lt;</span><span class="p">/</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="c">&lt;!-- this line removes any default padding and style. you might only need one of these values set. --&gt;</span>
+  <span class="p">&lt;</span><span class="nt">style</span><span class="p"></span><span class="p">&gt;</span> <span class="nt">body</span> <span class="p">{</span><span class="k">padding</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span> <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span><span class="p">;}</span> <span class="p">&lt;</span><span class="p">/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="p">/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">body</span><span class="p"></span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="p">/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="p">/</span><span class="nt">html</span><span class="p">&gt;</span></code></pre></div>
+<p>then create a javascript file called pointillism.js and insert the
+below code:</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">//pointillism example p5
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">img</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">smallPoint</span><span class="p">,</span> <span class="nx">largePoint</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">preload</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">img</span> <span class="o">=</span> <span class="nx">loadImage</span><span class="p">(</span><span class="s2">&#34;assets/myPhoto.jpg&#34;</span><span class="p">);</span><span class="c1">//use low res (72) photo
+</span><span class="c1"></span><span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">createCanvas</span><span class="p">(</span><span class="mi">720</span><span class="p">,</span> <span class="mi">400</span><span class="p">);</span>
+    <span class="nx">smallPoint</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="nx">largePoint</span> <span class="o">=</span> <span class="mi">40</span><span class="p">;</span>
+    <span class="nx">imageMode</span><span class="p">(</span><span class="nx">CENTER</span><span class="p">);</span>
+    <span class="nx">noStroke</span><span class="p">();</span>
+    <span class="nx">background</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span>
+    <span class="nx">img</span><span class="p">.</span><span class="nx">loadPixels</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">draw</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">pointillize</span> <span class="o">=</span> <span class="nx">map</span><span class="p">(</span><span class="nx">mouseX</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">width</span><span class="p">,</span> <span class="nx">smallPoint</span><span class="p">,</span> <span class="nx">largePoint</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">floor</span><span class="p">(</span><span class="nx">random</span><span class="p">(</span><span class="nx">img</span><span class="p">.</span><span class="nx">width</span><span class="p">));</span>
+    <span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">floor</span><span class="p">(</span><span class="nx">random</span><span class="p">(</span><span class="nx">img</span><span class="p">.</span><span class="nx">height</span><span class="p">));</span>
+    <span class="kd">var</span> <span class="nx">pix</span> <span class="o">=</span> <span class="nx">img</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">);</span>
+    <span class="nx">fill</span><span class="p">(</span><span class="nx">pix</span><span class="p">,</span> <span class="mi">128</span><span class="p">);</span>
+    <span class="nx">ellipse</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">pointillize</span><span class="p">,</span> <span class="nx">pointillize</span><span class="p">);</span>
+<span class="p">}</span></code></pre></div>
+<p>You need also to create a floder named 'assets' inside your Js project
+with a myphoto.jpg (choose a photo you like and named it myphoto.jpg
+or just go and change the name inside the pointilism.js)</p>
+
+<p>*Run*
+To see the results in your browser just open the insex.html file with
+the browser.</p>
+
+<p>Alternative, you can run a server locally. To do this open terminal and type the below command:</p>
 
 <blockquote>
 <p>
@@ -2233,6 +2295,8 @@ Open terminal and type the below command
 </blockquote>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">python -m http.server</code></pre></div>
 <h1 id="openframeworks">openFrameworks</h1>
+
+<p>Another way to</p>
 
 <h2 id="msafluids-kinect">MSAFluids-Kinect</h2>
 
