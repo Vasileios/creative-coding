@@ -2227,7 +2227,11 @@ programming purposes.</p>
 
 <p>Learn about javascript <a href="https://www.w3schools.com/jS/default.asp" title="here" target="_blank">here</a> and also <a href="https://www.codecademy.com/learn/learn-javascript" title="here" target="_blank">here</a></p>
 
-<p>Lets get started with p5.js examples such as <a href="https://p5js.org/examples/image-pointillism.html" title="pointillism" target="_blank">pointillism</a></p>
+<p>Lets get started with p5.js example such as <a href="https://p5js.org/examples/image-pointillism.html" title="pointillism" target="_blank">pointillism</a></p>
+
+<p>p5.js is a JS client-side library for creating graphic and interactive experiences, based on the core principles of Processing.</p>
+
+<p>for more info see <a href="https://github.com/processing/p5.js" title="here" target="_blank">here</a></p>
 
 <p>Create an html file i.e index.html
 and copy paste the below code:</p>
@@ -2275,11 +2279,20 @@ below code:</p>
     <span class="nx">ellipse</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">pointillize</span><span class="p">,</span> <span class="nx">pointillize</span><span class="p">);</span>
 <span class="p">}</span></code></pre></div>
 <p>You need also to create a floder named 'assets' inside your Js project
-with a myphoto.jpg (choose a photo you like and named it myphoto.jpg
-or just go and change the name inside the pointilism.js)</p>
+with a myphoto.jpg (you can choose the photo you desired and named it myphoto.jpg
+or just go and change the name inside the pointillism.js)</p>
 
-<p>*Run*
-To see the results in your browser just open the insex.html file with
+<blockquote>
+<p>
+Change the name of the .jpg file: pointillism.js
+</p>
+</blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">preload</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">img</span> <span class="o">=</span> <span class="nx">loadImage</span><span class="p">(</span><span class="s2">&#34;assets/myPhoto.jpg&#34;</span><span class="p">);</span><span class="c1">//use low res (72) photo
+</span><span class="c1"></span><span class="p">}</span></code></pre></div>
+<p><strong>Run</strong></p>
+
+<p>To see the results in your browser just open the insex.html file with
 the browser.</p>
 
 <p>Alternative, you can run a server locally. To do this open terminal and type the below command:</p>

@@ -2151,7 +2151,7 @@ to update to python 3.6 open shel and run the below command:
 # Create a new enviroment
 
 conda create --name py36 python=3.6
-#+END_QUOTE 
+#+END_QUOTE
 To run this example you need to install some external modes
 
 [[https://pypi.python.org/pypi/requests/][requests]]
@@ -2218,11 +2218,15 @@ Watch [[https://youtu.be/FDFaKzh0WLg][here]] a screen capture
 Javascript is the tool to work with browser and used also for interactive
 programming purposes.
 
- *Getting started with Javascript* 
+ *Getting started with Javascript*
 
 Learn about javascript [[https://www.w3schools.com/jS/default.asp][here]] and also [[https://www.codecademy.com/learn/learn-javascript][here]]
 
-Lets get started with p5.js examples such as [[https://p5js.org/examples/image-pointillism.html][pointillism]]
+Lets get started with p5.js example such as [[https://p5js.org/examples/image-pointillism.html][pointillism]]
+
+p5.js is a JS client-side library for creating graphic and interactive experiences, based on the core principles of Processing.
+
+for more info see [[https://github.com/processing/p5.js][here]]
 
 Create an html file i.e index.html
 and copy paste the below code:
@@ -2281,10 +2285,21 @@ function draw() {
 #+END_SRC
 
 You need also to create a floder named 'assets' inside your Js project
-with a myphoto.jpg (choose a photo you like and named it myphoto.jpg
-or just go and change the name inside the pointilism.js)
+with a myphoto.jpg (you can choose the photo you desired and named it myphoto.jpg
+or just go and change the name inside the pointillism.js)
+
+#+BEGIN_QUOTE
+Change the name of the .jpg file: pointillism.js
+#+END_QUOTE
+
+#+BEGIN_SRC js
+function preload() {
+    img = loadImage("assets/myPhoto.jpg");//use low res (72) photo
+}
+#+END_SRC
 
 *Run*
+
 To see the results in your browser just open the insex.html file with
 the browser.
 
@@ -2300,7 +2315,7 @@ Open terminal and type the below command
 python -m http.server
 #+END_SRC
 
-Another way to 
+Another way to
 * openFrameworks
 
 ** MSAFluids-Kinect
