@@ -2213,6 +2213,19 @@ while True:
 
 Watch [[https://youtu.be/FDFaKzh0WLg][here]] a screen capture
 
+* Javascript
+
+To run a server locally open terminal and run the below command:
+
+#+BEGIN_QUOTE
+Run a local server with python
+
+Open terminal and type the below command
+#+END_QUOTE
+
+#+BEGIN_SRC sh
+python -m http.server
+#+END_SRC
 * openFrameworks
 
 ** MSAFluids-Kinect
