@@ -1107,9 +1107,9 @@ Then press M-x magit-remote-add
 add remote rep to master or origin
 
 
-Backup rep online in GIThub
+Backup rep online on Github
 
-First, create an ssh key to gain access into your repositories in Github
+First, create an ssh key to gain access into your repositories
 
  Concatanate keys on terminal
 

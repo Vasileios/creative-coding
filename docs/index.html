@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-	<meta name="generator" content="Hugo 0.34" />
+	<meta name="generator" content="Hugo 0.45.1" />
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -145,7 +145,8 @@ L-systems SuperCollider
 <p><aside class="code">
 L-system algorithm.
 </aside></p>
-<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">a</span> <span class="o">=</span> <span class="nx">LSys</span><span class="p">(</span><span class="s2">&#34;F&#34;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&#34;F&#34;</span> <span class="o">-&gt;</span><span class="s2">&#34;F+F--/]&amp;F+F&#34;</span><span class="p">,</span> <span class="s2">&#34;F&#34;</span> <span class="o">-&gt;</span> <span class="s2">&#34;]/F+&amp;FF+-&#34;</span><span class="p">]);</span></code></pre></div>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">a</span> <span class="o">=</span> <span class="nx">LSys</span><span class="p">(</span><span class="s2">&#34;F&#34;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&#34;F&#34;</span> <span class="o">-&gt;</span><span class="s2">&#34;F+F--/]&amp;F+F&#34;</span><span class="p">,</span> <span class="s2">&#34;F&#34;</span> <span class="o">-&gt;</span> <span class="s2">&#34;]/F+&amp;FF+-&#34;</span><span class="p">]);</span>
+</code></pre></div>
 <p><aside class="code">
 Mapping L-system's symbols to numbers SuperCollider.
 </aside></p>
@@ -159,10 +160,11 @@ mapping - Assosiations (relate two objects) can be created via the -> operator
            <span class="err">“</span><span class="nx">F</span><span class="err">”</span> <span class="o">-&gt;</span> <span class="mi">1</span><span class="p">,</span>
            <span class="err">“</span><span class="o">+</span><span class="err">”</span> <span class="o">-&gt;</span> <span class="mi">2</span><span class="p">,</span>
            <span class="err">“</span><span class="o">-</span><span class="err">“</span> <span class="o">-&gt;</span> <span class="mi">3</span><span class="p">,</span>
-           <span class="err">“</span><span class="err">/“ -&gt; 5,</span>
+           <span class="err">“/“ -&gt; 5,</span>
            <span class="err">“</span><span class="p">]</span><span class="err">”</span> <span class="o">-&gt;</span> <span class="mi">8</span><span class="p">,</span>
            <span class="err">“</span><span class="o">&amp;</span><span class="err">”</span> <span class="o">-&gt;</span> <span class="mi">13</span>
-           <span class="p">];</span></code></pre></div>
+           <span class="p">];</span>
+</code></pre></div>
 <p>Finally, I have used patterns in SuperCollider to manipulate the arguments of the synth.</p>
 
 <p><aside class="code">
@@ -176,7 +178,8 @@ Pbind Pattern
 </blockquote>
 <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"> <span class="nx">Pbind</span><span class="p">(</span><span class="err">\</span><span class="nx">ls</span><span class="p">,</span> <span class="err">\</span><span class="nx">instrument</span><span class="p">,</span> <span class="err">\</span><span class="nx">synth01</span><span class="p">,</span>
  <span class="err">\</span><span class="nx">volume</span><span class="p">,</span><span class="nx">Pseq</span><span class="p">(</span><span class="o">~</span><span class="nx">ls</span><span class="o">*</span><span class="mf">0.05</span><span class="p">),</span>
- <span class="err">\</span><span class="nx">frequency</span><span class="p">,</span> <span class="nx">Pseq</span><span class="p">(</span><span class="o">~</span><span class="nx">ls</span><span class="o">*</span><span class="mi">440</span><span class="p">)).</span><span class="nx">play</span><span class="p">;</span></code></pre></div>
+ <span class="err">\</span><span class="nx">frequency</span><span class="p">,</span> <span class="nx">Pseq</span><span class="p">(</span><span class="o">~</span><span class="nx">ls</span><span class="o">*</span><span class="mi">440</span><span class="p">)).</span><span class="nx">play</span><span class="p">;</span>
+</code></pre></div>
 <h2 id="astronomy-and-sound-music-image">Astronomy and sound/music-image</h2>
 
 <ul>
@@ -355,7 +358,8 @@ Addison-Wesley.</p>
 		<span class="mf">0.1</span><span class="p">.</span><span class="nx">wait</span><span class="p">;</span><span class="c1">//100  miliseconds
 </span><span class="c1"></span>	<span class="p">}</span>
 
-<span class="p">)</span></code></pre></div>
+<span class="p">)</span>
+</code></pre></div>
 <h2 id="symbolism-in-creative-writing">Symbolism in creative writing</h2>
 
 <p>PhD thesis title: <strong>Audiovisual works in response to creative writing</strong></p>
@@ -790,7 +794,7 @@ and then do
 
 <h2 id="switch-to-zsh">Switch to <code>zsh</code></h2>
 
-<p>The <strong>Z shell</strong> (zsh) is a Unix shell [...]. Zsh can be thought of as an extended Bourne shell with a large number of improvements, including some features of bash, ksh, and tcsh<sup class="footnote-ref" id="fnref:https-gist-github-com-derhuerst-12a1558a4b408b3b2b6e"><a rel="footnote" href="#fn:https-gist-github-com-derhuerst-12a1558a4b408b3b2b6e">1</a></sup>.</p>
+<p>The <strong>Z shell</strong> (zsh) is a Unix shell [...]. Zsh can be thought of as an extended Bourne shell with a large number of improvements, including some features of bash, ksh, and tcsh<sup class="footnote-ref" id="fnref:https-gist-github-com-derhuerst-12a1558a4b408b3b2b6e"><a href="#fn:https-gist-github-com-derhuerst-12a1558a4b408b3b2b6e">1</a></sup>.</p>
 
 <h2 id="installing-zsh-on-linux">Installing zsh on Linux</h2>
 
@@ -1187,9 +1191,9 @@ Magit
 
 <p>add remote rep to master or origin</p>
 
-<p>Backup rep online in GIThub</p>
+<p>Backup rep online on Github</p>
 
-<p>First, create an ssh key to gain access into your repositories in Github</p>
+<p>First, create an ssh key to gain access into your repositories</p>
 
 <p>Concatanate keys on terminal</p>
 
@@ -1471,7 +1475,7 @@ G++ Hello_World
 </span><span class="cp"></span><span class="n">using</span> <span class="n">namespace</span> <span class="n">std</span><span class="p">;</span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="sa"></span><span class="s">&#34;hello world!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;hello world!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span></code></pre></div>
 <p>The next step is to create a <strong>makefile</strong>.</p>
@@ -1667,7 +1671,7 @@ Python
  <span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
      <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
      <span class="k">while</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
-         <span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+         <span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
          <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
      <span class="k">print</span><span class="p">()</span>
  <span class="n">fib</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span></code></pre></div>
@@ -1887,7 +1891,8 @@ Choose <strong>SuperCollider</strong>
 </span><span class="c1"></span>	<span class="p">},</span>
 	<span class="s1">&#39;/print&#39;</span> <span class="c1">// OSCmessage name
 </span><span class="c1"></span><span class="p">);</span>
-<span class="p">)</span></code></pre></div>
+<span class="p">)</span>
+</code></pre></div>
 <blockquote>
 <p>
 ipython notebook
@@ -1909,23 +1914,23 @@ Choose <strong>Python</strong>
 <span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="kn">as</span> <span class="nn">plt</span>
 
 <span class="kn">from</span> <span class="nn">IPython</span> <span class="kn">import</span> <span class="n">get_ipython</span>
-<span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;matplotlib&#39;</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;inline&#39;</span><span class="p">)</span>
+<span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;matplotlib&#39;</span><span class="p">,</span> <span class="s1">&#39;inline&#39;</span><span class="p">)</span>
 
 <span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 <span class="c1">#from __future__ import print_function</span>
 <span class="c1">#from __future__ import division</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;../particle-physics-playground-Sonification-Example_001/tools/&#34;</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&#34;../particle-physics-playground-Sonification-Example_001/tools/&#34;</span><span class="p">)</span>
 
 <span class="c1">#from draw_objects3D import *</span>
 <span class="kn">import</span> <span class="nn">cms_tools</span> <span class="kn">as</span> <span class="nn">cms</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span>
-<span class="n">infile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;../particle-physics-playground-Sonification-Example_001/data/small_cms_test_file.dat&#39;</span><span class="p">)</span>
+<span class="n">infile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../particle-physics-playground-Sonification-Example_001/data/small_cms_test_file.dat&#39;</span><span class="p">)</span>
 
 <span class="n">collisions</span> <span class="o">=</span> <span class="n">cms</span><span class="o">.</span><span class="n">get_collisions</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
 
 <span class="n">number_of_collisions</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">collisions</span><span class="p">)</span>
-<span class="k">print</span> <span class="p">(</span><span class="sa"></span><span class="s2">&#34;# of proton-proton collisions: </span><span class="si">%d</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">number_of_collisions</span><span class="p">))</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&#34;# of proton-proton collisions: </span><span class="si">%d</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">number_of_collisions</span><span class="p">))</span>
 
 
 <span class="c1"># of proton-proton collisions: 10</span>
@@ -1949,18 +1954,18 @@ Choose <strong>Python</strong>
 <span class="n">METx</span> <span class="o">=</span> <span class="n">collisions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">4</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">METy</span> <span class="o">=</span> <span class="n">collisions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">4</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
 
-<span class="k">print</span> <span class="p">(</span><span class="sa"></span><span class="s2">&#34;MET x: </span><span class="si">%f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">METx</span><span class="p">))</span>
-<span class="k">print</span> <span class="p">(</span><span class="sa"></span><span class="s2">&#34;MET y: </span><span class="si">%f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">METy</span><span class="p">))</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&#34;MET x: </span><span class="si">%f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">METx</span><span class="p">))</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&#34;MET y: </span><span class="si">%f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">METy</span><span class="p">))</span>
 
 <span class="n">MET</span> <span class="n">x</span><span class="p">:</span> <span class="mf">44.941500</span>
 <span class="n">MET</span> <span class="n">y</span><span class="p">:</span> <span class="mf">0.422000</span>
 
 
 <span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]</span>
-<span class="k">print</span> <span class="p">(</span><span class="sa"></span><span class="s2">&#34;# of jets:      </span><span class="si">%d</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">collisions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])))</span>
-<span class="k">print</span> <span class="p">(</span><span class="sa"></span><span class="s2">&#34;# of muons:     </span><span class="si">%d</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">collisions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">])))</span>
-<span class="k">print</span> <span class="p">(</span><span class="sa"></span><span class="s2">&#34;# of electrons: </span><span class="si">%d</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">collisions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">])))</span>
-<span class="k">print</span> <span class="p">(</span><span class="sa"></span><span class="s2">&#34;# of photons:   </span><span class="si">%d</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">collisions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">3</span><span class="p">])))</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&#34;# of jets:      </span><span class="si">%d</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">collisions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])))</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&#34;# of muons:     </span><span class="si">%d</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">collisions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">])))</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&#34;# of electrons: </span><span class="si">%d</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">collisions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">])))</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&#34;# of photons:   </span><span class="si">%d</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">collisions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">3</span><span class="p">])))</span>
 
 <span class="c1"># of jets:      5</span>
 <span class="c1"># of muons:     1</span>
@@ -1974,11 +1979,11 @@ Choose <strong>Python</strong>
 
 <span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]</span>
 <span class="n">E</span><span class="p">,</span><span class="n">px</span><span class="p">,</span><span class="n">py</span><span class="p">,</span><span class="n">pz</span><span class="p">,</span><span class="n">btag</span> <span class="o">=</span> <span class="n">jets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="k">print</span> <span class="p">(</span><span class="sa"></span><span class="s2">&#34;E:     </span><span class="si">%8.4f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">E</span><span class="p">))</span>
-<span class="k">print</span> <span class="p">(</span><span class="sa"></span><span class="s2">&#34;px:    </span><span class="si">%8.4f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">px</span><span class="p">))</span>
-<span class="k">print</span> <span class="p">(</span><span class="sa"></span><span class="s2">&#34;py:    </span><span class="si">%8.4f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">py</span><span class="p">))</span>
-<span class="k">print</span> <span class="p">(</span><span class="sa"></span><span class="s2">&#34;pz:    </span><span class="si">%8.4f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">pz</span><span class="p">))</span>
-<span class="k">print</span> <span class="p">(</span><span class="sa"></span><span class="s2">&#34;btag:  </span><span class="si">%8.4f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">btag</span><span class="p">))</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&#34;E:     </span><span class="si">%8.4f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">E</span><span class="p">))</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&#34;px:    </span><span class="si">%8.4f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">px</span><span class="p">))</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&#34;py:    </span><span class="si">%8.4f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">py</span><span class="p">))</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&#34;pz:    </span><span class="si">%8.4f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">pz</span><span class="p">))</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&#34;btag:  </span><span class="si">%8.4f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">btag</span><span class="p">))</span>
 
 <span class="n">E</span><span class="p">:</span>      <span class="mf">88.9127</span>
 <span class="n">px</span><span class="p">:</span>     <span class="mf">32.9767</span>
@@ -1989,11 +1994,11 @@ Choose <strong>Python</strong>
 
 <span class="n">In</span> <span class="p">[</span><span class="mi">10</span><span class="p">]</span>
 <span class="n">E</span><span class="p">,</span><span class="n">px</span><span class="p">,</span><span class="n">py</span><span class="p">,</span><span class="n">pz</span><span class="p">,</span><span class="n">q</span> <span class="o">=</span> <span class="n">muons</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="k">print</span> <span class="p">(</span><span class="sa"></span><span class="s2">&#34;E:  </span><span class="si">%8.4f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">E</span><span class="p">))</span>
-<span class="k">print</span> <span class="p">(</span><span class="sa"></span><span class="s2">&#34;px: </span><span class="si">%8.4f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">px</span><span class="p">))</span>
-<span class="k">print</span> <span class="p">(</span><span class="sa"></span><span class="s2">&#34;py: </span><span class="si">%8.4f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">py</span><span class="p">))</span>
-<span class="k">print</span> <span class="p">(</span><span class="sa"></span><span class="s2">&#34;pz: </span><span class="si">%8.4f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">pz</span><span class="p">))</span>
-<span class="k">print</span> <span class="p">(</span><span class="sa"></span><span class="s2">&#34;q:  </span><span class="si">%8.4f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">q</span><span class="p">))</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&#34;E:  </span><span class="si">%8.4f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">E</span><span class="p">))</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&#34;px: </span><span class="si">%8.4f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">px</span><span class="p">))</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&#34;py: </span><span class="si">%8.4f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">py</span><span class="p">))</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&#34;pz: </span><span class="si">%8.4f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">pz</span><span class="p">))</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&#34;q:  </span><span class="si">%8.4f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">q</span><span class="p">))</span>
 
 <span class="n">E</span><span class="p">:</span>   <span class="mf">15.7375</span>
 <span class="n">px</span><span class="p">:</span>   <span class="mf">1.4793</span>
@@ -2004,10 +2009,10 @@ Choose <strong>Python</strong>
 
 <span class="n">In</span> <span class="p">[</span><span class="mi">11</span><span class="p">]</span>
 <span class="n">E</span><span class="p">,</span><span class="n">px</span><span class="p">,</span><span class="n">py</span><span class="p">,</span><span class="n">pz</span> <span class="o">=</span> <span class="n">photons</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="k">print</span> <span class="p">(</span><span class="sa"></span><span class="s2">&#34;E:  </span><span class="si">%8.4f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">E</span><span class="p">))</span>
-<span class="k">print</span> <span class="p">(</span><span class="sa"></span><span class="s2">&#34;px: </span><span class="si">%8.4f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">px</span><span class="p">))</span>
-<span class="k">print</span> <span class="p">(</span><span class="sa"></span><span class="s2">&#34;py: </span><span class="si">%8.4f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">py</span><span class="p">))</span>
-<span class="k">print</span> <span class="p">(</span><span class="sa"></span><span class="s2">&#34;pz: </span><span class="si">%8.4f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">pz</span><span class="p">))</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&#34;E:  </span><span class="si">%8.4f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">E</span><span class="p">))</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&#34;px: </span><span class="si">%8.4f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">px</span><span class="p">))</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&#34;py: </span><span class="si">%8.4f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">py</span><span class="p">))</span>
+<span class="k">print</span> <span class="p">(</span><span class="s2">&#34;pz: </span><span class="si">%8.4f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">pz</span><span class="p">))</span>
 
 <span class="n">E</span><span class="p">:</span>   <span class="mf">52.3640</span>
 <span class="n">px</span><span class="p">:</span>  <span class="mf">17.4983</span>
@@ -2022,27 +2027,27 @@ Choose <strong>Python</strong>
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">njets</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;# of jets&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;# entries&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;# entries&#39;</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">jets_E</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span><span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">400</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Jet energy [GeV]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;# entries&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;# entries&#39;</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">muons_E</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span><span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">400</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Muon energy [GeV]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;# entries&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;# entries&#39;</span><span class="p">)</span>
 
 <span class="n">h1</span><span class="p">:</span>
 <span class="n">Watch</span> <span class="n">an</span> <span class="n">example</span>
 
 <span class="n">In</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
-<span class="n">YouTubeVideo</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;UfimSbOr9to&#39;</span><span class="p">)</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;UfimSbOr9to&#39;</span><span class="p">)</span>
 
 <span class="n">In</span> <span class="p">[</span><span class="mi">13</span><span class="p">]</span>
-<span class="n">infile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;../particle-physics-playground-Sonification-Example_001/data/mc_dy_1000collisions.dat&#39;</span><span class="p">)</span>
+<span class="n">infile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../particle-physics-playground-Sonification-Example_001/data/mc_dy_1000collisions.dat&#39;</span><span class="p">)</span>
 
 
 <span class="n">collisions</span> <span class="o">=</span> <span class="n">cms</span><span class="o">.</span><span class="n">get_collisions</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
@@ -2072,7 +2077,7 @@ Choose <strong>Python</strong>
         <span class="n">photons_E</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">E</span><span class="p">)</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">In</span> <span class="p">[</span><span class="mi">18</span><span class="p">]</span>
 <span class="kn">import</span> <span class="nn">time</span>
 
-<span class="n">infile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;../particle-physics-playground-Sonification-Example_001/data/mc_dy_1000collisions.dat&#39;</span><span class="p">)</span>
+<span class="n">infile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../particle-physics-playground-Sonification-Example_001/data/mc_dy_1000collisions.dat&#39;</span><span class="p">)</span>
 
 
 <span class="n">collisions</span> <span class="o">=</span> <span class="n">cms</span><span class="o">.</span><span class="n">get_collisions</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
@@ -2109,7 +2114,7 @@ Choose <strong>Python</strong>
 
 <span class="c1"># The port for SuperCollider is &#39;57120&#39;</span>
 
-<span class="n">client</span> <span class="o">=</span> <span class="n">udp_client</span><span class="o">.</span><span class="n">SimpleUDPClient</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;127.0.0.1&#34;</span><span class="p">,</span> <span class="mi">57120</span><span class="p">)</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">udp_client</span><span class="o">.</span><span class="n">SimpleUDPClient</span><span class="p">(</span><span class="s2">&#34;127.0.0.1&#34;</span><span class="p">,</span> <span class="mi">57120</span><span class="p">)</span>
 
 
 <span class="c1">#client.send_message(&#34;/print&#34;, muons_E)</span>
@@ -2117,18 +2122,18 @@ Choose <strong>Python</strong>
 <span class="c1"># now we can print them out too</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">muons_E</span><span class="p">:</span>
-      <span class="k">print</span> <span class="p">(</span><span class="sa"></span><span class="s2">&#34;muon was: </span><span class="si">%d</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span>
-      <span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;/print&#34;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+      <span class="k">print</span> <span class="p">(</span><span class="s2">&#34;muon was: </span><span class="si">%d</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span>
+      <span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="s2">&#34;/print&#34;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
       <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.015</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">jets_E</span><span class="p">:</span>
-      <span class="k">print</span> <span class="p">(</span><span class="sa"></span><span class="s2">&#34;jet was: </span><span class="si">%d</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span>
-      <span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;/print&#34;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+      <span class="k">print</span> <span class="p">(</span><span class="s2">&#34;jet was: </span><span class="si">%d</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span>
+      <span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="s2">&#34;/print&#34;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
       <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.015</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">photons_E</span><span class="p">:</span>
-      <span class="k">print</span> <span class="p">(</span><span class="sa"></span><span class="s2">&#34;photon was: </span><span class="si">%d</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span>
-      <span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;/print&#34;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+      <span class="k">print</span> <span class="p">(</span><span class="s2">&#34;photon was: </span><span class="si">%d</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span>
+      <span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="s2">&#34;/print&#34;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
       <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.015</span><span class="p">)</span>
 <span class="c1"># # Plot the quantities</span></code></pre></div>
 <h2 id="yt-visualisation">YT visualisation</h2>
@@ -2142,13 +2147,13 @@ Choose <strong>Python</strong>
 </blockquote>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">os</span>
 
-<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;/Users/experiments/yt_pics&#39;</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s1">&#39;/Users/experiments/yt_pics&#39;</span><span class="p">)</span>
 
 <span class="kn">import</span> <span class="nn">yt</span>
 
-<span class="n">ds</span> <span class="o">=</span> <span class="n">yt</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;/Users/experiments/Enzo_64/DD0043/data0043&#34;</span><span class="p">)</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">yt</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&#34;/Users/experiments/Enzo_64/DD0043/data0043&#34;</span><span class="p">)</span>
 
-<span class="n">sc</span> <span class="o">=</span> <span class="n">yt</span><span class="o">.</span><span class="n">create_scene</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">lens_type</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;perspective&#39;</span><span class="p">)</span>
+<span class="n">sc</span> <span class="o">=</span> <span class="n">yt</span><span class="o">.</span><span class="n">create_scene</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">lens_type</span><span class="o">=</span><span class="s1">&#39;perspective&#39;</span><span class="p">)</span>
 
 <span class="c1"># Get a reference to the VolumeSource associated with this scene</span>
 <span class="c1"># It is the first source associated with the scene, so we can refer to it</span>
@@ -2166,10 +2171,10 @@ Choose <strong>Python</strong>
 
 <span class="c1"># Plot the transfer function, along with the CDF of the density field to</span>
 <span class="c1"># see how the transfer function corresponds to structure in the CDF</span>
-<span class="n">source</span><span class="o">.</span><span class="n">tfh</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;transfer_function.png&#39;</span><span class="p">,</span> <span class="n">profile_field</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;density&#39;</span><span class="p">)</span>
+<span class="n">source</span><span class="o">.</span><span class="n">tfh</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;transfer_function.png&#39;</span><span class="p">,</span> <span class="n">profile_field</span><span class="o">=</span><span class="s1">&#39;density&#39;</span><span class="p">)</span>
 
 <span class="c1"># save the image, flooring especially bright pixels for better contrast</span>
-<span class="n">sc</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;rendering2.png&#39;</span><span class="p">,</span> <span class="n">sigma_clip</span><span class="o">=</span><span class="mf">6.0</span><span class="p">)</span></code></pre></div>
+<span class="n">sc</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;rendering2.png&#39;</span><span class="p">,</span> <span class="n">sigma_clip</span><span class="o">=</span><span class="mf">6.0</span><span class="p">)</span></code></pre></div>
 <p>For 3D modeling yt see here:</p>
 
 <p><a href="https://sketchfab.com/models/d494a64f23414fcf8eb7c4a9329d400c" title="Data Visualisation 3D" target="_blank">Data Visualisation 3D</a></p>
@@ -2229,19 +2234,19 @@ Choose <strong>Python</strong>
 <span class="kn">import</span> <span class="nn">time</span>
 
 <span class="k">def</span> <span class="nf">get_count</span><span class="p">():</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="sa"></span><span class="s2">&#34;https://data-live.flightradar24.com/zones/fcgi/feed.js?bounds=59.09,52.64,-58.77,-47.71&amp;faa=1&amp;mlat=1&amp;flarm=1&amp;adsb=1&amp;gnd=1&amp;air=1&amp;vehicles=1&amp;estimated</span><span class="err">
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&#34;https://data-live.flightradar24.com/zones/fcgi/feed.js?bounds=59.09,52.64,-58.77,-47.71&amp;faa=1&amp;mlat=1&amp;flarm=1&amp;adsb=1&amp;gnd=1&amp;air=1&amp;vehicles=1&amp;estimated</span><span class="err">
 </span><span class="err"></span><span class="s2">=1&amp;maxage=7200&amp;gliders=1&amp;stats=1&#34;</span>
 
     <span class="c1"># Request with fake header, otherwise you will get an 403 HTTP error</span>
-    <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="sa"></span><span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="sa"></span><span class="s1">&#39;Mozilla/5.0&#39;</span><span class="p">})</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s1">&#39;Mozilla/5.0&#39;</span><span class="p">})</span>
 
     <span class="c1"># Parse the JSON</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
     <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
 
     <span class="c1"># Iterate over the elements to get the number of total flights</span>
-    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="sa"></span><span class="s2">&#34;stats&#34;</span><span class="p">][</span><span class="sa"></span><span class="s2">&#34;total&#34;</span><span class="p">]:</span>
-        <span class="n">counter</span> <span class="o">+=</span> <span class="n">data</span><span class="p">[</span><span class="sa"></span><span class="s2">&#34;stats&#34;</span><span class="p">][</span><span class="sa"></span><span class="s2">&#34;total&#34;</span><span class="p">][</span><span class="n">element</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s2">&#34;stats&#34;</span><span class="p">][</span><span class="s2">&#34;total&#34;</span><span class="p">]:</span>
+        <span class="n">counter</span> <span class="o">+=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&#34;stats&#34;</span><span class="p">][</span><span class="s2">&#34;total&#34;</span><span class="p">][</span><span class="n">element</span><span class="p">]</span>
 
     <span class="k">return</span> <span class="n">counter</span>
 
@@ -2267,21 +2272,21 @@ programming purposes.</p>
 
 <p>Create an html file i.e index.html
 and copy paste the below code:</p>
-<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">html</span><span class="p"></span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">head</span><span class="p"></span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p"></span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">language</span><span class="o">=</span><span class="s">&#34;javascript&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;libraries/p5.js&#34;</span><span class="p"></span><span class="p">&gt;&lt;</span><span class="p">/</span><span class="nt">script</span><span class="p">&gt;</span>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">language</span><span class="o">=</span><span class="s">&#34;javascript&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;libraries/p5.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
   <span class="c">&lt;!-- uncomment lines below to include extra p5 libraries --&gt;</span>
-  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">language</span><span class="o">=</span><span class="s">&#34;javascript&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;libraries/p5.dom.js&#34;</span><span class="p"></span><span class="p">&gt;&lt;</span><span class="p">/</span><span class="nt">script</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">language</span><span class="o">=</span><span class="s">&#34;javascript&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;libraries/p5.sound.js&#34;</span><span class="p"></span><span class="p">&gt;&lt;</span><span class="p">/</span><span class="nt">script</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">language</span><span class="o">=</span><span class="s">&#34;javascript&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;sketch.js&#34;</span><span class="p"></span><span class="p">&gt;&lt;</span><span class="p">/</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">language</span><span class="o">=</span><span class="s">&#34;javascript&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;libraries/p5.dom.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">language</span><span class="o">=</span><span class="s">&#34;javascript&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;libraries/p5.sound.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">language</span><span class="o">=</span><span class="s">&#34;javascript&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;sketch.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
   <span class="c">&lt;!-- this line removes any default padding and style. you might only need one of these values set. --&gt;</span>
-  <span class="p">&lt;</span><span class="nt">style</span><span class="p"></span><span class="p">&gt;</span> <span class="nt">body</span> <span class="p">{</span><span class="k">padding</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span> <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span><span class="p">;}</span> <span class="p">&lt;</span><span class="p">/</span><span class="nt">style</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="p">/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span> <span class="nt">body</span> <span class="p">{</span><span class="k">padding</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span> <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span><span class="p">;}</span> <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 
-<span class="p">&lt;</span><span class="nt">body</span><span class="p"></span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="p">/</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="p">/</span><span class="nt">html</span><span class="p">&gt;</span></code></pre></div>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span></code></pre></div>
 <p>then create a javascript file called pointillism.js and insert the
 below code:</p>
 <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">//pointillism example p5
@@ -2309,7 +2314,8 @@ below code:</p>
     <span class="kd">var</span> <span class="nx">pix</span> <span class="o">=</span> <span class="nx">img</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">);</span>
     <span class="nx">fill</span><span class="p">(</span><span class="nx">pix</span><span class="p">,</span> <span class="mi">128</span><span class="p">);</span>
     <span class="nx">ellipse</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">pointillize</span><span class="p">,</span> <span class="nx">pointillize</span><span class="p">);</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span>
+</code></pre></div>
 <p>You need also to create a floder named 'assets' inside your Js project
 with a myphoto.jpg (you can choose the photo you desired and named it myphoto.jpg
 or just go and change the name inside the pointillism.js)</p>
@@ -2321,7 +2327,8 @@ Change the name of the .jpg file: pointillism.js
 </blockquote>
 <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">preload</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">img</span> <span class="o">=</span> <span class="nx">loadImage</span><span class="p">(</span><span class="s2">&#34;assets/myPhoto.jpg&#34;</span><span class="p">);</span><span class="c1">//use low res (72) photo
-</span><span class="c1"></span><span class="p">}</span></code></pre></div>
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></div>
 <p><strong>Run</strong></p>
 
 <p>To see the results in your browser just open the insex.html file with
@@ -2508,7 +2515,7 @@ ofApp.cpp
 <div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&#34;ofApp.h&#34;</span><span class="cp">
 </span><span class="cp"></span>
 
-<span class="kt">char</span> <span class="n">sz</span><span class="p">[]</span> <span class="o">=</span> <span class="sa"></span><span class="s">&#34;[Rd9?-2XaUP0QY[hO%9QTYQ`-W`QZhcccYQY[`b&#34;</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">sz</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&#34;[Rd9?-2XaUP0QY[hO%9QTYQ`-W`QZhcccYQY[`b&#34;</span><span class="p">;</span>
 
 
 <span class="kt">float</span> <span class="n">tuioXScaler</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
@@ -2527,7 +2534,7 @@ ofApp.cpp
 </span><span class="c1"></span>
     <span class="n">receiver</span><span class="p">.</span><span class="n">setup</span><span class="p">(</span><span class="n">PORT</span><span class="p">);</span>
 
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="sa"></span><span class="s">&#34;listening for osc messages on port &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">PORT</span> <span class="o">&lt;&lt;</span> <span class="sa"></span><span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;listening for osc messages on port &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">PORT</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
 
     <span class="c1">//ofSetFrameRate(60);
 </span><span class="c1"></span>
@@ -2584,7 +2591,7 @@ ofApp.cpp
     <span class="c1">///---sphere here
 </span><span class="c1"></span>    <span class="n">ofDisableArbTex</span><span class="p">();</span>
     <span class="c1">//ofLoadImage(texture, &#34;earthTex.jpg&#34;);
-</span><span class="c1"></span>    <span class="n">texture</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;earthTex.jpg&#34;</span><span class="p">);</span>
+</span><span class="c1"></span>    <span class="n">texture</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s">&#34;earthTex.jpg&#34;</span><span class="p">);</span>
 
     <span class="c1">//this makes sure that the back of the model doesn&#39;t show through the front
 </span><span class="c1"></span>    <span class="n">ofEnableDepthTest</span><span class="p">();</span>
@@ -2645,32 +2652,32 @@ ofApp.cpp
 
     <span class="kt">float</span> <span class="n">dim</span> <span class="o">=</span> <span class="mf">24.0</span><span class="p">;</span>
 
-    <span class="n">gui</span><span class="p">.</span><span class="n">addSlider</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;fluidCellsX&#34;</span><span class="p">,</span> <span class="n">fluidCellsX</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">400</span><span class="p">);</span>
-    <span class="n">gui</span><span class="p">.</span><span class="n">addButton</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;resizeFluid&#34;</span><span class="p">,</span> <span class="n">resizeFluid</span><span class="p">);</span>
-    <span class="n">gui</span><span class="p">.</span><span class="n">addSlider</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;colorMult&#34;</span><span class="p">,</span> <span class="n">colorMult</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
-    <span class="n">gui</span><span class="p">.</span><span class="n">addSlider</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;velocityMult&#34;</span><span class="p">,</span> <span class="n">velocityMult</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+    <span class="n">gui</span><span class="p">.</span><span class="n">addSlider</span><span class="p">(</span><span class="s">&#34;fluidCellsX&#34;</span><span class="p">,</span> <span class="n">fluidCellsX</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">400</span><span class="p">);</span>
+    <span class="n">gui</span><span class="p">.</span><span class="n">addButton</span><span class="p">(</span><span class="s">&#34;resizeFluid&#34;</span><span class="p">,</span> <span class="n">resizeFluid</span><span class="p">);</span>
+    <span class="n">gui</span><span class="p">.</span><span class="n">addSlider</span><span class="p">(</span><span class="s">&#34;colorMult&#34;</span><span class="p">,</span> <span class="n">colorMult</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+    <span class="n">gui</span><span class="p">.</span><span class="n">addSlider</span><span class="p">(</span><span class="s">&#34;velocityMult&#34;</span><span class="p">,</span> <span class="n">velocityMult</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
 
 
-    <span class="n">gui</span><span class="p">.</span><span class="n">addSlider</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;fs.viscocity&#34;</span><span class="p">,</span> <span class="n">fluidSolver</span><span class="p">.</span><span class="n">viscocity</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">);</span>
-    <span class="n">gui</span><span class="p">.</span><span class="n">addSlider</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;fs.colorDiffusion&#34;</span><span class="p">,</span> <span class="n">fluidSolver</span><span class="p">.</span><span class="n">colorDiffusion</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0003</span><span class="p">);</span>
-    <span class="n">gui</span><span class="p">.</span><span class="n">addSlider</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;fs.fadeSpeed&#34;</span><span class="p">,</span> <span class="n">fluidSolver</span><span class="p">.</span><span class="n">fadeSpeed</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">);</span>
-    <span class="n">gui</span><span class="p">.</span><span class="n">addSlider</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;fs.solverIterations&#34;</span><span class="p">,</span> <span class="n">fluidSolver</span><span class="p">.</span><span class="n">solverIterations</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">);</span>
-    <span class="n">gui</span><span class="p">.</span><span class="n">addSlider</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;fs.deltaT&#34;</span><span class="p">,</span> <span class="n">fluidSolver</span><span class="p">.</span><span class="n">deltaT</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
-    <span class="n">gui</span><span class="p">.</span><span class="n">addComboBox</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;fd.drawMode&#34;</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span><span class="p">)</span><span class="n">fluidDrawer</span><span class="p">.</span><span class="n">drawMode</span><span class="p">,</span> <span class="n">msa</span><span class="o">::</span><span class="n">fluid</span><span class="o">::</span><span class="n">getDrawModeTitles</span><span class="p">());</span>
-    <span class="n">gui</span><span class="p">.</span><span class="n">addToggle</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;fs.doRGB&#34;</span><span class="p">,</span> <span class="n">fluidSolver</span><span class="p">.</span><span class="n">doRGB</span><span class="p">);</span>
-    <span class="n">gui</span><span class="p">.</span><span class="n">addToggle</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;fs.doVorticityConfinement&#34;</span><span class="p">,</span> <span class="n">fluidSolver</span><span class="p">.</span><span class="n">doVorticityConfinement</span><span class="p">);</span>
-    <span class="n">gui</span><span class="p">.</span><span class="n">addToggle</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;fs.wrapX&#34;</span><span class="p">,</span> <span class="n">fluidSolver</span><span class="p">.</span><span class="n">wrap_x</span><span class="p">);</span>
-    <span class="n">gui</span><span class="p">.</span><span class="n">addToggle</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;fs.wrapY&#34;</span><span class="p">,</span> <span class="n">fluidSolver</span><span class="p">.</span><span class="n">wrap_y</span><span class="p">);</span>
+    <span class="n">gui</span><span class="p">.</span><span class="n">addSlider</span><span class="p">(</span><span class="s">&#34;fs.viscocity&#34;</span><span class="p">,</span> <span class="n">fluidSolver</span><span class="p">.</span><span class="n">viscocity</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">);</span>
+    <span class="n">gui</span><span class="p">.</span><span class="n">addSlider</span><span class="p">(</span><span class="s">&#34;fs.colorDiffusion&#34;</span><span class="p">,</span> <span class="n">fluidSolver</span><span class="p">.</span><span class="n">colorDiffusion</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0003</span><span class="p">);</span>
+    <span class="n">gui</span><span class="p">.</span><span class="n">addSlider</span><span class="p">(</span><span class="s">&#34;fs.fadeSpeed&#34;</span><span class="p">,</span> <span class="n">fluidSolver</span><span class="p">.</span><span class="n">fadeSpeed</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">);</span>
+    <span class="n">gui</span><span class="p">.</span><span class="n">addSlider</span><span class="p">(</span><span class="s">&#34;fs.solverIterations&#34;</span><span class="p">,</span> <span class="n">fluidSolver</span><span class="p">.</span><span class="n">solverIterations</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">);</span>
+    <span class="n">gui</span><span class="p">.</span><span class="n">addSlider</span><span class="p">(</span><span class="s">&#34;fs.deltaT&#34;</span><span class="p">,</span> <span class="n">fluidSolver</span><span class="p">.</span><span class="n">deltaT</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+    <span class="n">gui</span><span class="p">.</span><span class="n">addComboBox</span><span class="p">(</span><span class="s">&#34;fd.drawMode&#34;</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span><span class="p">)</span><span class="n">fluidDrawer</span><span class="p">.</span><span class="n">drawMode</span><span class="p">,</span> <span class="n">msa</span><span class="o">::</span><span class="n">fluid</span><span class="o">::</span><span class="n">getDrawModeTitles</span><span class="p">());</span>
+    <span class="n">gui</span><span class="p">.</span><span class="n">addToggle</span><span class="p">(</span><span class="s">&#34;fs.doRGB&#34;</span><span class="p">,</span> <span class="n">fluidSolver</span><span class="p">.</span><span class="n">doRGB</span><span class="p">);</span>
+    <span class="n">gui</span><span class="p">.</span><span class="n">addToggle</span><span class="p">(</span><span class="s">&#34;fs.doVorticityConfinement&#34;</span><span class="p">,</span> <span class="n">fluidSolver</span><span class="p">.</span><span class="n">doVorticityConfinement</span><span class="p">);</span>
+    <span class="n">gui</span><span class="p">.</span><span class="n">addToggle</span><span class="p">(</span><span class="s">&#34;fs.wrapX&#34;</span><span class="p">,</span> <span class="n">fluidSolver</span><span class="p">.</span><span class="n">wrap_x</span><span class="p">);</span>
+    <span class="n">gui</span><span class="p">.</span><span class="n">addToggle</span><span class="p">(</span><span class="s">&#34;fs.wrapY&#34;</span><span class="p">,</span> <span class="n">fluidSolver</span><span class="p">.</span><span class="n">wrap_y</span><span class="p">);</span>
 
-    <span class="n">gui</span><span class="p">.</span><span class="n">addToggle</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;drawFluid&#34;</span><span class="p">,</span> <span class="n">drawFluid</span><span class="p">);</span>
-    <span class="n">gui</span><span class="p">.</span><span class="n">addToggle</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;drawParticles&#34;</span><span class="p">,</span> <span class="n">drawParticles</span><span class="p">);</span>
+    <span class="n">gui</span><span class="p">.</span><span class="n">addToggle</span><span class="p">(</span><span class="s">&#34;drawFluid&#34;</span><span class="p">,</span> <span class="n">drawFluid</span><span class="p">);</span>
+    <span class="n">gui</span><span class="p">.</span><span class="n">addToggle</span><span class="p">(</span><span class="s">&#34;drawParticles&#34;</span><span class="p">,</span> <span class="n">drawParticles</span><span class="p">);</span>
 
-    <span class="n">gui</span><span class="p">.</span><span class="n">addSlider</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;tuioXScaler&#34;</span><span class="p">,</span> <span class="n">tuioXScaler</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
-    <span class="n">gui</span><span class="p">.</span><span class="n">addSlider</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;tuioYScaler&#34;</span><span class="p">,</span> <span class="n">tuioYScaler</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="n">gui</span><span class="p">.</span><span class="n">addSlider</span><span class="p">(</span><span class="s">&#34;tuioXScaler&#34;</span><span class="p">,</span> <span class="n">tuioXScaler</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="n">gui</span><span class="p">.</span><span class="n">addSlider</span><span class="p">(</span><span class="s">&#34;tuioYScaler&#34;</span><span class="p">,</span> <span class="n">tuioYScaler</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
 
 
     <span class="c1">//--
-</span><span class="c1"></span>    <span class="n">gui</span><span class="p">.</span><span class="n">currentPage</span><span class="p">().</span><span class="n">setXMLName</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;ofxMSAFluidSettings.xml&#34;</span><span class="p">);</span>
+</span><span class="c1"></span>    <span class="n">gui</span><span class="p">.</span><span class="n">currentPage</span><span class="p">().</span><span class="n">setXMLName</span><span class="p">(</span><span class="s">&#34;ofxMSAFluidSettings.xml&#34;</span><span class="p">);</span>
     <span class="n">gui</span><span class="p">.</span><span class="n">loadFromXML</span><span class="p">();</span>
     <span class="n">gui</span><span class="p">.</span><span class="n">setDefaultKeys</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
     <span class="n">gui</span><span class="p">.</span><span class="n">setAutoSave</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
@@ -2687,11 +2694,11 @@ ofApp.cpp
         <span class="n">ofxOscMessage</span> <span class="n">m</span><span class="p">;</span>
         <span class="n">receiver</span><span class="p">.</span><span class="n">getNextMessage</span><span class="p">(</span><span class="n">m</span><span class="p">);</span>
 
-        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="sa"></span><span class="s">&#34;got message from OSC</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;got message from OSC</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
 
-        <span class="k">if</span> <span class="p">(</span><span class="n">m</span><span class="p">.</span><span class="n">getAddress</span><span class="p">()</span> <span class="o">==</span> <span class="sa"></span><span class="s">&#34;/data&#34;</span><span class="p">){</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">m</span><span class="p">.</span><span class="n">getAddress</span><span class="p">()</span> <span class="o">==</span> <span class="s">&#34;/data&#34;</span><span class="p">){</span>
 
-            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="sa"></span><span class="s">&#34;message was data as expected</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;message was data as expected</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
 
             <span class="n">ofVec2f</span> <span class="n">eventPos</span> <span class="o">=</span> <span class="n">ofVec2f</span><span class="p">(</span><span class="n">m</span><span class="p">.</span><span class="n">getArgAsFloat</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">m</span><span class="p">.</span><span class="n">getArgAsFloat</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
             <span class="n">ofVec2f</span> <span class="n">mouseNorm</span> <span class="o">=</span> <span class="n">ofVec2f</span><span class="p">(</span><span class="n">eventPos</span><span class="p">)</span> <span class="o">/</span> <span class="n">ofGetWindowSize</span><span class="p">();</span>
@@ -2700,8 +2707,8 @@ ofApp.cpp
             <span class="n">pMouse</span> <span class="o">=</span> <span class="n">eventPos</span><span class="p">;</span>
 
 
-        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">m</span><span class="p">.</span><span class="n">getAddress</span><span class="p">()</span> <span class="o">==</span> <span class="sa"></span><span class="s">&#34;/vertex&#34;</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="sa"></span><span class="s">&#34;message was vertex as expected</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">m</span><span class="p">.</span><span class="n">getAddress</span><span class="p">()</span> <span class="o">==</span> <span class="s">&#34;/vertex&#34;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;message was vertex as expected</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
 
         <span class="p">}</span>
     <span class="p">}</span>
@@ -2823,43 +2830,43 @@ ofApp.cpp
 </span><span class="c1"></span><span class="kt">void</span> <span class="n">ofApp</span><span class="o">::</span><span class="n">keyPressed</span> <span class="p">(</span><span class="kt">int</span> <span class="n">key</span><span class="p">)</span> <span class="p">{</span>
 
     <span class="k">switch</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">case</span> <span class="sa"></span><span class="sc">&#39;1&#39;</span><span class="o">:</span>
+        <span class="k">case</span> <span class="sc">&#39;1&#39;</span><span class="o">:</span>
             <span class="n">fluidDrawer</span><span class="p">.</span><span class="n">setDrawMode</span><span class="p">(</span><span class="n">msa</span><span class="o">::</span><span class="n">fluid</span><span class="o">::</span><span class="n">kDrawColor</span><span class="p">);</span>
             <span class="k">break</span><span class="p">;</span>
 
-        <span class="k">case</span> <span class="sa"></span><span class="sc">&#39;2&#39;</span><span class="o">:</span>
+        <span class="k">case</span> <span class="sc">&#39;2&#39;</span><span class="o">:</span>
             <span class="n">fluidDrawer</span><span class="p">.</span><span class="n">setDrawMode</span><span class="p">(</span><span class="n">msa</span><span class="o">::</span><span class="n">fluid</span><span class="o">::</span><span class="n">kDrawMotion</span><span class="p">);</span>
             <span class="k">break</span><span class="p">;</span>
 
-        <span class="k">case</span> <span class="sa"></span><span class="sc">&#39;3&#39;</span><span class="o">:</span>
+        <span class="k">case</span> <span class="sc">&#39;3&#39;</span><span class="o">:</span>
             <span class="n">fluidDrawer</span><span class="p">.</span><span class="n">setDrawMode</span><span class="p">(</span><span class="n">msa</span><span class="o">::</span><span class="n">fluid</span><span class="o">::</span><span class="n">kDrawSpeed</span><span class="p">);</span>
             <span class="k">break</span><span class="p">;</span>
 
-        <span class="k">case</span> <span class="sa"></span><span class="sc">&#39;4&#39;</span><span class="o">:</span>
+        <span class="k">case</span> <span class="sc">&#39;4&#39;</span><span class="o">:</span>
             <span class="n">fluidDrawer</span><span class="p">.</span><span class="n">setDrawMode</span><span class="p">(</span><span class="n">msa</span><span class="o">::</span><span class="n">fluid</span><span class="o">::</span><span class="n">kDrawVectors</span><span class="p">);</span>
             <span class="k">break</span><span class="p">;</span>
 
-        <span class="k">case</span> <span class="sa"></span><span class="sc">&#39;d&#39;</span><span class="o">:</span>
+        <span class="k">case</span> <span class="sc">&#39;d&#39;</span><span class="o">:</span>
             <span class="n">drawFluid</span> <span class="o">^=</span> <span class="nb">true</span><span class="p">;</span>
             <span class="k">break</span><span class="p">;</span>
 
-        <span class="k">case</span> <span class="sa"></span><span class="sc">&#39;p&#39;</span><span class="o">:</span>
+        <span class="k">case</span> <span class="sc">&#39;p&#39;</span><span class="o">:</span>
             <span class="n">drawParticles</span> <span class="o">^=</span> <span class="nb">true</span><span class="p">;</span>
             <span class="k">break</span><span class="p">;</span>
 
-        <span class="k">case</span> <span class="sa"></span><span class="sc">&#39;f&#39;</span><span class="o">:</span>
+        <span class="k">case</span> <span class="sc">&#39;f&#39;</span><span class="o">:</span>
             <span class="n">ofToggleFullscreen</span><span class="p">();</span>
             <span class="k">break</span><span class="p">;</span>
 
-        <span class="k">case</span> <span class="sa"></span><span class="sc">&#39;r&#39;</span><span class="o">:</span>
+        <span class="k">case</span> <span class="sc">&#39;r&#39;</span><span class="o">:</span>
             <span class="n">fluidSolver</span><span class="p">.</span><span class="n">reset</span><span class="p">();</span>
             <span class="k">break</span><span class="p">;</span>
 
-        <span class="k">case</span> <span class="sa"></span><span class="sc">&#39;k&#39;</span><span class="o">:</span>
+        <span class="k">case</span> <span class="sc">&#39;k&#39;</span><span class="o">:</span>
             <span class="n">bKinectOpen</span> <span class="o">^=</span><span class="nb">true</span><span class="p">;</span>
             <span class="k">break</span><span class="p">;</span>
 
-        <span class="k">case</span> <span class="sa"></span><span class="sc">&#39;w&#39;</span><span class="o">:</span><span class="p">{</span>
+        <span class="k">case</span> <span class="sc">&#39;w&#39;</span><span class="o">:</span><span class="p">{</span>
                     <span class="c1">// texture.draw(0,0);
 </span><span class="c1"></span>
             <span class="n">ofEnableAlphaBlending</span><span class="p">();</span>
@@ -2877,7 +2884,7 @@ ofApp.cpp
             <span class="n">ofDisableAlphaBlending</span><span class="p">();</span>
         <span class="p">}</span>
 
-        <span class="k">case</span> <span class="sa"></span><span class="sc">&#39;e&#39;</span><span class="o">:</span><span class="p">{</span>
+        <span class="k">case</span> <span class="sc">&#39;e&#39;</span><span class="o">:</span><span class="p">{</span>
             <span class="c1">// texture.draw(0,0);
 </span><span class="c1"></span>
             <span class="n">ofEnableAlphaBlending</span><span class="p">();</span>
@@ -2897,7 +2904,7 @@ ofApp.cpp
 
 
 
-        <span class="k">case</span> <span class="sa"></span><span class="sc">&#39;b&#39;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="sc">&#39;b&#39;</span><span class="o">:</span> <span class="p">{</span>
             <span class="c1">//			Timer timer;
 </span><span class="c1"></span>            <span class="c1">//			const int ITERS = 3000;
 </span><span class="c1"></span>            <span class="c1">//			timer.start();
@@ -2908,7 +2915,7 @@ ofApp.cpp
             <span class="k">break</span><span class="p">;</span>
 
 
-        <span class="k">case</span> <span class="sa"></span><span class="sc">&#39;o&#39;</span><span class="o">:</span>
+        <span class="k">case</span> <span class="sc">&#39;o&#39;</span><span class="o">:</span>
             <span class="n">bShowControlPanel</span> <span class="o">=</span> <span class="o">!</span><span class="n">bShowControlPanel</span><span class="p">;</span>
             <span class="k">if</span> <span class="p">(</span><span class="n">bShowControlPanel</span><span class="p">){</span>
                 <span class="n">gui</span><span class="p">.</span><span class="n">show</span><span class="p">();</span>
@@ -2921,23 +2928,23 @@ ofApp.cpp
 
         <span class="k">case</span> <span class="mi">5</span><span class="o">:</span>
             <span class="n">blendMode</span> <span class="o">=</span> <span class="n">OF_BLENDMODE_ALPHA</span><span class="p">;</span>
-            <span class="n">eventString</span> <span class="o">=</span> <span class="sa"></span><span class="s">&#34;Alpha&#34;</span><span class="p">;</span>
+            <span class="n">eventString</span> <span class="o">=</span> <span class="s">&#34;Alpha&#34;</span><span class="p">;</span>
             <span class="k">break</span><span class="p">;</span>
         <span class="k">case</span> <span class="mi">6</span><span class="o">:</span>
             <span class="n">blendMode</span> <span class="o">=</span> <span class="n">OF_BLENDMODE_ADD</span><span class="p">;</span>
-            <span class="n">eventString</span> <span class="o">=</span> <span class="sa"></span><span class="s">&#34;Add&#34;</span><span class="p">;</span>
+            <span class="n">eventString</span> <span class="o">=</span> <span class="s">&#34;Add&#34;</span><span class="p">;</span>
             <span class="k">break</span><span class="p">;</span>
         <span class="k">case</span> <span class="mi">7</span><span class="o">:</span>
             <span class="n">blendMode</span> <span class="o">=</span> <span class="n">OF_BLENDMODE_MULTIPLY</span><span class="p">;</span>
-            <span class="n">eventString</span> <span class="o">=</span> <span class="sa"></span><span class="s">&#34;Multiply&#34;</span><span class="p">;</span>
+            <span class="n">eventString</span> <span class="o">=</span> <span class="s">&#34;Multiply&#34;</span><span class="p">;</span>
             <span class="k">break</span><span class="p">;</span>
         <span class="k">case</span> <span class="mi">8</span><span class="o">:</span>
             <span class="n">blendMode</span> <span class="o">=</span> <span class="n">OF_BLENDMODE_SUBTRACT</span><span class="p">;</span>
-            <span class="n">eventString</span> <span class="o">=</span> <span class="sa"></span><span class="s">&#34;Subtract&#34;</span><span class="p">;</span>
+            <span class="n">eventString</span> <span class="o">=</span> <span class="s">&#34;Subtract&#34;</span><span class="p">;</span>
             <span class="k">break</span><span class="p">;</span>
         <span class="k">case</span> <span class="mi">9</span><span class="o">:</span>
             <span class="n">blendMode</span> <span class="o">=</span> <span class="n">OF_BLENDMODE_SCREEN</span><span class="p">;</span>
-            <span class="n">eventString</span> <span class="o">=</span> <span class="sa"></span><span class="s">&#34;Screen&#34;</span><span class="p">;</span>
+            <span class="n">eventString</span> <span class="o">=</span> <span class="s">&#34;Screen&#34;</span><span class="p">;</span>
             <span class="k">break</span><span class="p">;</span>
         <span class="k">default</span><span class="o">:</span>
             <span class="k">break</span><span class="p">;</span>
