@@ -3310,12 +3310,10 @@ Choose <strong>Shell</strong>
 </blockquote>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"> Recordings git:<span class="o">(</span>SuperCollider<span class="o">)</span> ✗ rsync -avz -e ssh pi@192.168.1.96:/home/pi/.local/share/SuperCollider/Recordings/ Recordings/</code></pre></div>
 <p>and</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">voices git:<span class="o">(</span>SuperCollider<span class="o">)</span> ✗ rsync -avz -e ssh pi@192.168.1.96:~/sounds/voices/ voicesA/
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">some_dir ✗ rsync -avz -e ssh pi@192.168.1.96:~/sounds/voices/ voicesA/
 pi@192.168.1.96<span class="err">&#39;</span>s password:
 receiving file list ... <span class="k">done</span>
 created directory Weaving-voices</code></pre></div>
-<p>transfering files from mac to raspberry</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ onedirup~&gt; rsync -avP a_folder_inside_this_dir/ pi@192.168.1.96:~/dir/folder/</code></pre></div>
 <p>Unfortunatelly it doesnt work with the name of the raspberry instead you need to find the ip of raspberry. To find the ip ssh to your raspberry and type:</p>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo ifconfig</code></pre></div>
 <p>it will ask for the pass word:</p>
@@ -3330,6 +3328,29 @@ SC_170422_135403.aiff
 sent <span class="m">88</span> bytes  received <span class="m">11223209</span> bytes  <span class="m">477587</span>.11 bytes/sec
 total size is <span class="m">25854264</span>  speedup is <span class="m">2</span>.30
 ➜  Recordings git:<span class="o">(</span>SuperCollider<span class="o">)</span> ✗</code></pre></div>
+<blockquote>
+<p>
+transfering files from mac to raspberry
+</p>
+</blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ onedirup~&gt; rsync -avP a_folder_inside_this_dir/ pi@192.168.1.96:~/dir/folder/</code></pre></div>
+<blockquote>
+<p>
+If you asked to login as a root do the following:
+</p>
+<p>
+- set a root password
+</p>
+</blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">sudo su -
+passwd</code></pre></div>
+<blockquote>
+<p>
+and then you can ligo as root
+</p>
+
+</blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ onedirup~&gt; rsync -avP a_folder_inside_this_dir/ root@192.168.1.96:~/dir/folder/</code></pre></div>
 <h2 id="install-adafruit-mpr121-on-raspberry">Install Adafruit MPR121 on Raspberry</h2>
 
 <h2 id="soldering">Soldering</h2>

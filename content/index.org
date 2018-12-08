@@ -3393,18 +3393,11 @@ Choose *Shell*
 and
 
 #+BEGIN_SRC shell
-voices git:(SuperCollider) ✗ rsync -avz -e ssh pi@192.168.1.96:~/sounds/voices/ voicesA/
+some_dir ✗ rsync -avz -e ssh pi@192.168.1.96:~/sounds/voices/ voicesA/
 pi@192.168.1.96's password:
 receiving file list ... done
 created directory Weaving-voices
 #+END_SRC
-
-transfering files from mac to raspberry
-
-#+BEGIN_SRC shell
-$ onedirup~> rsync -avP a_folder_inside_this_dir/ pi@192.168.1.96:~/dir/folder/
-#+END_SRC
-
 Unfortunatelly it doesnt work with the name of the raspberry instead you need to find the ip of raspberry. To find the ip ssh to your raspberry and type:
 
 #+BEGIN_SRC shell
@@ -3430,6 +3423,31 @@ total size is 25854264  speedup is 2.30
 #+END_SRC
 
 
+#+BEGIN_QUOTE
+transfering files from mac to raspberry
+#+END_QUOTE
+
+#+BEGIN_SRC shell
+$ onedirup~> rsync -avP a_folder_inside_this_dir/ pi@192.168.1.96:~/dir/folder/
+#+END_SRC
+
+#+BEGIN_QUOTE
+If you asked to login as a root do the following:
+- set a root password
+#+END_QUOTE
+
+#+BEGIN_SRC shell
+sudo su -
+passwd
+#+END_SRC
+
+#+BEGIN_QUOTE
+and then you can ligo as root
+
+#+END_QUOTE
+#+BEGIN_SRC shell
+$ onedirup~> rsync -avP a_folder_inside_this_dir/ root@192.168.1.96:~/dir/folder/
+#+END_SRC
 
 ** Install Adafruit MPR121 on Raspberry
 
