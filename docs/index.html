@@ -3621,6 +3621,21 @@ Choose <strong>Shell</strong>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">diskutil eraseVolume ExFAT MyName diskX</code></pre></div>
 <p>change diskX to your disk number; i.e. <code>disk2s1</code></p>
 
+<blockquote>
+<p>
+issue with partition:
+</p>
+<p>
+check your disk number
+</p>
+</blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">diskutil list</code></pre></div>
+<blockquote>
+<p>
+change the <em>disk2</em> to your disk number and do the following:
+</p>
+</blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">diskutil eraseDisk FAT32 MYSD MBRFormat /dev/disk2</code></pre></div>
 <h1 id="suggested-bibliography">Suggested Bibliography</h1>
 
 <h2 id="books">Books</h2>
