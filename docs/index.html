@@ -3303,22 +3303,32 @@ scp macuser@macipaddress:/path/to/py/file ~
 
 <p>On your mac go to the directory you want to sync using <strong>cd</strong> on your terminal and type the following command:</p>
 
-<p>transfering files from raspberry to mac</p>
+<blockquote>
+<p>
+Transfering files from <code>raspberry</code> to <code>mac</code>
+</p>
+</blockquote>
 
 <blockquote>
 <p>
 Choose <strong>Shell</strong>
 </p>
 </blockquote>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"> Recordings git:<span class="o">(</span>SuperCollider<span class="o">)</span> ✗ rsync -avz -e ssh pi@192.168.1.96:/home/pi/.local/share/SuperCollider/Recordings/ Recordings/</code></pre></div>
-<p>and</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">some_dir ✗ rsync -avz -e ssh pi@192.168.1.96:~/sounds/voices/ voicesA/
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"> Recordings git:<span class="o">(</span>SuperCollider<span class="o">)</span> ✗ rsync -avz -e ssh pi@192.168.1.96:/home/pi/.local/share/SuperCollider/Recordings/ Recordings/</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">some_dir ✗ rsync -avz -e ssh pi@192.168.1.96:~/sounds/voices/ voicesA/
 pi@192.168.1.96<span class="err">&#39;</span>s password:
 receiving file list ... <span class="k">done</span>
 created directory Weaving-voices</code></pre></div>
-<p>Unfortunatelly it doesnt work with the name of the raspberry instead you need to find the ip of raspberry. To find the ip ssh to your raspberry and type:</p>
+<blockquote>
+<p>
+If it doesn't work with the name of the raspberry you need to find the ip of raspberry. To find the ip ssh to your raspberry and type:
+</p>
+</blockquote>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ sudo ifconfig</code></pre></div>
-<p>it will ask for the pass word:</p>
+<blockquote>
+<p>
+it will ask for the pass word:
+</p>
+</blockquote>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">pi@192.168.1.96<span class="err">&#39;</span>s password:
 receiving file list ... <span class="k">done</span>
 created directory Recordings
@@ -3332,7 +3342,7 @@ total size is <span class="m">25854264</span>  speedup is <span class="m">2</spa
 ➜  Recordings git:<span class="o">(</span>SuperCollider<span class="o">)</span> ✗</code></pre></div>
 <blockquote>
 <p>
-transfering files from mac to raspberry
+Transfering files from <code>mac</code> to <code>raspberry</code>
 </p>
 </blockquote>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ onedirup~&gt; rsync -avP a_folder_inside_this_dir/ pi@192.168.1.96:~/dir/folder/</code></pre></div>
