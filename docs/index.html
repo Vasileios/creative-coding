@@ -3301,7 +3301,11 @@ scp macuser@macipaddress:/path/to/py/file ~
 
 <h2 id="use-rsync">Use rsync</h2>
 
-<p>On your mac go to the directory you want to sync using <strong>cd</strong> on your terminal and type the following command:</p>
+<blockquote>
+<p>
+Choose <strong>Shell</strong>
+</p>
+</blockquote>
 
 <blockquote>
 <p>
@@ -3309,15 +3313,11 @@ Transfering files from <code>raspberry</code> to <code>mac</code>
 </p>
 </blockquote>
 
-<blockquote>
-<p>
-Choose <strong>Shell</strong>
-</p>
-</blockquote>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"> Recordings git:<span class="o">(</span>SuperCollider<span class="o">)</span> ✗ rsync -avz -e ssh pi@192.168.1.96:/home/pi/.local/share/SuperCollider/Recordings/ Recordings/</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">some_dir ✗ rsync -avz -e ssh pi@192.168.1.96:~/sounds/voices/ voicesA/
+<p>On your terminal use <strong>cd</strong> to change directory to your files directory and type the following command:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"> Recordings Directory git:<span class="o">(</span>SuperCollider<span class="o">)</span> ✗ rsync -avz -e ssh pi@192.168.1.96:/home/pi/.local/share/SuperCollider/Recordings/ Recordings/</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">some_dir ✗ rsync -avz -e ssh pi@192.168.1.96:~/sounds/voices/ voicesA/
 pi@192.168.1.96<span class="err">&#39;</span>s password:
 receiving file list ... <span class="k">done</span>
-created directory Weaving-voices</code></pre></div>
+created directory voices</code></pre></div>
 <blockquote>
 <p>
 If it doesn't work with the name of the raspberry you need to find the ip of raspberry. To find the ip ssh to your raspberry and type:
