@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Creative Coding</title>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2021-07-23T23:46:53 EEST">
+<title>Emacs :: Creative Coding</title>
+<link rel="shortcut icon" href="/creative-coding/images/favicon.png" type="image/x-icon" />
+<link href="/creative-coding/css/nucleus.css" rel="stylesheet">
+<link href="/creative-coding/css/font-awesome.min.css" rel="stylesheet">
+<link href="/creative-coding/css/featherlight.min.css" rel="stylesheet">
+<link href="/creative-coding/css/auto-complete.css" rel="stylesheet">
+<link href="/creative-coding/theme-flex/style.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/creative-coding/css/bootstrap.min.css">
+<meta name="description" content="">
+
+
+
+    
+  </head>
+  <body data-url="/creative-coding/code_tips/emacs/">
+    
+      <header>
+  <div class="logo">
+    
+	
+  
+    <a class="baselink" href="https://vasileios.github.io/creative-coding">Creative Coding</a>
+  
+
+
+  </div>
+  <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
+    <nav class="shortcuts">
+            <li class="" role="">
+                <a href="/creative-coding/"  rel="noopener">
+                  <i class='fa fa-fw fa-bullhorn'></i> Credits
+                </a>
+            </li>
+    </nav>
+</header>
+<article>
+  <aside>
+    <ul class="menu">
+          <li data-nav-id="/creative-coding/" class="dd-item">
+          <a href="/creative-coding/">
+            <i class="fa fa-fw fa-home"></i>
+          </a>
+          </li>
+    <li data-nav-id="https://vasileios.github.io/creative-coding/introduction/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/creative-coding/introduction/"><b>1. </b>Creative Coding</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="https://vasileios.github.io/creative-coding/introduction/creative_coding/" class="dd-item">
+        <div>
+          <a href="/creative-coding/introduction/creative_coding/">
+            About
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="https://vasileios.github.io/creative-coding/introduction/interdisciplinarity/" class="dd-item">
+        <div>
+          <a href="/creative-coding/introduction/interdisciplinarity/">
+            Interdisciplinarity
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="https://vasileios.github.io/creative-coding/introduction/algorithmic_composition/" class="dd-item">
+        <div>
+          <a href="/creative-coding/introduction/algorithmic_composition/">
+            Algorithmic Composition
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="https://vasileios.github.io/creative-coding/code_tips/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/creative-coding/code_tips/"><b>2. </b>Code $ Tips</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="https://vasileios.github.io/creative-coding/code_tips/shell/" class="dd-item">
+        <div>
+          <a href="/creative-coding/code_tips/shell/">
+            Shell
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="https://vasileios.github.io/creative-coding/code_tips/emacs/" class="dd-item">
+        <div>
+          <a href="/creative-coding/code_tips/emacs/">
+            Emacs
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="https://vasileios.github.io/creative-coding/code_tips/ipython/" class="dd-item">
+        <div>
+          <a href="/creative-coding/code_tips/ipython/">
+            ipython - Python
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="https://vasileios.github.io/creative-coding/code_tips/javascript/" class="dd-item">
+        <div>
+          <a href="/creative-coding/code_tips/javascript/">
+            Javascript
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="https://vasileios.github.io/creative-coding/code_tips/openframeworks/" class="dd-item">
+        <div>
+          <a href="/creative-coding/code_tips/openframeworks/">
+            openFrameworks
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="https://vasileios.github.io/creative-coding/code_tips/microcomputing/" class="dd-item">
+        <div>
+          <a href="/creative-coding/code_tips/microcomputing/">
+            Micro-computing
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="https://vasileios.github.io/creative-coding/code_tips/suggestedbibliography/" class="dd-item">
+        <div>
+          <a href="/creative-coding/code_tips/suggestedbibliography/">
+            Suggested Bibliography
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+
+
+
+
+    </ul>
+    <section>
+    </section>
+  </aside>
+  <section class="page">
+    
+    <div class="nav-select">
+      <center>Navigation : 
+        <select onchange="javascript:location.href = this.value;">
+          
+    <option value="/creative-coding/introduction/" >
+   Creative Coding</option>
+    <option value="/creative-coding/code_tips/" >
+   Code $ Tips</option> 
+      <option value="/creative-coding/code_tips/shell/" >- Shell</option>
+      <option value="/creative-coding/code_tips/emacs/"  selected>- Emacs</option>
+      <option value="/creative-coding/code_tips/ipython/" >- ipython - Python</option>
+      <option value="/creative-coding/code_tips/javascript/" >- Javascript</option>
+      <option value="/creative-coding/code_tips/openframeworks/" >- openFrameworks</option>
+      <option value="/creative-coding/code_tips/microcomputing/" >- Micro-computing</option>
+      <option value="/creative-coding/code_tips/suggestedbibliography/" >- Suggested Bibliography</option>
+  
+
+
+
+        </select>
+      </center>
+    </div>
+      <div>
+        <div class="searchbox">
+          <input data-search-input id="search-by" type="text" placeholder="Search...">
+        </div>
+      </div>
+    
+
+    <h1>Emacs</h1>
+    
+    
+    
+    
+<div id="outline-container-headline-1" class="outline-4">
+<h4 id="headline-1">
+chapter 2
+</h4>
+</div>
+<div id="outline-container-headline-2" class="outline-2">
+<h2 id="headline-2">
+Emacs
+</h2>
+<div id="outline-text-headline-2" class="outline-text-2">
+<p>
+GNU Emacs
+An extensible, customizable, free/libre text editor — and more.
+At its core is an interpreter for Emacs Lisp, a dialect of the Lisp programming language with extensions to support text editing.
+…<a href="https://www.gnu.org/software/emacs/">emacs</a></p>
+<div id="outline-container-headline-3" class="outline-3">
+<h3 id="headline-3">
+Install packages
+</h3>
+<div id="outline-text-headline-3" class="outline-text-3">
+<p>
+Install org-plus-contrib</p>
+<div class="src src-emacs-lisp">
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">
+<span style="color:#75715e">;; add this to your Emacs init file to be able to list the Org mode archives:</span>
+
+<span style="color:#111">(</span><span style="color:#111">require</span> <span style="color:#d88200">&#39;package</span><span style="color:#111">)</span>
+
+<span style="color:#111">(</span><span style="color:#111">add-to-list</span> <span style="color:#d88200">&#39;package-archives</span> <span style="color:#f92672">&#39;</span><span style="color:#111">(</span><span style="color:#d88200">&#34;org&#34;</span> <span style="color:#f92672">.</span> <span style="color:#d88200">&#34;http://orgmode.org/elpa/&#34;</span><span style="color:#111">)</span> <span style="color:#00a8c8">t</span><span style="color:#111">)</span>
+
+<span style="color:#111">Then</span> <span style="color:#111">M-x</span> <span style="color:#111">list-packages</span> <span style="color:#111">RET</span> <span style="color:#111">will</span> <span style="color:#75af00">list</span> <span style="color:#111">both</span> <span style="color:#111">the</span> <span style="color:#111">latest</span> <span style="color:#111">org</span> <span style="color:#111">and</span>
+<span style="color:#111">org-plus-contrib</span> <span style="color:#111">packages.</span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-4" class="outline-3">
+<h3 id="headline-4">
+Org-mode
+</h3>
+</div>
+<div id="outline-container-headline-5" class="outline-3">
+<h3 id="headline-5">
+Create Headers
+</h3>
+<div id="outline-text-headline-5" class="outline-text-3">
+<p>
+Start with an <strong>asterisk</strong> to make <strong>Headers</strong> and <strong>two asterisks</strong> for <strong>Subheaders</strong></p>
+<p>
+Example:</p>
+<p>
+<code class="verbatim">* Header</code></p>
+<p>
+<code class="verbatim">** Subheader</code></p>
+<p>
+Give a <strong>title</strong> to your page using <em>hash</em> (#) and <em>plus</em> (+) symbols</p>
+<p>
+Example: <code class="verbatim">#+Title: Getting started with org-mode</code></p>
+<p>
+<strong>Hide</strong> Numbers, table of contents</p>
+<p>
+Example: <code class="verbatim">#+Options: num:nil toc:nil</code></p>
+<p>
+Write <code class="verbatim">#+</code> and press <code class="verbatim">Meta-&lt;tab&gt;</code> to see the list of variables</p>
+<p>
+Example:</p>
+<p>
+ <code class="verbatim">#+AUTHOR: Vasilis Agiomyrgianakis</code></p>
+<p>
+<code class="verbatim">#+DATE: 120416</code></p>
+</div>
+</div>
+<div id="outline-container-headline-6" class="outline-3">
+<h3 id="headline-6">
+Bulleting-Quoting
+</h3>
+<div id="outline-text-headline-6" class="outline-text-3">
+<p>
+Use hyphen to make bullets</p>
+<ul>
+<li>
+<p>bulleted</p>
+</li>
+<li>
+<p>list</p>
+</li>
+<li>
+<p>items</p>
+</li>
+</ul>
+<p>You can include quotations in Org mode documents like this:</p>
+<p>
+<code class="verbatim">#+BEGIN_QUOTE</code></p>
+<p>
+&#39;QUATATION&#39;</p>
+<p>
+<code class="verbatim">#+END_QUOTE</code></p>
+<blockquote>
+<p>
+QUATATION</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-headline-7" class="outline-3">
+<h3 id="headline-7">
+Markups
+</h3>
+<div id="outline-text-headline-7" class="outline-text-3">
+<p>
+Give <strong>emphasis</strong> to your text.</p>
+<p>
+Write your text <strong>inside</strong> the below symbols:</p>
+<ul>
+<li>
+<p>2 asterics for <strong>Bold</strong>,</p>
+</li>
+<li>
+<p>2 slashes for <em>italics</em>,</p>
+</li>
+<li>
+<p>2 equals signs for <code class="verbatim">verbatim</code>,</p>
+</li>
+<li>
+<p>2 pluses for <del>strike through text</del></p>
+</li>
+</ul>
+<p><strong>Bold</strong>, <em>italics</em>, <code class="verbatim">verbatim</code>, <del>strikethrough</del></p>
+</div>
+</div>
+<div id="outline-container-headline-8" class="outline-3">
+<h3 id="headline-8">
+Linking
+</h3>
+<div id="outline-text-headline-8" class="outline-text-3">
+<p>
+ Press <code class="verbatim">C-c C-l</code> to <strong>link</strong> objects (files)</p>
+<p>
+Example:</p>
+<p>
+<em>Link: https/</em>:basmyr.net/</p>
+<p>
+Then give a name to the linked text</p>
+<p>
+<em>Description: Basmyr.net</em></p>
+<p>
+ Press <code class="verbatim">C-c C-o</code> to <strong>open</strong> the linked plain text with an external program</p>
+<p>
+<a href="http://basmyr.net">Basmyr.net</a></p>
+<p>
+or a video url</p>
+<p>
+<a href="https://youtu.be/Wr2aFlWyzvM">Granulator</a></p>
+</div>
+</div>
+<div id="outline-container-headline-9" class="outline-3">
+<h3 id="headline-9">
+Tables
+</h3>
+<div id="outline-text-headline-9" class="outline-text-3">
+<p>
+Use <strong>pipes - vertical bars</strong> to make tables</p>
+<p>
+Example: Start with pipes and some text:</p>
+<p>
+<code class="verbatim">| some | | Data |</code></p>
+<p>
+then hit return, pipe (vertical bar), hyphen and tab to extend the table verticaly</p>
+<p>
+Press tab and the arrows keys to make arrangements on the table</p>
+<table>
+<thead>
+<tr>
+<th class="align-right">Some</th>
+<th>Data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="align-right">234</td>
+<td>muons</td>
+</tr>
+<tr>
+<td class="align-right">1200</td>
+<td>jets</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-headline-10" class="outline-3">
+<h3 id="headline-10">
+Images &amp; Graphics
+</h3>
+</div>
+<div id="outline-container-headline-11" class="outline-3">
+<h3 id="headline-11">
+Images
+</h3>
+<div id="outline-text-headline-11" class="outline-text-3">
+<p>
+To insert an image with descriptions do the following:</p>
+<blockquote>
+<p>Example-images</p>
+</blockquote>
+<pre class="example">
+#+Caption: This is my image
+#+Name: Fig 1
+[[./images/myimage]]
+</pre>
+</div>
+</div>
+<div id="outline-container-headline-12" class="outline-3">
+<h3 id="headline-12">
+Ditaa
+</h3>
+<div id="outline-text-headline-12" class="outline-text-3">
+<p>
+<code class="verbatim">#+BEGIN_SRC ditaa :file image/awesome.png</code></p>
+<p>
+   _
+  <em><span style="text-decoration: underline;">\_</span>      <span style="text-decoration: underline;"><span style="text-decoration: underline;">_</span></span>  <span style="text-decoration: underline;">_</span>  <span style="text-decoration: underline;">_</span>  _ <span style="text-decoration: underline;">_ __</span>   <span style="text-decoration: underline;">_</span>
+ //_\\ \ /\ / / _ \</em> <span style="text-decoration: underline;">_|/ _ \| &#39;</span> ` _ \ / _ \
+/  _  \ V  V /  <span style="text-decoration: underline;"><span style="text-decoration: underline;">/\</span></span> \ (_) | | | | | |  __/
+\_/ \_/\_/\_/ \___||___/\___/|_| |_| |_|\___|</p>
+<p>
+<code class="verbatim">#+END_SRC</code></p>
+<p>
+<code class="verbatim">C-c C-c</code> to evaluate lisp code inside source block</p>
+<p>
+<strong>Find the path of ditaa.jar in you computer through a lisp program</strong></p>
+<div class="src src-emacs-lisp">
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">
+<span style="color:#111">(</span><span style="color:#75af00">expand-file-name</span>
+             <span style="color:#d88200">&#34;ditaa.jar&#34;</span>
+      <span style="color:#111">(</span><span style="color:#75af00">file-name-as-directory</span>
+            <span style="color:#111">(</span><span style="color:#75af00">expand-file-name</span>
+                <span style="color:#d88200">&#34;scripts&#34;</span>
+               <span style="color:#111">(</span><span style="color:#75af00">file-name-as-directory</span>
+                  <span style="color:#111">(</span><span style="color:#75af00">expand-file-name</span>
+                      <span style="color:#d88200">&#34;../contrib&#34;</span>
+                     <span style="color:#111">(</span><span style="color:#75af00">file-name-directory</span> <span style="color:#111">(</span><span style="color:#111">org-find-library-dir</span> <span style="color:#d88200">&#34;org&#34;</span><span style="color:#111">)))))))</span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-13" class="outline-3">
+<h3 id="headline-13">
+Export to other formats
+</h3>
+<div id="outline-text-headline-13" class="outline-text-3">
+<p>
+Pressing <code class="verbatim">C-c C-e</code> popups a buffer to <strong>export</strong> markups to HTML-PDF-etc.</p>
+<p>
+Example: hit <code class="verbatim">h</code> and <code class="verbatim">o</code> if you want to <strong>export and open as html</strong>.</p>
+<p>
+Export Beamer: <code class="verbatim">C-c C-e l P</code>     <code class="verbatim">(org-beamer-export-to-pdf)</code></p>
+<p>
+Export PDF: <code class="verbatim">C-c C-e l O</code></p>
+<p>
+To export and open pdf make sure you have installed Mactex with extras
+no the basic version.</p>
+<p>
+Export as LaTeX,  and open PDF file.</p>
+</div>
+</div>
+<div id="outline-container-headline-14" class="outline-3">
+<h3 id="headline-14">
+Source Code
+</h3>
+<div id="outline-text-headline-14" class="outline-text-3">
+<p>
+Create code blocks to insert your code.</p>
+<p>
+Press <code class="verbatim">C-c &#39;</code> <strong>inside the SRC block</strong> to edit the current code block</p>
+<p>
+in the mode of the language you want. For instance:</p>
+<p>
+ <code class="verbatim">#+BEGIN_SRC emacs-lisp</code></p>
+<p>
+write some lisp to make your configurations in org-mode</p>
+<p>
+so as to see bullets (UTF-8 characters) when you editing <strong>Headers</strong> in org-mode instead of asterisks.</p>
+<p>
+Then close the source block with:</p>
+<p>
+<code class="verbatim">#+END_SRC</code></p>
+<p>
+<strong>Result</strong></p>
+<div class="src src-emacs-lisp">
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">
+     <span style="color:#111">(</span><span style="color:#111">require</span> <span style="color:#d88200">&#39;org-bullets</span><span style="color:#111">)</span>
+<span style="color:#111">(</span><span style="color:#111">add-hook</span> <span style="color:#d88200">&#39;org-mode-hook</span>
+          <span style="color:#111">(</span><span style="color:#111">lambda</span> <span style="color:#111">()</span> <span style="color:#111">(</span><span style="color:#111">org-bullets-mode</span> <span style="color:#ae81ff">1</span><span style="color:#111">)))</span></code></pre></div>
+</div>
+<p>
+<strong>You can customise source blocks using <code class="verbatim">M-x customize-face RET</code> face RET</strong></p>
+<p>
+Evaluate source code. Press C-c C-c inside the block and see the results.</p>
+<div class="src src-shell">
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">
+<span style="color:#111">echo</span> <span style="color:#d88200">&#34;Hello </span><span style="color:#111">$USER</span><span style="color:#d88200">! Today is `date`&#34;</span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-15" class="outline-3">
+<h3 id="headline-15">
+LaTeX integrator
+</h3>
+<div id="outline-text-headline-15" class="outline-text-3">
+<ul>
+<li>
+<p>Characters: α → β</p>
+</li>
+<li>
+<p>$O(n \log n)$</p>
+</li>
+</ul>
+<p>
+\begin{align*}
+q = 2 * 4 + 1 - 2 &amp;= 7 <br>
+         q &amp;=7
+\end{align*}</p>
+</div>
+</div>
+<div id="outline-container-headline-16" class="outline-3">
+<h3 id="headline-16">
+Shortcuts Tips
+</h3>
+<div id="outline-text-headline-16" class="outline-text-3">
+<p>
+write down <code class="verbatim">&lt;s</code> and press <code class="verbatim">tab</code> to open src blocks,</p>
+<p>
+<code class="verbatim">&lt;q</code> tab for Quotes,</p>
+<p>
+<code class="verbatim">&lt;e</code> tab for Examples</p>
+<p>
+<code class="verbatim">&lt;c</code> tab for Center</p>
+<p>
+etc.</p>
+<p>
+to cooment a <code class="verbatim">lisp</code> region select a word or a region with C-M-space and then M-; to comment</p>
+<p>
+For symbols such as degrees ° use the shortcut <code>C-x 8 o</code> </p>
+<p>
+To check mapped symbols do <code>C-x 8 C-h</code> </p>
+<p>
+For Footnotes use <code>fn:1</code></p>
+<pre class="example">
+##Example Footnotes##
+i.e. The earth is round ...[fn:1]
+
+[fn:1] It has actually been known that the Earth was round since the
+time of the ancient Greeks. I believe that it was Pythagoras who first
+proposed that the Earth was round sometime around 500 B.C.(https://starchild.gsfc.nasa.gov/docs/StarChild/questions/question54.html)
+</pre>
+</div>
+</div>
+<div id="outline-container-headline-17" class="outline-3">
+<h3 id="headline-17">
+Change read-only files on emacs
+</h3>
+<div id="outline-text-headline-17" class="outline-text-3">
+<p>
+<code class="verbatim">M-x toggle-read-only</code></p>
+</div>
+</div>
+<div id="outline-container-headline-18" class="outline-3">
+<h3 id="headline-18">
+TO DO
+</h3>
+<div id="outline-text-headline-18" class="outline-text-3">
+<p>type TODO to create a todo object
+Move the cursor one line after the TODO item and press <code class="verbatim">C-c C-s</code> <code class="verbatim">(org-schedule)</code>
+to schedule with agenda</p>
+<blockquote>
+<p>TODO Call John
+SCHEDULED: <span class="timestamp">&lt;2016-11-09 Wed&gt;</span></p>
+</blockquote>
+<blockquote>
+<p>TODO read this and that
+SCHEDULED: <span class="timestamp">&lt;2016-11-10 Thu&gt;</span></p>
+</blockquote>
+<blockquote>
+<p>DONE export html minted  (highlight colour - syntax source blocks)
+SCHEDULED: <span class="timestamp">&lt;2016-10-12 Wed&gt;</span></p>
+</blockquote>
+<p>
+To open week-agenda window press C-ca
+To schedule a TODO item press C-c C-s
+Use shift-arrows to change dates</p>
+</div>
+</div>
+<div id="outline-container-headline-19" class="outline-3">
+<h3 id="headline-19">
+Github
+</h3>
+<div id="outline-text-headline-19" class="outline-text-3">
+<p>
+Introduction to Environments (Github or Bitbucket) for organizing and sharing files-Git.
+Set up an account with Slack and Github.</p>
+<blockquote>
+<p>Github</p>
+</blockquote>
+<p>
+ organize projects and share the
+individual processes using tools such as mass communication techniques
+Slack-Git.</p>
+<p>
+Git:</p>
+<ul>
+<li>
+<p>Create a Repository</p>
+</li>
+<li>
+<p>Create a Branch</p>
+</li>
+<li>
+<p>Make a Commit</p>
+</li>
+<li>
+<p>Push and Commit.</p>
+</li>
+</ul>
+<p><a href="https://guides.github.com/activities/hello-world/">GitHub Hello world</a></p>
+<p>
+<a href="https://gist.github.com/davfre/8313299">Github example</a></p>
+<p>
+Https://guides.github.com/activities/hello-world/,
+Https://gist.github.com/davfre/8313299</p>
+</div>
+</div>
+<div id="outline-container-headline-20" class="outline-3">
+<h3 id="headline-20">
+install package magit and usage
+</h3>
+<div id="outline-text-headline-20" class="outline-text-3">
+<blockquote>
+<p>Magit</p>
+</blockquote>
+<p>
+Download
+<a href="https://github.com/magit/magit%20">Magit</a></p>
+<p>
+Install Magit using MELPA</p>
+<p>
+Dired to the folder you want to create the .git file and press</p>
+<p>
+<code class="verbatim">M-x magit-init</code> and press <code class="verbatim">y</code></p>
+<p>
+Then press M-x magit-remote-add</p>
+<p>
+add remote rep to master or origin</p>
+<p>
+Backup rep online on Github</p>
+<p>
+First, create an ssh key to gain access into your repositories</p>
+<p>
+ Concatanate keys on terminal</p>
+<p>
+ie. //cat id_rsa.pub | pbcopy</p>
+<p>
+Press <code class="verbatim">C-x m</code> to display information about the current Git repository</p>
+<p>
+Press <code class="verbatim">C-x g</code> for magit-status</p>
+<p>
+<code class="verbatim">s</code> to stage files</p>
+<p>
+<code class="verbatim">c-c</code>  (write a comment) and then press <code class="verbatim">C-c C-c</code> to commit</p>
+<p>
+The next step is to push to  a remote branch on Github.</p>
+<p>
+Press <code class="verbatim">Shift-p p</code> to push to a remote branch (master).</p>
+<p>
+<code class="verbatim">P-p</code> to push to remote</p>
+</div>
+</div>
+<div id="outline-container-headline-21" class="outline-3">
+<h3 id="headline-21">
+Pull requests
+</h3>
+<div id="outline-text-headline-21" class="outline-text-3">
+<p>
+If you use more than one computers for the same repo you need to pull
+first and then to push to remote repo.</p>
+<p>
+On magit press <code class="verbatim">F</code> and <code class="verbatim">p</code> to pull to master.
+Then you are able to push into the location of this exact repository
+from your other computer. If later you want to upadate changes in your
+first computer you need to pull again and then push.</p>
+<p>
+<strong>NOTE</strong></p>
+<p>
+This seems a little bit tricky but it might happen.</p>
+<p>
+You might need to change the url of your repo in your first
+computer in case you didn&#39;t choose the same name for the folder where
+your project is located in your second computer. This happens, in case
+you first created the repo for example, in
+your laptop, in a folder named <strong>project1</strong> and built your site i.e hugo, and then pull this repo into
+a folder with the name <strong>project2</strong> in your other computer.</p>
+<p>
+To change the repo address go to your .git folder inside your poroject
+and open <code class="verbatim">config</code> file. Then change the repo address to the new one.</p>
+<p>
+i.e in <code class="verbatim">config</code> replace the old url with the new one:</p>
+<p>
+[remote &#34;origin&#34;]</p>
+<p>
+<del>url = git@github.com:User/project1.git</del></p>
+<p>
+url = git@github.com:User/project2.git</p>
+<p>
+After you did this you will be able to push again from your first
+computer.</p>
+<p>
+<strong>other issues</strong></p>
+<ul>
+<li>
+<p>Git refusing to merge unrelated histories</p>
+</li>
+</ul>
+<p>git cherry-pick -m 1 1234deadbeef1234deadbeef
+git rebase –continue</p>
+<p>
+merge</p>
+<p>
+Git failed…</p>
+<p>
+Git refusing to merge unrelated histories</p>
+<p>
+in magit press h to bring the popoup window and choose rebase -r and then -p</p>
+</div>
+</div>
+<div id="outline-container-headline-22" class="outline-3">
+<h3 id="headline-22">
+Install Dictionaries -emacs
+</h3>
+<div id="outline-text-headline-22" class="outline-text-3">
+<p>
+<strong>Install aspell with brew</strong></p>
+<div class="src src-shell">
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">
+$ brew install aspell --with-lang-en --with-lang-el --with-lang-de</code></pre></div>
+</div>
+<p>
+for English, Hellenic and Deutsch languages.</p>
+<p>
+if you have problems installing aspell with the above code</p>
+<p>
+just do only:</p>
+<div class="src src-shell">
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">
+$ brew install aspell</code></pre></div>
+</div>
+<p>
+<strong>Install aspell using downloaded packages aspell-0.60.6.1</strong></p>
+<p>
+go to terminal and type:</p>
+<div class="src src-shell">
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ <span style="color:#111">cd</span> ~/aspell path
+$ ./configure
+$ make
+$ make install</code></pre></div>
+</div>
+<p>
+To install additional dictionary download the language you prefer from  <a href="ftp://ftp.gnu.org/gnu/aspell/dict/0index.html">GNU_Available Aspell Dictionaries</a></p>
+<p>
+i.e <code class="verbatim">aspell-el-0.50-3</code> for Hellenic language (Greek)</p>
+<p>
+and go to terminal and type:</p>
+<div class="src src-shell">
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ <span style="color:#111">cd</span> ~/dictionary path
+$ ./configure
+$ make
+$ install</code></pre></div>
+</div>
+<p>
+<strong>Switch dictionary</strong></p>
+<p>
+To switch between dictionaries run:</p>
+<p>
+M-x: <code class="verbatim">ispell-change-dictionary</code></p>
+<p>
+and write <em>greek</em> for Hellenic language auto-correct</p>
+<p>
+Press F6 (fn-F6) to switch between dictionaries (british, greek, german)</p>
+<p>
+If you want to use the english dictionary in a particular buffer instead,
+put the following on the first line of the buffer:</p>
+<p>
+<code class="verbatim">-*- ispell-dictionary: &#34;english&#34; -*-</code></p>
+<p>
+<strong>Use flyspell instead of ispell</strong></p>
+<div class="src src-lisp">
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#111">(</span><span style="color:#00a8c8">setq</span> <span style="color:#111">ispell-list-command</span> <span style="color:#d88200">&#34;--list&#34;</span><span style="color:#111">)</span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-23" class="outline-3">
+<h3 id="headline-23">
+text expansion
+</h3>
+<div id="outline-text-headline-23" class="outline-text-3">
+<p>
+install YASnippet using MELPA</p>
+<p>
+put the below into your init.el</p>
+<div class="src src-emacs-lisp">
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="color:#111">(</span><span style="color:#111">add-to-list</span> <span style="color:#d88200">&#39;load-path</span>
+             <span style="color:#d88200">&#34;~/.emacs.d/plugins/yasnippet&#34;</span><span style="color:#111">)</span>
+<span style="color:#111">(</span><span style="color:#111">require</span> <span style="color:#d88200">&#39;yasnippet</span><span style="color:#111">)</span>
+<span style="color:#111">(</span><span style="color:#111">yas-global-mode</span> <span style="color:#ae81ff">1</span><span style="color:#111">)</span></code></pre></div>
+</div>
+<p>
+quit emacs and open again and type</p>
+<p>
+<code class="verbatim">M-x yas-new-snippet</code></p>
+<ul>
+<li>
+<p>Give a name to your snippet</p>
+</li>
+<li>
+<p>give the abrev</p>
+</li>
+<li>
+<p>write your text or code you want to be expanted</p>
+</li>
+<li>
+<p>save file C-c C-c</p>
+</li>
+<li>
+<p>choose a table i.e prog-mode</p>
+</li>
+<li>
+<p>give a name to your snippet (I use the abrev key as the name)</p>
+</li>
+</ul>
+<p>try using the abrev key and press tab to expant your text.</p>
+</div>
+</div>
+<div id="outline-container-headline-24" class="outline-3">
+<h3 id="headline-24">
+Searching
+</h3>
+<div id="outline-text-headline-24" class="outline-text-3">
+<p>
+Press <code class="verbatim">C-s</code> to search with I-search.</p>
+<p>
+You can also try:</p>
+<p>
+C-h f (or M-x describe-function) will show you the bindings for a command.
+C-h b (or M-x describe-bindings) will show you all bindings.
+C-h m (M-x describe-mode) is also handy to list bindings by mode.
+You might also try C-h k (M-x describe-key) to show what command is bound to a key.</p>
+<p>
+See also <code class="verbatim">helm swoop</code></p>
+<p>
+There is also the <code class="verbatim">projectile</code>. To use projectile make sure you have created a
+.git repo into your project.</p>
+<p>
+Press <code class="verbatim">C-cpp</code> to open projectile
+and search for projects</p>
+</div>
+</div>
+<div id="outline-container-headline-25" class="outline-3">
+<h3 id="headline-25">
+Export references to pdf with org-mode - bibtex
+</h3>
+<div id="outline-text-headline-25" class="outline-text-3">
+<p>
+The word ,,BibTeX&#39;&#39; stands for a tool and a file format which are used to describe and process lists of references, mostly in conjunction with LaTeX documents<a href="http://www.bibtex.org/">_1</a>.</p>
+<p>
+<strong>Set up</strong></p>
+<p>
+First put the bellow code in your init.el  ./emacs.d</p>
+<div class="src src-emacs-lisp">
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-emacs-lisp" data-lang="emacs-lisp">
+<span style="color:#75715e">;; Bibtex-latex export citation</span>
+<span style="color:#111">(</span><span style="color:#111">setq</span> <span style="color:#111">org-latex-pdf-process</span>
+      <span style="color:#f92672">&#39;</span><span style="color:#111">(</span><span style="color:#d88200">&#34;latexmk -pdflatex=&#39;pdflatex -interaction nonstopmode&#39; -pdf -bibtex -f %f&#34;</span><span style="color:#111">))</span></code></pre></div>
+</div>
+<p>
+Your next step is to create a .bib file with your citations and name it i.e: test-bib-refs</p>
+<blockquote>
+<p>Examples of bibtex style references</p>
+</blockquote>
+<p>
+<strong>[1]</strong></p>
+<div class="src src-latex">
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-latex" data-lang="latex">@ARTICLE<span style="color:#111">{</span>2011ApJS..192....9T,
+   author = <span style="color:#111">{{</span>Turk<span style="color:#111">}</span>, M.~J. and <span style="color:#111">{</span>Smith<span style="color:#111">}</span>, B.~D. and <span style="color:#111">{</span>Oishi<span style="color:#111">}</span>, J.~S. and <span style="color:#111">{</span>Skory<span style="color:#111">}</span>, S. and
+     <span style="color:#111">{</span>Skillman<span style="color:#111">}</span>, S.~W. and <span style="color:#111">{</span>Abel<span style="color:#111">}</span>, T. and <span style="color:#111">{</span>Norman<span style="color:#111">}</span>, M.~L.<span style="color:#111">}</span>,
+    title = &#34;<span style="color:#111">{</span>yt: A Multi-code Analysis Toolkit for Astrophysical Simulation Data<span style="color:#111">}</span>&#34;,
+  journal = <span style="color:#111">{</span>The Astrophysical Journal Supplement Series<span style="color:#111">}</span>,
+archivePrefix = &#34;arXiv&#34;,
+   eprint = <span style="color:#111">{</span>1011.3514<span style="color:#111">}</span>,
+ primaryClass = &#34;astro-ph.IM&#34;,
+ keywords = <span style="color:#111">{</span>cosmology: theory, methods: data analysis, methods: numerical <span style="color:#111">}</span>,
+     year = 2011,
+    month = jan,
+   volume = 192,
+      eid = <span style="color:#111">{</span>9<span style="color:#111">}</span>,
+    pages = <span style="color:#111">{</span>9<span style="color:#111">}</span>,
+      doi = <span style="color:#111">{</span>10.1088/0067-0049/192/1/9<span style="color:#111">}</span>,
+   adsurl = <span style="color:#111">{</span>http://adsabs.harvard.edu/abs/2011ApJS..192....9T<span style="color:#111">}</span>,
+  adsnote = <span style="color:#111">{</span>Provided by the SAO/NASA Astrophysics Data System<span style="color:#111">}</span>
+<span style="color:#111">}</span></code></pre></div>
+</div>
+<blockquote>
+<p>another example:</p>
+</blockquote>
+<p>
+<strong>[2]</strong></p>
+<div class="src src-latex">
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-latex" data-lang="latex">@InProceedings<span style="color:#111">{</span> alejandro<span style="color:#111">_</span>weinstein-proc-scipy-2016,
+  author    = <span style="color:#111">{</span> <span style="color:#111">{</span>A<span style="color:#111">}</span>lejandro <span style="color:#111">{</span>W<span style="color:#111">}</span>einstein and <span style="color:#111">{</span>W<span style="color:#111">}</span>ael <span style="color:#111">{</span>E<span style="color:#111">}</span>l-<span style="color:#111">{</span>D<span style="color:#111">}</span>eredy and <span style="color:#111">{</span>S<span style="color:#111">}</span>téren <span style="color:#111">{</span>C<span style="color:#111">}</span>habert and <span style="color:#111">{</span>M<span style="color:#111">}</span>yriam <span style="color:#111">{</span>F<span style="color:#111">}</span>uentes <span style="color:#111">}</span>,
+  title     = <span style="color:#111">{</span> <span style="color:#111">{</span>F<span style="color:#111">}</span>itting <span style="color:#111">{</span>H<span style="color:#111">}</span>uman <span style="color:#111">{</span>D<span style="color:#111">}</span>ecision <span style="color:#111">{</span>M<span style="color:#111">}</span>aking <span style="color:#111">{</span>M<span style="color:#111">}</span>odels using <span style="color:#111">{</span>P<span style="color:#111">}</span>ython <span style="color:#111">}</span>,
+  booktitle = <span style="color:#111">{</span> <span style="color:#111">{</span>P<span style="color:#111">}</span>roceedings of the 15th <span style="color:#111">{</span>P<span style="color:#111">}</span>ython in <span style="color:#111">{</span>S<span style="color:#111">}</span>cience <span style="color:#111">{</span>C<span style="color:#111">}</span>onference <span style="color:#111">}</span>,
+  pages     = <span style="color:#111">{</span> 1 - 6 <span style="color:#111">}</span>,
+  year      = <span style="color:#111">{</span> 2016 <span style="color:#111">}</span>,
+  editor    = <span style="color:#111">{</span> <span style="color:#111">{</span>S<span style="color:#111">}</span>ebastian <span style="color:#111">{</span>B<span style="color:#111">}</span>enthall and <span style="color:#111">{</span>S<span style="color:#111">}</span>cott <span style="color:#111">{</span>R<span style="color:#111">}</span>ostrup <span style="color:#111">}</span>
+<span style="color:#111">}</span></code></pre></div>
+</div>
+<blockquote>
+<p>then use these latex commands inside your org file</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>Tests in org file</p>
+</blockquote>
+<blockquote>
+<p>Latex</p>
+</blockquote>
+<blockquote>
+<p>Example of citation</p>
+</blockquote>
+<blockquote>
+<p>…this toolkit\cite{2011ApJS..192….9T}.</p>
+</blockquote>
+<blockquote>
+<p>another example</p>
+</blockquote>
+<blockquote>
+<p>…in python\cite{alejandro_weinstein-proc-scipy-2016}.</p>
+</blockquote>
+<blockquote>
+<p>…</p>
+</blockquote>
+<blockquote>
+<p>\printbibliography</p>
+</blockquote>
+<blockquote>
+<p>*Note: put <code class="verbatim">\printbibliography</code> at the end so as to print the references section last on your text.</p>
+</blockquote>
+<blockquote>
+<p>Then press C–c C-e to open org export dispatcher and then press <em>l</em>
+and <em>o</em> to export and open the pdf.</p>
+</blockquote>
+</div>
+</div>
+<div id="outline-container-headline-26" class="outline-3">
+<h3 id="headline-26">
+Emacs-G++
+</h3>
+<div id="outline-text-headline-26" class="outline-text-3">
+<blockquote>
+<p>G++ Hello_World</p>
+</blockquote>
+<p>Create a folder <strong>hello_world</strong>.
+ cd in this folder and create a file <strong>hello_world.cpp</strong></p>
+<p>
+copy the below code and paste it into <strong>hello_world.cpp</strong> file</p>
+<div class="src src-c++">
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">/*hello_world.cpp*/</span>
+
+<span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">using</span> <span style="color:#00a8c8">namespace</span> <span style="color:#111">std</span><span style="color:#111">;</span>
+
+<span style="color:#00a8c8">int</span> <span style="color:#75af00">main</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+    <span style="color:#111">cout</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#d88200">&#34;hello world!&#34;</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#111">endl</span><span style="color:#111">;</span>
+    <span style="color:#00a8c8">return</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span>
+<span style="color:#111">}</span></code></pre></div>
+</div>
+<p>
+The next step is to create a <strong>makefile</strong>.</p>
+<p>
+Use the bellow code.</p>
+<p>
+=hello_world: hello_world.cpp</p>
+<p>
+[TAB]g++ -Wall -g hello_world.cpp -o hello_world=</p>
+<p>
+then go back (M-x b) to the <strong>hello_world.cpp</strong> and press <code class="verbatim">C-x c</code>
+to run the programm.</p>
+<p>
+you will see a &#39;hello world&#39; message.</p>
+<p>
+ <strong>Create and Run a programm with multiple source files</strong></p>
+<p>
+On emacs create a folder [use dired to the direction you want to create
+the folder and press <code class="verbatim">Shift-+</code>
+and give a name] then dired to the folder and create 5 source files:</p>
+<ul>
+<li>
+<p>main.cpp, which reffers to the main programm,</p>
+</li>
+<li>
+<p>Point.h, which is the header file for the Point class,</p>
+</li>
+<li>
+<p>Point.cpp, which is the implementation file for the Point class,</p>
+</li>
+<li>
+<p>Line.h, header file for the Line class,</p>
+</li>
+<li>
+<p>Line.cpp, which is the implementation file for the Line
+class.</p>
+</li>
+</ul>
+<p><strong>Compiling source code</strong></p>
+<p>
+Compile its source code using the -c flag with the compiler.</p>
+<p>
+i.e.</p>
+<div class="src src-shell">
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">% g++ -c main.cpp
+% g++ -c Point.cpp
+% g++ -c Line.cpp</code></pre></div>
+</div>
+<p>
+This process generates object files <code class="verbatim">.o</code></p>
+<p>
+The next step is to link the object files into an executable</p>
+<div class="src src-shell">
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">% g++ -o main main.o Point.o Line.o</code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-27" class="outline-3">
+<h3 id="headline-27">
+makefile
+</h3>
+<div id="outline-text-headline-27" class="outline-text-3">
+<p>
+The makefile tells <code class="verbatim">make</code> how to compile and link a program.</p>
+<p>
+A makefile consists of rules with the following shape:</p>
+<pre class="example">
+target … : prerequisites …
+        recipe
+        …
+        …
+</pre>
+<p>
+<strong>Create a makefile</strong></p>
+<p>
+open emacs and dired to the folder with the .cpp and .o files and
+create a <code class="verbatim">makefile</code>. This file genereates the executable <code class="verbatim">main</code></p>
+<p>
+The one part is to set the <code class="verbatim">variables</code> you need to use in a simple makefile. These are variables
+which specify the C++ compiler and linker, as well as, flags
+for the compiler, etc.</p>
+<ul>
+<li>
+<p>Variables</p>
+</li>
+</ul>
+<p>Compiler</p>
+<p>
+<code class="verbatim">Comp = g++</code></p>
+<p>
+Compiler Flags</p>
+<p>
+<code class="verbatim">CompFL = -Wall -g</code></p>
+<p>
+<a href="https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#Warning-Options">Warnings Options</a></p>
+<ul>
+<li>
+<p>-Wall: This enables all the warnings about constructions that some</p>
+</li>
+</ul>
+<p>users consider questionable, and that are easy to avoid (or modify to
+prevent the warning), even in conjunction with macros. This also
+enables some language-specific warnings described in C++ Dialect
+Options and Objective-C and Objective-C++ Dialect Options.</p>
+<ul>
+<li>
+<p>-W or -Wextra: This enables some extra warning flags that are not enabled by Wall.</p>
+</li>
+<li>
+<p>-Werror: Make the specified warning into an error.</p>
+</li>
+</ul>
+<p>
+and the other part is to set the <code class="verbatim">targets</code> which can be files to be
+generated.</p>
+<ul>
+<li>
+<p>Targets</p>
+<p>
+<code class="verbatim">#Targets needed to bring the executable up to date</code></p>
+</li>
+</ul>
+<p><code class="verbatim">main: main.o Point.o Rectangle.o</code></p>
+<p>
+<code class="verbatim">[TAB]	$(Comp) $(CompFL) -o main main.o Point.o Line.o</code></p>
+<p>
+<code class="verbatim"># If we haven&#39;t set the variables Comp and CompFL the code would be like</code>
+<code class="verbatim"># this:</code>
+<code class="verbatim"># g++ -Wall -g -o main main.o Point.o Line.o</code></p>
+<p>
+<code class="verbatim"># The main.o target can be written more simply</code></p>
+<p>
+<code class="verbatim">main.o: main.cpp Point.h Line.h</code></p>
+<p>
+<code class="verbatim">[TAB]	$(Comp) $(CompFL) -c main.cpp</code></p>
+<p>
+<code class="verbatim">Point.o: Point.h</code></p>
+<p>
+<code class="verbatim">Line.o: Line.h Point.h</code></p>
+<p>
+To comment a make file use <code class="verbatim">#</code></p>
+<p>
+After creating the makefile choose the main.cpp file and press <code class="verbatim">C-x c</code>
+and then hit <code class="verbatim">enter</code> to begin the compilation.</p>
+<p>
+Clone the below repository to create a tetraedron
+and also to see an example of how to set up a makefile for OpenGL and GLUT
+framewroks.</p>
+<p>
+SSH: git@github.com:Vasileios/Gpp.git</p>
+<p>
+for more info see <a href="https://www.gnu.org/software/make/manual/make.html">GNU makefile</a></p>
+</div>
+</div>
+<div id="outline-container-headline-28" class="outline-3">
+<h3 id="headline-28">
+cmake
+</h3>
+<div id="outline-text-headline-28" class="outline-text-3">
+<ul>
+<li>
+<p>cmake Conways&#39;s Game of Life</p>
+</li>
+<li>
+<p>Compiling objects with g++ and SFML</p>
+</li>
+<li>
+<p>cmake</p>
+</li>
+</ul>
+<p>Click the below links to download and install sfml:</p>
+<p>
+<a href="https://www.sfml-dev.org/download.php">SFML download</a></p>
+<p>
+<a href="https://www.sfml-dev.org/tutorials/2.4/start-osx.php">SFML MAC osc</a></p>
+<p>
+You can also read the instructions of building SFML with cmake:</p>
+<p>
+<a href="https://github.com/SFML/SFML/wiki/Tutorial%253A-Build-your-SFML-project-with-CMake">Build SFML project</a></p>
+<p>
+Clone this <a href="https://github.com/Hopson97/Conway-s-Game-Of-Life">repository</a> and run the famous cellular automata Conway&#39;s Game
+of Life.</p>
+<p>
+On terminal, cd to the folder and use this command:</p>
+<div class="src src-shell">
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cmake -G<span style="color:#d88200">&#34;Xcode&#34;</span> -DSFML<span style="color:#f92672">=</span>/usr/local/include</code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-29" class="outline-3">
+<h3 id="headline-29">
+Running 3d graphics g++
+</h3>
+<div id="outline-text-headline-29" class="outline-text-3">
+<p>
+clone this repo</p>
+<p>
+https://github.com/scanberg/particle-skinning</p>
+<p>
+Requirements - glm, assimp, qt5</p>
+<div class="src src-shell">
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">brew install qt5
+brew install glm
+brew install assimp</code></pre></div>
+</div>
+<p>
+open main.cpp on emacs and hit <code class="verbatim">C-x c</code> to make the program.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+    
+    
+        <div class="chevrons">
+    <div id="navigation">
+<a class="nav nav-prev" href="/creative-coding/code_tips/shell/" title="Shell"> <i class="fa fa-chevron-left"></i><label>Shell</label></a>
+    <a class="nav nav-next" href="/creative-coding/code_tips/ipython/" title="ipython - Python" style="margin-right: 0px;"><label>ipython - Python</label><i class="fa fa-chevron-right"></i></a></div>
+  </div>
+
+  </section>
+</article>
+
+<footer>
+
+<div class="footline">
+    
+
+    
+
+    
+
+    
+    <div class="github-link">
+      <a href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/code_tips/emacs.org" target="blank"><i class="fa fa-code-fork"></i>
+        Improve this page</a>
+    </div>
+    
+  </div>
+
+
+	<div>
+
+
+  
+    Create a content/_footer.md file to customize the footer content
+  
+
+
+
+	</div>
+</footer>
+
+<script src="/creative-coding/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/vasileios.github.io\/creative-coding";
+    
+</script>
+<script src="/creative-coding/js/clipboard.min.js"></script>
+<script src="/creative-coding/js/featherlight.min.js"></script>
+
+<script type="text/javascript" src="/creative-coding/js/lunr.min.js"></script>
+<script type="text/javascript" src="/creative-coding/js/auto-complete.js"></script>
+<script type="text/javascript" src="/creative-coding/js/search.js"></script>
+<script src="/creative-coding/theme-flex/script.js"></script>
+
+
+
+
+<script src="https://vasileios.github.io/creative-coding/js/scripts.min.js"></script>
+    
+
+    
+    
+
+    
+  </body>
+</html>
