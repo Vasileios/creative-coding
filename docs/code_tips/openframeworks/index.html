@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Creative Coding</title>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2021-07-24T00:11:01 EEST">
+<title>openFrameworks :: Creative Coding</title>
+<link rel="shortcut icon" href="/creative-coding/images/favicon.png" type="image/x-icon" />
+<link href="/creative-coding/css/nucleus.css" rel="stylesheet">
+<link href="/creative-coding/css/font-awesome.min.css" rel="stylesheet">
+<link href="/creative-coding/css/featherlight.min.css" rel="stylesheet">
+<link href="/creative-coding/css/auto-complete.css" rel="stylesheet">
+<link href="/creative-coding/theme-flex/style.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/creative-coding/css/bootstrap.min.css">
+<meta name="description" content="">
+
+
+
+    
+  </head>
+  <body data-url="/creative-coding/code_tips/openframeworks/">
+    
+      <header>
+  <div class="logo">
+    
+	
+  
+    <a class="baselink" href="https://vasileios.github.io/creative-coding">Creative Coding</a>
+  
+
+
+  </div>
+  <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
+    <nav class="shortcuts">
+            <li class="" role="">
+                <a href="/creative-coding/"  rel="noopener">
+                  <i class='fa fa-fw fa-bullhorn'></i> Credits
+                </a>
+            </li>
+    </nav>
+</header>
+<article>
+  <aside>
+    <ul class="menu">
+          <li data-nav-id="/creative-coding/" class="dd-item">
+          <a href="/creative-coding/">
+            <i class="fa fa-fw fa-home"></i>
+          </a>
+          </li>
+    <li data-nav-id="https://vasileios.github.io/creative-coding/introduction/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/creative-coding/introduction/"><b>1. </b>Creative Coding</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="https://vasileios.github.io/creative-coding/introduction/creative_coding/" class="dd-item">
+        <div>
+          <a href="/creative-coding/introduction/creative_coding/">
+            About
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="https://vasileios.github.io/creative-coding/introduction/interdisciplinarity/" class="dd-item">
+        <div>
+          <a href="/creative-coding/introduction/interdisciplinarity/">
+            Interdisciplinarity
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="https://vasileios.github.io/creative-coding/introduction/algorithmic_composition/" class="dd-item">
+        <div>
+          <a href="/creative-coding/introduction/algorithmic_composition/">
+            Algorithmic Composition
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="https://vasileios.github.io/creative-coding/code_tips/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/creative-coding/code_tips/"><b>2. </b>Code $ Tips</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="https://vasileios.github.io/creative-coding/code_tips/shell/" class="dd-item">
+        <div>
+          <a href="/creative-coding/code_tips/shell/">
+            Shell
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="https://vasileios.github.io/creative-coding/code_tips/emacs/" class="dd-item">
+        <div>
+          <a href="/creative-coding/code_tips/emacs/">
+            Emacs
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="https://vasileios.github.io/creative-coding/code_tips/ipython/" class="dd-item">
+        <div>
+          <a href="/creative-coding/code_tips/ipython/">
+            ipython - Python
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="https://vasileios.github.io/creative-coding/code_tips/javascript/" class="dd-item">
+        <div>
+          <a href="/creative-coding/code_tips/javascript/">
+            Javascript
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="https://vasileios.github.io/creative-coding/code_tips/openframeworks/" class="dd-item">
+        <div>
+          <a href="/creative-coding/code_tips/openframeworks/">
+            openFrameworks
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="https://vasileios.github.io/creative-coding/code_tips/microcomputing/" class="dd-item">
+        <div>
+          <a href="/creative-coding/code_tips/microcomputing/">
+            Micro-computing
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="https://vasileios.github.io/creative-coding/code_tips/suggestedbibliography/" class="dd-item">
+        <div>
+          <a href="/creative-coding/code_tips/suggestedbibliography/">
+            Suggested Bibliography
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+
+
+
+
+    </ul>
+    <section>
+    </section>
+  </aside>
+  <section class="page">
+    
+    <div class="nav-select">
+      <center>Navigation : 
+        <select onchange="javascript:location.href = this.value;">
+          
+    <option value="/creative-coding/introduction/" >
+   Creative Coding</option>
+    <option value="/creative-coding/code_tips/" >
+   Code $ Tips</option> 
+      <option value="/creative-coding/code_tips/shell/" >- Shell</option>
+      <option value="/creative-coding/code_tips/emacs/" >- Emacs</option>
+      <option value="/creative-coding/code_tips/ipython/" >- ipython - Python</option>
+      <option value="/creative-coding/code_tips/javascript/" >- Javascript</option>
+      <option value="/creative-coding/code_tips/openframeworks/"  selected>- openFrameworks</option>
+      <option value="/creative-coding/code_tips/microcomputing/" >- Micro-computing</option>
+      <option value="/creative-coding/code_tips/suggestedbibliography/" >- Suggested Bibliography</option>
+  
+
+
+
+        </select>
+      </center>
+    </div>
+      <div>
+        <div class="searchbox">
+          <input data-search-input id="search-by" type="text" placeholder="Search...">
+        </div>
+      </div>
+    
+
+    <h1>openFrameworks</h1>
+    
+    
+    
+    
+<div id="outline-container-headline-1" class="outline-4">
+<h4 id="headline-1">
+chapter 2
+</h4>
+</div>
+<div id="outline-container-headline-2" class="outline-2">
+<h2 id="headline-2">
+openFrameworks
+</h2>
+<div id="outline-text-headline-2" class="outline-text-2">
+<div id="outline-container-headline-3" class="outline-3">
+<h3 id="headline-3">
+MSAFluids-Kinect
+</h3>
+</div>
+<div id="outline-container-headline-4" class="outline-3">
+<h3 id="headline-4">
+MSAFluids-data visualisation
+</h3>
+<div id="outline-text-headline-4" class="outline-text-3">
+<blockquote>
+<p>Choose <strong>C++</strong></p>
+</blockquote>
+<blockquote>
+<p>ofApp.h</p>
+</blockquote>
+<div class="src src-c++">
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#pragma once
+</span><span style="color:#75715e"></span>
+
+<span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;MSAFluid.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">//#include &#34;MSATimer.h&#34;
+</span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;ParticleSystem.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;ofMain.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;ofxOpenCv.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;ofxXmlSettings.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;ofxUI.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;ofxGui.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;ofxOsc.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#define HOST &#34;localhost&#34;
+</span><span style="color:#75715e">#define PORT 12345
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#define NUM_MSG_STRINGS 20
+</span><span style="color:#75715e"></span>
+
+<span style="color:#75715e">// comment this line out if you don&#39;t wanna use TUIO
+</span><span style="color:#75715e">// you will need ofxTUIO &amp; ofxOsc
+</span><span style="color:#75715e"></span><span style="color:#75715e">#define USE_TUIO
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// comment this line out if you don&#39;t wanna use the GUI
+</span><span style="color:#75715e">// you will need ofxSimpleGuiToo, ofxMSAInteractiveObject &amp; ofxXmlSettings
+</span><span style="color:#75715e">// if you don&#39;t use the GUI, you won&#39;t be able to see the fluid parameters
+</span><span style="color:#75715e"></span><span style="color:#75715e">#define USE_GUI
+</span><span style="color:#75715e"></span>
+
+<span style="color:#75715e">#ifdef USE_TUIO
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;ofxTuio.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#define tuioCursorSpeedMult				0.5	</span><span style="color:#75715e">// the iphone screen is so small, easy to rack up huge velocities! need to scale down
+</span><span style="color:#75715e"></span><span style="color:#75715e">#define tuioStationaryForce				0.001f	</span><span style="color:#75715e">// force exerted when cursor is stationary
+</span><span style="color:#75715e"></span><span style="color:#75715e">#endif
+</span><span style="color:#75715e"></span>
+
+<span style="color:#75715e">#ifdef USE_GUI
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;ofxSimpleGuiToo.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#endif
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// uncomment this to read from two kinects simultaneously
+</span><span style="color:#75715e">//#define USE_TWO_KINECTS
+</span><span style="color:#75715e"></span>
+<span style="color:#00a8c8">class</span> <span style="color:#75af00">ofApp</span> <span style="color:#f92672">:</span> <span style="color:#00a8c8">public</span> <span style="color:#111">ofBaseApp</span> <span style="color:#111">{</span>
+<span style="color:#00a8c8">public</span><span style="color:#f92672">:</span>
+
+    <span style="color:#00a8c8">void</span> <span style="color:#111">setup</span><span style="color:#111">();</span>
+    <span style="color:#00a8c8">void</span> <span style="color:#75af00">setupGui</span><span style="color:#111">();</span>
+    <span style="color:#00a8c8">void</span> <span style="color:#75af00">update</span><span style="color:#111">();</span>
+    <span style="color:#00a8c8">void</span> <span style="color:#75af00">drawGui</span><span style="color:#111">(</span><span style="color:#111">ofEventArgs</span> <span style="color:#f92672">&amp;</span> <span style="color:#111">args</span><span style="color:#111">);</span>
+    <span style="color:#00a8c8">void</span> <span style="color:#75af00">draw</span><span style="color:#111">();</span>
+    <span style="color:#00a8c8">void</span> <span style="color:#75af00">exit</span><span style="color:#111">();</span>
+    <span style="color:#00a8c8">void</span> <span style="color:#75af00">keyPressed</span><span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">key</span><span style="color:#111">);</span>
+    <span style="color:#75715e">//void mouseMoved(int x, int y );
+</span><span style="color:#75715e"></span>
+   <span style="color:#75715e">// void mouseDragged(int x, int y, int button);
+</span><span style="color:#75715e"></span>    <span style="color:#00a8c8">void</span> <span style="color:#75af00">mousePressed</span><span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">x</span><span style="color:#111">,</span> <span style="color:#00a8c8">int</span> <span style="color:#111">y</span><span style="color:#111">,</span> <span style="color:#00a8c8">int</span> <span style="color:#111">button</span><span style="color:#111">);</span>
+    <span style="color:#00a8c8">void</span> <span style="color:#75af00">mouseReleased</span><span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">x</span><span style="color:#111">,</span> <span style="color:#00a8c8">int</span> <span style="color:#111">y</span><span style="color:#111">,</span> <span style="color:#00a8c8">int</span> <span style="color:#111">button</span><span style="color:#111">);</span>
+    <span style="color:#00a8c8">void</span> <span style="color:#75af00">windowResized</span><span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">w</span><span style="color:#111">,</span> <span style="color:#00a8c8">int</span> <span style="color:#111">h</span><span style="color:#111">);</span>
+    <span style="color:#00a8c8">void</span> <span style="color:#75af00">fadeToColor</span><span style="color:#111">(</span><span style="color:#00a8c8">float</span> <span style="color:#111">r</span><span style="color:#111">,</span> <span style="color:#00a8c8">float</span> <span style="color:#111">g</span><span style="color:#111">,</span> <span style="color:#00a8c8">float</span> <span style="color:#111">b</span><span style="color:#111">,</span> <span style="color:#00a8c8">float</span> <span style="color:#111">speed</span><span style="color:#111">);</span>
+    <span style="color:#00a8c8">void</span> <span style="color:#75af00">addToFluid</span><span style="color:#111">(</span><span style="color:#111">ofVec2f</span> <span style="color:#111">pos</span><span style="color:#111">,</span> <span style="color:#111">ofVec2f</span> <span style="color:#111">vel</span><span style="color:#111">,</span> <span style="color:#00a8c8">bool</span> <span style="color:#111">addColor</span><span style="color:#111">,</span> <span style="color:#00a8c8">bool</span> <span style="color:#111">addForce</span><span style="color:#111">);</span>
+
+    <span style="color:#111">ofVboMesh</span> <span style="color:#111">mesh</span><span style="color:#111">;</span>
+    <span style="color:#111">ofEasyCam</span> <span style="color:#111">cam</span><span style="color:#111">;</span>
+    <span style="color:#75715e">//ofxAssimpModelLoader model;
+</span><span style="color:#75715e"></span>    <span style="color:#111">ofLight</span> <span style="color:#111">light</span><span style="color:#111">;</span>
+
+
+    <span style="color:#00a8c8">float</span>                   <span style="color:#111">colorMult</span><span style="color:#111">;</span>
+    <span style="color:#00a8c8">float</span>                   <span style="color:#111">velocityMult</span><span style="color:#111">;</span>
+    <span style="color:#00a8c8">int</span>                     <span style="color:#111">fluidCellsX</span><span style="color:#111">;</span>
+    <span style="color:#00a8c8">bool</span>                    <span style="color:#111">resizeFluid</span><span style="color:#111">;</span>
+    <span style="color:#00a8c8">bool</span>                    <span style="color:#111">drawFluid</span><span style="color:#111">;</span>
+    <span style="color:#00a8c8">bool</span>                    <span style="color:#111">drawParticles</span><span style="color:#111">;</span>
+
+    <span style="color:#111">msa</span><span style="color:#f92672">::</span><span style="color:#111">fluid</span><span style="color:#f92672">::</span><span style="color:#111">Solver</span>      <span style="color:#111">fluidSolver</span><span style="color:#111">;</span>
+    <span style="color:#111">msa</span><span style="color:#f92672">::</span><span style="color:#111">fluid</span><span style="color:#f92672">::</span><span style="color:#111">DrawerGl</span>	<span style="color:#111">fluidDrawer</span><span style="color:#111">;</span>
+
+    <span style="color:#111">ParticleSystem</span>          <span style="color:#111">particleSystem</span><span style="color:#111">;</span>
+
+    <span style="color:#111">ofVec2f</span>                 <span style="color:#111">pMouse</span><span style="color:#111">;</span>
+
+    <span style="color:#75715e">//Each frame take the number of blobs and create cursors at their centroids
+</span><span style="color:#75715e"></span>    <span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#111">ofVec2f</span><span style="color:#f92672">&gt;</span> <span style="color:#111">cursors</span> <span style="color:#111">;</span>
+    <span style="color:#00a8c8">float</span> <span style="color:#111">cursorXSensitivity</span> <span style="color:#111">;</span>
+    <span style="color:#00a8c8">float</span> <span style="color:#111">cursorYSensitivity</span> <span style="color:#111">;</span>
+    <span style="color:#00a8c8">bool</span> <span style="color:#111">bRestrictCursors</span> <span style="color:#111">;</span>
+    <span style="color:#00a8c8">float</span> <span style="color:#111">cursorBorderPadding</span> <span style="color:#111">;</span>
+
+    <span style="color:#00a8c8">bool</span>  <span style="color:#111">bFullscreen</span><span style="color:#111">;</span>
+    <span style="color:#00a8c8">bool</span>  <span style="color:#111">bShowControlPanel</span><span style="color:#111">;</span>
+    <span style="color:#00a8c8">bool</span> <span style="color:#111">bEpsCapture</span><span style="color:#111">;</span>
+
+    <span style="color:#00a8c8">bool</span> <span style="color:#111">bThreshWithOpenCV</span><span style="color:#111">;</span>
+    <span style="color:#00a8c8">bool</span> <span style="color:#111">bKinectOpen</span> <span style="color:#111">;</span>
+    <span style="color:#00a8c8">int</span> <span style="color:#111">nearThreshold</span><span style="color:#111">;</span>
+    <span style="color:#00a8c8">int</span> <span style="color:#111">farThreshold</span><span style="color:#111">;</span>
+
+    <span style="color:#00a8c8">float</span> <span style="color:#111">minBlobSize</span> <span style="color:#111">,</span> <span style="color:#111">maxBlobSize</span> <span style="color:#111">;</span>
+    <span style="color:#00a8c8">int</span> <span style="color:#111">maxCursors</span> <span style="color:#111">;</span>
+
+
+    <span style="color:#75715e">/////earh here
+</span><span style="color:#75715e"></span>    <span style="color:#111">ofImage</span> <span style="color:#111">texture</span><span style="color:#111">;</span>
+    <span style="color:#00a8c8">bool</span> <span style="color:#111">holdingbutton</span><span style="color:#111">;</span>
+    <span style="color:#00a8c8">int</span> <span style="color:#111">oldalpha</span><span style="color:#111">;</span>
+    <span style="color:#00a8c8">int</span> <span style="color:#111">newalpha</span><span style="color:#111">;</span>
+    <span style="color:#111">ofImage</span> <span style="color:#111">offimage</span><span style="color:#111">;</span>
+    <span style="color:#111">ofImage</span> <span style="color:#111">onimage</span><span style="color:#111">;</span>
+
+    <span style="color:#111">GLUquadricObj</span> <span style="color:#f92672">*</span><span style="color:#111">quadric</span><span style="color:#111">;</span>
+    <span style="color:#75715e">/////
+</span><span style="color:#75715e"></span>
+     <span style="color:#00a8c8">int</span> <span style="color:#111">mouseX</span> <span style="color:#f92672">=</span><span style="color:#ae81ff">0</span><span style="color:#111">;</span>
+
+<span style="color:#75715e">#ifdef USE_TUIO
+</span><span style="color:#75715e"></span>    <span style="color:#111">ofxTuioClient</span> <span style="color:#111">tuioClient</span><span style="color:#111">;</span>
+<span style="color:#75715e">#endif
+</span><span style="color:#75715e"></span>
+
+
+    <span style="color:#111">ofxCvColorImage</span> <span style="color:#111">colorImg</span><span style="color:#111">;</span>
+
+    <span style="color:#111">ofxOscReceiver</span>          <span style="color:#111">receiver</span><span style="color:#111">;</span>
+
+    <span style="color:#00a8c8">float</span> <span style="color:#111">oscX</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.0</span><span style="color:#111">;</span>
+    <span style="color:#00a8c8">float</span> <span style="color:#111">oscY</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.0</span><span style="color:#111">;</span>
+    <span style="color:#00a8c8">int</span> <span style="color:#111">fadeAmt</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">;</span>
+
+    <span style="color:#75715e">//this holds all of our points
+</span><span style="color:#75715e"></span>    <span style="color:#111">vector</span><span style="color:#f92672">&lt;</span><span style="color:#111">ofVec3f</span><span style="color:#f92672">&gt;</span> <span style="color:#111">points</span><span style="color:#111">;</span>
+    <span style="color:#75715e">//this keeps track of the center of all the points
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//ofxPanel gui;
+</span><span style="color:#75715e"></span>
+
+
+    <span style="color:#111">ofBlendMode</span> <span style="color:#111">blendMode</span><span style="color:#111">;</span>
+    <span style="color:#111">ofImage</span> <span style="color:#111">rainbow</span><span style="color:#111">;</span>
+    <span style="color:#111">ofTrueTypeFont</span> 	<span style="color:#111">vagRounded</span><span style="color:#111">;</span>
+    <span style="color:#111">string</span> <span style="color:#111">eventString</span><span style="color:#111">;</span>
+    <span style="color:#111">string</span> <span style="color:#111">timeString</span><span style="color:#111">;</span>
+
+<span style="color:#111">};</span></code></pre></div>
+</div>
+<blockquote>
+<p>ofApp.cpp</p>
+</blockquote>
+<div class="src src-c++">
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">
+<span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;ofApp.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+
+<span style="color:#00a8c8">char</span> <span style="color:#111">sz</span><span style="color:#111">[]</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;[Rd9?-2XaUP0QY[hO%9QTYQ`-W`QZhcccYQY[`b&#34;</span><span style="color:#111">;</span>
+
+
+<span style="color:#00a8c8">float</span> <span style="color:#111">tuioXScaler</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+<span style="color:#00a8c8">float</span> <span style="color:#111">tuioYScaler</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+<span style="color:#75715e">//--------------------------------------------------------------
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">void</span> <span style="color:#111">ofApp</span><span style="color:#f92672">::</span><span style="color:#111">setup</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+    <span style="color:#111">ofSetLogLevel</span><span style="color:#111">(</span><span style="color:#111">OF_LOG_VERBOSE</span><span style="color:#111">);</span>
+
+    <span style="color:#75715e">// turn on smooth lighting //
+</span><span style="color:#75715e"></span>    <span style="color:#111">ofSetSmoothLighting</span><span style="color:#111">(</span><span style="color:#111">true</span><span style="color:#111">);</span>
+
+    <span style="color:#75715e">//need this for alpha to come through
+</span><span style="color:#75715e"></span>    <span style="color:#111">ofEnableAlphaBlending</span><span style="color:#111">();</span>
+
+ <span style="color:#75715e">//OSC
+</span><span style="color:#75715e"></span>
+    <span style="color:#111">receiver</span><span style="color:#111">.</span><span style="color:#111">setup</span><span style="color:#111">(</span><span style="color:#111">PORT</span><span style="color:#111">);</span>
+
+    <span style="color:#111">cout</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#d88200">&#34;listening for osc messages on port &#34;</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#111">PORT</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#d88200">&#34;</span><span style="color:#8045ff">\n</span><span style="color:#d88200">&#34;</span><span style="color:#111">;</span>
+
+    <span style="color:#75715e">//ofSetFrameRate(60);
+</span><span style="color:#75715e"></span>
+    <span style="color:#75715e">//Fluids
+</span><span style="color:#75715e"></span>    <span style="color:#00a8c8">for</span><span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">i</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span><span style="color:#111">;</span> <span style="color:#111">i</span><span style="color:#f92672">&lt;</span><span style="color:#111">strlen</span><span style="color:#111">(</span><span style="color:#111">sz</span><span style="color:#111">);</span> <span style="color:#111">i</span><span style="color:#f92672">++</span><span style="color:#111">)</span> <span style="color:#111">sz</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">]</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">20</span><span style="color:#111">;</span>
+
+    <span style="color:#75715e">// setup fluid stuff
+</span><span style="color:#75715e"></span>    <span style="color:#111">fluidSolver</span><span style="color:#111">.</span><span style="color:#111">setup</span><span style="color:#111">(</span><span style="color:#ae81ff">100</span><span style="color:#111">,</span> <span style="color:#ae81ff">100</span><span style="color:#111">);</span>
+    <span style="color:#111">fluidSolver</span><span style="color:#111">.</span><span style="color:#111">enableRGB</span><span style="color:#111">(</span><span style="color:#111">true</span><span style="color:#111">).</span><span style="color:#111">setFadeSpeed</span><span style="color:#111">(</span><span style="color:#ae81ff">0.002</span><span style="color:#111">).</span><span style="color:#111">setDeltaT</span><span style="color:#111">(</span><span style="color:#ae81ff">0.5</span><span style="color:#111">).</span><span style="color:#111">setVisc</span><span style="color:#111">(</span><span style="color:#ae81ff">0.00015</span><span style="color:#111">).</span><span style="color:#111">setColorDiffusion</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">);</span>
+    <span style="color:#111">fluidDrawer</span><span style="color:#111">.</span><span style="color:#111">setup</span><span style="color:#111">(</span><span style="color:#f92672">&amp;</span><span style="color:#111">fluidSolver</span><span style="color:#111">);</span>
+
+    <span style="color:#111">fluidCellsX</span>			<span style="color:#f92672">=</span> <span style="color:#ae81ff">150</span><span style="color:#111">;</span>
+
+    <span style="color:#111">drawFluid</span>			<span style="color:#f92672">=</span> <span style="color:#111">true</span><span style="color:#111">;</span>
+    <span style="color:#111">drawParticles</span>		<span style="color:#f92672">=</span> <span style="color:#111">true</span><span style="color:#111">;</span>
+    <span style="color:#111">ofSetFrameRate</span><span style="color:#111">(</span><span style="color:#ae81ff">60</span><span style="color:#111">);</span>
+    <span style="color:#111">ofBackground</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">);</span>
+    <span style="color:#111">ofSetVerticalSync</span><span style="color:#111">(</span><span style="color:#111">false</span><span style="color:#111">);</span>
+
+
+<span style="color:#75715e">#ifdef USE_TUIO
+</span><span style="color:#75715e"></span>    <span style="color:#111">tuioClient</span><span style="color:#111">.</span><span style="color:#111">start</span><span style="color:#111">(</span><span style="color:#ae81ff">3333</span><span style="color:#111">);</span>
+<span style="color:#75715e">#endif
+</span><span style="color:#75715e"></span>
+
+    <span style="color:#111">windowResized</span><span style="color:#111">(</span><span style="color:#111">ofGetWidth</span><span style="color:#111">(),</span> <span style="color:#111">ofGetHeight</span><span style="color:#111">());</span>		<span style="color:#75715e">// force this at start (cos I don&#39;t think it is called)
+</span><span style="color:#75715e"></span>    <span style="color:#111">pMouse</span> <span style="color:#f92672">=</span> <span style="color:#111">msa</span><span style="color:#f92672">::</span><span style="color:#111">getWindowCenter</span><span style="color:#111">();</span>
+    <span style="color:#111">resizeFluid</span>			<span style="color:#f92672">=</span> <span style="color:#111">true</span><span style="color:#111">;</span>
+
+    <span style="color:#75715e">//ofEnableAlphaBlending();
+</span><span style="color:#75715e"></span>    <span style="color:#111">ofSetBackgroundAuto</span><span style="color:#111">(</span><span style="color:#111">false</span><span style="color:#111">);</span>
+
+
+    <span style="color:#75715e">///////------mesh here
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/*
+</span><span style="color:#75715e">    mesh.setMode(OF_PRIMITIVE_TRIANGLE_STRIP);
+</span><span style="color:#75715e">    mesh.enableColors();
+</span><span style="color:#75715e">
+</span><span style="color:#75715e">    ofVec3f  v0(-100, -100, -100);
+</span><span style="color:#75715e">    ofVec3f v1(100, -100, -100);
+</span><span style="color:#75715e">    ofVec3f v2(100, 100, -100);
+</span><span style="color:#75715e">
+</span><span style="color:#75715e">    mesh.addVertex(v0);
+</span><span style="color:#75715e">    mesh.addColor(ofFloatColor(0.0, 0.0, 0.0));
+</span><span style="color:#75715e">
+</span><span style="color:#75715e">    mesh.addVertex(v1);
+</span><span style="color:#75715e">    mesh.addColor(ofFloatColor(1.0, 0.0, 0.0));
+</span><span style="color:#75715e">
+</span><span style="color:#75715e">    mesh.addVertex(v2);
+</span><span style="color:#75715e">    mesh.addColor(ofFloatColor(1.0, 1.0, 0.0));
+</span><span style="color:#75715e">
+</span><span style="color:#75715e">    */</span>
+
+    <span style="color:#75715e">///---sphere here
+</span><span style="color:#75715e"></span>    <span style="color:#111">ofDisableArbTex</span><span style="color:#111">();</span>
+    <span style="color:#75715e">//ofLoadImage(texture, &#34;earthTex.jpg&#34;);
+</span><span style="color:#75715e"></span>    <span style="color:#111">texture</span><span style="color:#111">.</span><span style="color:#111">load</span><span style="color:#111">(</span><span style="color:#d88200">&#34;earthTex.jpg&#34;</span><span style="color:#111">);</span>
+
+    <span style="color:#75715e">//this makes sure that the back of the model doesn&#39;t show through the front
+</span><span style="color:#75715e"></span>    <span style="color:#111">ofEnableDepthTest</span><span style="color:#111">();</span>
+    <span style="color:#75715e">// sphere.setRadius( width );
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//prepare quadric for sphere
+</span><span style="color:#75715e"></span>    <span style="color:#111">quadric</span> <span style="color:#f92672">=</span> <span style="color:#111">gluNewQuadric</span><span style="color:#111">();</span>
+    <span style="color:#111">gluQuadricTexture</span><span style="color:#111">(</span><span style="color:#111">quadric</span><span style="color:#111">,</span> <span style="color:#111">GL_TRUE</span><span style="color:#111">);</span>
+    <span style="color:#111">gluQuadricNormals</span><span style="color:#111">(</span><span style="color:#111">quadric</span><span style="color:#111">,</span> <span style="color:#111">GLU_SMOOTH</span><span style="color:#111">);</span>
+    <span style="color:#75715e">/////////////////////////
+</span><span style="color:#75715e"></span>
+<span style="color:#111">}</span>
+
+<span style="color:#75715e">//---------------------------------------
+</span><span style="color:#75715e"></span>
+
+<span style="color:#00a8c8">void</span> <span style="color:#111">ofApp</span><span style="color:#f92672">::</span><span style="color:#111">fadeToColor</span><span style="color:#111">(</span><span style="color:#00a8c8">float</span> <span style="color:#111">r</span><span style="color:#111">,</span> <span style="color:#00a8c8">float</span> <span style="color:#111">g</span><span style="color:#111">,</span> <span style="color:#00a8c8">float</span> <span style="color:#111">b</span><span style="color:#111">,</span> <span style="color:#00a8c8">float</span> <span style="color:#111">speed</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+    <span style="color:#111">glColor4f</span><span style="color:#111">(</span><span style="color:#111">r</span><span style="color:#111">,</span> <span style="color:#111">g</span><span style="color:#111">,</span> <span style="color:#111">b</span><span style="color:#111">,</span> <span style="color:#111">speed</span><span style="color:#111">);</span>
+    <span style="color:#111">ofDrawRectangle</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#111">ofGetWidth</span><span style="color:#111">(),</span> <span style="color:#111">ofGetHeight</span><span style="color:#111">());</span>
+
+<span style="color:#111">}</span>
+
+
+<span style="color:#75715e">// add force and dye to fluid, and create particles
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">void</span> <span style="color:#111">ofApp</span><span style="color:#f92672">::</span><span style="color:#111">addToFluid</span><span style="color:#111">(</span><span style="color:#111">ofVec2f</span> <span style="color:#111">pos</span><span style="color:#111">,</span> <span style="color:#111">ofVec2f</span> <span style="color:#111">vel</span><span style="color:#111">,</span> <span style="color:#00a8c8">bool</span> <span style="color:#111">addColor</span><span style="color:#111">,</span> <span style="color:#00a8c8">bool</span> <span style="color:#111">addForce</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+    <span style="color:#00a8c8">float</span> <span style="color:#111">speed</span> <span style="color:#f92672">=</span> <span style="color:#111">vel</span><span style="color:#111">.</span><span style="color:#111">x</span> <span style="color:#f92672">*</span> <span style="color:#111">vel</span><span style="color:#111">.</span><span style="color:#111">x</span>  <span style="color:#f92672">+</span> <span style="color:#111">vel</span><span style="color:#111">.</span><span style="color:#111">y</span> <span style="color:#f92672">*</span> <span style="color:#111">vel</span><span style="color:#111">.</span><span style="color:#111">y</span> <span style="color:#f92672">*</span> <span style="color:#111">msa</span><span style="color:#f92672">::</span><span style="color:#111">getWindowAspectRatio</span><span style="color:#111">()</span> <span style="color:#f92672">*</span> <span style="color:#111">msa</span><span style="color:#f92672">::</span><span style="color:#111">getWindowAspectRatio</span><span style="color:#111">();</span>    <span style="color:#75715e">// balance the x and y components of speed with the screen aspect ratio
+</span><span style="color:#75715e"></span>    <span style="color:#00a8c8">if</span><span style="color:#111">(</span><span style="color:#111">speed</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#111">pos</span><span style="color:#111">.</span><span style="color:#111">x</span> <span style="color:#f92672">=</span> <span style="color:#111">ofClamp</span><span style="color:#111">(</span><span style="color:#111">pos</span><span style="color:#111">.</span><span style="color:#111">x</span><span style="color:#111">,</span> <span style="color:#ae81ff">0.0f</span><span style="color:#111">,</span> <span style="color:#ae81ff">1.0f</span><span style="color:#111">);</span>
+        <span style="color:#111">pos</span><span style="color:#111">.</span><span style="color:#111">y</span> <span style="color:#f92672">=</span> <span style="color:#111">ofClamp</span><span style="color:#111">(</span><span style="color:#111">pos</span><span style="color:#111">.</span><span style="color:#111">y</span><span style="color:#111">,</span> <span style="color:#ae81ff">0.0f</span><span style="color:#111">,</span> <span style="color:#ae81ff">1.0f</span><span style="color:#111">);</span>
+
+        <span style="color:#00a8c8">int</span> <span style="color:#111">index</span> <span style="color:#f92672">=</span> <span style="color:#111">fluidSolver</span><span style="color:#111">.</span><span style="color:#111">getIndexForPos</span><span style="color:#111">(</span><span style="color:#111">pos</span><span style="color:#111">);</span>
+
+        <span style="color:#00a8c8">if</span><span style="color:#111">(</span><span style="color:#111">addColor</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+            <span style="color:#75715e">//			Color drawColor(CM_HSV, (getElapsedFrames() % 360) / 360.0f, 1, 1);
+</span><span style="color:#75715e"></span>            <span style="color:#111">ofColor</span> <span style="color:#111">drawColor</span><span style="color:#111">;</span>
+            <span style="color:#111">drawColor</span><span style="color:#111">.</span><span style="color:#111">setHsb</span><span style="color:#111">((</span><span style="color:#111">ofGetFrameNum</span><span style="color:#111">()</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">255</span><span style="color:#111">),</span> <span style="color:#ae81ff">255</span><span style="color:#111">,</span> <span style="color:#ae81ff">255</span><span style="color:#111">);</span>
+
+            <span style="color:#111">fluidSolver</span><span style="color:#111">.</span><span style="color:#111">addColorAtIndex</span><span style="color:#111">(</span><span style="color:#111">index</span><span style="color:#111">,</span> <span style="color:#111">drawColor</span> <span style="color:#f92672">*</span> <span style="color:#111">colorMult</span><span style="color:#111">);</span>
+
+            <span style="color:#00a8c8">if</span><span style="color:#111">(</span><span style="color:#111">drawParticles</span><span style="color:#111">)</span>
+                <span style="color:#111">particleSystem</span><span style="color:#111">.</span><span style="color:#111">addParticles</span><span style="color:#111">(</span><span style="color:#111">pos</span> <span style="color:#f92672">*</span> <span style="color:#111">ofVec2f</span><span style="color:#111">(</span><span style="color:#111">ofGetWindowSize</span><span style="color:#111">()),</span> <span style="color:#ae81ff">10</span><span style="color:#111">);</span>
+        <span style="color:#111">}</span>
+
+        <span style="color:#00a8c8">if</span><span style="color:#111">(</span><span style="color:#111">addForce</span><span style="color:#111">)</span>
+            <span style="color:#111">fluidSolver</span><span style="color:#111">.</span><span style="color:#111">addForceAtIndex</span><span style="color:#111">(</span><span style="color:#111">index</span><span style="color:#111">,</span> <span style="color:#111">vel</span> <span style="color:#f92672">*</span> <span style="color:#111">velocityMult</span><span style="color:#111">);</span>
+
+    <span style="color:#111">}</span>
+<span style="color:#111">}</span>
+
+
+
+
+
+<span style="color:#75715e">//--------------------------------------------------------------
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">void</span> <span style="color:#111">ofApp</span><span style="color:#f92672">::</span><span style="color:#111">setupGui</span><span style="color:#111">(){</span>
+
+
+
+
+    <span style="color:#00a8c8">float</span> <span style="color:#111">dim</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">24.0</span><span style="color:#111">;</span>
+
+    <span style="color:#111">gui</span><span style="color:#111">.</span><span style="color:#111">addSlider</span><span style="color:#111">(</span><span style="color:#d88200">&#34;fluidCellsX&#34;</span><span style="color:#111">,</span> <span style="color:#111">fluidCellsX</span><span style="color:#111">,</span> <span style="color:#ae81ff">20</span><span style="color:#111">,</span> <span style="color:#ae81ff">400</span><span style="color:#111">);</span>
+    <span style="color:#111">gui</span><span style="color:#111">.</span><span style="color:#111">addButton</span><span style="color:#111">(</span><span style="color:#d88200">&#34;resizeFluid&#34;</span><span style="color:#111">,</span> <span style="color:#111">resizeFluid</span><span style="color:#111">);</span>
+    <span style="color:#111">gui</span><span style="color:#111">.</span><span style="color:#111">addSlider</span><span style="color:#111">(</span><span style="color:#d88200">&#34;colorMult&#34;</span><span style="color:#111">,</span> <span style="color:#111">colorMult</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#ae81ff">100</span><span style="color:#111">);</span>
+    <span style="color:#111">gui</span><span style="color:#111">.</span><span style="color:#111">addSlider</span><span style="color:#111">(</span><span style="color:#d88200">&#34;velocityMult&#34;</span><span style="color:#111">,</span> <span style="color:#111">velocityMult</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#ae81ff">100</span><span style="color:#111">);</span>
+
+
+    <span style="color:#111">gui</span><span style="color:#111">.</span><span style="color:#111">addSlider</span><span style="color:#111">(</span><span style="color:#d88200">&#34;fs.viscocity&#34;</span><span style="color:#111">,</span> <span style="color:#111">fluidSolver</span><span style="color:#111">.</span><span style="color:#111">viscocity</span><span style="color:#111">,</span> <span style="color:#ae81ff">0.0</span><span style="color:#111">,</span> <span style="color:#ae81ff">0.01</span><span style="color:#111">);</span>
+    <span style="color:#111">gui</span><span style="color:#111">.</span><span style="color:#111">addSlider</span><span style="color:#111">(</span><span style="color:#d88200">&#34;fs.colorDiffusion&#34;</span><span style="color:#111">,</span> <span style="color:#111">fluidSolver</span><span style="color:#111">.</span><span style="color:#111">colorDiffusion</span><span style="color:#111">,</span> <span style="color:#ae81ff">0.0</span><span style="color:#111">,</span> <span style="color:#ae81ff">0.0003</span><span style="color:#111">);</span>
+    <span style="color:#111">gui</span><span style="color:#111">.</span><span style="color:#111">addSlider</span><span style="color:#111">(</span><span style="color:#d88200">&#34;fs.fadeSpeed&#34;</span><span style="color:#111">,</span> <span style="color:#111">fluidSolver</span><span style="color:#111">.</span><span style="color:#111">fadeSpeed</span><span style="color:#111">,</span> <span style="color:#ae81ff">0.0</span><span style="color:#111">,</span> <span style="color:#ae81ff">0.1</span><span style="color:#111">);</span>
+    <span style="color:#111">gui</span><span style="color:#111">.</span><span style="color:#111">addSlider</span><span style="color:#111">(</span><span style="color:#d88200">&#34;fs.solverIterations&#34;</span><span style="color:#111">,</span> <span style="color:#111">fluidSolver</span><span style="color:#111">.</span><span style="color:#111">solverIterations</span><span style="color:#111">,</span> <span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#ae81ff">50</span><span style="color:#111">);</span>
+    <span style="color:#111">gui</span><span style="color:#111">.</span><span style="color:#111">addSlider</span><span style="color:#111">(</span><span style="color:#d88200">&#34;fs.deltaT&#34;</span><span style="color:#111">,</span> <span style="color:#111">fluidSolver</span><span style="color:#111">.</span><span style="color:#111">deltaT</span><span style="color:#111">,</span> <span style="color:#ae81ff">0.1</span><span style="color:#111">,</span> <span style="color:#ae81ff">5</span><span style="color:#111">);</span>
+    <span style="color:#111">gui</span><span style="color:#111">.</span><span style="color:#111">addComboBox</span><span style="color:#111">(</span><span style="color:#d88200">&#34;fd.drawMode&#34;</span><span style="color:#111">,</span> <span style="color:#111">(</span><span style="color:#00a8c8">int</span><span style="color:#f92672">&amp;</span><span style="color:#111">)</span><span style="color:#111">fluidDrawer</span><span style="color:#111">.</span><span style="color:#111">drawMode</span><span style="color:#111">,</span> <span style="color:#111">msa</span><span style="color:#f92672">::</span><span style="color:#111">fluid</span><span style="color:#f92672">::</span><span style="color:#111">getDrawModeTitles</span><span style="color:#111">());</span>
+    <span style="color:#111">gui</span><span style="color:#111">.</span><span style="color:#111">addToggle</span><span style="color:#111">(</span><span style="color:#d88200">&#34;fs.doRGB&#34;</span><span style="color:#111">,</span> <span style="color:#111">fluidSolver</span><span style="color:#111">.</span><span style="color:#111">doRGB</span><span style="color:#111">);</span>
+    <span style="color:#111">gui</span><span style="color:#111">.</span><span style="color:#111">addToggle</span><span style="color:#111">(</span><span style="color:#d88200">&#34;fs.doVorticityConfinement&#34;</span><span style="color:#111">,</span> <span style="color:#111">fluidSolver</span><span style="color:#111">.</span><span style="color:#111">doVorticityConfinement</span><span style="color:#111">);</span>
+    <span style="color:#111">gui</span><span style="color:#111">.</span><span style="color:#111">addToggle</span><span style="color:#111">(</span><span style="color:#d88200">&#34;fs.wrapX&#34;</span><span style="color:#111">,</span> <span style="color:#111">fluidSolver</span><span style="color:#111">.</span><span style="color:#111">wrap_x</span><span style="color:#111">);</span>
+    <span style="color:#111">gui</span><span style="color:#111">.</span><span style="color:#111">addToggle</span><span style="color:#111">(</span><span style="color:#d88200">&#34;fs.wrapY&#34;</span><span style="color:#111">,</span> <span style="color:#111">fluidSolver</span><span style="color:#111">.</span><span style="color:#111">wrap_y</span><span style="color:#111">);</span>
+
+    <span style="color:#111">gui</span><span style="color:#111">.</span><span style="color:#111">addToggle</span><span style="color:#111">(</span><span style="color:#d88200">&#34;drawFluid&#34;</span><span style="color:#111">,</span> <span style="color:#111">drawFluid</span><span style="color:#111">);</span>
+    <span style="color:#111">gui</span><span style="color:#111">.</span><span style="color:#111">addToggle</span><span style="color:#111">(</span><span style="color:#d88200">&#34;drawParticles&#34;</span><span style="color:#111">,</span> <span style="color:#111">drawParticles</span><span style="color:#111">);</span>
+
+    <span style="color:#111">gui</span><span style="color:#111">.</span><span style="color:#111">addSlider</span><span style="color:#111">(</span><span style="color:#d88200">&#34;tuioXScaler&#34;</span><span style="color:#111">,</span> <span style="color:#111">tuioXScaler</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#ae81ff">2</span><span style="color:#111">);</span>
+    <span style="color:#111">gui</span><span style="color:#111">.</span><span style="color:#111">addSlider</span><span style="color:#111">(</span><span style="color:#d88200">&#34;tuioYScaler&#34;</span><span style="color:#111">,</span> <span style="color:#111">tuioYScaler</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#ae81ff">2</span><span style="color:#111">);</span>
+
+
+    <span style="color:#75715e">//--
+</span><span style="color:#75715e"></span>    <span style="color:#111">gui</span><span style="color:#111">.</span><span style="color:#111">currentPage</span><span style="color:#111">().</span><span style="color:#111">setXMLName</span><span style="color:#111">(</span><span style="color:#d88200">&#34;ofxMSAFluidSettings.xml&#34;</span><span style="color:#111">);</span>
+    <span style="color:#111">gui</span><span style="color:#111">.</span><span style="color:#111">loadFromXML</span><span style="color:#111">();</span>
+    <span style="color:#111">gui</span><span style="color:#111">.</span><span style="color:#111">setDefaultKeys</span><span style="color:#111">(</span><span style="color:#111">true</span><span style="color:#111">);</span>
+    <span style="color:#111">gui</span><span style="color:#111">.</span><span style="color:#111">setAutoSave</span><span style="color:#111">(</span><span style="color:#111">true</span><span style="color:#111">);</span>
+    <span style="color:#111">gui</span><span style="color:#111">.</span><span style="color:#111">show</span><span style="color:#111">();</span>
+
+
+    <span style="color:#111">ofSetBackgroundColor</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">);</span>
+<span style="color:#111">}</span>
+<span style="color:#75715e">//--------------------------------------------------------------
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">void</span> <span style="color:#111">ofApp</span><span style="color:#f92672">::</span><span style="color:#111">update</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+    <span style="color:#75715e">//OSC receive from SuperCollider
+</span><span style="color:#75715e"></span>
+    <span style="color:#00a8c8">while</span> <span style="color:#111">(</span><span style="color:#111">receiver</span><span style="color:#111">.</span><span style="color:#111">hasWaitingMessages</span><span style="color:#111">())</span> <span style="color:#111">{</span>
+        <span style="color:#111">ofxOscMessage</span> <span style="color:#111">m</span><span style="color:#111">;</span>
+        <span style="color:#111">receiver</span><span style="color:#111">.</span><span style="color:#111">getNextMessage</span><span style="color:#111">(</span><span style="color:#111">m</span><span style="color:#111">);</span>
+
+        <span style="color:#111">cout</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#d88200">&#34;got message from OSC</span><span style="color:#8045ff">\n</span><span style="color:#d88200">&#34;</span><span style="color:#111">;</span>
+
+        <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">m</span><span style="color:#111">.</span><span style="color:#111">getAddress</span><span style="color:#111">()</span> <span style="color:#f92672">==</span> <span style="color:#d88200">&#34;/data&#34;</span><span style="color:#111">){</span>
+
+            <span style="color:#111">cout</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#d88200">&#34;message was data as expected</span><span style="color:#8045ff">\n</span><span style="color:#d88200">&#34;</span><span style="color:#111">;</span>
+
+            <span style="color:#111">ofVec2f</span> <span style="color:#111">eventPos</span> <span style="color:#f92672">=</span> <span style="color:#111">ofVec2f</span><span style="color:#111">(</span><span style="color:#111">m</span><span style="color:#111">.</span><span style="color:#111">getArgAsFloat</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">),</span> <span style="color:#111">m</span><span style="color:#111">.</span><span style="color:#111">getArgAsFloat</span><span style="color:#111">(</span><span style="color:#ae81ff">1</span><span style="color:#111">));</span>
+            <span style="color:#111">ofVec2f</span> <span style="color:#111">mouseNorm</span> <span style="color:#f92672">=</span> <span style="color:#111">ofVec2f</span><span style="color:#111">(</span><span style="color:#111">eventPos</span><span style="color:#111">)</span> <span style="color:#f92672">/</span> <span style="color:#111">ofGetWindowSize</span><span style="color:#111">();</span>
+            <span style="color:#111">ofVec2f</span> <span style="color:#111">mouseVel</span> <span style="color:#f92672">=</span> <span style="color:#111">ofVec2f</span><span style="color:#111">(</span><span style="color:#111">eventPos</span> <span style="color:#f92672">-</span> <span style="color:#111">pMouse</span><span style="color:#111">)</span> <span style="color:#f92672">/</span> <span style="color:#111">ofGetWindowSize</span><span style="color:#111">();</span>
+            <span style="color:#111">addToFluid</span><span style="color:#111">(</span><span style="color:#111">mouseNorm</span><span style="color:#111">,</span> <span style="color:#111">mouseVel</span><span style="color:#111">,</span> <span style="color:#111">true</span><span style="color:#111">,</span> <span style="color:#111">true</span><span style="color:#111">);</span>
+            <span style="color:#111">pMouse</span> <span style="color:#f92672">=</span> <span style="color:#111">eventPos</span><span style="color:#111">;</span>
+
+
+        <span style="color:#111">}</span> <span style="color:#00a8c8">else</span> <span style="color:#75af00">if</span> <span style="color:#111">(</span><span style="color:#111">m</span><span style="color:#111">.</span><span style="color:#111">getAddress</span><span style="color:#111">()</span> <span style="color:#f92672">==</span> <span style="color:#d88200">&#34;/vertex&#34;</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+            <span style="color:#111">cout</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#d88200">&#34;message was vertex as expected</span><span style="color:#8045ff">\n</span><span style="color:#d88200">&#34;</span><span style="color:#111">;</span>
+
+        <span style="color:#111">}</span>
+    <span style="color:#111">}</span>
+
+        <span style="color:#75715e">//Reset the cursors
+</span><span style="color:#75715e"></span>        <span style="color:#111">cursors</span><span style="color:#111">.</span><span style="color:#111">clear</span><span style="color:#111">()</span> <span style="color:#111">;</span>
+
+        <span style="color:#00a8c8">if</span><span style="color:#111">(</span><span style="color:#111">resizeFluid</span><span style="color:#111">)</span> 	<span style="color:#111">{</span>
+            <span style="color:#111">fluidSolver</span><span style="color:#111">.</span><span style="color:#111">setSize</span><span style="color:#111">(</span><span style="color:#111">fluidCellsX</span><span style="color:#111">,</span> <span style="color:#111">fluidCellsX</span> <span style="color:#f92672">/</span> <span style="color:#111">msa</span><span style="color:#f92672">::</span><span style="color:#111">getWindowAspectRatio</span><span style="color:#111">());</span>
+            <span style="color:#111">fluidDrawer</span><span style="color:#111">.</span><span style="color:#111">setup</span><span style="color:#111">(</span><span style="color:#f92672">&amp;</span><span style="color:#111">fluidSolver</span><span style="color:#111">);</span>
+            <span style="color:#111">resizeFluid</span> <span style="color:#f92672">=</span> <span style="color:#111">false</span><span style="color:#111">;</span>
+        <span style="color:#111">}</span>
+
+
+        <span style="color:#111">fluidSolver</span><span style="color:#111">.</span><span style="color:#111">update</span><span style="color:#111">();</span>
+
+<span style="color:#111">}</span>
+
+<span style="color:#75715e">//--------------------------------------------------------------
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">void</span> <span style="color:#111">ofApp</span><span style="color:#f92672">::</span><span style="color:#111">draw</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+
+    <span style="color:#111">ofEnableAlphaBlending</span><span style="color:#111">()</span> <span style="color:#111">;</span>
+
+    <span style="color:#111">ofPushMatrix</span><span style="color:#111">()</span> <span style="color:#111">;</span>
+
+    <span style="color:#75715e">////////////////////////////////////////////////
+</span><span style="color:#75715e"></span>    <span style="color:#00a8c8">for</span><span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#111">;</span> <span style="color:#111">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#111">points</span><span style="color:#111">.</span><span style="color:#111">size</span><span style="color:#111">();</span> <span style="color:#111">i</span><span style="color:#f92672">++</span><span style="color:#111">){</span>
+
+        <span style="color:#75715e">//find this point and the next point
+</span><span style="color:#75715e"></span>        <span style="color:#111">ofVec3f</span> <span style="color:#111">thisPoint</span> <span style="color:#f92672">=</span> <span style="color:#111">points</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#111">];</span>
+        <span style="color:#111">ofVec3f</span> <span style="color:#111">nextPoint</span> <span style="color:#f92672">=</span> <span style="color:#111">points</span><span style="color:#111">[</span><span style="color:#111">i</span><span style="color:#111">];</span>
+
+        <span style="color:#75715e">//get the direction from one to the next.
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//the ribbon should fan out from this direction
+</span><span style="color:#75715e"></span>        <span style="color:#111">ofVec3f</span> <span style="color:#111">direction</span> <span style="color:#f92672">=</span> <span style="color:#111">(</span><span style="color:#111">nextPoint</span> <span style="color:#f92672">-</span> <span style="color:#111">thisPoint</span><span style="color:#111">);</span>
+
+        <span style="color:#75715e">//get the distance from one point to the next
+</span><span style="color:#75715e"></span>        <span style="color:#00a8c8">float</span> <span style="color:#111">distance</span> <span style="color:#f92672">=</span> <span style="color:#111">direction</span><span style="color:#111">.</span><span style="color:#111">length</span><span style="color:#111">();</span>
+
+        <span style="color:#75715e">//get the normalized direction. normalized vectors always have a length of one
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//and are really useful for representing directions as opposed to something with length
+</span><span style="color:#75715e"></span>        <span style="color:#111">ofVec3f</span> <span style="color:#111">unitDirection</span> <span style="color:#f92672">=</span> <span style="color:#111">direction</span><span style="color:#111">.</span><span style="color:#111">getNormalized</span><span style="color:#111">()</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">0.1f</span> <span style="color:#111">;</span>
+
+        <span style="color:#75715e">//find both directions to the left and to the right
+</span><span style="color:#75715e"></span>        <span style="color:#111">ofVec3f</span> <span style="color:#111">toTheLeft</span> <span style="color:#f92672">=</span> <span style="color:#111">unitDirection</span><span style="color:#111">.</span><span style="color:#111">getRotated</span><span style="color:#111">(</span><span style="color:#f92672">-</span><span style="color:#ae81ff">90</span><span style="color:#111">,</span> <span style="color:#111">ofVec3f</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">1</span><span style="color:#111">));</span>
+        <span style="color:#111">ofVec3f</span> <span style="color:#111">toTheRight</span> <span style="color:#f92672">=</span> <span style="color:#111">unitDirection</span><span style="color:#111">.</span><span style="color:#111">getRotated</span><span style="color:#111">(</span><span style="color:#ae81ff">90</span><span style="color:#111">,</span> <span style="color:#111">ofVec3f</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">1</span><span style="color:#111">));</span>
+
+        <span style="color:#75715e">//use the map function to determine the distance.
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//the longer the distance, the narrower the line.
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//this makes it look a bit like brush strokes
+</span><span style="color:#75715e"></span>        <span style="color:#00a8c8">float</span> <span style="color:#111">thickness</span> <span style="color:#f92672">=</span> <span style="color:#111">ofMap</span><span style="color:#111">(</span><span style="color:#111">distance</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#ae81ff">60</span><span style="color:#111">,</span> <span style="color:#ae81ff">40</span><span style="color:#111">,</span> <span style="color:#ae81ff">10</span><span style="color:#111">,</span> <span style="color:#111">true</span><span style="color:#111">);</span>
+
+        <span style="color:#75715e">//calculate the points to the left and to the right
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//by extending the current point in the direction of left/right by the length
+</span><span style="color:#75715e"></span>        <span style="color:#111">ofVec3f</span> <span style="color:#111">leftPoint</span> <span style="color:#f92672">=</span> <span style="color:#111">thisPoint</span><span style="color:#f92672">+</span><span style="color:#111">toTheLeft</span><span style="color:#f92672">*</span><span style="color:#111">thickness</span><span style="color:#111">;</span>
+        <span style="color:#111">ofVec3f</span> <span style="color:#111">rightPoint</span> <span style="color:#f92672">=</span> <span style="color:#111">thisPoint</span><span style="color:#f92672">+</span><span style="color:#111">toTheRight</span><span style="color:#f92672">*</span><span style="color:#111">thickness</span><span style="color:#111">;</span>
+
+        <span style="color:#75715e">//add these points to the triangle strip
+</span><span style="color:#75715e"></span>
+        <span style="color:#111">mesh</span><span style="color:#111">.</span><span style="color:#111">addVertex</span><span style="color:#111">(</span><span style="color:#111">ofVec3f</span><span style="color:#111">(</span><span style="color:#111">leftPoint</span><span style="color:#111">.</span><span style="color:#111">x</span><span style="color:#111">,</span> <span style="color:#111">leftPoint</span><span style="color:#111">.</span><span style="color:#111">y</span><span style="color:#111">,</span> <span style="color:#111">leftPoint</span><span style="color:#111">.</span><span style="color:#111">z</span><span style="color:#111">));</span>
+        <span style="color:#111">mesh</span><span style="color:#111">.</span><span style="color:#111">addVertex</span><span style="color:#111">(</span><span style="color:#111">ofVec3f</span><span style="color:#111">(</span><span style="color:#111">rightPoint</span><span style="color:#111">.</span><span style="color:#111">x</span><span style="color:#111">,</span> <span style="color:#111">rightPoint</span><span style="color:#111">.</span><span style="color:#111">y</span><span style="color:#111">,</span> <span style="color:#111">rightPoint</span><span style="color:#111">.</span><span style="color:#111">z</span><span style="color:#111">));</span>
+
+        <span style="color:#111">mesh</span><span style="color:#111">.</span><span style="color:#111">addColor</span> <span style="color:#111">(</span> <span style="color:#111">ofColor</span><span style="color:#f92672">::</span><span style="color:#111">fromHsb</span><span style="color:#111">(</span> <span style="color:#111">sin</span> <span style="color:#111">(</span> <span style="color:#111">(</span><span style="color:#00a8c8">float</span><span style="color:#111">)</span><span style="color:#111">i</span> <span style="color:#111">)</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">40.0f</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">128.0f</span><span style="color:#111">,</span> <span style="color:#ae81ff">255.0f</span> <span style="color:#111">,</span> <span style="color:#ae81ff">255.0f</span> <span style="color:#111">)</span> <span style="color:#111">)</span> <span style="color:#111">;</span>
+        <span style="color:#111">mesh</span><span style="color:#111">.</span><span style="color:#111">addColor</span> <span style="color:#111">(</span> <span style="color:#111">ofColor</span><span style="color:#f92672">::</span><span style="color:#111">fromHsb</span><span style="color:#111">(</span> <span style="color:#111">sin</span> <span style="color:#111">(</span> <span style="color:#111">(</span><span style="color:#00a8c8">float</span><span style="color:#111">)</span><span style="color:#111">i</span> <span style="color:#111">)</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">40.0f</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">128.0f</span><span style="color:#111">,</span> <span style="color:#ae81ff">255.0f</span> <span style="color:#111">,</span> <span style="color:#ae81ff">255.0f</span> <span style="color:#111">)</span> <span style="color:#111">)</span> <span style="color:#111">;</span>
+
+        <span style="color:#111">}</span>
+
+
+    <span style="color:#00a8c8">if</span><span style="color:#111">(</span><span style="color:#111">drawFluid</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#111">ofClear</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">);</span>
+        <span style="color:#111">glColor3f</span><span style="color:#111">(</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#ae81ff">1</span><span style="color:#111">);</span>
+        <span style="color:#111">fluidDrawer</span><span style="color:#111">.</span><span style="color:#111">draw</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#111">ofGetWidth</span><span style="color:#111">(),</span> <span style="color:#111">ofGetHeight</span><span style="color:#111">());</span>
+    <span style="color:#111">}</span> <span style="color:#00a8c8">else</span> <span style="color:#111">{</span>
+        <span style="color:#75715e">//		if(ofGetFrameNum()%5==0)
+</span><span style="color:#75715e"></span>        <span style="color:#111">fadeToColor</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#ae81ff">0.01</span><span style="color:#111">);</span>
+    <span style="color:#111">}</span>
+    <span style="color:#00a8c8">if</span><span style="color:#111">(</span><span style="color:#111">drawParticles</span><span style="color:#111">)</span>
+        <span style="color:#111">particleSystem</span><span style="color:#111">.</span><span style="color:#111">updateAndDraw</span><span style="color:#111">(</span><span style="color:#111">fluidSolver</span><span style="color:#111">,</span> <span style="color:#111">ofGetWindowSize</span><span style="color:#111">(),</span> <span style="color:#111">drawFluid</span><span style="color:#111">);</span>
+
+    <span style="color:#75715e">//ofDrawBitmapString(sz, 50, 50);
+</span><span style="color:#75715e"></span>
+
+    <span style="color:#75715e">//earth here
+</span><span style="color:#75715e"></span>    <span style="color:#00a8c8">int</span> <span style="color:#111">alpha</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">120</span><span style="color:#111">;</span> <span style="color:#75715e">// amount of smoothing
+</span><span style="color:#75715e"></span>    <span style="color:#111">ofEnableAlphaBlending</span><span style="color:#111">();</span>
+    <span style="color:#111">ofSetColor</span><span style="color:#111">(</span><span style="color:#ae81ff">255</span><span style="color:#111">,</span> <span style="color:#ae81ff">255</span><span style="color:#111">,</span> <span style="color:#ae81ff">255</span><span style="color:#111">,</span> <span style="color:#111">alpha</span><span style="color:#111">);</span>
+    <span style="color:#111">ofTranslate</span><span style="color:#111">(</span><span style="color:#111">ofGetWidth</span><span style="color:#111">()</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span><span style="color:#111">,</span> <span style="color:#111">ofGetHeight</span><span style="color:#111">()</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">);</span>
+
+    <span style="color:#111">ofRotateY</span><span style="color:#111">(</span><span style="color:#111">ofGetFrameNum</span><span style="color:#111">());</span>
+    <span style="color:#111">ofRotateX</span><span style="color:#111">(</span><span style="color:#f92672">-</span><span style="color:#ae81ff">90</span><span style="color:#111">);</span> <span style="color:#75715e">//north pole facing up
+</span><span style="color:#75715e"></span>
+    <span style="color:#75715e">//bind and draw texture
+</span><span style="color:#75715e"></span>    <span style="color:#111">texture</span><span style="color:#111">.</span><span style="color:#111">getTexture</span><span style="color:#111">().</span><span style="color:#111">bind</span><span style="color:#111">();</span>
+    <span style="color:#111">gluSphere</span><span style="color:#111">(</span><span style="color:#111">quadric</span><span style="color:#111">,</span> <span style="color:#ae81ff">200</span><span style="color:#111">,</span> <span style="color:#ae81ff">100</span><span style="color:#111">,</span> <span style="color:#ae81ff">100</span><span style="color:#111">);</span>
+    <span style="color:#111">texture</span><span style="color:#111">.</span><span style="color:#111">draw</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#ae81ff">0</span><span style="color:#111">);</span>
+
+    <span style="color:#111">ofDisableAlphaBlending</span><span style="color:#111">();</span>
+    <span style="color:#111">ofPopMatrix</span><span style="color:#111">();</span>
+
+
+
+   <span style="color:#111">}</span>
+
+
+<span style="color:#75715e">//-------------------------------------------------------------
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">void</span> <span style="color:#111">ofApp</span><span style="color:#f92672">::</span><span style="color:#111">drawGui</span><span style="color:#111">(</span><span style="color:#111">ofEventArgs</span> <span style="color:#f92672">&amp;</span> <span style="color:#111">args</span><span style="color:#111">){</span>
+    <span style="color:#111">gui</span><span style="color:#111">.</span><span style="color:#111">draw</span><span style="color:#111">();</span>
+<span style="color:#111">}</span>
+
+
+<span style="color:#75715e">//--------------------------------------------------------------
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">//--------------------------------------------------------------
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">void</span> <span style="color:#111">ofApp</span><span style="color:#f92672">::</span><span style="color:#111">exit</span><span style="color:#111">()</span> <span style="color:#111">{</span>
+
+<span style="color:#111">}</span>
+
+<span style="color:#75715e">//--------------------------------------------------------------
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">void</span> <span style="color:#111">ofApp</span><span style="color:#f92672">::</span><span style="color:#111">keyPressed</span> <span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">key</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+
+    <span style="color:#00a8c8">switch</span><span style="color:#111">(</span><span style="color:#111">key</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+        <span style="color:#00a8c8">case</span> <span style="color:#d88200">&#39;1&#39;</span><span style="color:#f92672">:</span>
+            <span style="color:#111">fluidDrawer</span><span style="color:#111">.</span><span style="color:#111">setDrawMode</span><span style="color:#111">(</span><span style="color:#111">msa</span><span style="color:#f92672">::</span><span style="color:#111">fluid</span><span style="color:#f92672">::</span><span style="color:#111">kDrawColor</span><span style="color:#111">);</span>
+            <span style="color:#00a8c8">break</span><span style="color:#111">;</span>
+
+        <span style="color:#00a8c8">case</span> <span style="color:#d88200">&#39;2&#39;</span><span style="color:#f92672">:</span>
+            <span style="color:#111">fluidDrawer</span><span style="color:#111">.</span><span style="color:#111">setDrawMode</span><span style="color:#111">(</span><span style="color:#111">msa</span><span style="color:#f92672">::</span><span style="color:#111">fluid</span><span style="color:#f92672">::</span><span style="color:#111">kDrawMotion</span><span style="color:#111">);</span>
+            <span style="color:#00a8c8">break</span><span style="color:#111">;</span>
+
+        <span style="color:#00a8c8">case</span> <span style="color:#d88200">&#39;3&#39;</span><span style="color:#f92672">:</span>
+            <span style="color:#111">fluidDrawer</span><span style="color:#111">.</span><span style="color:#111">setDrawMode</span><span style="color:#111">(</span><span style="color:#111">msa</span><span style="color:#f92672">::</span><span style="color:#111">fluid</span><span style="color:#f92672">::</span><span style="color:#111">kDrawSpeed</span><span style="color:#111">);</span>
+            <span style="color:#00a8c8">break</span><span style="color:#111">;</span>
+
+        <span style="color:#00a8c8">case</span> <span style="color:#d88200">&#39;4&#39;</span><span style="color:#f92672">:</span>
+            <span style="color:#111">fluidDrawer</span><span style="color:#111">.</span><span style="color:#111">setDrawMode</span><span style="color:#111">(</span><span style="color:#111">msa</span><span style="color:#f92672">::</span><span style="color:#111">fluid</span><span style="color:#f92672">::</span><span style="color:#111">kDrawVectors</span><span style="color:#111">);</span>
+            <span style="color:#00a8c8">break</span><span style="color:#111">;</span>
+
+        <span style="color:#00a8c8">case</span> <span style="color:#d88200">&#39;d&#39;</span><span style="color:#f92672">:</span>
+            <span style="color:#111">drawFluid</span> <span style="color:#f92672">^=</span> <span style="color:#111">true</span><span style="color:#111">;</span>
+            <span style="color:#00a8c8">break</span><span style="color:#111">;</span>
+
+        <span style="color:#00a8c8">case</span> <span style="color:#d88200">&#39;p&#39;</span><span style="color:#f92672">:</span>
+            <span style="color:#111">drawParticles</span> <span style="color:#f92672">^=</span> <span style="color:#111">true</span><span style="color:#111">;</span>
+            <span style="color:#00a8c8">break</span><span style="color:#111">;</span>
+
+        <span style="color:#00a8c8">case</span> <span style="color:#d88200">&#39;f&#39;</span><span style="color:#f92672">:</span>
+            <span style="color:#111">ofToggleFullscreen</span><span style="color:#111">();</span>
+            <span style="color:#00a8c8">break</span><span style="color:#111">;</span>
+
+        <span style="color:#00a8c8">case</span> <span style="color:#d88200">&#39;r&#39;</span><span style="color:#f92672">:</span>
+            <span style="color:#111">fluidSolver</span><span style="color:#111">.</span><span style="color:#111">reset</span><span style="color:#111">();</span>
+            <span style="color:#00a8c8">break</span><span style="color:#111">;</span>
+
+        <span style="color:#00a8c8">case</span> <span style="color:#d88200">&#39;k&#39;</span><span style="color:#f92672">:</span>
+            <span style="color:#111">bKinectOpen</span> <span style="color:#f92672">^=</span><span style="color:#111">true</span><span style="color:#111">;</span>
+            <span style="color:#00a8c8">break</span><span style="color:#111">;</span>
+
+        <span style="color:#00a8c8">case</span> <span style="color:#d88200">&#39;w&#39;</span><span style="color:#f92672">:</span><span style="color:#111">{</span>
+                    <span style="color:#75715e">// texture.draw(0,0);
+</span><span style="color:#75715e"></span>
+            <span style="color:#111">ofEnableAlphaBlending</span><span style="color:#111">();</span>
+            <span style="color:#111">texture</span><span style="color:#111">.</span><span style="color:#111">getTextureReference</span><span style="color:#111">().</span><span style="color:#111">bind</span><span style="color:#111">();</span>
+            <span style="color:#111">gluSphere</span><span style="color:#111">(</span><span style="color:#111">quadric</span><span style="color:#111">,</span> <span style="color:#ae81ff">200</span><span style="color:#111">,</span> <span style="color:#ae81ff">100</span><span style="color:#111">,</span> <span style="color:#ae81ff">100</span><span style="color:#111">);</span>
+            <span style="color:#111">texture</span><span style="color:#111">.</span><span style="color:#111">draw</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">);</span>
+            <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">holdingbutton</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+                <span style="color:#111">newalpha</span> <span style="color:#f92672">=</span> <span style="color:#111">oldalpha</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+                <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">newalpha</span> <span style="color:#f92672">&lt;</span><span style="color:#ae81ff">0</span> <span style="color:#111">)</span> <span style="color:#111">{</span><span style="color:#111">newalpha</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">;}</span>
+                <span style="color:#111">ofSetColor</span><span style="color:#111">(</span><span style="color:#ae81ff">255</span><span style="color:#111">,</span><span style="color:#ae81ff">255</span><span style="color:#111">,</span><span style="color:#ae81ff">255</span><span style="color:#111">,</span><span style="color:#111">newalpha</span><span style="color:#111">);</span>
+                <span style="color:#111">oldalpha</span> <span style="color:#f92672">=</span> <span style="color:#111">newalpha</span><span style="color:#111">;</span>
+            <span style="color:#111">}</span>
+            <span style="color:#00a8c8">else</span> <span style="color:#111">{</span> <span style="color:#111">ofSetColor</span><span style="color:#111">(</span><span style="color:#ae81ff">255</span><span style="color:#111">,</span><span style="color:#ae81ff">255</span><span style="color:#111">,</span><span style="color:#ae81ff">255</span><span style="color:#111">,</span><span style="color:#ae81ff">255</span><span style="color:#111">);}</span>
+            <span style="color:#111">texture</span><span style="color:#111">.</span><span style="color:#111">draw</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">);</span>
+            <span style="color:#111">ofDisableAlphaBlending</span><span style="color:#111">();</span>
+        <span style="color:#111">}</span>
+
+        <span style="color:#00a8c8">case</span> <span style="color:#d88200">&#39;e&#39;</span><span style="color:#f92672">:</span><span style="color:#111">{</span>
+            <span style="color:#75715e">// texture.draw(0,0);
+</span><span style="color:#75715e"></span>
+            <span style="color:#111">ofEnableAlphaBlending</span><span style="color:#111">();</span>
+             <span style="color:#111">texture</span><span style="color:#111">.</span><span style="color:#111">draw</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">);</span>
+            <span style="color:#111">texture</span><span style="color:#111">.</span><span style="color:#111">getTextureReference</span><span style="color:#111">().</span><span style="color:#111">bind</span><span style="color:#111">();</span>
+            <span style="color:#111">gluSphere</span><span style="color:#111">(</span><span style="color:#111">quadric</span><span style="color:#111">,</span> <span style="color:#ae81ff">200</span><span style="color:#111">,</span> <span style="color:#ae81ff">100</span><span style="color:#111">,</span> <span style="color:#ae81ff">100</span><span style="color:#111">);</span>
+            <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">holdingbutton</span><span style="color:#111">)</span> <span style="color:#111">{</span>
+                <span style="color:#111">newalpha</span> <span style="color:#f92672">=</span> <span style="color:#111">oldalpha</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span><span style="color:#111">;</span>
+                <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">newalpha</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">255</span><span style="color:#111">)</span> <span style="color:#111">{</span><span style="color:#111">newalpha</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">255</span><span style="color:#111">;}</span>
+                <span style="color:#111">ofSetColor</span><span style="color:#111">(</span><span style="color:#ae81ff">255</span><span style="color:#111">,</span><span style="color:#ae81ff">255</span><span style="color:#111">,</span><span style="color:#ae81ff">255</span><span style="color:#111">,</span><span style="color:#111">newalpha</span><span style="color:#111">);</span>
+                <span style="color:#111">oldalpha</span> <span style="color:#f92672">=</span> <span style="color:#111">newalpha</span><span style="color:#111">;</span>
+            <span style="color:#111">}</span>
+            <span style="color:#00a8c8">else</span> <span style="color:#111">{</span> <span style="color:#111">ofSetColor</span><span style="color:#111">(</span><span style="color:#ae81ff">255</span><span style="color:#111">,</span><span style="color:#ae81ff">255</span><span style="color:#111">,</span><span style="color:#ae81ff">255</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">);}</span>
+            <span style="color:#111">texture</span><span style="color:#111">.</span><span style="color:#111">draw</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">);</span>
+            <span style="color:#111">ofDisableAlphaBlending</span><span style="color:#111">();</span>
+        <span style="color:#111">}</span>
+
+
+
+        <span style="color:#00a8c8">case</span> <span style="color:#d88200">&#39;b&#39;</span><span style="color:#f92672">:</span> <span style="color:#111">{</span>
+            <span style="color:#75715e">//			Timer timer;
+</span><span style="color:#75715e"></span>            <span style="color:#75715e">//			const int ITERS = 3000;
+</span><span style="color:#75715e"></span>            <span style="color:#75715e">//			timer.start();
+</span><span style="color:#75715e"></span>            <span style="color:#75715e">//			for(int i = 0; i &lt; ITERS; ++i) fluidSolver.update();
+</span><span style="color:#75715e"></span>            <span style="color:#75715e">//			timer.stop();
+</span><span style="color:#75715e"></span>            <span style="color:#75715e">//			cout &lt;&lt; ITERS &lt;&lt; &#34; iterations took &#34; &lt;&lt; timer.getSeconds() &lt;&lt; &#34; seconds.&#34; &lt;&lt; std::endl;
+</span><span style="color:#75715e"></span>        <span style="color:#111">}</span>
+            <span style="color:#00a8c8">break</span><span style="color:#111">;</span>
+
+
+        <span style="color:#00a8c8">case</span> <span style="color:#d88200">&#39;o&#39;</span><span style="color:#f92672">:</span>
+            <span style="color:#111">bShowControlPanel</span> <span style="color:#f92672">=</span> <span style="color:#f92672">!</span><span style="color:#111">bShowControlPanel</span><span style="color:#111">;</span>
+            <span style="color:#00a8c8">if</span> <span style="color:#111">(</span><span style="color:#111">bShowControlPanel</span><span style="color:#111">){</span>
+                <span style="color:#111">gui</span><span style="color:#111">.</span><span style="color:#111">show</span><span style="color:#111">();</span>
+                <span style="color:#111">ofShowCursor</span><span style="color:#111">();</span>
+            <span style="color:#111">}</span> <span style="color:#00a8c8">else</span> <span style="color:#111">{</span>
+                <span style="color:#111">gui</span><span style="color:#111">.</span><span style="color:#111">hide</span><span style="color:#111">();</span>
+                <span style="color:#111">ofShowCursor</span><span style="color:#111">();</span>
+            <span style="color:#111">}</span>
+            <span style="color:#00a8c8">break</span><span style="color:#111">;</span>
+
+        <span style="color:#00a8c8">case</span> <span style="color:#ae81ff">5</span><span style="color:#f92672">:</span>
+            <span style="color:#111">blendMode</span> <span style="color:#f92672">=</span> <span style="color:#111">OF_BLENDMODE_ALPHA</span><span style="color:#111">;</span>
+            <span style="color:#111">eventString</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;Alpha&#34;</span><span style="color:#111">;</span>
+            <span style="color:#00a8c8">break</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">case</span> <span style="color:#ae81ff">6</span><span style="color:#f92672">:</span>
+            <span style="color:#111">blendMode</span> <span style="color:#f92672">=</span> <span style="color:#111">OF_BLENDMODE_ADD</span><span style="color:#111">;</span>
+            <span style="color:#111">eventString</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;Add&#34;</span><span style="color:#111">;</span>
+            <span style="color:#00a8c8">break</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">case</span> <span style="color:#ae81ff">7</span><span style="color:#f92672">:</span>
+            <span style="color:#111">blendMode</span> <span style="color:#f92672">=</span> <span style="color:#111">OF_BLENDMODE_MULTIPLY</span><span style="color:#111">;</span>
+            <span style="color:#111">eventString</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;Multiply&#34;</span><span style="color:#111">;</span>
+            <span style="color:#00a8c8">break</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">case</span> <span style="color:#ae81ff">8</span><span style="color:#f92672">:</span>
+            <span style="color:#111">blendMode</span> <span style="color:#f92672">=</span> <span style="color:#111">OF_BLENDMODE_SUBTRACT</span><span style="color:#111">;</span>
+            <span style="color:#111">eventString</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;Subtract&#34;</span><span style="color:#111">;</span>
+            <span style="color:#00a8c8">break</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">case</span> <span style="color:#ae81ff">9</span><span style="color:#f92672">:</span>
+            <span style="color:#111">blendMode</span> <span style="color:#f92672">=</span> <span style="color:#111">OF_BLENDMODE_SCREEN</span><span style="color:#111">;</span>
+            <span style="color:#111">eventString</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;Screen&#34;</span><span style="color:#111">;</span>
+            <span style="color:#00a8c8">break</span><span style="color:#111">;</span>
+        <span style="color:#00a8c8">default</span><span style="color:#f92672">:</span>
+            <span style="color:#00a8c8">break</span><span style="color:#111">;</span>
+
+
+    <span style="color:#111">}</span>
+<span style="color:#111">}</span>
+<span style="color:#75715e">//--------------------------------------------------------------
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">void</span> <span style="color:#111">ofApp</span><span style="color:#f92672">::</span><span style="color:#111">mousePressed</span><span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">x</span><span style="color:#111">,</span> <span style="color:#00a8c8">int</span> <span style="color:#111">y</span><span style="color:#111">,</span> <span style="color:#00a8c8">int</span> <span style="color:#111">button</span><span style="color:#111">)</span>
+<span style="color:#111">{}</span>
+
+<span style="color:#75715e">//--------------------------------------------------------------
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">void</span> <span style="color:#111">ofApp</span><span style="color:#f92672">::</span><span style="color:#111">mouseReleased</span><span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">x</span><span style="color:#111">,</span> <span style="color:#00a8c8">int</span> <span style="color:#111">y</span><span style="color:#111">,</span> <span style="color:#00a8c8">int</span> <span style="color:#111">button</span><span style="color:#111">)</span>
+<span style="color:#111">{}</span>
+
+<span style="color:#75715e">//--------------------------------------------------------------
+</span><span style="color:#75715e"></span><span style="color:#00a8c8">void</span> <span style="color:#111">ofApp</span><span style="color:#f92672">::</span><span style="color:#111">windowResized</span><span style="color:#111">(</span><span style="color:#00a8c8">int</span> <span style="color:#111">w</span><span style="color:#111">,</span> <span style="color:#00a8c8">int</span> <span style="color:#111">h</span><span style="color:#111">)</span>
+<span style="color:#111">{}</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+    
+    
+        <div class="chevrons">
+    <div id="navigation">
+<a class="nav nav-prev" href="/creative-coding/code_tips/javascript/" title="Javascript"> <i class="fa fa-chevron-left"></i><label>Javascript</label></a>
+    <a class="nav nav-next" href="/creative-coding/code_tips/microcomputing/" title="Micro-computing" style="margin-right: 0px;"><label>Micro-computing</label><i class="fa fa-chevron-right"></i></a></div>
+  </div>
+
+  </section>
+</article>
+
+<footer>
+
+<div class="footline">
+    
+
+    
+
+    
+
+    
+    <div class="github-link">
+      <a href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/code_tips/openframeworks.org" target="blank"><i class="fa fa-code-fork"></i>
+        Improve this page</a>
+    </div>
+    
+  </div>
+
+
+	<div>
+
+
+  
+    Create a content/_footer.md file to customize the footer content
+  
+
+
+
+	</div>
+</footer>
+
+<script src="/creative-coding/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/vasileios.github.io\/creative-coding";
+    
+</script>
+<script src="/creative-coding/js/clipboard.min.js"></script>
+<script src="/creative-coding/js/featherlight.min.js"></script>
+
+<script type="text/javascript" src="/creative-coding/js/lunr.min.js"></script>
+<script type="text/javascript" src="/creative-coding/js/auto-complete.js"></script>
+<script type="text/javascript" src="/creative-coding/js/search.js"></script>
+<script src="/creative-coding/theme-flex/script.js"></script>
+
+
+
+
+<script src="https://vasileios.github.io/creative-coding/js/scripts.min.js"></script>
+    
+
+    
+    
+
+    
+  </body>
+</html>
