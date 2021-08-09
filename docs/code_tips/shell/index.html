@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-08-09T18:31:58 EEST">
+<meta name="revised" content="2021-08-09T18:41:31 EEST">
 <title>Shell :: Creative Coding</title>
 <link rel="shortcut icon" href="/creative-coding/images/favicon.png" type="image/x-icon" />
 <link href="/creative-coding/css/nucleus.css" rel="stylesheet">
@@ -270,12 +270,10 @@ tmux for collaborative editing
 </h3>
 <div id="outline-text-headline-4" class="outline-text-3">
 <p>
-Prerequisites
-tmux version 3.2a  
-emacs version 27.2 </p>
+Tested on MacOs Catalina with tmux version 3.2a and emacs version 27.2 </p>
 <p>
-Put this at the end of ~/.emacs </p>
-<p>#+END_QUOTE</p>
+Copy/paste the below code at the end of your ~/.emacs.d init file  
+Code from <a href="https://www.emacswiki.org/emacs/tmux_for_collaborative_editing">EmacsWiki</a></p>
 <pre class="example">
 (require &#39;server)
     ;; some systems don&#39;t auto-detect the socket dir, so specify it here and for the client:
@@ -293,10 +291,10 @@ Put this at the end of ~/.emacs </p>
     (global-set-key (kbd &#34;&lt;f8&gt;&#34;) &#39;highlight-changes-remove-highlight)
 </pre>
 <p>
-Create a new user. To do this go to System Preferences-&gt; Users and
+Now you need to create a new user if you dont have one already. To do this go to System Preferences-&gt; Users and
 Groups. Create the user (you can use the default user).</p>
 <p>
-Then create a group and name it as you wish. I will name it users for
+Then create a group and name it as you wish. I will name it <code class="verbatim">users</code> for
 the example.</p>
 <blockquote>
 <p>Now go and create a directory tmux-shared in <em>tmp</em> location.
