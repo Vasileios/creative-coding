@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-07-24T01:40:54 EEST">
+<meta name="revised" content="2021-08-09T18:31:58 EEST">
 <title>Shell :: Creative Coding</title>
 <link rel="shortcut icon" href="/creative-coding/images/favicon.png" type="image/x-icon" />
 <link href="/creative-coding/css/nucleus.css" rel="stylesheet">
@@ -271,13 +271,11 @@ tmux for collaborative editing
 <div id="outline-text-headline-4" class="outline-text-3">
 <p>
 Prerequisites
-tmux version 1.6 or later
-emacs version 23 or later</p>
+tmux version 3.2a  
+emacs version 27.2 </p>
 <p>
-Put this at the end of ~/.emacs if it’s not already there:</p>
-<blockquote>
-<p>Put this at the end of ~/.emacs if it’s not already there:</p>
-</blockquote>
+Put this at the end of ~/.emacs </p>
+<p>#+END_QUOTE</p>
 <pre class="example">
 (require &#39;server)
     ;; some systems don&#39;t auto-detect the socket dir, so specify it here and for the client:
@@ -295,9 +293,16 @@ Put this at the end of ~/.emacs if it’s not already there:</p>
     (global-set-key (kbd &#34;&lt;f8&gt;&#34;) &#39;highlight-changes-remove-highlight)
 </pre>
 <p>
-The, assuming all concerned users are members of the group users (or some other group if you prefer):</p>
+Create a new user. To do this go to System Preferences-&gt; Users and
+Groups. Create the user (you can use the default user).</p>
+<p>
+Then create a group and name it as you wish. I will name it users for
+the example.</p>
 <blockquote>
-<p>create dir tmux-shared in <em>tmp</em></p>
+<p>Now go and create a directory tmux-shared in <em>tmp</em> location.
+Open terminal and use the bellow commands to create the directory (mkdir)
+tmux-shared, change a group of the directory (chgrp) and change file
+permission (chmod).</p>
 </blockquote>
 <pre class="example">
 $ mkdir /tmp/tmux-shared
@@ -305,8 +310,7 @@ $ chgrp users /tmp/tmux-shared
 $ chmod g+ws  /tmp/tmux-shared
 </pre>
 <p>
-Start up the host
-Assuming the previous step is done, start up tmux with that directory:</p>
+Now it time to start the host using the below command:</p>
 <blockquote>
 <p>Start up the host</p>
 </blockquote>
@@ -314,19 +318,20 @@ Assuming the previous step is done, start up tmux with that directory:</p>
 $ tmux -S /tmp/tmux-shared/myshare
 </pre>
 <p>
-This will log you into a new shell (you can exit as usual with Ctrl+D), from here you start up emacs:</p>
+This will open tmux shell in <code class="verbatim">/tmp/tmux-shared/myshare</code> directory.</p>
 <blockquote>
-<p>start up emacs:</p>
+<p>start up emacs as host:</p>
 </blockquote>
 <pre class="example">
 $ emacs
 </pre>
 <p>
-on emacs do M-x:server-start</p>
+Now start the server:</p>
 <blockquote>
 <p>on emacs do M-x:server-start</p>
 </blockquote>
 <p>
+Now open a new shell tab (cmd-d on mac) and try to connect to the host.
 <strong>Connecting to the host</strong></p>
 <blockquote>
 <p>Connecting to the host</p>
@@ -334,14 +339,14 @@ on emacs do M-x:server-start</p>
 <pre class="example">
 $ tmux -S /tmp/tmux-shared/myshare
 </pre>
-<p>
-and then do</p>
 <blockquote>
-<p>and then do</p>
+<p>then do</p>
 </blockquote>
 <pre class="example">
 $ emacsclient --tty --socket-name /tmp/emacs-shared/server
 </pre>
+<p>
+<strong>Well done! Have fun.</strong></p>
 </div>
 </div>
 <div id="outline-container-headline-5" class="outline-3">
